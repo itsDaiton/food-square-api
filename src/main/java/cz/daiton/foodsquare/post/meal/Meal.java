@@ -1,9 +1,11 @@
 package cz.daiton.foodsquare.post.meal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "meal")
@@ -22,26 +24,27 @@ public class Meal {
     @Column(
             name = "prep_time"
     )
-    private LocalDateTime timeToPrepare;
+    private Integer timeToPrepare;
 
     @Column(
             name = "cook_time"
     )
-    private LocalDateTime timeToCook;
+    private Integer timeToCook;
 
     private String instructions;
 
+    @JsonIgnore
     @OneToMany(
             mappedBy = "id",
             fetch = FetchType.LAZY
     )
-    private Set<IngredientsInMeal> ingredientsInMeals;
+    private Set<IngredientsInMeal> ingredientsInMeals = new HashSet<>();
 
     public Meal() {
 
     }
 
-    public Meal(Long id, String name, String description, LocalDateTime timeToPrepare, LocalDateTime timeToCook, String instructions) {
+    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -50,7 +53,7 @@ public class Meal {
         this.instructions = instructions;
     }
 
-    public Meal(String name, String description, LocalDateTime timeToPrepare, LocalDateTime timeToCook, String instructions) {
+    public Meal(String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions) {
         this.name = name;
         this.description = description;
         this.timeToPrepare = timeToPrepare;
@@ -82,19 +85,19 @@ public class Meal {
         this.description = description;
     }
 
-    public LocalDateTime getTimeToPrepare() {
+    public Integer getTimeToPrepare() {
         return timeToPrepare;
     }
 
-    public void setTimeToPrepare(LocalDateTime timeToPrepare) {
+    public void setTimeToPrepare(Integer timeToPrepare) {
         this.timeToPrepare = timeToPrepare;
     }
 
-    public LocalDateTime getTimeToCook() {
+    public Integer getTimeToCook() {
         return timeToCook;
     }
 
-    public void setTimeToCook(LocalDateTime timeToCook) {
+    public void setTimeToCook(Integer timeToCook) {
         this.timeToCook = timeToCook;
     }
 

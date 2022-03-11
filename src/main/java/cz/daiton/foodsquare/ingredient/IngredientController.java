@@ -1,11 +1,12 @@
 package cz.daiton.foodsquare.ingredient;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/ingredient")
+@RequestMapping(path = "api/v1/ingredients")
+@CrossOrigin
 public class IngredientController {
 
     private final IngredientService ingredientService;
@@ -14,8 +15,34 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-    @GetMapping(path = "test")
-    public String getEndPointExample() {
-        return "IngredientController end-point.";
+    @GetMapping(value = "get/{id}")
+    public Ingredient getIngredient(@PathVariable Long id) {
+        return ingredientService.get(id);
     }
+
+    @GetMapping(value = "/getAll")
+    public List<Ingredient> getAllIngredients() {
+        return ingredientService.getAll();
+    }
+
+    @PostMapping(value = "/add")
+    public String addIngredient(@RequestBody Ingredient ingredient) {
+        ingredientService.add(ingredient);
+        return "Ingredient has been successfully added.";
+    }
+
+    @PutMapping(value = "/update/{id}")
+    public String updateIngredient(@RequestBody IngredientDto ingredientDto, @PathVariable Long id) {
+        ingredientService.update(ingredientDto, id);
+        return "Ingredient has been successfully updated.";
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public String deleteIngredient(@PathVariable Long id) {
+        ingredientService.delete(id);
+        return "Ingredient has been successfully deleted.";
+    }
+
+    //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy
+
 }

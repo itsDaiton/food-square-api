@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.ingredients_in_meal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.post.meal.Meal;
 
@@ -21,9 +22,11 @@ public class IngredientsInMeal {
     //TODO: vytvořit možnost zadat gramáž, počet a různé jednotky při výběru
 
     @ManyToOne
+    @JoinColumn(name = "meal_id")
     private Meal meal;
 
     @ManyToOne
+    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 
     public IngredientsInMeal() {
