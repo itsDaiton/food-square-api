@@ -2,6 +2,9 @@ package cz.daiton.foodsquare.post.thread;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 @Service
 public class ThreadServiceImpl implements ThreadService {
 
@@ -11,5 +14,31 @@ public class ThreadServiceImpl implements ThreadService {
         this.threadRepository = threadRepository;
     }
 
-    //TODO: implementace metod z rozhraní přes repository
+    @Override
+    public Thread get(Long id) {
+        return threadRepository.findById(id).orElseThrow(NoSuchFieldError::new);
+    }
+
+    @Override
+    public List<Thread> getAll() {
+        return threadRepository.findAll();
+    }
+
+    @Override
+    public void add(Thread thread) {
+        threadRepository.save(thread);
+    }
+
+    @Override
+    public void update(ThreadDto threadDto, Long id) {
+        Thread thread = threadRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        thread.setHeader(threadDto.getHeader());
+        thread.setContent(threadDto.getContent());
+        threadRepository.save(thread);
+    }
+
+    @Override
+    public void delete(Long id) {
+        threadRepository.deleteById(id);
+    }
 }

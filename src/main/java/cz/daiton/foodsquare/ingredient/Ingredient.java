@@ -1,8 +1,10 @@
 package cz.daiton.foodsquare.ingredient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "ingredient")
@@ -30,8 +32,8 @@ public class Ingredient {
             mappedBy = "id",
             fetch = FetchType.LAZY
     )
-    private Set<IngredientsInMeal> ingredientsInMeals;
-
+    @JsonIgnore
+    private Set<IngredientsInMeal> ingredientsInMeals = new HashSet<>();
 
     //TODO: přidat jednotlivé hodnoty(tuky, bílkoviny, sacharidy...)
 

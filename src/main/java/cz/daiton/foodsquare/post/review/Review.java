@@ -17,6 +17,8 @@ public class Review {
 
     private Integer rating;
 
+    //TODO: omezit hodnoty ratingu jen na 1 - 5
+
     @Column(
             name = "path_to_image"
     )
