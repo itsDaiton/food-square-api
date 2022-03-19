@@ -1,9 +1,9 @@
 package cz.daiton.foodsquare.post.thread;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import cz.daiton.foodsquare.post.Post;
+
+import javax.persistence.*;
 
 @Entity(name = "thread")
 public class Thread {
@@ -18,19 +18,27 @@ public class Thread {
 
     private String content;
 
+    @JsonIgnore
+    @OneToOne(
+            mappedBy = "thread"
+    )
+    private Post post;
+
     public Thread() {
 
     }
 
-    public Thread(Long id, String header, String content) {
+    public Thread(Long id, String header, String content, Post post) {
         this.id = id;
         this.header = header;
         this.content = content;
+        this.post = post;
     }
 
-    public Thread(String header, String content) {
+    public Thread(String header, String content, Post post) {
         this.header = header;
         this.content = content;
+        this.post = post;
     }
 
     public Long getId() {
@@ -55,5 +63,13 @@ public class Thread {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
     }
 }

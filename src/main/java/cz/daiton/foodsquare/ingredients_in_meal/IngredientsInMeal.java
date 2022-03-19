@@ -1,6 +1,5 @@
 package cz.daiton.foodsquare.ingredients_in_meal;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.post.meal.Meal;
 

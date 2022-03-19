@@ -1,6 +1,13 @@
 package cz.daiton.foodsquare.appuser;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import cz.daiton.foodsquare.comment.Comment;
+import cz.daiton.foodsquare.like.Like;
+import cz.daiton.foodsquare.post.Post;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "app_user")
 public class AppUser {
@@ -44,11 +51,29 @@ public class AppUser {
     )
     private AppUserRole role;
 
+    @OneToMany(mappedBy = "appUser")
+    @JsonIgnore
+    private Set<Post> posts;
+
+    @OneToMany(
+            mappedBy = "id",
+            fetch = FetchType.LAZY
+    )
+    @JsonIgnore
+    private Set<Comment> comments = new HashSet<>();
+
+    @OneToMany(
+            mappedBy = "id",
+            fetch = FetchType.LAZY
+    )
+    @JsonIgnore
+    private Set<Like> likes = new HashSet<>();
+
     public AppUser() {
 
     }
 
-    public AppUser(Long id, String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role) {
+    public AppUser(Long id, String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role, Set<Post> posts, Set<Comment> comments, Set<Like> likes) {
         this.id = id;
         this.email = email;
         this.userName = userName;
@@ -57,9 +82,12 @@ public class AppUser {
         this.password = password;
         this.pathToImage = pathToImage;
         this.role = role;
+        this.posts = posts;
+        this.comments = comments;
+        this.likes = likes;
     }
 
-    public AppUser(String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role) {
+    public AppUser(String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role, Set<Post> posts, Set<Comment> comments, Set<Like> likes) {
         this.email = email;
         this.userName = userName;
         this.firstName = firstName;
@@ -67,6 +95,9 @@ public class AppUser {
         this.password = password;
         this.pathToImage = pathToImage;
         this.role = role;
+        this.posts = posts;
+        this.comments = comments;
+        this.likes = likes;
     }
 
     public Long getId() {
@@ -131,6 +162,30 @@ public class AppUser {
 
     public void setRole(AppUserRole role) {
         this.role = role;
+    }
+
+    public Set<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<Post> posts) {
+        this.posts = posts;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public Set<Like> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Set<Like> likes) {
+        this.likes = likes;
     }
 
     @Override
