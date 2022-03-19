@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.meal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
+import cz.daiton.foodsquare.post.Post;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -40,25 +40,25 @@ public class Meal {
     )
     private Set<IngredientsInMeal> ingredientsInMeals = new HashSet<>();
 
+    @JsonIgnore
+    @OneToOne(
+            mappedBy = "meal"
+    )
+    private Post post;
+
     public Meal() {
 
     }
 
-    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions) {
+    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions, Set<IngredientsInMeal> ingredientsInMeals, Post post) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.timeToPrepare = timeToPrepare;
         this.timeToCook = timeToCook;
         this.instructions = instructions;
-    }
-
-    public Meal(String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions) {
-        this.name = name;
-        this.description = description;
-        this.timeToPrepare = timeToPrepare;
-        this.timeToCook = timeToCook;
-        this.instructions = instructions;
+        this.ingredientsInMeals = ingredientsInMeals;
+        this.post = post;
     }
 
     public Long getId() {
@@ -115,6 +115,14 @@ public class Meal {
 
     public void setIngredientsInMeals(Set<IngredientsInMeal> ingredientsInMeals) {
         this.ingredientsInMeals = ingredientsInMeals;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
     }
 
     @Override

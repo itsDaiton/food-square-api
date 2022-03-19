@@ -6,7 +6,6 @@ import cz.daiton.foodsquare.post.meal.Meal;
 import cz.daiton.foodsquare.post.meal.MealRepository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.NoSuchElementException;
 
