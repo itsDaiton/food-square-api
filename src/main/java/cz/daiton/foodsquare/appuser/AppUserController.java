@@ -6,6 +6,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/users")
+@CrossOrigin
 public class AppUserController {
 
     private final AppUserService appUserService;
