@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.like.Like;
 import cz.daiton.foodsquare.post.Post;
+import cz.daiton.foodsquare.role.Role;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -39,17 +40,13 @@ public class AppUser {
     )
     private String lastName;
 
+    @JsonIgnore
     private String password;
 
     @Column(
             name = "path_to_image"
     )
     private String pathToImage;
-
-    @Enumerated(
-            EnumType.STRING
-    )
-    private AppUserRole role;
 
     @OneToMany(mappedBy = "appUser")
     @JsonIgnore
@@ -69,11 +66,19 @@ public class AppUser {
     @JsonIgnore
     private Set<Like> likes = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(
+            name = "app_user_roles",
+            joinColumns = @JoinColumn(name = "app_user_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
+
     public AppUser() {
 
     }
 
-    public AppUser(Long id, String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role, Set<Post> posts, Set<Comment> comments, Set<Like> likes) {
+    public AppUser(Long id, String email, String userName, String firstName, String lastName, String password, String pathToImage, Set<Post> posts, Set<Comment> comments, Set<Like> likes, Set<Role> roles) {
         this.id = id;
         this.email = email;
         this.userName = userName;
@@ -81,23 +86,16 @@ public class AppUser {
         this.lastName = lastName;
         this.password = password;
         this.pathToImage = pathToImage;
-        this.role = role;
         this.posts = posts;
         this.comments = comments;
         this.likes = likes;
+        this.roles = roles;
     }
 
-    public AppUser(String email, String userName, String firstName, String lastName, String password, String pathToImage, AppUserRole role, Set<Post> posts, Set<Comment> comments, Set<Like> likes) {
+    public AppUser(String email, String userName, String password) {
         this.email = email;
         this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.password = password;
-        this.pathToImage = pathToImage;
-        this.role = role;
-        this.posts = posts;
-        this.comments = comments;
-        this.likes = likes;
     }
 
     public Long getId() {
@@ -156,14 +154,6 @@ public class AppUser {
         this.pathToImage = pathToImage;
     }
 
-    public AppUserRole getRole() {
-        return role;
-    }
-
-    public void setRole(AppUserRole role) {
-        this.role = role;
-    }
-
     public Set<Post> getPosts() {
         return posts;
     }
@@ -188,17 +178,12 @@ public class AppUser {
         this.likes = likes;
     }
 
-    @Override
-    public String toString() {
-        return "AppUser{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", userName='" + userName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", password='" + password + '\'' +
-                ", pathToImage='" + pathToImage + '\'' +
-                ", role=" + role +
-                '}';
+    @JsonIgnore
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

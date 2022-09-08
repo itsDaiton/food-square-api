@@ -1,5 +1,7 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.role.AppUserRole;
+
 public class AppUserDto {
 
     private Long id;

@@ -1,12 +1,13 @@
 package cz.daiton.foodsquare.appuser;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/users")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class AppUserController {
 
     private final AppUserService appUserService;
@@ -16,11 +17,14 @@ public class AppUserController {
     }
 
     @GetMapping(value = "get/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public AppUser getUser(@PathVariable Long id) {
         return appUserService.get(id);
     }
 
+
     @GetMapping(value = "/getAll")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
     }
