@@ -1,13 +1,9 @@
 package cz.daiton.foodsquare.payload.request;
 
-import javax.validation.constraints.NotBlank;
+public class LoginRequestDTO {
 
-public class LoginRequest {
-
-    @NotBlank
     private String username;
 
-    @NotBlank
     public String password;
 
     public String getUsername() {

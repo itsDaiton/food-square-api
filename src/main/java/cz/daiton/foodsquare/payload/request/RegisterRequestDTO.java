@@ -1,19 +1,25 @@
 package cz.daiton.foodsquare.payload.request;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
-public class RegisterRequest {
+public class RegisterRequestDTO {
 
-    @NotBlank
+    private final String required = "This field is required.";
+
+    @NotNull(message = required)
+    @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.")
     private String username;
 
-    @NotBlank
-    @Email
+    @NotEmpty(message = required)
+    @Email(message = "This is not valid e-mail address.")
     private String email;
 
-    @NotBlank
+    @NotNull(message = required)
+    @Size(min = 6, message = "Password must be at least 6 characters long.")
     private String password;
 
     private Set<String> role;

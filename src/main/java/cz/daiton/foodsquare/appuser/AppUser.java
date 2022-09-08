@@ -7,27 +7,39 @@ import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.role.Role;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "app_user")
 public class AppUser {
 
+    @Transient
+    private final String required = "This field is required.";
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+
     private Long id;
 
     @Column(
             unique = true
     )
+    @NotNull(message = required)
+    @Email(message = "This is not valid e-mail address.")
     private String email;
 
     @Column(
             unique = true,
             name = "username"
     )
+
+    @NotNull(message = required)
+    @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.")
     private String userName;
 
     @Column(
@@ -41,6 +53,8 @@ public class AppUser {
     private String lastName;
 
     @JsonIgnore
+    @NotNull(message = required)
+    @Size(min = 6, message = "Password must be at least 6 characters long.")
     private String password;
 
     @Column(

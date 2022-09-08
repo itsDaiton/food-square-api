@@ -3,8 +3,10 @@ package cz.daiton.foodsquare.security;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.appuser.AppUserServiceImpl;
-import cz.daiton.foodsquare.payload.request.LoginRequest;
-import cz.daiton.foodsquare.payload.request.RegisterRequest;
+import cz.daiton.foodsquare.payload.request.LoginRequestDTO;
+import cz.daiton.foodsquare.payload.request.RegisterRequestDTO;
+import cz.daiton.foodsquare.payload.response.CustomFieldError;
+import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.UserDataResponse;
 import cz.daiton.foodsquare.role.AppUserRole;
@@ -24,6 +26,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -57,50 +60,62 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest) {
-        if (appUserRepository.existsByUserName(registerRequest.getUsername())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Username is already taken."));
+    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequestDTO registerRequestDto) {
+
+        List<CustomFieldError> errorList = new ArrayList<>();
+        FieldErrorResponse response = new FieldErrorResponse();
+
+        if (appUserRepository.existsByUserName(registerRequestDto.getUsername())) {
+            CustomFieldError error = new CustomFieldError();
+            error.setMessage("This username is already taken.");
+            error.setField("username");
+            errorList.add(error);
         }
 
-        if (appUserRepository.existsByEmail(registerRequest.getEmail())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: E-mail is already taken."));
+        if (appUserRepository.existsByEmail(registerRequestDto.getEmail())) {
+            CustomFieldError error = new CustomFieldError();
+            error.setMessage("This e-mail is already taken.");
+            error.setField("email");
+            errorList.add(error);
+        }
+
+        response.setErrorList(errorList);
+
+        if (!errorList.isEmpty()) {
+            return ResponseEntity.badRequest().body(response);
         }
 
         AppUser appUser = new AppUser(
-                registerRequest.getEmail(),
-                registerRequest.getUsername(),
-                passwordEncoder.encode(registerRequest.getPassword())
+                registerRequestDto.getEmail(),
+                registerRequestDto.getUsername(),
+                passwordEncoder.encode(registerRequestDto.getPassword())
         );
 
-        Set<String> strRoles = registerRequest.getRole();
+        Set<String> strRoles = registerRequestDto.getRole();
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(AppUserRole.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    .orElseThrow(() -> new RuntimeException("Role is not found."));
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
                         Role roleAdmin = roleRepository.findByName(AppUserRole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleAdmin);
                         break;
 
                     case "moderator":
                         Role roleModerator = roleRepository.findByName(AppUserRole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleModerator);
                         break;
 
                     default:
                         Role roleUser = roleRepository.findByName(AppUserRole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleUser);
                 }
             });
@@ -114,10 +129,10 @@ public class AuthenticationController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequestDTO loginRequestDto) {
 
         Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+                .authenticate(new UsernamePasswordAuthenticationToken(loginRequestDto.getUsername(), loginRequestDto.getPassword())
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
