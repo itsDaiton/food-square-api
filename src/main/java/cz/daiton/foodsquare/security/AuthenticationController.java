@@ -158,6 +158,7 @@ public class AuthenticationController {
 
     @PostMapping("logout")
     public ResponseEntity<?> logoutUser() {
+        SecurityContextHolder.clearContext();
         ResponseCookie cookie = jwtUtils.cleanCookie();
         return ResponseEntity
                 .ok()
