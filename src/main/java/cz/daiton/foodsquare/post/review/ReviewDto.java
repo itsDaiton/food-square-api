@@ -12,6 +12,8 @@ public class ReviewDto {
 
     //TODO: multipartFile pro obrázky
 
+    private Long appUser;
+
     public Long getId() {
         return id;
     }
@@ -42,5 +44,13 @@ public class ReviewDto {
 
     public void setRating(Integer rating) {
         this.rating = rating;
+    }
+
+    public Long getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(Long appUser) {
+        this.appUser = appUser;
     }
 }

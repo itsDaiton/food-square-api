@@ -2,20 +2,32 @@ package cz.daiton.foodsquare.post;
 
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.meal.Meal;
 import cz.daiton.foodsquare.post.meal.MealRepository;
 import cz.daiton.foodsquare.post.review.Review;
 import cz.daiton.foodsquare.post.review.ReviewRepository;
 import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.post.thread.ThreadRepository;
+import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.security.jwt.JwtUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.nio.file.AccessDeniedException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 public class PostServiceImpl implements PostService {
+
+    private static final Logger logger = LoggerFactory.getLogger(PostServiceImpl.class);
 
     private final PostRepository postRepository;
     private final AppUserRepository appUserRepository;
@@ -23,12 +35,19 @@ public class PostServiceImpl implements PostService {
     private final ReviewRepository reviewRepository;
     private final ThreadRepository threadRepository;
 
-    public PostServiceImpl(PostRepository postRepository, AppUserRepository appUserRepository, MealRepository mealRepository, ReviewRepository reviewRepository, ThreadRepository threadRepository) {
+    private final AppUserService appUserService;
+
+
+    private final JwtUtils jwtUtils;
+
+    public PostServiceImpl(PostRepository postRepository, AppUserRepository appUserRepository, MealRepository mealRepository, ReviewRepository reviewRepository, ThreadRepository threadRepository, AppUserService appUserService, JwtUtils jwtUtils) {
         this.postRepository = postRepository;
         this.appUserRepository = appUserRepository;
         this.mealRepository = mealRepository;
         this.reviewRepository = reviewRepository;
         this.threadRepository = threadRepository;
+        this.appUserService = appUserService;
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -61,7 +80,7 @@ public class PostServiceImpl implements PostService {
             post.setThread(thread);
         }
 
-        post.setCreatedAt(postDto.getCreatedAt());
+        post.setCreatedAt(LocalDateTime.now());
         post.setAppUser(appUser);
 
         postRepository.save(post);
@@ -87,7 +106,7 @@ public class PostServiceImpl implements PostService {
             post.setThread(thread);
         }
 
-        post.setCreatedAt(postDto.getCreatedAt());
+        post.setCreatedAt(LocalDateTime.now());
         post.setAppUser(appUser);
 
         postRepository.save(post);
@@ -96,5 +115,24 @@ public class PostServiceImpl implements PostService {
     @Override
     public void delete(Long id) {
         postRepository.deleteById(id);
+    }
+
+    @Override
+    public String handleRequest(PostDto postDto, HttpServletRequest request) throws IncorrectUserException {
+        String jwt = jwtUtils.getJwtFromCookies(request);
+
+        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
+            String username = jwtUtils.getUserNameFromJwtToken(jwt);
+            AppUser appUser = appUserService.findByUsername(username);
+
+            if (appUser.getId().equals(postDto.getAppUser())) {
+                add(postDto);
+                return "Post has been successfully added.";
+            }
+            else {
+                throw new IncorrectUserException("You are not authorized for this action.");
+            }
+        }
+        return "Your token is invalid.";
     }
 }

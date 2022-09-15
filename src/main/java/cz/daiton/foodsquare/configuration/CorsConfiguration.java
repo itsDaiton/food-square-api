@@ -15,6 +15,10 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("http://localhost:3000");
                 registry.addMapping("/api/v1/auth/login").allowedOrigins("http://localhost:3000").allowCredentials(true);
+                registry.addMapping("/api/v1/meals/add").allowedOrigins("http://localhost:3000").allowCredentials(true);
+                registry.addMapping("/api/v1/reviews/add").allowedOrigins("http://localhost:3000").allowCredentials(true);
+                registry.addMapping("/api/v1/threads/add").allowedOrigins("http://localhost:3000").allowCredentials(true);
+                registry.addMapping("/api/v1/posts/add").allowedOrigins("http://localhost:3000").allowCredentials(true);
             }
         };
     }

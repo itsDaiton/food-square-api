@@ -5,7 +5,6 @@ import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.appuser.AppUserServiceImpl;
 import cz.daiton.foodsquare.payload.request.LoginRequestDTO;
 import cz.daiton.foodsquare.payload.request.RegisterRequestDTO;
-import cz.daiton.foodsquare.payload.response.CustomFieldError;
 import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.UserDataResponse;
@@ -17,6 +16,7 @@ import cz.daiton.foodsquare.security.userdetails.UserDetailsImpl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -65,14 +65,14 @@ public class AuthenticationController {
         List<CustomFieldError> errorList = new ArrayList<>();
         FieldErrorResponse response = new FieldErrorResponse();
 
-        if (appUserRepository.existsByUserName(registerRequestDto.getUsername())) {
+        if (appUserService.existsByUserName(registerRequestDto.getUsername())) {
             CustomFieldError error = new CustomFieldError();
             error.setMessage("This username is already taken.");
             error.setField("username");
             errorList.add(error);
         }
 
-        if (appUserRepository.existsByEmail(registerRequestDto.getEmail())) {
+        if (appUserService.existsByEmail(registerRequestDto.getEmail())) {
             CustomFieldError error = new CustomFieldError();
             error.setMessage("This e-mail is already taken.");
             error.setField("email");
@@ -157,6 +157,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("logout")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<?> logoutUser() {
         SecurityContextHolder.clearContext();
         ResponseCookie cookie = jwtUtils.cleanCookie();

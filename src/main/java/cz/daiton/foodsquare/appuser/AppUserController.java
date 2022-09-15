@@ -17,31 +17,32 @@ public class AppUserController {
     }
 
     @GetMapping(value = "get/{id}")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public AppUser getUser(@PathVariable Long id) {
         return appUserService.get(id);
     }
 
 
     @GetMapping(value = "/getAll")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
     }
 
     @PostMapping(value = "/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public String addUser(@RequestBody AppUser appUser) {
         appUserService.add(appUser);
         return "User has been successfully added.";
     }
 
     @PutMapping(value = "/update/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String updateUser(@RequestBody AppUserDto appUserDto, @PathVariable Long id) {
         appUserService.update(appUserDto, id);
         return "User has been successfully updated.";
     }
 
     @DeleteMapping(value = "/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String deleteUser(@PathVariable Long id) {
         appUserService.delete(id);
         return "User has been successfully deleted.";

@@ -1,6 +1,7 @@
 package cz.daiton.foodsquare.post;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class PostDto {
 
@@ -62,5 +63,18 @@ public class PostDto {
 
     public void setThread(Long thread) {
         this.thread = thread;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PostDto postDto = (PostDto) o;
+        return id.equals(postDto.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

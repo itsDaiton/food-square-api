@@ -58,6 +58,15 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/v1/auth/register", "/api/v1/auth/login").anonymous()
+                .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll").permitAll()
+                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll").permitAll()
+                .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
+                .antMatchers("/api/v1/meal-ingredients/get/*", "/api/v1/meal-ingredients/getAll").permitAll()
+                .antMatchers("/api/v1/likes/get/*", "/api/v1/likes/getAll").permitAll()
+                .antMatchers("/api/v1/meals/get/*", "/api/v1/meals/getAll").permitAll()
+                .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll").permitAll()
+                .antMatchers("/api/v1/threads/get/*", "/api/v1/threads/getAll").permitAll()
+                .antMatchers("/api/v1/posts/get/*", "/api/v1/posts/getAll").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);

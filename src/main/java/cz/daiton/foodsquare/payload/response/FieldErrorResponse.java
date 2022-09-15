@@ -1,5 +1,7 @@
 package cz.daiton.foodsquare.payload.response;
 
+import cz.daiton.foodsquare.security.CustomFieldError;
+
 import java.util.List;
 
 public class FieldErrorResponse {

@@ -1,6 +1,5 @@
 package cz.daiton.foodsquare.security;
 
-import cz.daiton.foodsquare.payload.response.CustomFieldError;
 import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

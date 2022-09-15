@@ -42,4 +42,19 @@ public class AppUserServiceImpl implements AppUserService {
     public void delete(Long id) {
         appUserRepository.deleteById(id);
     }
+
+    @Override
+    public AppUser findByUsername(String username) {
+        return appUserRepository.findByUserName(username).orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public Boolean existsByUserName(String username) {
+        return appUserRepository.existsByUserName(username);
+    }
+
+    @Override
+    public Boolean existsByEmail(String email) {
+        return appUserRepository.existsByEmail(email);
+    }
 }

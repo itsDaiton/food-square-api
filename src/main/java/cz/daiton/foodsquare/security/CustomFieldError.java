@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.payload.response;
+package cz.daiton.foodsquare.security;
 
 public class CustomFieldError {
 

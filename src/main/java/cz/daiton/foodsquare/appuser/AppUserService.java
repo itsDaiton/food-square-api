@@ -15,4 +15,10 @@ public interface AppUserService {
 
     void delete(Long id);
 
+    AppUser findByUsername(String username);
+
+    Boolean existsByUserName(String username);
+
+    Boolean existsByEmail(String email);
+
 }
