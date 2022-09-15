@@ -1,5 +1,7 @@
 package cz.daiton.foodsquare.post.meal;
 
+import cz.daiton.foodsquare.appuser.AppUser;
+
 import java.util.List;
 
 public interface MealService {
@@ -8,10 +10,12 @@ public interface MealService {
 
     List<Meal> getAll();
 
-    void add(Meal meal);
+    void add(MealDto mealDto);
 
     void update(MealDto mealDto, Long id);
 
     void delete(Long id);
+
+    Meal findTopByAppUserOrderByIdDesc(AppUser appUser);
 
 }

@@ -1,18 +1,26 @@
 package cz.daiton.foodsquare.post.thread;
 
+import cz.daiton.foodsquare.appuser.AppUser;
+import cz.daiton.foodsquare.appuser.AppUserService;
+import cz.daiton.foodsquare.payload.response.PostContentResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/threads")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 public class ThreadController {
 
     private final ThreadService threadService;
 
-    public ThreadController(ThreadService threadService) {
+    private final AppUserService appUserService;
+
+    public ThreadController(ThreadService threadService, AppUserService appUserService) {
         this.threadService = threadService;
+        this.appUserService = appUserService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -26,18 +34,29 @@ public class ThreadController {
     }
 
     @PostMapping(value = "/add")
-    public String addThread(@RequestBody Thread thread) {
-        threadService.add(thread);
-        return "Thread has been successfully added.";
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> addThread(@RequestBody ThreadDto threadDto) {
+        threadService.add(threadDto);
+        AppUser appUser = appUserService.get(threadDto.getAppUser());
+        Thread thread = threadService.findTopByAppUserOrderByIdDesc(appUser);
+        return ResponseEntity
+                .ok()
+                .body(new PostContentResponse(
+                        thread.getId(),
+                        appUser.getId(),
+                        "Thread has been successfully added."
+                ));
     }
 
     @PutMapping(value = "/update/{id}")
+    @PreAuthorize("hasRole('USER')")
     public String updateThread(@RequestBody ThreadDto threadDto, @PathVariable Long id) {
         threadService.update(threadDto, id);
         return "Thread has been successfully updated.";
     }
 
     @DeleteMapping(value = "/delete/{id}")
+    @PreAuthorize("hasRole('USER')")
     public String deleteThread(@PathVariable Long id) {
         threadService.delete(id);
         return "Thread has been successfully deleted.";

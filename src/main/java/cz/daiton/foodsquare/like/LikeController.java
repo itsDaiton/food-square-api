@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.like;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,18 +27,21 @@ public class LikeController {
     }
 
     @PostMapping(value = "/add")
+    @PreAuthorize("hasRole('USER')")
     public String addLike(@RequestBody LikeDto likeDto) {
         likeService.add(likeDto);
         return "Like has been successfully added.";
     }
 
     @PutMapping(value = "/update/{id}")
+    @PreAuthorize("hasRole('USER')")
     public String updateLike(@RequestBody LikeDto likeDto, @PathVariable Long id) {
         likeService.update(likeDto, id);
         return "Like has been successfully updated.";
     }
 
     @DeleteMapping(value = "/delete/{id}")
+    @PreAuthorize("hasRole('USER')")
     public String deleteLike(@PathVariable Long id) {
         likeService.delete(id);
         return "Like has been successfully deleted.";

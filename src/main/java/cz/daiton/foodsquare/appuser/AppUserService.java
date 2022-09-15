@@ -1,6 +1,7 @@
 package cz.daiton.foodsquare.appuser;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AppUserService {
 
@@ -13,4 +14,11 @@ public interface AppUserService {
     void update(AppUserDto appUserDto, Long id);
 
     void delete(Long id);
+
+    AppUser findByUsername(String username);
+
+    Boolean existsByUserName(String username);
+
+    Boolean existsByEmail(String email);
+
 }
