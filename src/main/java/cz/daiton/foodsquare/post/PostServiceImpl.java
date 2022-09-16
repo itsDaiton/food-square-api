@@ -13,6 +13,7 @@ import cz.daiton.foodsquare.security.IncorrectUserException;
 import cz.daiton.foodsquare.security.jwt.JwtUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -114,7 +115,12 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void delete(Long id) {
-        postRepository.deleteById(id);
+        if (postRepository.existsById(id)) {
+            postRepository.deleteById(id);
+        }
+        else {
+            throw new NoSuchElementException("This post does not exist. You cannot delete it.");
+        }
     }
 
     @Override
@@ -126,6 +132,10 @@ public class PostServiceImpl implements PostService {
             AppUser appUser = appUserService.findByUsername(username);
 
             if (appUser.getId().equals(postDto.getAppUser())) {
+                Meal meal = mealRepository.findById(postDto.getMeal()).orElseThrow(NoSuchElementException::new);
+                if (postRepository.existsById(meal.getId())) {
+                    throw new DataIntegrityViolationException("Post with this meal already exists.");
+                }
                 add(postDto);
                 return "Post has been successfully added.";
             }

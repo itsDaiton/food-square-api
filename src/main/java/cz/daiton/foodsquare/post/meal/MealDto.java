@@ -14,8 +14,6 @@ public class MealDto {
 
     private String instructions;
 
-    private Long appUser;
-
     public Long getId() {
         return id;
     }
@@ -62,13 +60,5 @@ public class MealDto {
 
     public void setInstructions(String instructions) {
         this.instructions = instructions;
-    }
-
-    public Long getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(Long appUser) {
-        this.appUser = appUser;
     }
 }

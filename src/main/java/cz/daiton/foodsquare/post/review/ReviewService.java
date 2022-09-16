@@ -1,7 +1,5 @@
 package cz.daiton.foodsquare.post.review;
 
-import cz.daiton.foodsquare.appuser.AppUser;
-
 import java.util.List;
 
 public interface ReviewService {
@@ -16,5 +14,5 @@ public interface ReviewService {
 
     void delete(Long id);
 
-    Review findTopByAppUserOrderByIdDesc(AppUser appUser);
+    Review findTopByOrderByIdDesc();
 }

@@ -36,6 +36,7 @@ public class ThreadController {
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addThread(@RequestBody ThreadDto threadDto) {
+        /*
         threadService.add(threadDto);
         AppUser appUser = appUserService.get(threadDto.getAppUser());
         Thread thread = threadService.findTopByAppUserOrderByIdDesc(appUser);
@@ -46,6 +47,9 @@ public class ThreadController {
                         appUser.getId(),
                         "Thread has been successfully added."
                 ));
+         */
+        //TODO: vyřešit
+        return ResponseEntity.ok().body("placeholder");
     }
 
     @PutMapping(value = "/update/{id}")

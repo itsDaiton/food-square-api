@@ -1,7 +1,6 @@
 package cz.daiton.foodsquare.post.meal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
 import cz.daiton.foodsquare.post.Post;
 
@@ -47,18 +46,11 @@ public class Meal {
     )
     private Post post;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "app_user_id",
-            nullable = false
-    )
-    private AppUser appUser;
-
     public Meal() {
 
     }
 
-    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions, Set<IngredientsInMeal> ingredientsInMeals, Post post, AppUser appUser) {
+    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions, Set<IngredientsInMeal> ingredientsInMeals, Post post) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -67,7 +59,6 @@ public class Meal {
         this.instructions = instructions;
         this.ingredientsInMeals = ingredientsInMeals;
         this.post = post;
-        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -132,14 +123,6 @@ public class Meal {
 
     public void setPost(Post post) {
         this.post = post;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
     }
 
     @Override

@@ -40,22 +40,27 @@ public class PostController {
     }
 
     @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasAnyRole()")
+    @PreAuthorize("hasRole('USER')")
     public String updatePost(@RequestBody PostDto postDto, @PathVariable Long id) {
         postService.update(postDto, id);
         return "Post has been successfully updated.";
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasAnyRole()")
+    @PreAuthorize("hasRole('USER')")
     public String deletePost(@PathVariable Long id) {
         postService.delete(id);
         return "Post has been successfully deleted.";
     }
 
-    @ExceptionHandler(value = IncorrectUserException.class)
+    @ExceptionHandler(value = {IncorrectUserException.class, RuntimeException.class})
     public ResponseEntity<?> handleExceptions(Exception e) {
         if (e instanceof IncorrectUserException) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse(e.getMessage()));
+        }
+        if (e instanceof RuntimeException) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse(e.getMessage()));

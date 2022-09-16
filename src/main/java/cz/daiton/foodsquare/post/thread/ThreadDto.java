@@ -8,8 +8,6 @@ public class ThreadDto {
 
     private String content;
 
-    private Long appUser;
-
     public Long getId() {
         return id;
     }
@@ -32,13 +30,5 @@ public class ThreadDto {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public Long getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(Long appUser) {
-        this.appUser = appUser;
     }
 }

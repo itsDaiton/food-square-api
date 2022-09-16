@@ -7,8 +7,6 @@ public class PostDto {
 
     private Long id;
 
-    private LocalDateTime createdAt;
-
     private Long appUser;
 
     private Long meal;
@@ -23,14 +21,6 @@ public class PostDto {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
     }
 
     public Long getAppUser() {

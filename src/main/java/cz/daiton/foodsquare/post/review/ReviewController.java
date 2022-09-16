@@ -1,7 +1,6 @@
 package cz.daiton.foodsquare.post.review;
 
 import cz.daiton.foodsquare.appuser.AppUser;
-import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,11 +15,8 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    private final AppUserService appUserService;
-
-    public ReviewController(ReviewService reviewService, AppUserService appUserService) {
+    public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
-        this.appUserService = appUserService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -36,6 +32,7 @@ public class ReviewController {
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addReview(@RequestBody ReviewDto reviewDto) {
+        /*
         reviewService.add(reviewDto);
         AppUser appUser = appUserService.get(reviewDto.getAppUser());
         Review review = reviewService.findTopByAppUserOrderByIdDesc(appUser);
@@ -46,6 +43,10 @@ public class ReviewController {
                         appUser.getId(),
                         "Review has been successfully added."
                 ));
+
+         */
+        //TODO: vyřešit
+        return ResponseEntity.ok().body("placeholder");
     }
 
     @PutMapping(value = "/update/{id}")

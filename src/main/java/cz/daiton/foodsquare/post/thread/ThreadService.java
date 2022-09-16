@@ -1,7 +1,5 @@
 package cz.daiton.foodsquare.post.thread;
 
-import cz.daiton.foodsquare.appuser.AppUser;
-
 import java.util.List;
 
 public interface ThreadService {
@@ -16,5 +14,5 @@ public interface ThreadService {
 
     void delete(Long id);
 
-    Thread findTopByAppUserOrderByIdDesc(AppUser appUser);
+    Thread findTopByOrderByIdDesc();
 }
