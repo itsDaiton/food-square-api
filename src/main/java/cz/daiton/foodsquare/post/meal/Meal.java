@@ -3,13 +3,18 @@ package cz.daiton.foodsquare.post.meal;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
 import cz.daiton.foodsquare.post.Post;
-
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "meal")
 public class Meal {
+
+    @Transient
+    private final String required = "This field is required.";
 
     @Id
     @GeneratedValue(
@@ -17,20 +22,32 @@ public class Meal {
     )
     private Long id;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String name;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String description;
 
     @Column(
-            name = "prep_time"
+            name = "prep_time",
+            nullable = false
     )
+    @NotNull(message = required)
+    @Min(value = 1, message = "Preparation time must be at least 1 minute.")
     private Integer timeToPrepare;
 
     @Column(
-            name = "cook_time"
+            name = "cook_time",
+            nullable = false
     )
+    @NotNull(message = required)
+    @Min(value = 1, message = "Time to cook must be at least 1 minute.")
     private Integer timeToCook;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String instructions;
 
     @JsonIgnore

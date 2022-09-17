@@ -1,6 +1,7 @@
 package cz.daiton.foodsquare.post;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -45,12 +46,19 @@ public class PostController {
                 .body(new MessageResponse(postService.delete(id, request)));
     }
 
+
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<?> handleExceptions(Exception e) {
+        String message;
+
+        if (e instanceof InvalidDataAccessApiUsageException) {
+            message = "Post must have a user, it cannot be null.";
+        }
+        else {
+            message = e.getMessage();
+        }
         return ResponseEntity
                 .badRequest()
-                .body(new MessageResponse(e.getMessage()));
+                .body(new MessageResponse(message));
     }
-
-    //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy
 }

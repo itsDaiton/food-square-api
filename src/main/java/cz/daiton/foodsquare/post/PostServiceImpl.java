@@ -49,7 +49,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getAll() {
-        return postRepository.findAll();
+        return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
     @Override
@@ -87,7 +87,8 @@ public class PostServiceImpl implements PostService {
         return "There has been a error while trying to delete the post.";
     }
 
-    private Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException {
+    @Override
+    public Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException {
         String jwt = jwtUtils.getJwtFromCookies(request);
         if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
             String username = jwtUtils.getUserNameFromJwtToken(jwt);
@@ -99,6 +100,18 @@ public class PostServiceImpl implements PostService {
             else {
                 throw new IncorrectUserException("You are not authorized to operate with other user's content.");
             }
+        }
+        else {
+            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
+        }
+    }
+
+    @Override
+    public AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException{
+        String jwt = jwtUtils.getJwtFromCookies(request);
+        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
+            String username = jwtUtils.getUserNameFromJwtToken(jwt);
+            return appUserService.findByUsername(username);
         }
         else {
             throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
