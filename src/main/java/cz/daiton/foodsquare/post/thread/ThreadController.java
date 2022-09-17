@@ -3,10 +3,13 @@ package cz.daiton.foodsquare.post.thread;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
+import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.security.jwt.JwtUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -18,9 +21,12 @@ public class ThreadController {
 
     private final AppUserService appUserService;
 
-    public ThreadController(ThreadService threadService, AppUserService appUserService) {
+    private final JwtUtils jwtUtils;
+
+    public ThreadController(ThreadService threadService, AppUserService appUserService, JwtUtils jwtUtils) {
         this.threadService = threadService;
         this.appUserService = appUserService;
+        this.jwtUtils = jwtUtils;
     }
 
     @GetMapping(value = "get/{id}")
@@ -35,21 +41,25 @@ public class ThreadController {
 
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addThread(@RequestBody ThreadDto threadDto) {
-        /*
-        threadService.add(threadDto);
-        AppUser appUser = appUserService.get(threadDto.getAppUser());
-        Thread thread = threadService.findTopByAppUserOrderByIdDesc(appUser);
-        return ResponseEntity
-                .ok()
-                .body(new PostContentResponse(
-                        thread.getId(),
-                        appUser.getId(),
-                        "Thread has been successfully added."
-                ));
-         */
-        //TODO: vyřešit
-        return ResponseEntity.ok().body("placeholder");
+    public ResponseEntity<?> addThread(@RequestBody ThreadDto threadDto, HttpServletRequest request) throws IncorrectUserException{
+        Thread thread = threadService.add(threadDto);
+
+        String jwt = jwtUtils.getJwtFromCookies(request);
+
+        if (jwt != null) {
+            String username = jwtUtils.getUserNameFromJwtToken(jwt);
+            AppUser appUser = appUserService.findByUsername(username);
+            return ResponseEntity
+                    .ok()
+                    .body(new PostContentResponse(
+                            thread.getId(),
+                            appUser.getId(),
+                            "Thread has been successfully added."
+                    ));
+        }
+        else {
+            throw new IncorrectUserException("You cannot do this. You are not the same user.");
+        }
     }
 
     @PutMapping(value = "/update/{id}")

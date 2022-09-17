@@ -8,7 +8,7 @@ public interface ReviewService {
 
     List<Review> getAll();
 
-    void add(ReviewDto reviewDto);
+    Review add(ReviewDto reviewDto);
 
     void update(ReviewDto reviewDto, Long id);
 

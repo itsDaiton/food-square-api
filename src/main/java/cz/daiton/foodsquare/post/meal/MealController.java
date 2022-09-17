@@ -42,14 +42,13 @@ public class MealController {
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addMeal(@RequestBody MealDto mealDto, HttpServletRequest request) throws IncorrectUserException {
-        mealService.add(mealDto);
+        Meal meal = mealService.add(mealDto);
 
         String jwt = jwtUtils.getJwtFromCookies(request);
 
         if (jwt != null) {
             String username = jwtUtils.getUserNameFromJwtToken(jwt);
             AppUser appUser = appUserService.findByUsername(username);
-            Meal meal = mealService.findTopByOrderByIdDesc();
             return ResponseEntity
                     .ok()
                     .body(new PostContentResponse(

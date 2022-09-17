@@ -11,16 +11,10 @@ import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.post.thread.ThreadRepository;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import cz.daiton.foodsquare.security.jwt.JwtUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.nio.file.AccessDeniedException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -28,17 +22,12 @@ import java.util.NoSuchElementException;
 @Service
 public class PostServiceImpl implements PostService {
 
-    private static final Logger logger = LoggerFactory.getLogger(PostServiceImpl.class);
-
     private final PostRepository postRepository;
     private final AppUserRepository appUserRepository;
     private final MealRepository mealRepository;
     private final ReviewRepository reviewRepository;
     private final ThreadRepository threadRepository;
-
     private final AppUserService appUserService;
-
-
     private final JwtUtils jwtUtils;
 
     public PostServiceImpl(PostRepository postRepository, AppUserRepository appUserRepository, MealRepository mealRepository, ReviewRepository reviewRepository, ThreadRepository threadRepository, AppUserService appUserService, JwtUtils jwtUtils) {
@@ -53,7 +42,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post get(Long id) {
-        return postRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return postRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Post with id: '" + id + "' does not exist.")
+        );
     }
 
     @Override
@@ -62,87 +53,95 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void add(PostDto postDto) {
+    public String add(PostDto postDto, HttpServletRequest request) throws IncorrectUserException{
         Post post = new Post();
-        AppUser appUser = appUserRepository.findById(postDto.getAppUser()).orElseThrow(NoSuchElementException::new);
+        AppUser appUser = appUserRepository.findById(postDto.getAppUser()).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + postDto.getAppUser() + "' does not exist.")
+        );
 
-        if (postDto.getMeal() != null) {
-            Meal meal = mealRepository.findById(postDto.getMeal()).orElseThrow(NoSuchElementException::new);
-            post.setMeal(meal);
+        if (checkUser(postDto.getAppUser(), request)) {
+
+            checkMeal(postDto, post);
+            checkReview(postDto, post);
+            checkThread(postDto, post);
+
+            post.setCreatedAt(LocalDateTime.now());
+            post.setAppUser(appUser);
+            postRepository.save(post);
+
+            return "Post has been successfully created.";
         }
-
-        if (postDto.getReview() != null) {
-            Review review = reviewRepository.findById(postDto.getReview()).orElseThrow(NoSuchElementException::new);
-            post.setReview(review);
-        }
-
-        if (postDto.getThread() != null) {
-            Thread thread = threadRepository.findById(postDto.getThread()).orElseThrow(NoSuchElementException::new);
-            post.setThread(thread);
-        }
-
-        post.setCreatedAt(LocalDateTime.now());
-        post.setAppUser(appUser);
-
-        postRepository.save(post);
+        return "There has been a error while trying to add the post.";
     }
 
     @Override
-    public void update(PostDto postDto, Long id) {
-        Post post = postRepository.findById(id).orElseThrow(NoSuchElementException::new);
-        AppUser appUser = appUserRepository.findById(postDto.getAppUser()).orElseThrow(NoSuchElementException::new);
+    public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Post post = postRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Post with id: '" + id + "' does not exist. You cannot delete it.")
+        );
 
-        if (postDto.getMeal() != null) {
-            Meal meal = mealRepository.findById(postDto.getMeal()).orElseThrow(NoSuchElementException::new);
-            post.setMeal(meal);
-        }
-
-        if (postDto.getReview() != null) {
-            Review review = reviewRepository.findById(postDto.getReview()).orElseThrow(NoSuchElementException::new);
-            post.setReview(review);
-        }
-
-        if (postDto.getThread() != null) {
-            Thread thread = threadRepository.findById(postDto.getThread()).orElseThrow(NoSuchElementException::new);
-            post.setThread(thread);
-        }
-
-        post.setCreatedAt(LocalDateTime.now());
-        post.setAppUser(appUser);
-
-        postRepository.save(post);
-    }
-
-    @Override
-    public void delete(Long id) {
-        if (postRepository.existsById(id)) {
+        if (checkUser(post.getAppUser().getId(), request)) {
             postRepository.deleteById(id);
+            return "Post has been successfully deleted.";
         }
-        else {
-            throw new NoSuchElementException("This post does not exist. You cannot delete it.");
-        }
+        return "There has been a error while trying to delete the post.";
     }
 
-    @Override
-    public String handleRequest(PostDto postDto, HttpServletRequest request) throws IncorrectUserException {
+    private Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException {
         String jwt = jwtUtils.getJwtFromCookies(request);
-
         if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
             String username = jwtUtils.getUserNameFromJwtToken(jwt);
             AppUser appUser = appUserService.findByUsername(username);
 
-            if (appUser.getId().equals(postDto.getAppUser())) {
-                Meal meal = mealRepository.findById(postDto.getMeal()).orElseThrow(NoSuchElementException::new);
-                if (postRepository.existsById(meal.getId())) {
-                    throw new DataIntegrityViolationException("Post with this meal already exists.");
-                }
-                add(postDto);
-                return "Post has been successfully added.";
+            if (appUser.getId().equals(id)) {
+                return true;
             }
             else {
-                throw new IncorrectUserException("You are not authorized for this action.");
+                throw new IncorrectUserException("You are not authorized to operate with other user's content.");
             }
         }
-        return "Your token is invalid.";
+        else {
+            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
+        }
+    }
+
+    private void checkMeal(PostDto postDto, Post post) {
+        if (postDto.getMeal() != null) {
+            Meal meal = mealRepository.findById(postDto.getMeal()).orElseThrow(
+                    () -> new NoSuchElementException("Meal with id: '" + postDto.getMeal() + "' does not exist.")
+            );
+            if (postRepository.existsByMeal(meal)) {
+                throw new DataIntegrityViolationException("Post with meal with id: '" + meal.getId() + "' already exists.");
+            }
+            else {
+                post.setMeal(meal);
+            }
+        }
+    }
+
+    private void checkReview(PostDto postDto, Post post) {
+        if (postDto.getReview() != null) {
+            Review review = reviewRepository.findById(postDto.getReview()).orElseThrow(
+                    () -> new NoSuchElementException("Review with id: '" + postDto.getReview() + "' does not exist.")
+            );
+            if (postRepository.existsByReview(review)) {
+                throw new DataIntegrityViolationException("Post with review with id: '" + review.getId() + "' already exists.");
+            }
+            else {
+                post.setReview(review);
+            }
+        }
+    }
+
+    private void checkThread(PostDto postDto, Post post) {
+        if (postDto.getThread() != null) {
+            Thread thread = threadRepository.findById(postDto.getThread()).orElseThrow(
+                    () -> new NoSuchElementException("Thread with id: '" + postDto.getThread() + "' does not exist.")
+            );
+            if (postRepository.existsByThread(thread)) {
+                throw new DataIntegrityViolationException("Post with thread with id: '" + thread.getId() + "' already exists.");
+            }
+            post.setThread(thread);
+        }
     }
 }

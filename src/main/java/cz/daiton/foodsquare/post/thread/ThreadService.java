@@ -8,7 +8,7 @@ public interface ThreadService {
 
     List<Thread> getAll();
 
-    void add(ThreadDto threadDto);
+    Thread add(ThreadDto threadDto);
 
     void update(ThreadDto threadDto, Long id);
 

@@ -7,7 +7,7 @@ public interface MealService {
 
     List<Meal> getAll();
 
-    void add(MealDto mealDto);
+    Meal add(MealDto mealDto);
 
     void update(MealDto mealDto, Long id);
 

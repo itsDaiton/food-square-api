@@ -25,7 +25,7 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public void add(MealDto mealDto) {
+    public Meal add(MealDto mealDto) {
         Meal meal = new Meal();
 
         meal.setName(mealDto.getName());
@@ -34,7 +34,7 @@ public class MealServiceImpl implements MealService {
         meal.setTimeToCook(mealDto.getTimeToCook());
         meal.setTimeToPrepare(mealDto.getTimeToPrepare());
 
-        mealRepository.save(meal);
+        return mealRepository.saveAndFlush(meal);
     }
 
     @Override

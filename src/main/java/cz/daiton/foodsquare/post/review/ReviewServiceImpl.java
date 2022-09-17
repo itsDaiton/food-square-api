@@ -25,14 +25,14 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public void add(ReviewDto reviewDto) {
+    public Review add(ReviewDto reviewDto) {
         Review review = new Review();
 
         review.setHeader(reviewDto.getHeader());
         review.setContent(reviewDto.getContent());
         review.setRating(reviewDto.getRating());
 
-        reviewRepository.save(review);
+        return reviewRepository.saveAndFlush(review);
     }
 
     @Override

@@ -1,13 +1,11 @@
 package cz.daiton.foodsquare.post;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
-import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.ws.Response;
 import java.util.List;
 
 @RestController
@@ -36,37 +34,22 @@ public class PostController {
     public ResponseEntity<?> addPost(@RequestBody PostDto postDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
-                .body(new MessageResponse(postService.handleRequest(postDto, request)));
-    }
-
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public String updatePost(@RequestBody PostDto postDto, @PathVariable Long id) {
-        postService.update(postDto, id);
-        return "Post has been successfully updated.";
+                .body(new MessageResponse(postService.add(postDto, request)));
     }
 
     @DeleteMapping(value = "/delete/{id}")
     @PreAuthorize("hasRole('USER')")
-    public String deletePost(@PathVariable Long id) {
-        postService.delete(id);
-        return "Post has been successfully deleted.";
+    public ResponseEntity<?> deletePost(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(postService.delete(id, request)));
     }
 
-    @ExceptionHandler(value = {IncorrectUserException.class, RuntimeException.class})
+    @ExceptionHandler(value = Exception.class)
     public ResponseEntity<?> handleExceptions(Exception e) {
-        if (e instanceof IncorrectUserException) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse(e.getMessage()));
-        }
-        if (e instanceof RuntimeException) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse(e.getMessage()));
-        }
-
-        return ResponseEntity.badRequest().body(e.getMessage());
+        return ResponseEntity
+                .badRequest()
+                .body(new MessageResponse(e.getMessage()));
     }
 
     //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy

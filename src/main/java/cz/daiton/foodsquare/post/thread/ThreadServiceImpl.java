@@ -26,13 +26,13 @@ public class ThreadServiceImpl implements ThreadService {
     }
 
     @Override
-    public void add(ThreadDto threadDto) {
+    public Thread add(ThreadDto threadDto) {
         Thread thread = new Thread();
 
         thread.setHeader(threadDto.getHeader());
         thread.setContent(threadDto.getContent());
 
-        threadRepository.save(thread);
+        return threadRepository.saveAndFlush(thread);
     }
 
     @Override

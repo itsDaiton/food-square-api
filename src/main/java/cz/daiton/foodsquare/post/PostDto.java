@@ -1,6 +1,5 @@
 package cz.daiton.foodsquare.post;
 
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class PostDto {
