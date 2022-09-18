@@ -1,5 +1,8 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.security.IncorrectUserException;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface AppUserService {
@@ -8,16 +11,20 @@ public interface AppUserService {
 
     List<AppUser> getAll();
 
-    void add(AppUser appUser);
+    void register(AppUser appUser);
 
-    void update(AppUserDto appUserDto, Long id);
+    String updateAdditionalInfo(AppUserDto appUserDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    void delete(Long id);
+    String deleteProfilePicture(Long id, HttpServletRequest request) throws IncorrectUserException;
 
     AppUser findByUsername(String username);
 
     Boolean existsByUserName(String username);
 
     Boolean existsByEmail(String email);
+
+    Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException;
 
 }

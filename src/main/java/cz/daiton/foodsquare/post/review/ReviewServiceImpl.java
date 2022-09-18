@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.review;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ import java.util.NoSuchElementException;
 public class ReviewServiceImpl implements ReviewService {
 
     private final ReviewRepository reviewRepository;
-    private final PostService postService;
+    private final AppUserService appUserService;
     private final PostRepository postRepository;
 
-    public ReviewServiceImpl(ReviewRepository reviewRepository, PostService postService, PostRepository postRepository) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository, AppUserService appUserService,PostRepository postRepository ) {
         this.reviewRepository = reviewRepository;
-        this.postService = postService;
+        this.appUserService = appUserService;
         this.postRepository = postRepository;
     }
 
@@ -55,7 +55,7 @@ public class ReviewServiceImpl implements ReviewService {
                 () -> new NoSuchElementException("Post with review with id: '" + id + "' has not been found.")
         );
 
-        if (postService.checkUser(post.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(post.getAppUser().getId(), request)) {
             review.setHeader(reviewDto.getHeader());
             review.setContent(reviewDto.getContent());
             review.setRating(reviewDto.getRating());

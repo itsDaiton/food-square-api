@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.review;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -21,11 +21,11 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    private final PostService postService;
+    private final AppUserService appUserService;
 
-    public ReviewController(ReviewService reviewService, PostService postService) {
+    public ReviewController(ReviewService reviewService, AppUserService appUserService) {
         this.reviewService = reviewService;
-        this.postService = postService;
+        this.appUserService = appUserService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -46,7 +46,7 @@ public class ReviewController {
                 .ok()
                 .body(new PostContentResponse(
                         review.getId(),
-                        postService.getLocalUser(request).getId(),
+                        appUserService.getLocalUser(request).getId(),
                         "Review has been successfully added."
                 ));
     }

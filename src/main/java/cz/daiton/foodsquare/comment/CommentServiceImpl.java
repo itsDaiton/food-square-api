@@ -2,9 +2,9 @@ package cz.daiton.foodsquare.comment;
 
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +19,13 @@ public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final AppUserRepository appUserRepository;
     private final PostRepository postRepository;
-    private final PostService postService;
+    private final AppUserService appUserService;
 
-    public CommentServiceImpl(CommentRepository commentRepository, AppUserRepository appUserRepository, PostRepository postRepository, PostService postService) {
+    public CommentServiceImpl(CommentRepository commentRepository, AppUserRepository appUserRepository, PostRepository postRepository, AppUserService appUserService) {
         this.commentRepository = commentRepository;
         this.appUserRepository = appUserRepository;
         this.postRepository = postRepository;
-        this.postService = postService;
+        this.appUserService = appUserService;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class CommentServiceImpl implements CommentService {
                 () -> new NoSuchElementException("Post with id: '" + commentDto.getPost() + "' does not exist.")
         );
 
-        if (postService.checkUser(appUser.getId(), request)) {
+        if (appUserService.checkUser(appUser.getId(), request)) {
             comment.setAppUser(appUser);
             comment.setPost(post);
             comment.setCommentedAt(LocalDateTime.now());
@@ -68,7 +68,7 @@ public class CommentServiceImpl implements CommentService {
                 () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot edit it.")
         );
 
-        if (postService.checkUser(comment.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
             comment.setCommentedAt(LocalDateTime.now());
             comment.setText(commentDto.getText());
             commentRepository.save(comment);
@@ -84,7 +84,7 @@ public class CommentServiceImpl implements CommentService {
                 () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot delete it.")
         );
 
-        if (postService.checkUser(comment.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
             commentRepository.deleteById(id);
             return "Comment has been successfully deleted.";
         }

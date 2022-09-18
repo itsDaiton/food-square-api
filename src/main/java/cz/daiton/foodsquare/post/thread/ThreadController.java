@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.thread;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -21,11 +21,11 @@ public class ThreadController {
 
     private final ThreadService threadService;
 
-    private final PostService postService;
+    private final AppUserService appUserService;
 
-    public ThreadController(ThreadService threadService, PostService postService) {
+    public ThreadController(ThreadService threadService, AppUserService appUserService) {
         this.threadService = threadService;
-        this.postService = postService;
+        this.appUserService = appUserService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -46,7 +46,7 @@ public class ThreadController {
                 .ok()
                 .body(new PostContentResponse(
                         thread.getId(),
-                        postService.getLocalUser(request).getId(),
+                        appUserService.getLocalUser(request).getId(),
                         "Thread has been successfully added."
                 ));
     }

@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.like.Like;
 import cz.daiton.foodsquare.post.Post;
-import cz.daiton.foodsquare.post.meal.Meal;
-import cz.daiton.foodsquare.post.review.Review;
-import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.role.Role;
 
 import javax.persistence.*;
@@ -40,7 +37,6 @@ public class AppUser {
             unique = true,
             name = "username"
     )
-
     @NotNull(message = required)
     @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.")
     private String userName;

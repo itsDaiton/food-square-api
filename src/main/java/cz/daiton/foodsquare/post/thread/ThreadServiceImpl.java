@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.thread;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
@@ -14,14 +14,14 @@ import java.util.NoSuchElementException;
 public class ThreadServiceImpl implements ThreadService {
 
     private final ThreadRepository threadRepository;
-    private final PostService postService;
     private final PostRepository postRepository;
+    private final AppUserService appUserService;
 
 
-    public ThreadServiceImpl(ThreadRepository threadRepository, PostService postService, PostRepository postRepository) {
+    public ThreadServiceImpl(ThreadRepository threadRepository, PostRepository postRepository, AppUserService appUserService) {
         this.threadRepository = threadRepository;
-        this.postService = postService;
         this.postRepository = postRepository;
+        this.appUserService = appUserService;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ThreadServiceImpl implements ThreadService {
                 () -> new NoSuchElementException("Post with thread with id: '" + id + "' has not been found.")
         );
 
-        if (postService.checkUser(post.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(post.getAppUser().getId(), request)) {
             thread.setHeader(threadDto.getHeader());
             thread.setContent(threadDto.getContent());
 

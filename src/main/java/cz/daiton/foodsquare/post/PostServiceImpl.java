@@ -10,7 +10,6 @@ import cz.daiton.foodsquare.post.review.ReviewRepository;
 import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.post.thread.ThreadRepository;
 import cz.daiton.foodsquare.security.IncorrectUserException;
-import cz.daiton.foodsquare.security.jwt.JwtUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -28,16 +27,14 @@ public class PostServiceImpl implements PostService {
     private final ReviewRepository reviewRepository;
     private final ThreadRepository threadRepository;
     private final AppUserService appUserService;
-    private final JwtUtils jwtUtils;
 
-    public PostServiceImpl(PostRepository postRepository, AppUserRepository appUserRepository, MealRepository mealRepository, ReviewRepository reviewRepository, ThreadRepository threadRepository, AppUserService appUserService, JwtUtils jwtUtils) {
+    public PostServiceImpl(PostRepository postRepository, AppUserRepository appUserRepository, MealRepository mealRepository, ReviewRepository reviewRepository, ThreadRepository threadRepository, AppUserService appUserService) {
         this.postRepository = postRepository;
         this.appUserRepository = appUserRepository;
         this.mealRepository = mealRepository;
         this.reviewRepository = reviewRepository;
         this.threadRepository = threadRepository;
         this.appUserService = appUserService;
-        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -59,7 +56,7 @@ public class PostServiceImpl implements PostService {
                 () -> new NoSuchElementException("User with id: '" + postDto.getAppUser() + "' does not exist.")
         );
 
-        if (checkUser(postDto.getAppUser(), request)) {
+        if (appUserService.checkUser(postDto.getAppUser(), request)) {
 
             checkMeal(postDto, post);
             checkReview(postDto, post);
@@ -80,42 +77,11 @@ public class PostServiceImpl implements PostService {
                 () -> new NoSuchElementException("Post with id: '" + id + "' does not exist. You cannot delete it.")
         );
 
-        if (checkUser(post.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(post.getAppUser().getId(), request)) {
             postRepository.deleteById(id);
             return "Post has been successfully deleted.";
         }
         return "There has been a error while trying to delete the post.";
-    }
-
-    @Override
-    public Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException {
-        String jwt = jwtUtils.getJwtFromCookies(request);
-        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
-            String username = jwtUtils.getUserNameFromJwtToken(jwt);
-            AppUser appUser = appUserService.findByUsername(username);
-
-            if (appUser.getId().equals(id)) {
-                return true;
-            }
-            else {
-                throw new IncorrectUserException("You are not authorized to operate with other user's content.");
-            }
-        }
-        else {
-            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
-        }
-    }
-
-    @Override
-    public AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException{
-        String jwt = jwtUtils.getJwtFromCookies(request);
-        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
-            String username = jwtUtils.getUserNameFromJwtToken(jwt);
-            return appUserService.findByUsername(username);
-        }
-        else {
-            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
-        }
     }
 
     private void checkMeal(PostDto postDto, Post post) {

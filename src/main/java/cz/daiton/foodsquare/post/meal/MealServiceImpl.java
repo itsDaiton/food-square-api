@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.meal;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ import java.util.NoSuchElementException;
 public class MealServiceImpl implements MealService {
 
     private final MealRepository mealRepository;
-    private final PostService postService;
+    private final AppUserService appUserService;
     private final PostRepository postRepository;
 
-    public MealServiceImpl(MealRepository mealRepository, PostService postService, PostRepository postRepository) {
+    public MealServiceImpl(MealRepository mealRepository, AppUserService appUserService, PostRepository postRepository) {
         this.mealRepository = mealRepository;
-        this.postService = postService;
+        this.appUserService = appUserService;
         this.postRepository = postRepository;
     }
 
@@ -57,7 +57,7 @@ public class MealServiceImpl implements MealService {
                 () -> new NoSuchElementException("Post with meal with id: '" + id + "' has not been found.")
         );
 
-        if (postService.checkUser(post.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(post.getAppUser().getId(), request)) {
             meal.setName(mealDto.getName());
             meal.setDescription(mealDto.getDescription());
             meal.setInstructions(mealDto.getInstructions());

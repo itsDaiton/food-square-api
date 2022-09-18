@@ -2,9 +2,9 @@ package cz.daiton.foodsquare.like;
 
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -20,13 +20,13 @@ public class LikeServiceImpl implements LikeService {
     private final LikeRepository likeRepository;
     private final AppUserRepository appUserRepository;
     private final PostRepository postRepository;
-    private final PostService postService;
+    private final AppUserService appUserService;
 
-    public LikeServiceImpl(LikeRepository likeRepository, AppUserRepository appUserRepository, PostRepository postRepository, PostService postService) {
+    public LikeServiceImpl(LikeRepository likeRepository, AppUserRepository appUserRepository, PostRepository postRepository, AppUserService appUserService) {
         this.likeRepository = likeRepository;
         this.appUserRepository = appUserRepository;
         this.postRepository = postRepository;
-        this.postService = postService;
+        this.appUserService = appUserService;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LikeServiceImpl implements LikeService {
                 () -> new NoSuchElementException("Post with id: '" + likeDto.getPost() + "' does not exist.")
         );
 
-        if (postService.checkUser(appUser.getId(), request)) {
+        if (appUserService.checkUser(appUser.getId(), request)) {
             if (likeRepository.existsByAppUserAndPost(appUser, post)) {
                 throw new DataIntegrityViolationException("You already liked this post.");
             }
@@ -73,7 +73,7 @@ public class LikeServiceImpl implements LikeService {
                 () -> new NoSuchElementException("Like with id: '" + id + "' does not exist.")
         );
 
-        if (postService.checkUser(like.getAppUser().getId(), request)) {
+        if (appUserService.checkUser(like.getAppUser().getId(), request)) {
             likeRepository.deleteById(id);
             return "You are no longer liking this post.";
         }

@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.post.meal;
 
+import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
-import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -21,11 +21,11 @@ public class MealController {
 
     private final MealService mealService;
 
-    private final PostService postService;
+    private final AppUserService appUserService;
 
-    public MealController(MealService mealService, PostService postService) {
+    public MealController(MealService mealService, AppUserService appUserService) {
         this.mealService = mealService;
-        this.postService = postService;
+        this.appUserService = appUserService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -46,7 +46,7 @@ public class MealController {
                 .ok()
                 .body(new PostContentResponse(
                         meal.getId(),
-                        postService.getLocalUser(request).getId(),
+                        appUserService.getLocalUser(request).getId(),
                         "Meal has been successfully added."
                 ));
     }

@@ -1,6 +1,5 @@
 package cz.daiton.foodsquare.post;
 
-import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.security.IncorrectUserException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,4 @@ public interface PostService {
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException;
-
-    AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException;
 }
