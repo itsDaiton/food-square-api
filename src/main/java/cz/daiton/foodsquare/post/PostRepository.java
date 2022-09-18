@@ -20,6 +20,10 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     Optional<Post> findByMeal(Meal meal);
 
+    Optional<Post> findByReview(Review review);
+
+    Optional<Post> findByThread(Thread thread);
+
     List<Post> findAllByOrderByCreatedAtDesc();
 
 }

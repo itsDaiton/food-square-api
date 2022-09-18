@@ -1,7 +1,12 @@
 package cz.daiton.foodsquare.post.review;
 
+import cz.daiton.foodsquare.post.Post;
+import cz.daiton.foodsquare.post.PostRepository;
+import cz.daiton.foodsquare.post.PostService;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -9,19 +14,25 @@ import java.util.NoSuchElementException;
 public class ReviewServiceImpl implements ReviewService {
 
     private final ReviewRepository reviewRepository;
+    private final PostService postService;
+    private final PostRepository postRepository;
 
-    public ReviewServiceImpl(ReviewRepository reviewRepository) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository, PostService postService, PostRepository postRepository) {
         this.reviewRepository = reviewRepository;
+        this.postService = postService;
+        this.postRepository = postRepository;
     }
 
     @Override
     public Review get(Long id) {
-        return reviewRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
     }
 
     @Override
     public List<Review> getAll() {
-        return reviewRepository.findAll();
+        return reviewRepository.findAllByOrderByIdDesc();
     }
 
     @Override
@@ -36,23 +47,22 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public void update(ReviewDto reviewDto, Long id) {
-        Review review = reviewRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    public String update(ReviewDto reviewDto, Long id, HttpServletRequest request) throws IncorrectUserException {
+        Review review = reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
+        Post post = postRepository.findByReview(review).orElseThrow(
+                () -> new NoSuchElementException("Post with review with id: '" + id + "' has not been found.")
+        );
 
-        review.setHeader(reviewDto.getHeader());
-        review.setContent(reviewDto.getContent());
-        review.setRating(reviewDto.getRating());
+        if (postService.checkUser(post.getAppUser().getId(), request)) {
+            review.setHeader(reviewDto.getHeader());
+            review.setContent(reviewDto.getContent());
+            review.setRating(reviewDto.getRating());
 
-        reviewRepository.save(review);
-    }
-
-    @Override
-    public void delete(Long id) {
-        reviewRepository.deleteById(id);
-    }
-
-    @Override
-    public Review findTopByOrderByIdDesc() {
-        return reviewRepository.findTopByOrderByIdDesc().orElseThrow(NoSuchElementException::new);
+            reviewRepository.save(review);
+            return "Review has been successfully updated.";
+        }
+        return "There has been a error while trying to update the review.";
     }
 }

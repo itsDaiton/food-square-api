@@ -4,9 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.post.Post;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity(name = "thread")
 public class Thread {
+
+    @Transient
+    private final String required = "This field is required.";
 
     @Id
     @GeneratedValue(
@@ -14,8 +18,12 @@ public class Thread {
     )
     private Long id;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String header;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String content;
 
     @JsonIgnore

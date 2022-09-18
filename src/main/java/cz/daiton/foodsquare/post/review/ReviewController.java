@@ -1,16 +1,18 @@
 package cz.daiton.foodsquare.post.review;
 
-import cz.daiton.foodsquare.appuser.AppUser;
-import cz.daiton.foodsquare.appuser.AppUserService;
+import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
+import cz.daiton.foodsquare.post.PostService;
 import cz.daiton.foodsquare.security.IncorrectUserException;
-import cz.daiton.foodsquare.security.jwt.JwtUtils;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "api/v1/reviews")
@@ -19,14 +21,11 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    private final AppUserService appUserService;
+    private final PostService postService;
 
-    private final JwtUtils jwtUtils;
-
-    public ReviewController(ReviewService reviewService, AppUserService appUserService, JwtUtils jwtUtils) {
+    public ReviewController(ReviewService reviewService, PostService postService) {
         this.reviewService = reviewService;
-        this.appUserService = appUserService;
-        this.jwtUtils = jwtUtils;
+        this.postService = postService;
     }
 
     @GetMapping(value = "get/{id}")
@@ -41,40 +40,44 @@ public class ReviewController {
 
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addReview(@RequestBody ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException {
+    public ResponseEntity<?> addReview(@Valid @RequestBody ReviewDto reviewDto, HttpServletRequest request) throws Exception {
         Review review = reviewService.add(reviewDto);
-
-        String jwt = jwtUtils.getJwtFromCookies(request);
-
-        if (jwt != null) {
-            String username = jwtUtils.getUserNameFromJwtToken(jwt);
-            AppUser appUser = appUserService.findByUsername(username);
-            return ResponseEntity
-                    .ok()
-                    .body(new PostContentResponse(
-                            review.getId(),
-                            appUser.getId(),
-                            "Review has been successfully added."
-                    ));
-        }
-        else {
-            throw new IncorrectUserException("You cannot do this. You are not the same user.");
-        }
+        return ResponseEntity
+                .ok()
+                .body(new PostContentResponse(
+                        review.getId(),
+                        postService.getLocalUser(request).getId(),
+                        "Review has been successfully added."
+                ));
     }
 
     @PutMapping(value = "/update/{id}")
     @PreAuthorize("hasRole('USER')")
-    public String updateReview(@RequestBody ReviewDto reviewDto, @PathVariable Long id) {
-        reviewService.update(reviewDto, id);
-        return "Review has been successfully updated.";
+    public ResponseEntity<?> updateReview(@Valid @RequestBody ReviewDto reviewDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+        reviewService.update(reviewDto, id, request);
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(reviewService.update(reviewDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public String deleteReview(@PathVariable Long id) {
-        reviewService.delete(id);
-        return "Review has been successfully deleted.";
-    }
+    @ExceptionHandler(value =
+            {
+                    NoSuchElementException.class,
+                    HttpMessageNotReadableException.class,
+                    IncorrectUserException.class
+            })
+    public ResponseEntity<?> handleExceptions(Exception e) {
+        String message;
 
-    //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy
+        if (e instanceof HttpMessageNotReadableException) {
+            message = "Error while parsing JSON. Please enter valid inputs.";
+        }
+        else {
+            message = e.getMessage();
+        }
+
+        return ResponseEntity
+                .badRequest()
+                .body(new MessageResponse(message));
+    }
 }

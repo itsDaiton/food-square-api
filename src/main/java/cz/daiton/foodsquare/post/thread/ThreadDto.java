@@ -1,20 +1,16 @@
 package cz.daiton.foodsquare.post.thread;
 
+import javax.validation.constraints.NotEmpty;
+
 public class ThreadDto {
 
-    private Long id;
+    private final String required = "This field is required.";
 
+    @NotEmpty(message = required)
     private String header;
 
+    @NotEmpty(message = required)
     private String content;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getHeader() {
         return header;
