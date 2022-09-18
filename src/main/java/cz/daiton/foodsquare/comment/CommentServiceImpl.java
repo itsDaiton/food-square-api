@@ -4,8 +4,11 @@ import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
+import cz.daiton.foodsquare.post.PostService;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,53 +19,75 @@ public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final AppUserRepository appUserRepository;
     private final PostRepository postRepository;
+    private final PostService postService;
 
-    public CommentServiceImpl(CommentRepository commentRepository, AppUserRepository appUserRepository, PostRepository postRepository) {
+    public CommentServiceImpl(CommentRepository commentRepository, AppUserRepository appUserRepository, PostRepository postRepository, PostService postService) {
         this.commentRepository = commentRepository;
         this.appUserRepository = appUserRepository;
         this.postRepository = postRepository;
+        this.postService = postService;
     }
 
     @Override
     public Comment get(Long id) {
-        return commentRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return commentRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+        );
     }
 
     @Override
     public List<Comment> getAll() {
-        return commentRepository.findAll();
+        return commentRepository.findAllByOrderByCommentedAtDesc();
     }
 
     @Override
-    public void add(CommentDto commentDto) {
+    public String add(CommentDto commentDto, HttpServletRequest request) throws IncorrectUserException {
         Comment comment = new Comment();
-        AppUser appUser = appUserRepository.findById(commentDto.getAppUser()).orElseThrow(NoSuchElementException::new);
-        Post post = postRepository.findById(commentDto.getPost()).orElseThrow(NoSuchElementException::new);
+        AppUser appUser = appUserRepository.findById(commentDto.getAppUser()).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + commentDto.getAppUser() + "' does not exist.")
+        );
+        Post post = postRepository.findById(commentDto.getPost()).orElseThrow(
+                () -> new NoSuchElementException("Post with id: '" + commentDto.getPost() + "' does not exist.")
+        );
 
-        comment.setAppUser(appUser);
-        comment.setPost(post);
-        comment.setCommentedAt(LocalDateTime.now());
-        comment.setText(commentDto.getText());
+        if (postService.checkUser(appUser.getId(), request)) {
+            comment.setAppUser(appUser);
+            comment.setPost(post);
+            comment.setCommentedAt(LocalDateTime.now());
+            comment.setText(commentDto.getText());
 
-        commentRepository.save(comment);
+            commentRepository.save(comment);
+            return "Comment has been successfully created.";
+        }
+        return "There has been a error while trying to add the comment.";
     }
 
     @Override
-    public void update(CommentDto commentDto, Long id) {
-        AppUser appUser = appUserRepository.findById(commentDto.getAppUser()).orElseThrow(NoSuchElementException::new);
-        Post post = postRepository.findById(commentDto.getPost()).orElseThrow(NoSuchElementException::new);
-        Comment comment = commentRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    public String update(CommentDto commentDto, Long id, HttpServletRequest request) throws IncorrectUserException {
+        Comment comment = commentRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot edit it.")
+        );
 
-        comment.setAppUser(appUser);
-        comment.setPost(post);
-        comment.setCommentedAt(LocalDateTime.now());
-        comment.setText(commentDto.getText());
+        if (postService.checkUser(comment.getAppUser().getId(), request)) {
+            comment.setCommentedAt(LocalDateTime.now());
+            comment.setText(commentDto.getText());
+            commentRepository.save(comment);
 
-        commentRepository.save(comment);
+            return "Comment has been successfully updated.";
+        }
+        return "There has been a error while trying to edit the comment.";
     }
 
     @Override
-    public void delete(Long id) {
-        commentRepository.deleteById(id);
+    public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Comment comment = commentRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot delete it.")
+        );
+
+        if (postService.checkUser(comment.getAppUser().getId(), request)) {
+            commentRepository.deleteById(id);
+            return "Comment has been successfully deleted.";
+        }
+        return "There has been a error while trying to delete the comment.";
     }
 }
