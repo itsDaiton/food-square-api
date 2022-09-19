@@ -1,16 +1,20 @@
 package cz.daiton.foodsquare.post.meal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
 import cz.daiton.foodsquare.post.Post;
-
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "meal")
 public class Meal {
+
+    @Transient
+    private final String required = "This field is required.";
 
     @Id
     @GeneratedValue(
@@ -18,20 +22,32 @@ public class Meal {
     )
     private Long id;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String name;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String description;
 
     @Column(
-            name = "prep_time"
+            name = "prep_time",
+            nullable = false
     )
+    @NotNull(message = required)
+    @Min(value = 1, message = "Preparation time must be at least 1 minute.")
     private Integer timeToPrepare;
 
     @Column(
-            name = "cook_time"
+            name = "cook_time",
+            nullable = false
     )
+    @NotNull(message = required)
+    @Min(value = 1, message = "Time to cook must be at least 1 minute.")
     private Integer timeToCook;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String instructions;
 
     @JsonIgnore
@@ -47,18 +63,11 @@ public class Meal {
     )
     private Post post;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "app_user_id",
-            nullable = false
-    )
-    private AppUser appUser;
-
     public Meal() {
 
     }
 
-    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions, Set<IngredientsInMeal> ingredientsInMeals, Post post, AppUser appUser) {
+    public Meal(Long id, String name, String description, Integer timeToPrepare, Integer timeToCook, String instructions, Set<IngredientsInMeal> ingredientsInMeals, Post post) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -67,7 +76,6 @@ public class Meal {
         this.instructions = instructions;
         this.ingredientsInMeals = ingredientsInMeals;
         this.post = post;
-        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -132,14 +140,6 @@ public class Meal {
 
     public void setPost(Post post) {
         this.post = post;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
     }
 
     @Override

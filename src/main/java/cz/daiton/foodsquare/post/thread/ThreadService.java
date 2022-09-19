@@ -1,7 +1,8 @@
 package cz.daiton.foodsquare.post.thread;
 
-import cz.daiton.foodsquare.appuser.AppUser;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ThreadService {
@@ -10,11 +11,8 @@ public interface ThreadService {
 
     List<Thread> getAll();
 
-    void add(ThreadDto threadDto);
+    Thread add(ThreadDto threadDto);
 
-    void update(ThreadDto threadDto, Long id);
+    String update(ThreadDto threadDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    void delete(Long id);
-
-    Thread findTopByAppUserOrderByIdDesc(AppUser appUser);
 }

@@ -4,21 +4,11 @@ import java.time.LocalDateTime;
 
 public class LikeDto {
 
-    private Long id;
-
     private LocalDateTime likedAt;
 
     private Long appUser;
 
     private Long post;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public LocalDateTime getLikedAt() {
         return likedAt;

@@ -1,13 +1,16 @@
 package cz.daiton.foodsquare.post.thread;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.post.Post;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity(name = "thread")
 public class Thread {
+
+    @Transient
+    private final String required = "This field is required.";
 
     @Id
     @GeneratedValue(
@@ -15,8 +18,12 @@ public class Thread {
     )
     private Long id;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String header;
 
+    @Column(nullable = false)
+    @NotEmpty(message = required)
     private String content;
 
     @JsonIgnore
@@ -25,30 +32,21 @@ public class Thread {
     )
     private Post post;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "app_user_id",
-            nullable = false
-    )
-    private AppUser appUser;
-
     public Thread() {
 
     }
 
-    public Thread(Long id, String header, String content, Post post, AppUser appUser) {
+    public Thread(Long id, String header, String content, Post post) {
         this.id = id;
         this.header = header;
         this.content = content;
         this.post = post;
-        this.appUser = appUser;
     }
 
-    public Thread(String header, String content, Post post, AppUser appUser) {
+    public Thread(String header, String content, Post post) {
         this.header = header;
         this.content = content;
         this.post = post;
-        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -81,13 +79,5 @@ public class Thread {
 
     public void setPost(Post post) {
         this.post = post;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
     }
 }

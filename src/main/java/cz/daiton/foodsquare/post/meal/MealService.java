@@ -1,21 +1,17 @@
 package cz.daiton.foodsquare.post.meal;
 
-import cz.daiton.foodsquare.appuser.AppUser;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
 public interface MealService {
 
     Meal get(Long id);
 
     List<Meal> getAll();
 
-    void add(MealDto mealDto);
+    Meal add(MealDto mealDto);
 
-    void update(MealDto mealDto, Long id);
-
-    void delete(Long id);
-
-    Meal findTopByAppUserOrderByIdDesc(AppUser appUser);
+    String update(MealDto mealDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
 }

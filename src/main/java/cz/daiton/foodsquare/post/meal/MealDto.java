@@ -1,28 +1,29 @@
 package cz.daiton.foodsquare.post.meal;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class MealDto {
 
-    private Long id;
+    private final String required = "This field is required.";
 
+    @NotEmpty(message = required)
     private String name;
 
+    @NotEmpty(message = required)
     private String description;
 
+    @NotNull(message = required)
+    @Min(value = 1, message = "Preparation time must be at least 1 minute.")
     private Integer timeToPrepare;
 
+    @NotNull(message = required)
+    @Min(value = 1, message = "Cooking time must be at least 1 minute.")
     private Integer timeToCook;
 
+    @NotEmpty(message = required)
     private String instructions;
-
-    private Long appUser;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -62,13 +63,5 @@ public class MealDto {
 
     public void setInstructions(String instructions) {
         this.instructions = instructions;
-    }
-
-    public Long getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(Long appUser) {
-        this.appUser = appUser;
     }
 }

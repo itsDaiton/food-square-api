@@ -1,9 +1,12 @@
 package cz.daiton.foodsquare.post.review;
 
-import cz.daiton.foodsquare.appuser.AppUser;
-import cz.daiton.foodsquare.appuser.AppUserRepository;
+import cz.daiton.foodsquare.appuser.AppUserService;
+import cz.daiton.foodsquare.post.Post;
+import cz.daiton.foodsquare.post.PostRepository;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -11,57 +14,55 @@ import java.util.NoSuchElementException;
 public class ReviewServiceImpl implements ReviewService {
 
     private final ReviewRepository reviewRepository;
+    private final AppUserService appUserService;
+    private final PostRepository postRepository;
 
-    private final AppUserRepository appUserRepository;
-
-    public ReviewServiceImpl(ReviewRepository reviewRepository, AppUserRepository appUserRepository) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository, AppUserService appUserService,PostRepository postRepository ) {
         this.reviewRepository = reviewRepository;
-        this.appUserRepository = appUserRepository;
+        this.appUserService = appUserService;
+        this.postRepository = postRepository;
     }
 
     @Override
     public Review get(Long id) {
-        return reviewRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
     }
 
     @Override
     public List<Review> getAll() {
-        return reviewRepository.findAll();
+        return reviewRepository.findAllByOrderByIdDesc();
     }
 
     @Override
-    public void add(ReviewDto reviewDto) {
+    public Review add(ReviewDto reviewDto) {
         Review review = new Review();
-        AppUser appUser =  appUserRepository.findById(reviewDto.getAppUser()).orElseThrow(NoSuchElementException::new);
 
         review.setHeader(reviewDto.getHeader());
         review.setContent(reviewDto.getContent());
         review.setRating(reviewDto.getRating());
-        review.setAppUser(appUser);
 
-        reviewRepository.save(review);
+        return reviewRepository.saveAndFlush(review);
     }
 
     @Override
-    public void update(ReviewDto reviewDto, Long id) {
-        Review review = reviewRepository.findById(id).orElseThrow(NoSuchElementException::new);
-        AppUser appUser =  appUserRepository.findById(reviewDto.getAppUser()).orElseThrow(NoSuchElementException::new);
+    public String update(ReviewDto reviewDto, Long id, HttpServletRequest request) throws IncorrectUserException {
+        Review review = reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
+        Post post = postRepository.findByReview(review).orElseThrow(
+                () -> new NoSuchElementException("Post with review with id: '" + id + "' has not been found.")
+        );
 
-        review.setHeader(reviewDto.getHeader());
-        review.setContent(reviewDto.getContent());
-        review.setRating(reviewDto.getRating());
-        review.setAppUser(appUser);
+        if (appUserService.checkUser(post.getAppUser().getId(), request)) {
+            review.setHeader(reviewDto.getHeader());
+            review.setContent(reviewDto.getContent());
+            review.setRating(reviewDto.getRating());
 
-        reviewRepository.save(review);
-    }
-
-    @Override
-    public void delete(Long id) {
-        reviewRepository.deleteById(id);
-    }
-
-    @Override
-    public Review findTopByAppUserOrderByIdDesc(AppUser appUser) {
-        return reviewRepository.findTopByAppUserOrderByIdDesc(appUser).orElseThrow(NoSuchElementException::new);
+            reviewRepository.save(review);
+            return "Review has been successfully updated.";
+        }
+        return "There has been a error while trying to update the review.";
     }
 }

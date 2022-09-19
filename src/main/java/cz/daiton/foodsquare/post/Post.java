@@ -30,7 +30,8 @@ public class Post {
     @ManyToOne
     @JoinColumn(
             name = "appuser_id",
-            nullable = false
+            nullable = false,
+            updatable = false
     )
     private AppUser appUser;
 

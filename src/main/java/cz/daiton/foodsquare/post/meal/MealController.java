@@ -1,13 +1,18 @@
 package cz.daiton.foodsquare.post.meal;
 
-import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserService;
+import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.PostContentResponse;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(value = "api/v1/meals")
@@ -35,34 +40,44 @@ public class MealController {
 
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addMeal(@RequestBody MealDto mealDto) {
-        mealService.add(mealDto);
-        AppUser appUser = appUserService.get(mealDto.getAppUser());
-        Meal meal = mealService.findTopByAppUserOrderByIdDesc(appUser);
+    public ResponseEntity<?> addMeal(@Valid @RequestBody MealDto mealDto, HttpServletRequest request) throws Exception {
+        Meal meal = mealService.add(mealDto);
         return ResponseEntity
                 .ok()
                 .body(new PostContentResponse(
                         meal.getId(),
-                        appUser.getId(),
+                        appUserService.getLocalUser(request).getId(),
                         "Meal has been successfully added."
                 ));
     }
 
     @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasAnyRole()")
-    public String updateMeal(@RequestBody MealDto mealDto, @PathVariable Long id) {
-        mealService.update(mealDto, id);
-        return "Meal has been successfully updated.";
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> updateMeal(@Valid @RequestBody MealDto mealDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+        mealService.update(mealDto, id, request);
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(mealService.update(mealDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasAnyRole()")
-    public String deleteMeal(@PathVariable Long id) {
-        mealService.delete(id);
-        return "Meal has been successfully deleted.";
+    @ExceptionHandler(value =
+            {
+                    NoSuchElementException.class,
+                    HttpMessageNotReadableException.class,
+                    IncorrectUserException.class
+            })
+    public ResponseEntity<?> handleExceptions(Exception e) {
+        String message;
+
+        if (e instanceof HttpMessageNotReadableException) {
+            message = "Error while parsing JSON. Please enter valid inputs.";
+        }
+        else {
+            message = e.getMessage();
+        }
+
+        return ResponseEntity
+                .badRequest()
+                .body(new MessageResponse(message));
     }
-
-    //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy
-
-
 }

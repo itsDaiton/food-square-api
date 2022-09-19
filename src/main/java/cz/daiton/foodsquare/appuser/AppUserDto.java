@@ -1,48 +1,14 @@
 package cz.daiton.foodsquare.appuser;
 
-import cz.daiton.foodsquare.role.AppUserRole;
-
 public class AppUserDto {
 
-    private Long id;
-
-    private String email;
-
-    private String userName;
+    private Long appUser;
 
     private String firstName;
 
     private String lastName;
 
-    private String password;
-
     private String pathToImage;
-
-    private AppUserRole role;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -60,14 +26,6 @@ public class AppUserDto {
         this.lastName = lastName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getPathToImage() {
         return pathToImage;
     }
@@ -76,11 +34,11 @@ public class AppUserDto {
         this.pathToImage = pathToImage;
     }
 
-    public AppUserRole getRole() {
-        return role;
+    public Long getAppUser() {
+        return appUser;
     }
 
-    public void setRole(AppUserRole role) {
-        this.role = role;
+    public void setAppUser(Long appUser) {
+        this.appUser = appUser;
     }
 }

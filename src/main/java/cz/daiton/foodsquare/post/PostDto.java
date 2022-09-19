@@ -1,13 +1,6 @@
 package cz.daiton.foodsquare.post;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
 public class PostDto {
-
-    private Long id;
-
-    private LocalDateTime createdAt;
 
     private Long appUser;
 
@@ -16,22 +9,6 @@ public class PostDto {
     private Long review;
 
     private Long thread;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public Long getAppUser() {
         return appUser;
@@ -63,18 +40,5 @@ public class PostDto {
 
     public void setThread(Long thread) {
         this.thread = thread;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PostDto postDto = (PostDto) o;
-        return id.equals(postDto.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

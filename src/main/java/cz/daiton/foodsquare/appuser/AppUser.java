@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.like.Like;
 import cz.daiton.foodsquare.post.Post;
-import cz.daiton.foodsquare.post.meal.Meal;
-import cz.daiton.foodsquare.post.review.Review;
-import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.role.Role;
 
 import javax.persistence.*;
@@ -27,7 +24,6 @@ public class AppUser {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-
     private Long id;
 
     @Column(
@@ -41,7 +37,6 @@ public class AppUser {
             unique = true,
             name = "username"
     )
-
     @NotNull(message = required)
     @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.")
     private String userName;
@@ -93,22 +88,10 @@ public class AppUser {
     @JsonIgnore
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany(mappedBy = "appUser")
-    @JsonIgnore
-    private Set<Meal> meals;
-
-    @OneToMany(mappedBy = "appUser")
-    @JsonIgnore
-    private Set<Review> reviews;
-
-    @OneToMany(mappedBy = "appUser")
-    @JsonIgnore
-    private Set<Thread> threads;
-
     public AppUser() {
     }
 
-    public AppUser(Long id, String email,String userName, String firstName, String lastName, String password, String pathToImage, Set<Post> posts, Set<Comment> comments, Set<Like> likes, Set<Role> roles, Set<Meal> meals, Set<Review> reviews, Set<Thread> threads) {
+    public AppUser(Long id, String email,String userName, String firstName, String lastName, String password, String pathToImage, Set<Post> posts, Set<Comment> comments, Set<Like> likes, Set<Role> roles) {
         this.id = id;
         this.email = email;
         this.userName = userName;
@@ -120,9 +103,6 @@ public class AppUser {
         this.comments = comments;
         this.likes = likes;
         this.roles = roles;
-        this.meals = meals;
-        this.reviews = reviews;
-        this.threads = threads;
     }
 
     public AppUser(@NotNull(message = required) @Email(message = "This is not valid e-mail address.") String email, @NotNull(message = required) @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.") String userName, @NotNull(message = required) @Size(min = 6, message = "Password must be at least 6 characters long.") String password) {
@@ -217,30 +197,6 @@ public class AppUser {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    public Set<Meal> getMeals() {
-        return meals;
-    }
-
-    public void setMeals(Set<Meal> meals) {
-        this.meals = meals;
-    }
-
-    public Set<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(Set<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    public Set<Thread> getThreads() {
-        return threads;
-    }
-
-    public void setThreads(Set<Thread> threads) {
-        this.threads = threads;
     }
 
     @Override

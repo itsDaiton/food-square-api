@@ -1,7 +1,8 @@
 package cz.daiton.foodsquare.post.review;
 
-import cz.daiton.foodsquare.appuser.AppUser;
+import cz.daiton.foodsquare.security.IncorrectUserException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ReviewService {
@@ -10,11 +11,8 @@ public interface ReviewService {
 
     List<Review> getAll();
 
-    void add(ReviewDto reviewDto);
+    Review add(ReviewDto reviewDto);
 
-    void update(ReviewDto reviewDto, Long id);
+    String update(ReviewDto reviewDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    void delete(Long id);
-
-    Review findTopByAppUserOrderByIdDesc(AppUser appUser);
 }

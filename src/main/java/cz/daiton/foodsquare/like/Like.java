@@ -19,7 +19,8 @@ public class Like {
     private Long id;
 
     @Column(
-            name = "liked_at"
+            name = "liked_at",
+            nullable = false
     )
     private LocalDateTime likedAt;
 

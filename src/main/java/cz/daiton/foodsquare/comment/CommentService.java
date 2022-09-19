@@ -1,5 +1,8 @@
 package cz.daiton.foodsquare.comment;
 
+import cz.daiton.foodsquare.security.IncorrectUserException;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface CommentService {
@@ -8,9 +11,9 @@ public interface CommentService {
 
     List<Comment> getAll();
 
-    void add(CommentDto commentDto);
+    String add(CommentDto commentDto, HttpServletRequest request) throws IncorrectUserException;
 
-    void update(CommentDto commentDto, Long id);
+    String update(CommentDto commentDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    void delete(Long id);
+    String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
 }

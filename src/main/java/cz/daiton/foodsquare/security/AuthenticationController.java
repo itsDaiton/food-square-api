@@ -122,7 +122,7 @@ public class AuthenticationController {
         }
 
         appUser.setRoles(roles);
-        appUserService.add(appUser);
+        appUserService.register(appUser);
 
         return ResponseEntity.ok(new MessageResponse("User has been registered successfully."));
     }

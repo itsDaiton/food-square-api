@@ -11,11 +11,8 @@ public interface PostService {
 
     List<Post> getAll();
 
-    void add(PostDto postDto);
+    String add(PostDto postDto, HttpServletRequest request) throws IncorrectUserException;
 
-    void update(PostDto postDto, Long id);
+    String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
 
-    void delete(Long id);
-
-    String handleRequest(PostDto postDto, HttpServletRequest request) throws IncorrectUserException;
 }
