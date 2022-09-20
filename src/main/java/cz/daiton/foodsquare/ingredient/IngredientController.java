@@ -1,9 +1,11 @@
 package cz.daiton.foodsquare.ingredient;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+import cz.daiton.foodsquare.payload.response.MessageResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "api/v1/ingredients")
@@ -26,27 +28,10 @@ public class IngredientController {
         return ingredientService.getAll();
     }
 
-    @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('USER')")
-    public String addIngredient(@RequestBody Ingredient ingredient) {
-        ingredientService.add(ingredient);
-        return "Ingredient has been successfully added.";
+    @ExceptionHandler(value = NoSuchElementException.class)
+    public ResponseEntity<?> handleExceptions(NoSuchElementException e) {
+        return ResponseEntity
+                .badRequest()
+                .body(new MessageResponse(e.getMessage()));
     }
-
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public String updateIngredient(@RequestBody IngredientDto ingredientDto, @PathVariable Long id) {
-        ingredientService.update(ingredientDto, id);
-        return "Ingredient has been successfully updated.";
-    }
-
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public String deleteIngredient(@PathVariable Long id) {
-        ingredientService.delete(id);
-        return "Ingredient has been successfully deleted.";
-    }
-
-    //TODO: ošetřit vyjímky, práci s databází a securtnout endpointy
-
 }

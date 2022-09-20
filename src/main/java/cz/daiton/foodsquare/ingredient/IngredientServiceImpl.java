@@ -16,29 +16,13 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public Ingredient get(Long id) {
-        return ingredientRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return ingredientRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Ingredient with id: '" + id + "' was not found.")
+        );
     }
 
     @Override
     public List<Ingredient> getAll() {
         return ingredientRepository.findAll();
-    }
-
-    @Override
-    public void add(Ingredient ingredient) {
-        ingredientRepository.save(ingredient);
-    }
-
-    @Override
-    public void update(IngredientDto ingredientDto, Long id) {
-        Ingredient ingredient = ingredientRepository.findById(id).orElseThrow(NoSuchElementException::new);
-        ingredient.setName(ingredientDto.getName());
-        ingredient.setCategory(ingredientDto.getCategory());
-        ingredientRepository.save(ingredient);
-    }
-
-    @Override
-    public void delete(Long id) {
-        ingredientRepository.deleteById(id);
     }
 }
