@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.security;
+package cz.daiton.foodsquare.exceptions;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.security.userdetails;
+package cz.daiton.foodsquare.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;

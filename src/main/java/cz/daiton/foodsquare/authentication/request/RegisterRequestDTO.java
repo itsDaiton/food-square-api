@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.payload.request;
+package cz.daiton.foodsquare.authentication.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

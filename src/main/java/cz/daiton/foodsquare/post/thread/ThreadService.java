@@ -1,6 +1,6 @@
 package cz.daiton.foodsquare.post.thread;
 
-import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

@@ -1,6 +1,6 @@
-package cz.daiton.foodsquare.security.jwt;
+package cz.daiton.foodsquare.authentication;
 
-import cz.daiton.foodsquare.security.userdetails.UserDetailsImpl;
+import cz.daiton.foodsquare.security.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.SignatureException;
 import org.slf4j.Logger;

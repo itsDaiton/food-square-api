@@ -1,6 +1,6 @@
-package cz.daiton.foodsquare.security.jwt;
+package cz.daiton.foodsquare.authentication;
 
-import cz.daiton.foodsquare.security.userdetails.UserDetailsServiceImpl;
+import cz.daiton.foodsquare.security.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-public class AuthenticationTokenFilter extends OncePerRequestFilter {
+public class CustomAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
     private JwtUtils jwtUtils;
@@ -26,7 +25,7 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthenticationTokenFilter.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,

@@ -1,7 +1,8 @@
-package cz.daiton.foodsquare.security.userdetails;
+package cz.daiton.foodsquare.security;
 
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
+import cz.daiton.foodsquare.security.UserDetailsImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

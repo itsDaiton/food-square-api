@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.security;
+package cz.daiton.foodsquare.exceptions;
 
 import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import org.springframework.http.HttpHeaders;

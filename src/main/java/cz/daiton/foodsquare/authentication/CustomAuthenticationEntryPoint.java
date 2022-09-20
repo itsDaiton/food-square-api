@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.security.jwt;
+package cz.daiton.foodsquare.authentication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -16,9 +16,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class AuthenticationEntryPointJwt implements AuthenticationEntryPoint {
+public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthenticationEntryPointJwt.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationEntryPoint.class);
 
     @Override
     public void commence(HttpServletRequest request,

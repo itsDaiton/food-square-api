@@ -3,7 +3,7 @@ package cz.daiton.foodsquare.post.meal;
 import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.post.Post;
 import cz.daiton.foodsquare.post.PostRepository;
-import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
