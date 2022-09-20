@@ -9,7 +9,7 @@ import cz.daiton.foodsquare.post.review.Review;
 import cz.daiton.foodsquare.post.review.ReviewRepository;
 import cz.daiton.foodsquare.post.thread.Thread;
 import cz.daiton.foodsquare.post.thread.ThreadRepository;
-import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 

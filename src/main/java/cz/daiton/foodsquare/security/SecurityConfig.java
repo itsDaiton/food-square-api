@@ -1,7 +1,8 @@
 package cz.daiton.foodsquare.security;
 
-import cz.daiton.foodsquare.security.jwt.AuthenticationEntryPointJwt;
-import cz.daiton.foodsquare.security.jwt.AuthenticationTokenFilter;
+import cz.daiton.foodsquare.authentication.CustomAuthenticationEntryPoint;
+import cz.daiton.foodsquare.authentication.CustomAuthenticationFilter;
+import cz.daiton.foodsquare.exceptions.CustomAccessDeniedHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,9 +23,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    private final AuthenticationEntryPointJwt unauthorizedHandler;
+    private final CustomAuthenticationEntryPoint unauthorizedHandler;
 
-    public SecurityConfig(AuthenticationEntryPointJwt unauthorizedHandler) {
+    public SecurityConfig(CustomAuthenticationEntryPoint unauthorizedHandler) {
         this.unauthorizedHandler = unauthorizedHandler;
     }
 
@@ -34,8 +35,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationTokenFilter authenticationTokenFilter() {
-        return new AuthenticationTokenFilter();
+    public CustomAuthenticationFilter authenticationTokenFilter() {
+        return new CustomAuthenticationFilter();
     }
 
     @Bean

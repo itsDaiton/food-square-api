@@ -1,18 +1,18 @@
-package cz.daiton.foodsquare.security;
+package cz.daiton.foodsquare.authentication;
 
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.appuser.AppUserServiceImpl;
-import cz.daiton.foodsquare.payload.request.LoginRequestDTO;
-import cz.daiton.foodsquare.payload.request.RegisterRequestDTO;
+import cz.daiton.foodsquare.authentication.request.LoginRequestDTO;
+import cz.daiton.foodsquare.authentication.request.RegisterRequestDTO;
 import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.UserDataResponse;
 import cz.daiton.foodsquare.role.AppUserRole;
 import cz.daiton.foodsquare.role.Role;
 import cz.daiton.foodsquare.role.RoleRepository;
-import cz.daiton.foodsquare.security.jwt.JwtUtils;
-import cz.daiton.foodsquare.security.userdetails.UserDetailsImpl;
+import cz.daiton.foodsquare.exceptions.CustomFieldError;
+import cz.daiton.foodsquare.security.UserDetailsImpl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;

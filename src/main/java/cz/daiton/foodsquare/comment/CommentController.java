@@ -1,7 +1,7 @@
 package cz.daiton.foodsquare.comment;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
-import cz.daiton.foodsquare.security.IncorrectUserException;
+import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;

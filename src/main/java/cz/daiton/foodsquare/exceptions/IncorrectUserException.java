@@ -1,4 +1,4 @@
-package cz.daiton.foodsquare.security;
+package cz.daiton.foodsquare.exceptions;
 
 public class IncorrectUserException extends Exception {
 

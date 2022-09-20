@@ -1,0 +1,935 @@
+OrigFdCd; OrigFdNm; EngFdNam; SciNam; EDIBLE; NCF; FACF; ENERC [kJ]; ENERC [kcal]; FAT [g]; FASAT [g]; FAMS [g]; FAPU [g]; FATRN [g]; CHOT [g]; CHO [g]; SUGAR [g]; FIBT [g]; PROT [g]; ASH [g]; NA [mg]; NACL [g]; WATER [g]
+562; Agar; Agar; ; 1.00; 6.25; 0.000;1428;336;0;0;0;0;0; 83.4; 83.4; 6.4;0; 0.6; 0.8;110; 0.28; 15.2
+428; Aloe vera, listy; Aloe vera, leaves, raw; Aloe vera; 1.00; 6.25; 0.956;105;25; 0.7;0;0;0;0; 6.1; 3.4; 1.2; 2.7;0; 0.9;1;0; 92.3
+653; Amarant semena; Amaranth seeds; Amaranthus; 1.00; 6.25; 0.956;1476;351; 7.2; 0.23; 3.95; 3.05;0; 63.5; 50.7; 1.3; 12.9; 14.5; 2.9;0;0; 11.9
+565; Amur bílı, maso z celé ryby; Grass carp, whole fish, raw; Ctenopharyngodon idella; 0.45; 6.25; 0.700;424;101; 3.7; 0.49; 1.37; 0.37;0;0;0;0;0; 16.9; 1.1;33; 0.08; 78.0
+795; Amur bílı, uzenı, maso bez kùe; Grass carp, meat without skin, smoked; Ctenopharyngodon idella; 0.86; 6.25; 0.900;548;131; 5.4; 1.53; 2.32; 0.75;0;0;0;0;0; 20.5; 3.9;1186; 2.96; 69.2
+332; Ananas; Pineapple, raw; Ananas comosus (L.) Merr.; 0.60; 6.25; 0.800;212;50; 0.2; 0.01; 0.01; 0.04; ; 12.6; 10.6; 10.1; 2.0; 0.5; 0.5;16;0; 86.2
+691; Ananas sušenı; Pineapple, dried; ; 1.00; 6.25; 0.800;1501;354; 0.2; 0.08; 0.03; 0.02;0; 89.4; 85.9; 82.5; 3.5; 0.5; 0.7;263; 0.65; 9.3
+935; Ananas, lyofilizovanı; Pineapple, lyophilized; Ananas comosus; 1.00; 6.25; 0.800;1483;350; 0.6;0;0;0;0; 87.7; 77.8; 71.5; 9.9; 3.5; 2.3;0;0; 5.9
+366; Angrešt; Gooseberry, raw; Ribes uva-crispa L.; 0.98; 6.25; 0.800;186;44; 0.2; 0.02; 0.01; 0.07; ; 11.3; 8.3; 2.9; 3.0; 0.8; 0.4;7;0; 87.3
+367; Arašídy; Peanuts, dried; Arachis hypogaea L.; 0.75; 5.46; 0.950;2460;594; 48.9; 9.19; 23.09; 13.49; ; 16.5; 8.9; 3.1; 7.6; 25.8; 2.2;10;0; 6.6
+727; Arašídy loupané; Peanuts, peeled; Arachis hypogaea; 1.00; 6.25; 0.956;2526;610; 49.3; 9.22; 22.20; 15.73;0; 20.6; 11.8; 3.4; 8.7; 25.3; 2.5;1;0; 2.3
+618; Artyèok; Artichoke, raw; Cynara cardunculus; 0.48; 6.25; 0.800;261;63; 0.6;0;0;0;0; 16.7; 5.5; 3.6; 11.2; 3.2; 1.8;5; 0.01; 77.6
+486; Avokádo; Avocado, raw; Persea americana; 0.65; 6.25; 0.800;697;166; 16.5; 3.12; 8.32; 1.76;0; 6.3; 1.4; 0.5; 4.9; 1.5; 2.7;8; 0.02; 73.2
+793; Bábovka tøená, modelová receptura; Sponge cake, model recipe; ; 1.00; 6.25; 0.956;1521;362; 14.6; 9.18; 4.04; 0.59; 0.26; 53.0; 51.3; 23.8; 1.7; 5.6; 1.0;204; 0.5; 25.8
+883; Banán, sušenı; Banana, dried; ; 1.00; 6.25; 0.800;1504;356; 0.7;0;0;0;0; 91.0; 76.2; 75.6; 14.8; 3.8; 2.9;4; 0.01; 1.6
+32; Banány; Bananas, raw; Musa paradisiaca L.; 0.63; 6.25; 0.800;415;98; 0.3; 0.05; 0.01; 0.06; ; 23.9; 21.6; 19.0; 2.3; 1.1; 0.8;1;0; 73.9
+936; Banány, lyofilizované; Banana, lyophilized; Musa; 1.00; 6.25; 0.800;1549;366; 0.9;0;0;0;0; 87.5; 78.0; 58.1; 9.5; 6.7; 3.0;0;0; 1.9
+171; Bér; Foxtail millet; Setaria italica; 1.00; 6.25; 0.720;1490;353; 5.3; 0.41; 0.63; 2.75; ; 72.8; 55.4; ; 17.4; 12.4; 3.1;3;0; 6.5
+884; Bez èernı, plody; Elderberry (black elder), raw; Sambucus nigra, L.; 0.76; 6.25; 0.800;301;73; 2.8;0;0;0;0; 13.5; 3.7; 3.5; 9.8; 3.3; 1.3;0;0; 79.1
+432; Bílkovina mléèná; Milk protein; ; 1.00; 6.38; 0.945;261;62; 0.1;0;0;0;0; 5.6; 5.6; 4.6;0; 9.4; 1.2;41; 0.10; 83.6
+672; Bílkovina sójová izolovaná; Soy protein isolate; ; 1.00; 6.25; 0.956;1553;366; 2.7; 0.77; 0.43; 1.35;0; 3.5; 3.5;0;0; 82.0; 5.1;1666; 4.17; 6.7
+513; Bio-Margarín se sníenım obsahem tuku (60 %), Rama Bio, UNILEVER; Bio-Margarine, reduced-fat (60%), Rama Bio, UNILEVER; ; 1.00; 6.25; 0.956;2220;541; 60.0; 16.3; 29.1; 14.0; 0.7; 0.2; 0.2; 0.2;0;0; ;120; 0.3; 38.9
+953; Boby kakaové nepraené; Cocoa beans, not roasted; Theobroma cacao; 1.00; 6.25; 0.956;2303;559; 49.3; 27.87; 17.86; 1.32;0; 29.5; 2.7;0; 26.8; 12.8; 3.1;0;0; 5.3
+885; Borùvka, sušená; Blueberry, dried; Vaccinium myrtillus L.; 1.00; 6.25; 0.800;1379;330; 7.0;0;0;0;0; 75.4; 44.1; 43.5; 31.3; 7.0; 1.9;30; 0.07; 8.7
+33; Borùvky; Bilberries, raw; Vaccinium myrtillus  L.; 0.99; 6.25; 0.800;213;51; 0.6; 0.02; 0.07; 0.39; ; 12.3; 8.9; 6.4; 3.4; 0.7; 0.3;4;0; 86.1
+2; Bramborák, modelová receptura; Bramborak, pancake from raw potatoes, fried, model recipe; ; 1.00; 6.25; 0.956;1020;242; 10.0; 4.57; 3.84; 1.14; 0.23; 33.9; 30.9; 3.7; 3.0; 5.6; 2.0;420; 1.1; 48.6
+10; Bramborák, trh; Bramborak, pancake from raw potatoes, fried, retail; ; 1.00; 6.25; 0.956;1090;261; 13.2; 1.20; 7.92; 3.28; ; 30.8; ; ; ; 4.8; 4.2;1042; 2.6; 47.0
+193; Brambory rané; Potato, new, raw; Solanum tuberosum L.; 0.93; 6.25; 0.800;303;71; 0.2; ; ; ; ; 16.1; 14.7; ; 1.4; 2.0; 1.0;28; 0.1; 80.7
+619; Brambory sladké (batáty, jamy); Sweet potatoes, raw; Ipomoea batatas; 0.87; 6.25; 0.800;277;66; 0.2;0;0;0;0; 16.1; 13.6; 8.3; 2.5; 1.1; 1.2;36; 0.09; 81.3
+194; Brambory zimní; Potato, old, raw; Solanum tuberosum L.; 0.81; 6.25; 0.800;330;78; 0.3; ; ; ; ; 17.2; 15.6; ; 1.6; 2.4; 1.0;16;0; 79.1
+506; Brambory zimní, loupané, vaøené v nesolené vodì; Potato, old, boiled in unsalted water; ; 1.00; 6.25; 0.000;304;72; 0.3; ; ; ; ; 16.1; 14.4; ; 1.7; 2.0; 1.1; ; ; 80.5
+49; Brokolice; Broccoli, raw; Brassica oleracea var. Italica; 0.61; 6.25; 0.800;153;37; 0.3; ; ; ; ; 6.1; 2.0; ; 4.1; 4.4; 1.0;10;0; 88.2
+937; Brokolice, lyofilizovaná; Broccoli, lyophilized; Brassica oleracea var. Botrytis italica; 1.00; 6.25; 0.800;1259;301; 3.8; 0.69; 0.27; 0.94;0; 55.6; 23.7; 17.9; 31.9; 27.1; 5.9;80; 0.20; 7.6
+34; Broskve; Peaches, raw; Prunus persica L.; 0.91; 6.25; 0.800;205;48; 0.2; 0.02; 0.07; 0.08; ; 11.5; 10.0; 8.8; 1.5; 0.9; 0.5;4;0; 86.9
+938; Broskve, lyofilizované; Peach, lyophilized; Prunus persica; 1.00; 6.25; 0.800;1549;365; 0.5;0;0;0;0; 90.7; 83.8; 74.3; 6.9; 3.0; 1.4;90; 0.23; 4.4
+487; Brusinky; Cranberries, raw; Vaccinium vitis-idaea; 1.00; 6.25; 0.800;204;49; 0.7; 0.48;0;0;0; 11.7; 8.6; 5.9; 3.1; 0.6; 0.2;0;0; 86.9
+738; Brusinky sušené; Cramberries, dried; Vaccinium vitis-idaea L.; 1.00; 6.25; 0.800;1503;354; 1.2; 0.19; 0.67; 0.27;0; 87.0; 84.4; 71.4; 2.6; 0.2; 0.1;8; 0.02; 11.5
+939; Brusinky, lyofilizované; Lingonberry (cowberry), lyophilized; Vaccinium vitis-idaea L.; 1.00; 6.25; 0.800;1276;304; 2.9; 0.28; 0.61; 1.40;0; 81.3; 53.3; 29.8; 28.0; 2.2; 1.4;3; 0.01; 12.2
+794; Buchty kynuté, plnìné tvarohovou náplní, modelová receptura; Buchty, fermented buns, with quark filling, model recipe; ; 1.00; 6.25; 0.956;1235;293; 8.1; 3.60; 2.77; 1.23; 0.00; 47.4; 44.8; 12.2; 2.6; 9.0; 1.1;264; 0.7; 34.4
+1008; Bulgur pšeniènı; Bulgur; ; 1.00; 6.25; 0.670;1451;343; 1.5; 0.19; 0.22; 0.60;0; 73.1; 64.5; 1.0; 8.6; 13.5; 1.1;1;0; 10.8
+178; Bulgur špaldovı; Spelt bulgur; Triticum spelta; 1.00; 5.83; 0.720;1560;370; 3.4; 0.42; 0.52; 1.51; ; 75.5; 66.8; ; 8.7; 13.7; 1.8;3;0; 5.6
+796; Candát obecnı, maso bez kùe; Pike perch, meat without skin, raw; Sander lucioperca; 0.91; 6.25; 0.700;308;73; 0.2; 0.05; 0.06; 0.04;0;0;0;0;0; 17.7; 1.0;46; 0.12; 79.7
+797; Candát obecnı, maso s kùí; Pike perch, meat with skin, raw; Sander lucioperca; 1.00; 6.25; 0.700;310;73; 0.1; 0.03; 0.04; 0.03;0;0;0;0;0; 18.0; 1.1;44; 0.11; 80.0
+800; Cejn velkı,  maso s kùí; Freshwater bream, meat with skin, raw; Abramis brama; 0.50; 6.25; 0.900;522;125; 6.4; 1.54; 3.08; 0.56;0;0;0;0;0; 16.8; 2.1;39; 0.10; 75.1
+798; Cejn velkı, maso bez kùe; Freshwater bream, meat without skin, raw; Abramis brama; 0.42; 6.25; 0.900;481;115; 5.1; 1.02; 2.15; 0.74;0;0;0;0;0; 17.2; 1.2;37; 0.09; 76.7
+799; Cejn velkı, uzenı, maso bez kùe; Freshwater bream, meat without skin, smoked; Abramis brama; 0.77; 6.25; 0.900;701;168; 10.3; 2.53; 5.12; 0.56;0;0;0;0;0; 18.8; 3.7;946; 2.36; 65.9
+50; Celer bulvovı; Celeriac, raw; Apium graveolens L.; 0.68; 6.25; 0.800;117;28; 0.3; ; ; ; ; 7.1; 2.6; ; 4.5; 1.5; 1.0;92; 0.2; 90.1
+620; Celer øapíkatı; Celery, raw; Apium graveolens; 1.00; 6.25; 0.800;69;17; 0.2;0;0;0;0; 5.3; 0.7; 2.0; 4.7; 0.7; 0.8;46; 0.12; 92.9
+940; Celer, sušenı; Celery, dried; Apium graveolens; 1.00; 6.25; 0.800;1144;273; 1.6; 0.60; 0.06; 0.38;0; 69.2; 37.6; 17.0; 31.6; 11.4; 10.0;960; 2.40; 7.8
+51; Cibule; Onion, raw; Allium cepa L.; 0.92; 6.25; 0.800;164;39; 0.3; ; ; ; ; 8.7; 6.6; ; 2.1; 1.4; 0.5;8;0; 89.1
+621; Cibule èervená; Onion, red, raw; Allium; 0.96; 6.25; 0.800;191;45; 0.2;0;0;0;0; 10.4; 8.6; 6.9; 1.9; 1.4; 0.4;7; 0.02; 87.6
+622; Cibule šalotka; Onion, shallot, raw; Allium ascalonicum; 0.92; 6.25; 0.800;187;44; 0.1;0;0;0;0; 10.3; 8.2; 4.5; 2.2; 1.5; 0.6;2;0; 87.4
+941; Cibule, lyofilizovaná; Onion, lyophilized; Allium cepa; 1.00; 6.25; 0.800;1374;326; 1.2; 0.27; 0.20; 0.42;0; 75.3; 57.3; 34.9; 18.0; 12.4; 4.3;7; 0.02; 6.8
+942; Cibule, sušená; Onion, dried; Allium cepa; 1.00; 6.25; 0.800;1333;316; 0.7;0;0;0;0; 78.3; 57.4; 33.9; 20.9; 9.6; 4.2;56; 0.14; 7.2
+35; Citróny; Lemons, raw; Citrus limon L.; 0.63; 6.25; 0.800;149;35; 0.4; 0.04; 0.01; 0.06; ; 8.4; 6.1; 2.7; 2.3; 0.7; 0.5;4;0; 90.0
+582; Cizrna; Chickpea, dried; ; 1.00; 6.25; 0.720;1285;308; 5.8; 0.57; 1.27; 2.30;0; 60.7; 27.2; 1.9; 33.5; 20.0; 2.8;5; 0.01; 10.7
+52; Cuketa; Zucchini, raw; Cucurbita pepo L. convar. giromontiina Greb.; 0.90; 6.25; 0.800;57;14; 0.1; 0.08;0;0;0; 2.8; 1.8; 1.7; 1.0; 0.8; 0.5;1;0; 95.8
+559; Cukr hroznovı (glukóza); Glucose; ; 1.00; 6.25; 0.000;1557;366;0;0;0;0;0; 91.4; 91.4; 90.8;0; 0.2; 0.1;1;0; 8.3
+190; Cukr øepnı, bílı; Sugar, beet, sucrose, white; ; 1.00; 6.25; 0.800;1700;399;0; ; ; ; ; 99.9; 99.8; 99.8;0;0;0;0;0;0
+330; Cukr tøtinovı; Sugar, cane; ; 1.00; 6.25; 0.800;1680;402;0;0;0;0; ; 98.9; 98.9; 96.7;0;0; 0.5;2;0; 0.6
+191; Cukr vanilkovı; Sugar, vanilla; ; 1.00; 6.25; 0.800;1701;400; 0.2; ; ; ; ; 99.7; 99.6; 99.6;0;0;0;0;0; 0.1
+53; Èesnek; Garlic, raw; Allium sativum L.; 0.87; 6.25; 0.800;636;150; 0.4; ; ; ; ; 31.7; 28.9; ; 2.8; 6.3; 1.4;13;0; 60.1
+623; Èesnek medvìdí; Bear's garlic, raw; Allium ursinum; 1.00; 6.25; 0.800;155;37; 1.0;0;0;0;0; 5.1; 2.3; 0.4; 2.8; 3.3; 0.9;1;0; 89.7
+944; Èesnek, lyofilizovanı; Garlic, lyophilized; Allium sativum; 1.00; 6.25; 0.800;1481;351; 0.9;0;0;0;0; 73.9; 59.5; 6.7; 14.4; 18.9; 4.1;45; 0.11; 2.2
+92; Èoèka; Lentils, dried; Lens esculenta Moench; 1.00; 6.25; 0.800;1372;325; 0.7; ; ; ; ; 63.5; 48.5; ; 15.0; 23.6; 2.4;5;0; 9.8
+647; Èoèka èervená; Lentil, red; ; 1.00; 6.25; 0.956;1317;313; 1.3; 0.21; 0.35; 0.73;0; 61.8; 39.2; 1.4; 22.6; 24.7; 2.6;1;0; 9.6
+917; Èoèka, èerná; Lentil, black; Lens; 1.00; 6.25; 0.800;1271;303; 1.5; 0.25; 0.33; 0.61;0; 59.9; 32.3; 1.1; 27.6; 26.2; 2.9;0;0; 9.5
+495; Èoèka, vaøená v nesolené vodì; Lentils, boiled in unsalted water; ; 1.00; 6.25; 0.000;466;110; 0.4; ; ; ; ; 21.3; 16.3; ; 5.0; 7.9; 0.8; ; ; 69.6
+350; Èokoláda bílá; Chocolate, white; ; 1.00; 6.25; 0.000;2290;549; 32.1; 19.34; 9.05; 1.01;0; 59.2; 59.0; ; 0.2; 5.9; 1.5;90; 0.2; 1.3
+346; Èokoláda hoøká, obsah kakaa 45-59 %; Chocolate, dark, 45-59% cacao solids; ; 1.00; 6.25; 0.000;2220;532; 31.3; 18.41; 9.53; 1.06; 0.11; 61.1; 54.1; 48.0; 7.0; 4.9; 1.7;24; 0.1; 1.0
+348; Èokoláda hoøká, obsah kakaa 60-69 %; Chocolate, dark, 60-69% cacao solids; ; 1.00; 6.25; 0.000;2340;563; 38.3; 21.88; 11.52; 1.18; 0.08; 52.4; 44.4; 36.7; 8.0; 6.1; 1.9;10;0; 1.3
+349; Èokoláda hoøká, obsah kakaa 70-85 %; Chocolate, dark, 70-85% cacao solids; ; 1.00; 6.25; 0.000;2390;579; 42.6; 24.37; 12.77; 1.24; 0.03; 45.9; 35.0; 24.0; 10.9; 7.8; 2.3;20; 0.1; 1.4
+347; Èokoláda mléèná; Chocolate, milk; ; 1.00; 6.25; 0.000;2210;529; 29.7; 18.5; 6.49; 1.34; 0.20; 59.4; 56.0; 52.8; 3.4; 7.7; 1.78;79; 0.2; 1.5
+203; Dalamánek; Bread bun, Dalamánek; ; 1.00; 6.25; 0.000;1220;289; 3.5; 0.25; 1.20; 0.81;0; 60.1; 54.7; 3.6; 5.4; 6.9; 3.1;956; 2.4; 26.4
+364; Datle, sušené; Dates, dried; Phoenix dactylifera; 0.86; 6.25; 0.800;1434;339; 0.8; 0.11; 0.14; 0.34;0; 85.1; 75.7; 56.2; 9.4; 2.5; 1.8;5; 0.01; 9.8
+384; Destilát, whisky; Whisky; ; 1.00; 6.25; 0.000;1050;250;0;0;0;0; ; 0.1;0;0;0;0;0;0;0; 63.9
+698; Droby kachní; Duck offal; Anas platyrhynchos f. domestica; 1.00; 6.25; 0.741;535;127; 5.1; 1.48; 1.71; 0.54;0; 0.56; 0.56;0;0; 19.8; 1.3;78; 0.20; 73.6
+233; Droby kuøecí; Chicken, giblets, raw; ; 1.00; 6.25; 0.741;493;117; 4.4; 1.32; 1.42; 0.46;0; 1.40; 1.40;0;0; 18.0; 1.2;79; 0.20; 75.0
+251; Drodí lisované; Yeast, baker´s, compressed; ; 1.00; 6.25; 0.956;437;105; 2.7; 0.42; 2.10; 0.08;0; 11.3; 0.2; 0.1; 11.1; 14.4; 1.8;19; 0.05; 69.8
+252; Drodí sušené; Yeast, baker´s, dried; ; 1.00; 6.25; 0.956;1419;339; 6.4; 2.43; 2.77; 0.91;0; 40.2; 12.9; 4.6; 27.3; 43.8; 5.3;80; 0.20; 3.7
+219; Dršky hovìzí; Tripe, ox, raw; ; 1.00; 6.25; 0.916;355;86; 1.0; 0.43; 0.39; 0.03;0;0;0;0;0; 18.7; 0.7;43; 0.11; 80.4
+945; Døišál, plody, sušené; Barberry, dried; Berberis vulgaris; 1.00; 6.25; 0.800;1413;334; 2.0; 0.48; 0.33; 0.60;0; 80.6; 69.1; 48.2; 11.5; 4.2; 2.8;12; 0.03; 10.4
+946; Dınì, Hokkaidó; Vegetace marrow, Hokkaido, raw; Cucurbita maxima Duchesne ssp.; 0.71; 6.25; 0.800;154;37; 0.6;0;0;0;0; 7.7; 5.7; 5.2; 2.0; 1.1; 0.7;1;0; 89.9
+947; Dınì, máslová; Butternut, pumpkin, raw; Cucurbita moschata Butternut; 0.80; 6.25; 0.800;161;38; 0.2;0;0;0;0; 8.4; 6.3; 4.8; 2.1; 1.8; 0.7;0;0; 88.9
+985; Dem jahodovı, modelová receptura; Jam, strawberry, model recipe; ; 1.00; 6.25; 0.800;781;185; 1.9; 0.56; 0.13; 0.74;0; 40.3; 38.6; 39.0; 1.7; 0.7; 0.4;156; 0.39; 56.7
+90; Fazole bílé, sušené; Beans, white, dried; Phaseolus vulgaris L.; 1.00; 6.25; 0.800;1411;334; 0.8; ; ; ; ; 69.7; 50.5; ; 19.2; 21.7; 4.1;4;0; 3.7
+496; Fazole bílé, vaøené v nesolené vodì; Beans, white, boiled in unsalted water; ; 1.00; 6.25; 0.000;539;128; 0.4; ; ; ; ; 25.8; 18.5; ; 7.3; 8.9; 1.4; ; ; 63.5
+649; Fazole èerné; Beans, black, dried; Phaseolus; 1.00; 6.25; 0.956;1129;270; 1.4; 0.22; 0.13; 1.00;0; 61.3; 26.7; 2.6; 34.6; 20.4; 3.8;0;0; 13.2
+654; Fazole èervené; Beans, kidney, red, dried; Phaseolus; 1.00; 6.25; 0.956;1151;276; 1.7; 0.25; 0.19; 1.15;0; 65.0; 28.0; 1.3; 37.0; 18.6; 3.5;0;0; 11.1
+918; Fazole, pinto; Beans, pinto; Phaseolus; 1.00; 6.25; 0.800;1112;267; 1.6; 0.83; 0.34; 0.05;0; 63.7; 22.8; 2.7; 40.9; 19.9; 3.9;0;0; 10.9
+54; Fazolky; Beans, green, raw; Phaseolus vulgaris L.; 0.91; 6.25; 0.800;134;32; 0.2; ; ; ; ; 7.1; 3.4; ; 3.7; 2.3; 0.7;5;0; 89.7
+983; Fenykl, bulva; Fenel, tuber; Foeniculum vulgare; 0.85; 6.25; 0.800;67;16; 0.2;0;0;0;0; 4.2; 2.2; 2.1; 2.0; 0.7; 0.7;17; 0.04; 94.2
+362; Fíky; Figs, raw; Ficus carica L.; 1.00; 6.25; 0.800;323;77; 0.3; 0.06; 0.07; 0.14; ; 19.1; 16.2; 9.6; 2.9; 0.8; 0.7;1;1; 79.1
+363; Fíky, sušené; Figs, dried; Ficus carica L.; 1.00; 6.25; 0.000;1090;257; 0.9; 0.15; 0.16; 0.25; ; 63.8; 54.0; 47.8; 9.8; 3.3; 1.9;10;0; 30.1
+624; Goji, plody kustovnice èínské, sušené; Goji, dried; Lycium chinense; 1.00; 6.25; 0.800;1454;344; 3.3; 0.33; 0.57; 1.66;0; 71.9; 61.2; 35.3; 10.7; 12.1; 4.2;500; 1.25; 8.4
+361; Grapefruit; Grapefruit, raw; Citrus paradisi Macfad.; 0.67; 6.25; 0.800;170;40; 0.2; 0.05; 0.03; 0.07; ; 9.8; 8.2; 6.4; 1.6; 0.6; 0.4;2; ; 89.0
+450; Guma arabská; Gum Arabic (acacia gum); ; 1.00; 6.25; 0.800;1450;348;0;0;0;0;0; 84.1; 84.1;0; ; 1.4; 3.3;15; 0.04; 11.1
+563; Guma guar; Guar gum; ; 1.00; 6.25; 0.000;783;194;0;0;0;0;0; 87.2;0;0; 87.2; 5.0; 0.9;127; 0.32; 8.6
+674; Guma tara; Tara; Caesalpinia spinosa; 1.00; 6.25; 0.956;772;192; 0.8;0;0;0;0; 88.1;0;0; 88.0; 2.3; 0.9;2;0; 8.0
+675; Guma xanthanová; Xanthan gum; ; 1.00; 6.25; 0.956;737;182; 0.6;0;0;0;0; 78.3; 2.8;0; 75.5; 3.6; 9.3;654; 1.64; 8.1
+351; Hamburger (firma McDONALD´S); Hamburger, McDONALD'S; ; 1.00; 6.25; 0.000;1050;248; 7.4; 2.40; 0.30; 3.97; ; 32.4; ; ; ; 13.0; 2.4;520; 1.3; 44.8
+468; Hlíva ústøièná; Mushrooms, oyster, raw; Pleurotus ostreatus; 1.00; 6.25; 0.800;85;20; 0.1; 0.08;0;0;0; 5.4; 1.1; 0.8; 4.3; 1.6; 0.8;2;0; 92.1
+971; Hloh, plody; Hawthron, fruits; Crataegus L.; 1.00; 6.25; 0.800;352;86; 1.0; 0.17; 0.27; 0.09;0; 31.7; 4.1; 3.3; 27.6; 1.4; 1.5;1;0; 64.4
+451; Hmota kakaová; Cocoa mass; ; 1.00; 6.25; 0.950;2540;617; 54.4; 33.16; 17.10; 1.43;0; 26.9; 9.0; 0.5; 17.9; 13.8; 3.1;6; 0.01; 1.66
+801; Hoki, maso s kùí; Blue grenadier, meat with skin, raw; Macruronus; 1.00; 6.25; 0.700;323;76; 1.1; 0.34; 0.47; 0.11;0;0;0;0;0; 16.6; 1.4;110; 0.27; 80.9
+895; Holoubì, celé, maso bez kùe; Pigeon (young), meat whit skin, raw; Columba; 0.41; 6.25; 0.945;806;194; 13.1; 3.37; 7.39; 1.51;0;0;0;0;0; 18.9; 1.7;85; 0.21; 65.8
+896; Holoubì, celé, maso s kùí; Pigeon (young), meat whitout skin, raw; Columba; 0.48; 6.25; 0.945;897;216; 16.1; 4.19; 8.39; 2.40;0;0;0;0;0; 17.7; 1.3;78; 0.20; 63.0
+265; Hoøèice kremská; Mustard, with horseradish Krems-type; ; 1.00; 6.25; 0.920;545;130; 6.6; ; ; ; ; 14.1; 12.4; ; 1.7; 4.5; 3.1;760; 1.9; 71.7
+264; Hoøèice plnotuèná; Mustard, full fat; ; 1.00; 6.25; 0.920;545;130; 6.6; ; ; ; ; 14.1; 12.4; ; 1.7; 4.5; 3.1;760; 1.9; 71.7
+802; Houby, lišky; Chanterelles, raw; Cantharellus cibarius; 1.00; 6.25; 0.800;113;27; 0.4;0;0;0;0; 5.3; 2.0;0; 3.3; 2.2; 1.1;1;0; 91.0
+91; Hrách; Peas, dried; Pisum sativum L.; 1.00; 6.25; 0.800;1429;338; 1.8; ; ; ; ; 67.3; 54.7; ; 12.6; 19.5; 3.5;19;0; 7.9
+497; Hrách, vaøenı v nesolené vodì; Peas, boiled in unsalted water; ; 1.00; 6.25; 0.000;484;114; 0.4; ; ; ; ; 23.3; 19.1; ; 4.2; 6.5; 1.1; ; ; 68.7
+13; Hranolky bramborové, smaené, trh; French fries, retail; ; 1.00; 6.25; 0.956;1310;314; 15.5; 3.96; 9.14; 1.58; ; 39.2; ; ; ; 4.3; 1.5;116; 0.3; 39.6
+55; Hrášek; Peas, green, raw; Pisum sativum L.; 0.47; 6.25; 0.800;325;77; 0.4; ; ; ; ; 15.3; 8.6; ; 6.7; 6.5; 0.9;8;0; 76.9
+950; Hrášek, lyofilizovanı; Green peas, lyophilized; Pisum sativum; 1.00; 6.25; 0.800;1429;340; 3.4; 0.73; 0.43; 1.50;0; 65.2; 41.3; 23.3; 23.9; 24.2; 2.8;9; 0.02; 4.4
+36; Hrušky; Pears, raw; Pyrus communis  L. emend Gaertn.; 0.92; 6.25; 0.800;238;57; 0.3; 0.05; 0.03; 0.15; ; 14.6; 11.3; 10.3; 3.3; 0.5; 0.3;3;0; 84.3
+927; Hrušky, loupané, prùmìr; Pears, peeled, raw; Pyrus; 0.83; 6.25; 0.800;194;46; 0.2;0;0;0;0; 11.4; 9.9; 8.8; 1.5; 0.4; 0.5;0;0; 87.5
+244; Høib smrkovı; Boletus edible, raw; Boletus edulis; 0.82; 6.25; 0.770;170;41; 0.6; ; ; ; ; 5.2; 2.2; ; 3.0; 5.1; 1.1;17;0; 88.0
+245; Høib smrkovı, sušenı; Boletus edible, dried; Boletus edulis; 1.00; 6.25; 0.770;1360;321; 3.1; ; ; ; ; 39.2; 31.7; ; 7.5; 37.7; 7.4;14;0; 12.6
+352; Cheeseburger (firma McDONALD´S); Cheeseburger, McDONALD'S; ; 1.00; 6.25; 0.000;1090;259; 9.0; 3.27; 0.32; 4.39; ; 26.0; ; ; ; 18.4; 2.9;631; 1.6; 43.7
+355; Chicken Mc Nuggets (firma McDONALD´S); Chicken McNuggets, McDONALD'S; ; 1.00; 6.25; 0.000;1120;269; 14.6; 3.56; 8.09; 1.74; ; 14.1; ; ; ; 20.2; 2.3;521; 1.3; 48.8
+195; Chléb pšenièno-itnı, Šumava; Bread, wheat-rye, Šumava; ; 1.00; 6.25; 0.000;1050;247; 1.7; ; ; ; ; 54.5; 49.4; ; 5.1; 6.0; 1.4;515; 1.3; 36.4
+198; Chléb pšeniènı bílı; Bread, wheat, white; ; 1.00; 6.25; 0.000;1030;242; 1.6; ; ; ; ; 50.8; 46.5; ; 4.3; 8.3; 1.5;510; 1.3; 37.8
+199; Chléb pšeniènı celozrnnı; Bread, wheat, wholemeal; ; 1.00; 6.25; 0.000;968;229; 2.0; ; ; ; ; 48.0; 39.8; ; 8.2; 8.9; 1.9;456; 1.1; 39.2
+200; Chléb pšeniènı celozrnnı, Graham; Bread, wheat, Graham; ; 1.00; 6.25; 0.000;1040;247; 2.7; ; ; ; ; 49.8; 43.4; ; 6.4; 9.1; 1.9;301; 0.8; 36.5
+469; Chøest bílı; Asparagus, white, raw; Asparagus officinalis; 0.75; 6.25; 0.800;80;19; 0.1; 0.08;0;0;0; 3.7; 2.2; 2.2; 1.5; 1.5; 0.5;11; 0.03; 94.2
+676; Inulin; Inulin; ; 1.00; 6.25; 0.956;1091;264; 0.6;0;0;0;0; 92.9; 35.9;0; 57.0; 0.2; 0.1;20; 0.05; 6.2
+37; Jablka; Apples, raw; Malus domestica Borkh.; 0.92; 6.25; 0.800;219;52; 0.4; 0.13; 0.01; 0.16; ; 12.8; 10.5; 10.9; 2.3; 0.4; 0.3;4;0; 86.1
+739; Jablka sušená; Apples, dried; ; 1.00; 6.25; 0.800;1331;314; 0.5; 0.08; 0.10; 0.26;0; 79.4; 72.7; 58.3; 6.7; 1.3; 1.7;189; 0.47; 17.2
+929; Jablka, loupaná, prùmìr; Apples, peeled, raw; Malaventum/Malus; 0.77; 6.25; 0.800;231;54; 0.2;0;0;0;0; 13.0; 12.6; 11.3; 0.4; 0.4; 0.2;0;0; 86.2
+972; Jack fruit, chlebovník obecnı; Jackfruit, raw; Artocarpus heterophyllus; 0.31; 6.25; 0.800;390;93; 0.8;0;0;0;0; 21.4; 17.0; 11.4; 4.4; 2.2; 1.1;0;0; 74.5
+973; Jack fruit, sušenı; Jackfruit, dried; Artocarpus heterophyllus; 1.00; 6.25; 0.800;1622;388; 11.1; 4.27; 3.85; 1.01;0; 77.7; 58.0; 57.8; 19.7;4; 2.3;1;0; 4.9
+581; Jáhly; Millet, raw; ; 1.00; 6.25; 0.720;1522;359; 2.5; 0.22; 0.43; 1.17;0; 72.8; 71.6;0; 1.2; 11.9; 0.1;0;0; 12.7
+38; Jahody zahradní; Strawberries, raw; Fragaria x ananassa Duchesne; 0.96; 6.25; 0.800;158;37; 0.4; 0.04; 0.06; 0.24; ; 8.6; 6.7; 6.0; 1.9; 0.8; 0.7;3;0; 89.5
+218; Játra hovìzí; Liver, ox, raw; ; 0.93; 6.25; 0.760;548;130; 4.0; ; ; ; ; 4.3; 4.3; ;0; 19.2; 1.3;126; 0.3; 71.2
+699; Játra husí; Goose liver; Anser anser domesticus; 1.00; 6.25; 0.741;493;117; 2.7; 1.04; 0.54; 0.19;0; 1.26; 1.26;0;0; 21.9; 1.4;88; 0.22; 72.8
+526; Játra kachní; Liver, duck, raw; ; 1.00; 6.25; 0.741;510;121; 3.3; 1.06; 0.94; 0.44;0; 2.2; 2.2;0;0; 20.6; 1.4;79; 0.20; 72.5
+594; Játra králièí; Liver, rabbit, raw; ; 1.00; 6.25; 0.741;466;111; 3.4; 0.99; 0.52; 1.00;0;0;0;0;0; 20.0; 1.6;69; 0.17; 71.2
+700; Játra krùtí; Turkey liver; Meleagris gallopavo f. domestica; 1.00; 6.25; 0.741;478;113; 3.1; 1.06; 0.53; 0.53;0; 0.57; 0.57;0;0; 20.7; 1.4;86; 0.21; 74.2
+226; Játra kuøecí; Liver, chicken, raw; ; 1.00; 6.25; 0.741;509;122; 5.0; 1.48; 1.63; 0.59;0; 2.4; 2.4;0;0; 16.8; 1.3;71; 0.18; 74.7
+585; Játra kuøecí, Zlaté kuøe; Liver, chicken,  type - golden chicken, raw; ; 1.00; 6.25; 0.741;437;104; 2.9; 1.04; 0.57; 0.52;0;0;0;0;0; 19.4; 1.4;79; 0.20; 74.3
+221; Játra telecí; Liver, veal, raw; Bos taurus; 1.00; 6.25; 0.916;634;152; 6.1; 2.62; 1.66; 0.47;0; 3.00; 3.00;0;0; 21.3; 2.0;64; 0.16; 67.6
+204; Játra vepøová; Liver, pig, raw; ; 1.00; 6.25; 0.741;496;118; 2.7; 0.42; 0.70; 0.43;0; 3.9; 3.9;0;0; 19.4; 1.4;97; 0.3; 72.6
+243; Játra, tresèí v oleji a vlastní šávì; Liver, cod, in own oil and grease; ; 1.00; 6.25; 0.000;2470;600; 64.4; ; ; ; ; 1.0; 1.0; ;0; 4.2; 2.0;589; 1.5; 28.4
+217; Jazyk hovìzí; Tongue, ox, raw; ; 0.85; 6.25; 0.920;779;187; 13.7; ; ; ; ;0;0; ;0; 16.0; 1.0;95; 0.2; 69.3
+300; Jazyk vepøovı; Tongue, pig, raw; ; 0.92; 6.25; 0.965;777;187; 13.5; 4.63; 6.95; 1.78; ;0;0; ;0; 16.3; 1.0;104; ; 69.2
+164; Jeèmen nahı; Naked barley; Hordeum vulgare var. Nudum; 1.00; 5.83; 0.720;1420;336; 3.0; 0.48; 0.33; 1.32; ; 71.3; 59.6; ; 11.7; 11.9; 1.6;4;0; 12.4
+627; Jeøabiny; Rowanberry, raw; Sorbus; 1.00; 6.25; 0.800;271;65; 1.0; 0.12; 0.31; 0.54;0; 16.4; 9.9; 1.3; 6.5; 0.7; 0.6;0;0; 81.2
+173; Jeatka; Indian barnyard millet or sawa millet; Echinochloa frumentacea; 1.00; 6.25; 0.720;1498;357; 7.5; 0.49; 1.40; 3.50; ; 69.4; 46.7; ; 22.7; 14.4; 4.2;4;0; 4.6
+628; Jidášovo ucho, sušené; Jew's ear, dried; Auricularia auricula-judae; 1.00; 6.25; 0.800;762;188; 0.7;0;0;0;0; 76.4; 2.6;0; 73.9; 5.9; 4.3;30; 0.07; 12.6
+313; Jitrnice; Meat product, white pudding; ; 0.87; 6.25; 0.000;1140;272; 19.1; ; ; ; ; 10.4; ; ;0; 15.1; 2.9;1125; 2.8; 52.5
+126; Jogurt bílı, 3,5 % tuku; Yogurt, plain, 3.5% milkfat; ; 1.00; 6.38; 0.945;311;74; 3.5; 2.26; 0.95; 0.10; ; 5.2; 5.2; 5.2;0; 4.5; 1.0;59; 0.1; 84.6
+125; Jogurt bílı, se sníenım obsahem tuku, 1,5 % tuku; Yogurt, plain, reduced fat, 1.5% milkfat; ; 1.00; 6.38; 0.945;216;51; 1.5; 0.97; 0.41; 0.04; ; 4.3; 4.3; 4.3;0; 3.9; 0.9;51; 0.1; 88.0
+127; Jogurt smetanovı, min. 10 % tuku; Yogurt, plain, min. 10% milkfat; ; 1.00; 6.38; 0.945;491;119; 10.0; 6.47; 2.70; 0.29; ; 3.3; 3.3; 3.3;0; 3.0; 0.7;40; 0.1; 82.0
+1007; Jogurt, bílı, odtuènìnı; Yoghurt, plain, skimmed; ; 1.00; 6.25; 0.945;183;43; 0.2; 0.15; 0.06;0;0; 4.4; 4.4; 4.4;0; 5.3; 0.9;48; 0.12; 87.7
+629; Josta; Jostaberry, raw; Ribes nidigrolaria; 1.00; 6.25; 0.800;199;48; 0.5;0;0;0;0; 12.5; 7.3; 4.6; 5.2; 0.8; 0.6;0;0; 85.5
+789; Kachna divoká, maso z celého kusu bez kùe; Mallard (wild duck), meat from the whole carcass without skin, raw; Anas platyrhynchos; 0.58; 6.25; 0.945;578;138; 5.4; 1.85; 2.55; 0.70;0;0;0;0;0; 22.4; 1.2;61; 0.15; 70.8
+788; Kachna divoká, maso z celého kusu s kùí; Mallard (wild duck), meat from the whole carcass with skin, raw; Anas platyrhynchos; 0.55; 6.25; 0.945;642;153; 7.8; 2.70; 3.86; 0.82;0;0;0;0;0; 20.8; 1.1;73; 0.18; 70.0
+791; Kachna divoká, prsa, bez kùe; Mallard (wild duck), breast without skin, raw; Anas platyrhynchos; 1.00; 6.25; 0.945;483;114; 2.4; 0.71; 1.28; 0.20;0;0;0;0;0; 23.2; 1.3;57; 0.14; 71.7
+790; Kachna divoká, stehno, bez kùe; Mallard (wild duck), thigh without skin, raw; Anas platyrhynchos; 0.90; 6.25; 0.945;596;142; 6.1; 1.67; 3.42; 0.60;0;0;0;0;0; 21.8; 1.1;71; 0.18; 71.3
+238; Kachna domácí, maso, s kùí; Duck, domesticated, meat and skin, raw; ; 0.72; 6.25; 0.940;1650;400; 39.3; ; ; ; ;0;0;0;0; 11.5; 0.7;86; 0.2; 48.5
+804; Kambala velká, maso bez kùe; Turbot, meat without skin, raw; Psetta maxima; 0.27; 6.25; 0.900;602;144; 9.2; 1.95; 3.06; 2.16;0;0;0;0;0; 15.4; 0.7;85; 0.21; 73.3
+325; Kapr obecnı, maso bez kostí a kùe, dušené; Carp, meat without bone and skin, stewed; Cyprinus carpio L.; 1.00; 6.25; 0.000;757;182; 12.1; 1.99; 5.20; 0.93; ;0;0;0;0; 18.2; 1.1;43; 0.1; 67.5
+326; Kapr obecnı, maso bez kostí a kùe, peèené; Carp, meat without bone and skin, roasted; Cyprinus carpio L.; 1.00; 6.25; 0.000;792;190; 12.8; 2.07; 5.54; 1.00; ;0;0;0;0; 18.7; 1.2;42; 0.1; 66.2
+327; Kapr obecnı, maso bez kostí a kùe, smaené; Carp, meat without bone and skin, fried; Cyprinus carpio L.; 1.00; 6.25; 0.000;897;216; 15.8; 2.90; 6.45; 1.13; ;0;0;0;0; 18.4; 1.1;42; 0.1; 63.7
+239; Kapr obecnı, maso bez kostí a kùe, syrové; Carp, meat, skinless, boneless, raw; Cyprinus carpio (L.); 0.52; 6.25; 0.000;630;151; 8.9; 1.48; 3.80; 0.70; ;0;0;0;0; 17.7; 1.0;41; 0.1; 71.1
+688; Kapr obecnı, maso s kùí; Carp, meat with skin, raw; Cyprinus carpio; 1.00; 6.25; 0.900;522;125; 6.3; 1.69; 3.58; 0.19;0; 0.9; 0.9;0;0; 16.2; 0.9;39; 0.10; 75.8
+805; Kapr obecnı, uzenı, maso bez kùe; Common carp, meat without skin, smoked; Cyprinus carpio; 0.83; 6.25; 0.900;661;158; 8.4; 1.99; 4.44; 0.77;0;0;0;0;0; 20.6; 3.2;869; 2.17; 66.7
+577; Kapr, jikry a mlíèí; Carp, roe and milt, raw; ; 1.00; 6.25; 0.900;1150;278; 25.1; 5.63; 13.64; 2.57;0;0;0;0;0; 13.1; 1.8;57; 0.14; 57.7
+578; Kapr, vnitønosti; Carp, offal, raw; ; 1.00; 6.25; 0.900;1304;316; 31.2; 8.92; 16.47; 2.65;0;0;0;0;0; 8.8; 0.9;57; 0.14; 55.9
+56; Kapusta hlávková; Cabbage, savoy, raw; Brassica oleracea L. convar. sabauda L. O. E. Sc; 0.62; 6.25; 0.800;161;39; 0.7; ; ; ; ; 7.1; 2.3; ; 4.8; 3.4; 1.4;20; 0.1; 87.4
+887; Kapusta kadeøavá; Savoy cabbage, raw; Brassica oleracea L. var. sabellica L.; 1.00; 6.25; 0.800;134;32; 0.5;0;0;0;0; 3.38; 2.47; 0.19; 0.91; 3.9; 1.8;38; 0.10; 90.4
+57; Kapusta rùièková; Brussels sprouts, raw; Brassica oleracea L. convar. gemmifera (DC.) Markg; 0.77; 6.25; 0.800;204;49; 0.5; ; ; ; ; 8.6; 4.5; ; 4.1; 4.5; 1.4;9;0; 85.0
+677; Karagenan; Carrageenan; ; 1.00; 6.25; 0.956;508;126; 0.6;0;0;0;0; 58.8; 0.8;0; 58.0; 0.6; 32.8;593; 1.48; 7.4
+630; Karambola, plod; Carambola, fruits, raw; Averrhoa carambola; 1.00; 6.25; 0.800;133;32; 0.4;0;0;0;0; 8.0; 4.5; 4.5; 3.5; 0.6; 0.5;0;0; 91.4
+561; Karubin; Carobin (carob bean gum, E410); ; 1.00; 6.25; 0.000;809;200; 1.3; 0.04; 0.57; 0.37;0; 78.0; 3.3;0; 74.7; 6.3; 1.0;58; 0.15; 13.4
+435; Kaseinát potravináøskı; Food caseinate; ; 1.00; 6.38; 0.945;1500;359; 1.9; 1.32; 0.47;0;0;0;0;0;0; 84.3; 3.8;1300; 3.26; 10.0
+631; Kaštany jedlé; Nuts, chestnuts; Castanea sativa; 1.00; 6.25; 0.800;705;167; 1.1; 0.15; 0.32; 0.40;0; 38.9; 33.7; 8.1; 5.2; 2.9; 0.8;0;0; 56.3
+689; Káva praená; Coffee, beans, roasted; ; 1.00; 6.25; 0.956;1357;330; 13.8; 5.67; 1.25; 6.26;0; 63.0; 9.7;0; 53.3; 15.0; 4.2;2; 0.01; 4.0
+395; Keèup; Tomato ketchup; ; 1.00; 6.25; 0.000;458;108; 0.5; ; ; ; ; 24.8; 23.4; ; 1.4; 1.8; 3.4;1125; 2.8; 69.5
+58; Kedlubna; Kohlrabi, raw; Brassica oleracea L. convar. gongylodes L. Markg; 0.65; 6.25; 0.800;114;27; 0.1; ; ; ; ; 5.7; 3.2; ; 2.5; 2.1; 1.0;23; 0.1; 91.0
+741; Kiwáno; Kiwano; Cucumis metuliferus; 0.60; 6.25; 0.800;149;36; 1.4; 0.24; 0.10; 0.82;0; 6.0; 2.6; 2.6; 3.4; 1.5; 0.7;2; 0.01; 91.4
+39; Kiwi; Kiwi fruit, raw; Actinidia chinensis Planchon, var. deliciosa; 0.87; 6.25; 0.800;244;58; 0.8; 0.04; 0.05; 0.38; ; 13.1; 10.3; 6.8; 2.8; 1.0; 0.7;3;0; 84.4
+954; Kiwi, lyofilizované; Kiwi fruit, lyophilized; Actinidia deliciosa; 1.00; 6.25; 0.800;1498;356; 4.8; 0.36; 0.59; 2.80;0; 83.7; 63.7; 49.0; 20.0; 4.6; 4.0;6; 0.02; 2.9
+975; Klanopraška èínská, plody, sušené; Schisandra (Chinese magnolia-vine), dried; Schisandra chinensis; 1.00; 6.25; 0.800;1414;341; 14.3; 0.46; 2.04; 8.85;0; 64.1; 25.1; 5.2; 39.0; 8.6; 4.0;1;0; 9.0
+656; Klíèky kukuøice; Corn, sprouted; Zea mays L.; 1.00; 6.25; 0.956;1505;356; 3.6; 0.45; 0.97; 2.02;0; 78.4; 69.5; 0.5; 8.9; 7.0; 1.1;0;0; 9.9
+657; Klíèky ovesné; Oat, sprouted; Avena sativa L.; 1.00; 6.25; 0.956;1565;372; 7.6; 1.21; 3.17; 2.93;0; 69.4; 59.3; 0.2; 10.1; 11.3; 1.6;1;0; 10.0
+658; Klíèky pohankové; Buckwheat, sprouted; Fagopyrum esculentum; 1.00; 6.25; 0.956;1400;335; 10.0; 1.91; 4.09; 3.53;0; 35.7; 15.3; 0.7; 20.5; 35.7; 7.9;0;0; 10.7
+465; Klíèky pšenièné; Wheat sprouts; ; 1.00; 6.25; 0.700;1260;302; 7.8; 0.98; 0.77; 3.64;0; 50.7; 17.3; 8.3; 33.4; 24.4; 5.3;36; 0.01; 11.8
+955; Klikva, lyofilizovaná; Cranberry, lyophilized; Vaccinium macrocarpon (Aiton); 1.00; 6.25; 0.800;1355;323; 3.2; 0.26; 0.66; 1.63;0; 86.6; 58.9; 31.0; 27.7; 0.7; 1.7;3; 0.01; 7.8
+4; Knedlík bramborovı, modelová receptura; Dumplings from cooked potatoes, model recipe; ; 1.00; 6.25; 0.956;583;138; 0.6; 0.17; 0.20; 0.13; 0.02; 29.5; 27.6; ; 1.9; 4.5; 1.5;330; 0.8; 64.1
+5; Knedlík bramborovı, trh; Dumplings from cooked potatoes, retail; ; 1.00; 6.25; 0.956;736;174; 0.7; 0.14; 0.18; 0.33;0; 37.3; 35.3; ; 2.0; 5.5; 1.8;490; 1.2; 54.7
+157; Knedlík houskovı, modelová receptura; Dumpling from wheat flour, yeast, model recipe; ; 1.00; 6.25; 0.950;840;198; 1.4; 0.52; 0.51; 0.27;0; 40.0; 37.9; 2.0; 2.1; 7.5; 1.2;236; 0.6; 49.9
+6; Knedlík chlupatı, modelová receptura; Dumplings from raw potatoes, modelová receptura; ; 1.00; 6.25; 0.956;476;113; 1.6; 0.74; 0.58; 0.18; 0.03; 21.8; 20.1; ; 1.7; 3.6; 1.0;245; 0.6; 72.1
+89; Kokos mletı; Coconut meat, desiccated; ; 0.63; 5.30; 0.950;2830;687; 65.7; ; ; ; ; 23.8; 11.2; ; 12.6; 6.4; 1.8;28; 0.1; 2.3
+59; Kopr; Dill, raw; Anethum graveolens L.; 0.87; 6.25; 0.800;143;34; 0.3; ; ; ; ; 7.1; 3.4; ; 3.7; 2.6; 1.8;27; 0.1; 88.2
+838; Koryféna velká (zlak nachovı, mahi-mahi), maso bez kùe; Common dolphinfish (mahi-mahi), meat without skin, raw; Coryphaena hippurus; 1.00; 6.25; 0.700;413;98; 1.1; 0.39; 0.20; 0.09;0;0;0;0;0; 21.9; 1.2;43; 0.11; 74.5
+839; Koryféna velká (zlak nachovı, mahi-mahi), maso s kùí; Common dolphinfish (mahi-mahi), meat with skin, raw; Coryphaena hippurus; 1.00; 6.25; 0.700;422;100; 1.1; 0.33; 0.18; 0.16;0;0;0;0;0; 22.4; 1.6;48; 0.12; 74.3
+976; Koøen èernı; Black salsify, raw; Scorzonera hispanica L.; 0.78; 6.25; 0.800;309;73; 0.4;0;0;0;0; 16.0; 11.8; 2.1; 4.2; 3.5; 0.9;6; 0.01; 79.2
+254; Koøení nové; Spices, allspice; Pimenta dioica; 1.00; 6.25; 0.000;1430;341; 7.0; ; ; ; ; 74.8; 53.2; ; 21.6; 5.6; 3.9;77; 0.2; 8.7
+575; Koøení, bazalka, sušená; Spices, basil, dried; Ocimum; 1.00; 6.25; 0.956;988;238; 2.9; 1.09; 0.35; 1.13;0; 54.7; 13.7; 1.6; 41.0; 18.8; 14.4;64; 0.16; 9.2
+638; Koøení, fenykl; Spices, fennel seed; Foeniculum vulgare; 1.00; 6.25; 0.956;1289;314; 16.1; 0.80; 13.06; 1.51;0; 51.3;0;0; 51.3; 16.7; 7.8;143; 0.36; 8.7
+253; Koøení, høebíèek; Spices, cloves, dried; Syzygium aromaticum; 1.00; 6.25; 0.000;1510;363; 17.2; ; ; ; ; 63.6; 29.0; ; 34.6; 5.8; 6.0;240; 0.6; 7.4
+633; Koøení, kardamom; Spices, cardamom; Elettaria cardamomum; 1.00; 6.25; 0.956;1138;273; 2.0; 0.26; 0.52; 0.15;0; 74.5; 35.9;0; 38.6; 8.6; 6.2;2;0; 8.7
+259; Koøení, kmín; Spices, caraway, seed; Carum carvi; 1.00; 6.25; 0.000;1360;328; 13.7; ; ; ; ; 57.5; 19.5; ; 38.0; 12.6; 5.7;17;0; 10.5
+579; Koøení, kmín øímskı; Spices, cumin seed; Cuminum cyminum; 1.00; 6.25; 0.956;1564;380; 22.9; 1.06; 14.27; 6.50;0; 43.8; 3.7; 2.6; 40.1; 19.6; 7.1;39; 0.10; 6.9
+580; Koøení, kurkuma; Spices, turmeric, ground; Curcuma longa; 1.00; 6.25; 0.956;1296;308; 1.7; 0.04; 0.94; 0.09;0; 74.2; 53.2; 4.3; 21.0; 9.5; 6.6;27; 0.07; 8.0
+257; Koøení, majoránka, sušená; Spices, marjoram, dried; Origanum majorana; 1.00; 6.25; 0.000;1090;263; 5.6; ; ; ; ; 58.9; 18.6; ; 40.3; 14.3; 11.4;48; 0.1; 9.8
+260; Koøení, muškátovı kvìt; Spices, mace, ground; Myristica fragrans; 1.00; 6.25; 0.000;1700;411; 26.4; ; ; ; ; 54.6; 20.2; ; 34.4; 5.9; 2.3;80; 0.2; 10.8
+261; Koøení, muškátovı oøíšek; Spices, nutmeg, whole; Myristica fragrans; 1.00; 6.25; 0.000;2020;489; 36.3; ; ; ; ; 43.9; 23.1; ; 20.8; 7.1; 2.8;16;0; 9.9
+262; Koøení, paprika, sladká, mletá; Spices, paprika, dried; Capsicum; 1.00; 6.25; 0.956;1344;325; 13.8; 1.98; 1.87; 9.33;0; 56.9; 13.7; 11.4; 43.2; 15.0; 6.4;28; 0.07; 7.9
+255; Koøení, pepø, èernı; Spices, pepper, black; Piper nigrum; 1.00; 6.25; 0.956;1400;335; 8.6; ; ; ; ; 62.7; 42.5; ; 20.2; 11.8; 5.0;142; 0.4; 11.9
+258; Koøení, tymián, sušenı; Spices, thyme, dried; Thymus vulgaris; 1.00; 6.25; 0.000;1180;285; 7.4; ; ; ; ; 64.0; 27.0; ; 37.0; 9.1; 11.7;55; 0.1; 7.8
+263; Koøení, zázvor, mletı; Spices, ginger, ground; Zingiber officinale; 1.00; 6.25; 0.800;1400;333; 4.7; ; ; ; ; 71.9; 59.4; ; 12.5; 7.1; 5.0;32; 0.1; 11.3
+806; Krevety; Shrimps; Palaemon spp.; 0.67; 6.25; 0.700;356;84; 0.5; 0.11; 0.06; 0.13;0; 1.7; 1.7;0;0; 18.2; 2.1;94; 0.23; 77.5
+177; Kroupy jeèné; Barley; Hordeum; 1.00; 5.83; 0.720;1480;350; 2.8; 0.47; 0.33; 1.19; ; 75.8; 68.4; ; 7.4; 9.2; 1.1;2;0; 11.1
+186; Krupice kukuøièná, T1200; Corn/maize semolina T1200; Zea mays L.; 1.00; 6.25; 0.860;1470;347; 2.9; ; ; ; ; 73.9; 68.3; ; 5.6; 9.2; 1.1;23; 0.1; 12.9
+187; Krupice kukuøièná, T600; Corn/maize semolina T600; Zea mays L.; 1.00; 6.25; 0.860;1490;351; 1.1; ; ; ; ; 78.9; 74.9; ; 4.0; 8.4; 0.6;10; 0.1; 11.0
+659; Krupice pohanková; Buckwheat groats; Fagopyrum esculentum; 1.00; 6.25; 0.956;1474;348; 1.9; 0.36; 0.75; 0.67;0; 76.8; 73.4; 0.6; 3.3; 7.6; 0.9;0;0; 12.8
+149; Krupice, pšenièná, hrubá, T 480, obsah popele max. 0,5 % v suš.; Wheat, grits, T 480, ash content max. 0.5% DM; ; 1.00; 6.25; 0.670;1460;343; 1.2; 0.18; 0.09; 0.52;0; 74.0; 70.5; 0.5; 3.5; 10.8; 0.4;1;0; 13.7
+60; Køen; Horseradish, raw; Armoracia rusticana P. Gaertn., B. Mey. et Scherb.; 0.60; 6.25; 0.800;339;81; 0.5; ; ; ; ; 18.8; 11.5; ; 7.3; 3.9; 1.8;17;0; 75.0
+984; Køen, sušenı, mletı; Horseradish, dried, milled; Armoracia; 1.00; 6.25; 0.800;1386;328; 0.9; 0.12; 0.11; 0.47;0; 73.4; 55.9; 21.2; 17.5; 15.4; 3.3;22; 0.05; 7.0
+849; Køepelka celá, bez kùe; Japanese quail, meat from the whole animal without skin, raw; Coturnix japonica; 0.50; 6.25; 0.945;467;111; 3.2; 0.77; 1.03; 0.85;0;0;0;0;0; 20.5; 1.3;73; 0.18; 74.0
+850; Køepelka celá, s kùí; Japanese quail, meat from the whole animal with skin, raw; Coturnix japonica; 0.54; 6.25; 0.945;722;173; 10.5; 3.25; 4.18; 2.34;0;0;0;0;0; 19.6; 1.2;60; 0.15; 68.1
+851; Køepelka stehna bez kùe; Japanese quail, thigh without skin, raw; Coturnix japonica; 0.74; 6.25; 0.945;505;120; 4.7; 1.24; 1.89; 1.28;0;0;0;0;0; 19.5; 1.2;71; 0.18; 73.6
+852; Køepelka, prsa bez kùe; Japanese quail, breast without, raw; Coturnix japonica; 1.00; 6.25; 0.945;462;109; 2.2; 0.58; 0.75; 0.64;0;0;0;0;0; 22.4; 1.4;52; 0.13; 74.0
+853; Køepelka, prsa s kùí; Japanese quail, breast with, raw; Coturnix japonica; 1.00; 6.25; 0.945;578;138; 6.2; 1.70; 2.39; 1.73;0;0;0;0;0; 20.5; 1.4;56; 0.14; 71.2
+854; Køepelka, stehna s kùí; Japanese quail, thigh with skin, raw; Coturnix japonica; 0.74; 6.25; 0.945;630;151; 8.3; 2.33; 3.35; 1.85;0;0;0;0;0; 19.0; 1.1;74; 0.19; 71.0
+170; Køibice (ito trsnaté); Semi-perennial rye; Secale cereale var. multicaule; 1.00; 5.83; 0.720;1410;333; 2.4; 0.27; 0.37; 1.09; ; 69.5; 54.3; ; 15.2; 16.0; 2.0;2;0; 10.1
+180; Kukuøice cukrová, sterilovaná; Sweetcorn, kernels, canned; Zea mays L.; 1.00; 6.25; 0.920;428;101; 1.1; ; ; ; ; 21.0; 18.5; ; 2.5; 3.1; 1.0;310; 0.8; 73.8
+179; Kukuøice cukrová, zmrazená; Sweetcorn, kernels, frozen; Zea mays L.; 1.00; 6.25; 0.920;474;112; 1.4; ; ; ; ; 22.7; 20.5; ; 2.2; 3.3; 0.6;3;0; 72.0
+660; Kukuøice mladá celá; Baby corn, raw; Zea mays L.; 1.00; 6.25; 0.800;116;28; 0.2;0;0;0;0; 5.8; 2.7;0; 3.1; 2.1; 0.5;0;0; 91.3
+956; Kukuøice, cukrová, lyofilizovaná; Corn, lyophilized; Zea L.; 1.00; 6.25; 0.800;1591;378; 6.6; 1.27; 2.12; 1.88;0; 74.1; 60.7; 23.0; 13.4; 12.2; 2.0;11; 0.03; 5.1
+977; Kumquat; Kumquats, raw; Fortunelle spp.; 1.00; 6.25; 0.800;318;76; 0.5;0;0;0;0; 18.9; 13.2; 12.6; 5.7; 1.6; 0.7;2; 0.01; 78.3
+1002; Kùra pomeranèová, drcená, jemná; Orange peel, dried; Pomorancium; 1.00; 6.25; 0.800;1137;273; 1.3; 0.32; 0.20; 0.45;0; 82.6; 37.9; 26.2; 44.7; 5.1; 3.0;10; 0.02; 8.0
+488; Kuskus; Couscous; ; 1.00; 6.25; 0.670;1490;356; 1.2; 0.20; 0.20; 0.47;0; 72.9; 68.7; 3.3; 4.2; 14.2; 0.8;4; 0.01; 10.9
+998; Kuskus, celozrnnı; Couscous, whole grain; Couscous; 1.00; 6.25; 0.670;1448;342; 2.0; 0.25; 0.29; 0.78;0; 72.6; 64.7; 4.5; 7.9; 12.4; 1.3;4; 0.01; 11.7
+527; Kùe kuøecí, prùmìr z celého trupu; Chicken, skin, average from the whole carcass, raw; ; 1.00; 6.25; 0.945;1855;450; 46.7; 13.57; 21.37; 8.54;0;0;0;0;0; 7.5; 0.4;43; 0.11; 44.0
+551; Kùe vepøové, zbavené tuku; Pork, skin, fat removed, raw; ; 1.00; 6.25; 0.910;1636;395; 33.6; 14.04; 13.61; 2.57;0;0;0;0;0; 23.1; 0.5;88; 0.22; 39.5
+61; Kvìták; Cauliflower, raw; Brassica oleracea L. convar. botrytis L. Markgr.; 0.64; 6.25; 0.800;110;26; 0.2; ; ; ; ; 4.9; 2.5; ; 2.4; 2.4; 0.9;26; 0.1; 91.6
+11; Langoš, trh; Langos, yeast pancake, deep fried, retail; ; 1.00; 6.25; 0.953;1390;332; 14.5; 1.21; 8.70; 3.51; ; 42.9; ; ; ; 7.4; 0.8;200; 0.5; 34.4
+678; Lecitin sluneènicovı; Sunflower lecithin; ; 1.00; 6.25; 0.956;2562;618; 52.7; 20.20; 12.30; 16.02;0; 28.6; 28.6;0;0; 7.5; 9.6;4; 0.01; 1.7
+248; Leèo zeleninové, sterilované; Lecho, vegetable, sterilized; ; 1.00; 6.25; 0.000;138;33; 0.6; ; ; ; ; 6.2; 5.3; ; 0.9; 1.1; 0.9;222; 0.6; 91.2
+301; Ledviny hovìzí; Kidney, ox, raw; ; 0.87; 6.25; 0.770;398;95; 3.6; 1.70; 1.10; 0.30; ;0;0; ;0; 15.6; 1.1;219; ; 79.2
+205; Ledviny vepøové; Kidney, pig, raw; ; 0.95; 6.25; 0.790;439;105; 4.2; ; ; ; ; 0.4; 0.4; ;0; 16.3; 1.2;184; 0.5; 77.9
+386; Lihovina, gin; Spirit, Gin; ; 1.00; 6.25; 0.000;1100;262;0;0;0;0; ;0;0;0;0;0;0;2;0; 62.1
+377; Lihovina, Tuzemák, 40 %; Spirit, Tuzemak, 40%; ; 1.00; 6.25; 0.000;919;220;0;0;0;0; ;0;0; ;0;0; ;0;0; 68.3
+383; Lihovina, vodka; Spirit, Vodka; ; 1.00; 6.25; 0.000;969;231;0;0;0;0; ;0;0;0;0;0;0;1;0; 66.6
+466; Lilek; Eggplant, raw; Solanum melongena; 0.84; 6.25; 0.800;77;18;0;0;0;0;0; 5.0; 2.8; 2.3; 2.2; 0.8; 0.5;3; 0.01; 93.8
+467; Limetka; Lime, raw; Citrus aurantifolia; 0.77; 6.25; 0.800;148;35;0;0;0;0;0; 9.9; 6.6; 1.6; 3.3; 0.6; 0.4;1;0; 89.2
+807; Lín obecnı, maso bez kùe; Common tench, meat without skin, raw; Tinca tinca; 0.39; 6.25; 0.900;463;110; 4.7; 1.08; 2.23; 0.63;0;0;0;0;0; 17.0; 1.1;38; 0.09; 77.5
+808; Lín obecnı, maso s kùí; Common tench, meat with skin, raw; Tinca tinca; 0.50; 6.25; 0.700;399;95; 2.7; 0.52; 0.99; 0.30;0;0;0;0;0; 17.6; 1.2;42; 0.10; 78.9
+809; Lín, uzenı, maso bez kùe; Common tench, meat without skin, smoked; Tinca tinca; 0.57; 6.25; 0.900;572;136; 6.4; 1.46; 2.87; 0.78;0;0;0;0;0; 19.7; 3.2;848; 2.12; 70.1
+596; Losos atlantickı, filet, bez kùe; Salmon, fillet, without skin; Salmo salar; 1.00; 6.25; 0.700;664;158; 7.8; 0.80; 2.92; 1.27;0;0;0;0;0; 22.1; 1.3;53; 0.13; 68.5
+389; Losos atlantickı, filet, s kùí; Salmon, fillet, meat with skin, raw; Salmo salar L.; 1.00; 6.25; 0.700;933;225; 16.9; 0.91; 3.00; 1.25;0;0;0;0;0; 18.1; 1.2;69; 0.17; 62.6
+810; Losos gorbuša, maso s kùí; Pink salmon, meat with skin, raw; Oncorhynchus gorbuscha; 1.00; 6.25; 0.700;363;86; 1.3; 0.22; 0.22; 0.19;0;0;0;0;0; 18.5; 1.3;144; 0.36; 77.8
+307; Luncheon meat; Luncheon meat; ; 1.00; 6.25; 0.000;1280;304; 26.6; 8.70; 11.0; 3.0; ; 4.1; 4.1; ;0; 13.0; 3.9;1304; ; 52.4
+308; Luncheon meat, drùbeí; Luncheon meat, poultry; ; 1.00; 6.25; 0.000;674;161; 9.8; ; ; ; ; 4.0; 4.0; ;0; 14.3; 2.2;296; ; 69.7
+990; Lupínky, bramborové,  smaené; Chips, potato, fried; ; 1.00; 6.25; 0.956;1878;452; 33.2; 2.40; 14.75; 9.24; 0.04; 35.4; 32.0; 4.4; 3.4; 4.6; 2.2;311; 0.78; 24.6
+81; Majonéza; Mayonnaise; ; 1.00; 6.25; 0.950;3000;730; 80.0; ; ; ; ; 1.4; 1.4; ;0; 1.1; 1.1;450; 1.1; 16.4
+986; Majonéza, modelová receptura; Mayonnaise, modelová receptura; ; 1.00; 6.25; 0.956;3349;814; 89.4; 9.47; 23.71; 47.56;0; 0.3; 0.3; 0.1;0; 2.1; 0.3;176; 0.44; 7.9
+83; Mák  ; Poppy seeds; Papaver somniferum L.; 1.00; 6.25; 0.956;2043;495; 38.9; 4.58; 7.57; 25.07;0; 25.7; 3.0; 1.8; 22.7; 21.8; 7.2;4; 0.01; 6.4
+333; Maliny; Raspberries, raw; ; 1.00; 6.25; 0.800;209;50; 0.6; 0.02; 0.07; 0.38; ; 13.2; 6.8; 5.3; 6.4; 1.2; 0.5;6;0; 84.5
+957; Maliny, lyofilizované; Raspberry, lyophilized; Rubus idaeus Linné; 1.00; 6.25; 0.800;1364;326; 4.3; 0.16; 0.46; 2.79;0; 77.7; 50.2; 33.1; 27.5; 7.7; 2.9;1;0; 7.4
+560; Maltodextrin; Maltodextrin; ; 1.00; 6.25; 0.000;1603;377;0;0;0;0;0; 94.8; 93.8; 2.5; 1.0;0; 0.1;93; 0.23; 5.1
+485; Mandarinky; Tangerines, (mandarin oranges), raw; Citrus reticulata; 0.87; 6.25; 0.800;176;42; 0.2;0;0;0;0; 10.0; 8.9; 8.2; 1.1; 0.6; 0.4;3; 0.01; 88.8
+87; Mandle; Almonds, raw; Amygdalus communis L.; 1.00; 6.25; 0.956;2450;593; 47.9; 4.45; 28.96; 10.01;0; 20.2; 4.3; 4.3; 15.9; 28.1; 3.0;1;0; 4.9
+728; Mandle loupané; Almonds, peeled; ; 1.00; 6.25; 0.956;2544;615; 53.5; 4.08; 33.54; 13.53;0; 13.9; 4.0; 3.8; 9.9; 24.6; 3.1;2; 0.01; 4.9
+365; Mango; Mango, raw; Mangifera indica L.; 0.69; 6.25; 0.800;292;69; 0.5; 0.10; 0.19; 0.10; ; 16.4; 14.7; 12.5; 1.7; 0.6; 0.5;5;0; 82.0
+958; Mango, lyofilizované; Mango, lyophilized; Mangifera; 1.00; 6.25; 0.800;1540;364; 0.8;0;0;0;0; 91.6; 82.9; 74.4; 8.7; 1.8; 2.2;8; 0.02; 3.6
+888; Mango, sušené; Mango, dried; Mangifera indica; 1.00; 6.25; 0.800;1469;347; 1.3;0;0;0;0; 85.9; 76.5; 65.2; 9.4; 2.6; 1.5;0;0; 8.7
+635; Mangold; Mangold (chard), raw; Beta vulgaris; 1.00; 6.25; 0.800;104;25; 0.3;0;0;0;0; 5.0; 1.4; 1.4; 3.6; 2.3; 1.5;222; 0.55; 90.9
+636; Maniok jedlı, kasava; Manioc (cassava), raw; Manihot esculenta; 0.84; 6.25; 0.800;608;144; 0.2;0;0;0;0; 36.4; 32.7; 5.3; 3.7; 0.9; 0.6;20; 0.05; 61.9
+637; Marakuja (muèenka jedlá); Maracuja (passionfruit), raw; Passiflora edulis; 0.49; 6.25; 0.800;389;94; 3.4; 0.40; 0.54; 1.75;0; 18.4; 8.2; 8.2; 10.2; 2.5; 1.1;0;0; 75.8
+519; Margarín s nízkım obsahem tuku (39 %) s pøídavkem másla, Perla máslová pøíchu se špetkou soli, UNILEVER; Margarine, low-fat (39%) with added butter, Perla máslová pøíchu se špetkou soli, UNILEVER; ; 1.00; 6.25; 0.956;1473;358; 39.2; 10.23; 20.41; 8.47; 0.11; 1.3; 1.2; 0.1;0; 0.1; ;484; 1.2; 58.3
+518; Margarín s nízkım obsahem tuku (39 %) s pøídavkem másla, Perla máslová pøíchu, UNILEVER; Margarine, low-fat (39%) with added butter, Perla máslová pøíchu, UNILEVER; ; 1.00; 6.25; 0.956;1473;358; 39.2; 10.23; 20.41; 8.47; 0.11; 1.3; 1.2; 0.1;0; 0.1; ;130; 0.33; 58.3
+517; Margarín s nízkım obsahem tuku (39 %), Perla plus Vitamíny, UNILEVER; Margarine, low-fat (39%), Perla plus Vitamíny, UNILEVER; ; 1.00; 6.25; 0.956;1450;352; 39.2; 10.31; 20.28; 8.29; 0.29;0;0;0;0;0; ;206; 0.53; 60.3
+512; Margarín s nízkım obsahem tuku (39 %), Rama jemnì slaná, UNILEVER; Margarine, low-fat (39%), Rama jemnì slaná, UNILEVER; ; 1.00; 6.25; 0.956;1480;356; 39.2; 10.26; 13.90; 14.79; 0.25; 1.4; 1.4; 0.2;0; 0.2; ;445; 1.2; 57.8
+510; Margarín s nízkım obsahem tuku (39 %), Rama Linie, UNILEVER; Margarine, low-fat (39%), Rama Linie, UNILEVER; ; 1.00; 6.25; 0.956;1480;360; 39.2; 10.93; 13.97; 14.03; 0.27; 1.4; 1.4; 0.2;0; 0.2; ;131; 0.33; 58.6
+507; Margarín s nízkım obsahem tuku (39 %), Rama MultiVita, UNILEVER; Margarine, low-fat (39%), Rama MultiVita, UNILEVER; ; 1.00; 6.25; 0.956;1480;360; 39.21; 10.56; 13.77; 14.68; 0.19; 1.4; 1.4; 0.2;0; 0.2; ;131; 0.33; 58.6
+511; Margarín s nízkım obsahem tuku (39 %), Rama Olivio, UNILEVER; Margarine, low-fat (39%), Rama Olivio, UNILEVER; ; 1.00; 6.25; 0.956;1480;357; 39.2; 10.6; 15.38; 13.02; 0.18; 1.4; 1.4; 0.2;0; 0.2; ;131; 0.33; 58.6
+509; Margarín se sníenım obsahem tuku (60 %), Rama Lahodná máslová pøíchu, UNILEVER; Margarine, reduced-fat (60%), Rama Lahodná máslová pøíchu, UNILEVER; ; 1.00; 6.25; 0.956;2230;542; 60.0; 17.32; 28.07; 14.36; 0.20; 0.2; 0.2; 0.2;0; 0.2; ;87; 0.23; 39.2
+508; Margarín se sníenım obsahem tuku (60%), Rama Classic, UNILEVER; Margarine, reduced-fat (60%), Rama Classic, UNILEVER; ; 1.00; 6.25; 0.956;2230;542; 60.0; 17.61; 27.81; 14.34; 0.23; 0.2; 0.2; 0.2;0; 0.2; ;126; 0.33; 39.1
+128; Máslo; Butter; ; 1.00; 6.25; 0.945;3095;753; 83.0; 50.67; 19.57; 1.59; 2.48; 0.8; 0.8; 0.8;0; 0.6; 0.1;7; 0.02; 15.3
+464; Máslo arašídové; Peanut butter; ; 1.00; 6.25; 0.960;2570;621; 50.7; 10.46; 19.87; 18.34;0; 17.7; 9.3; 6.1; 8.4; 27.7; 2.5;160; 0.40; 1.41
+344; Máslo kakaové; Cocoa butter; ; 1.00; 6.25; 0.956;3693;898; 99.8; 60.57; 32.06; 2.56;0;0;0;0;0;0;0;0;0; 0.2
+438; Máslo syrovátkové; Whey butter; ; 1.00; 6.38; 0.945;2930;712; 78.9; 51.60; 19.47; 2.17; 1.42; 0.5; 0.5; 0.4;0;0; 0.1;4; 0.01; 20.6
+844; Maso baantí, prsa; Pheasant meat, breast, raw; Phasianus colchicus; 1.00; 6.25; 0.945;434;102; 0.6; 0.25; 0.26; 0.03;0;0;0;0;0; 24.2; 1.2;39; 0.10; 73.6
+842; Maso baantí, stehno; Pheasant meat, thigh with bone and skin, raw; Phasianus colchicus; 0.82; 6.25; 0.945;607;145; 7.5; 2.44; 3.55; 1.09;0;0;0;0;0; 19.4; 1.0;60; 0.15; 71.4
+843; Maso baantí, ze staeného kusu; Pheasant meat, from the whole animal, without skin, raw; Phasianus colchicus; 0.67; 6.25; 0.945;869;209; 14.1; 4.23; 6.53; 2.38;0;0;0;0;0; 20.4; 1.0;51; 0.13; 63.6
+745; Maso danèí, høbet; Fallow deer, back, raw; Dama dama; 1.00; 6.25; 0.916;478;114; 3.5; 1.65; 1.13; 0.14;0;0;0;0;0; 20.5; 1.0;54; 0.13; 72.9
+742; Maso danèí, kıta; Fallow deer, rump, raw; Dama dama; 1.00; 6.25; 0.916;419;99; 1.3; 0.61; 0.29; 0.07;0;0;0;0;0; 21.8; 1.2;44; 0.11; 75.0
+747; Maso danèí, na guláš; Fallow deer, for goulash, raw; Dama dama; 1.00; 6.25; 0.916;412;98; 1.2; 0.62; 0.23; 0.05;0;0;0;0;0; 21.7; 1.1;63; 0.16; 75.5
+748; Maso danèí, panenka; Fallow deer, loin, raw; Dama dama; 1.00; 6.25; 0.916;431;102; 1.5; 0.80; 0.30; 0.09;0;0;0;0;0; 22.1; 1.2;45; 0.11; 74.8
+743; Maso danèí, plec; Fallow deer, shoulder, raw; Dama dama; 1.00; 6.25; 0.916;432;102; 2.3; 1.23; 0.43; 0.08;0;0;0;0;0; 20.4; 1.1;57; 0.14; 75.4
+411; Maso hovìzí, klika, libová, dušená; Beef, shank, separable lean only, stewed; ; 1.00; 6.25; 0.000;651;154; 2.7; 1.07; 1.23; 0.12; 0.01;0;0;0;0; 32.4; 1.5;121; 0.3; 62.9
+407; Maso hovìzí, klika, libová, syrová; Beef, shank, separable lean only, raw; ; 1.00; 6.25; 0.000;392;93; 1.3; 0.56; 0.54; 0.06; 0.01;0;0;0;0; 20.2; 1.1;77; 0.2; 77.0
+408; Maso hovìzí, klika, syrová (separovatelnı tuk 1 %); Beef, shank, separable lean and 1% separable fat, raw; ; 1.00; 6.25; 0.000;421;100; 2.2; 1.04; 0.85; 0.08; 0.01;0;0;0;0; 20.0; 1.1;76; 0.2; 76.3
+409; Maso hovìzí, klika, syrová (separovatelnı tuk 3 %); Beef, shank, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;481;114; 4.0; 1.99; 1.46; 0.13; 0.02;0;0;0;0; 19.6; 1.1;75; 0.2; 74.9
+410; Maso hovìzí, klika, syrová (separovatelnı tuk 5 %); Beef, shank, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;540;129; 5.7; 2.94; 2.08; 0.16; 0.02;0;0;0;0; 19.3; 1.1;73; 0.2; 73.5
+212; Maso hovìzí, kıta; Beef, round, raw; ; 0.89; 6.25; 0.940;427;101; 1.3; 0.58; 0.54; 0.05; 0.01;0;0;0;0; 22.3; 1.1;47; 0.1; 75.3
+406; Maso hovìzí, kıta, libová, peèená; Beef, round, separable lean only, roasted; ; 1.00; 6.25; 0.000;733;173; 3.0; 1.25; 1.31; 0.12; 0.01;0;0;0;0; 36.6; 1.1;51; 0.1; 59.1
+403; Maso hovìzí, kıta, syrová (separovatelnı tuk 1 %); Beef, round, separable lean and 1% separable fat, raw; ; 1.00; 6.25; 0.000;457;108; 2.2; 1.06; 0.84; 0.07; 0.01;0;0;0;0; 22.1; 1.1;47; 0.1; 74.6
+404; Maso hovìzí, kıta, syrová (separovatelnı tuk 2 %); Beef, round, separable lean and 2% separable fat, raw; ; 1.00; 6.25; 0.000;486;115; 3.1; 1.53; 1.15; 0.09; 0.02;0;0;0;0; 21.9; 1.1;46; 0.1; 74.0
+405; Maso hovìzí, kıta, syrová (separovatelnı tuk 3 %); Beef, round, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;515;122; 4.0; 2.01; 1.46; 0.11; 0.02;0;0;0;0; 21.7; 1.1;46; 0.1; 73.3
+151; Maso hovìzí, kıta, vaøená; Beef, round, boiled; ; 1.00; 6.25; 0.920;818;195; 8.1; 3.28; 3.89; 0.25;0; 0.9; 0.9; ;0; 29.6; 1.3;285; 0.7; 60.1
+415; Maso hovìzí, plec bez kosti, libová, peèená; Beef, chuck, boneless, separable lean only, roasted; ; 1.00; 6.25; 0.000;732;173; 3.7; 1.63; 1.58; 0.13; 0.01;0;0;0;0; 35.0; 1.2;64; 0.2; 59.4
+209; Maso hovìzí, plec bez kosti, libová, syrová; Beef, chuck, boneless, separable lean only, raw; ; 0.85; 6.25; 0.940;444;105; 2.2; 0.95; 0.93; 0.09; 0.01;0;0;0;0; 21.3; 1.1;70; 0.2; 75.5
+414; Maso hovìzí, plec bez kosti, syrová (separovatelnı tuk 10 %); Beef, chuck, boneless, separable lean and 10% separable fat, raw; ; 1.00; 6.25; 0.000;735;176; 11.0; 5.66; 3.96; 0.30; 0.04;0;0;0;0; 19.3; 1.0;63; 0.2; 68.7
+412; Maso hovìzí, plec bez kosti, syrová (separovatelnı tuk 3 %); Beef, chuck, boneless, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;531;126; 4.8; 2.36; 1.84; 0.15; 0.02;0;0;0;0; 20.7; 1.1;68; 0.2; 73.5
+413; Maso hovìzí, plec bez kosti, syrová (separovatelnı tuk 5 %); Beef, chuck, boneless, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;589;141; 6.6; 3.30; 2.44; 0.19; 0.02;0;0;0;0; 20.3; 1.1;67; 0.2; 72.1
+420; Maso hovìzí, roštìnec bez kosti, libovı, dušenı; Beef, sirloin, boneless, separable lean only, stewed; ; 1.00; 6.25; 0.000;823;195; 5.3; 2.31; 2.35; 0.12; 0.01;0;0;0;0; 36.9; 1.4;66; 0.2; 55.9
+416; Maso hovìzí, roštìnec bez kosti, libovı, syrovı; Beef, sirloin, boneless, separable lean only, raw; ; 1.00; 6.25; 0.000;518;123; 4.2; 1.86; 1.81; 0.10; 0.01;0;0;0;0; 21.3; 1.0;55; 0.1; 73.3
+417; Maso hovìzí, roštìnec bez kosti, syrovı (separovatelnı tuk 1 %); Beef, sirloin, boneless, separable lean and 1% separable fat, raw; ; 1.00; 6.25; 0.000;546;130; 5.1; 2.32; 2.10; 0.12; 0.01;0;0;0;0; 21.1; 1.0;54; 0.1; 72.6
+418; Maso hovìzí, roštìnec bez kosti, syrovı (separovatelnı tuk 3 %); Beef, sirloin, boneless, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;603;144; 6.8; 3.25; 2.69; 0.16; 0.02;0;0;0;0; 20.7; 1.0;53; 0.1; 71.3
+419; Maso hovìzí, roštìnec bez kosti, syrovı (separovatelnı tuk 5 %); Beef, sirloin, boneless, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;660;158; 8.5; 4.17; 3.28; 0.20; 0.02;0;0;0;0; 20.3; 1.0;52; 0.1; 70.0
+211; Maso hovìzí, svíèková; Beef, sirloin, raw; ; 1.00; 6.25; 0.940;526;125; 4.9; 2.22; 2.08; 0.12; 0.01;0;0;0;0; 20.3; 1.1;55; 0.1; 73.7
+400; Maso hovìzí, svíèková,  syrová (separovatelnı tuk 1 %); Beef, tenderloin, separable lean and 1% separable fat, raw; ; 1.00; 6.25; 0.000;555;132; 5.8; 2.68; 2.37; 0.14; 0.01;0;0;0;0; 20.1; 1.1;54; 0.1; 73.0
+401; Maso hovìzí, svíèková,  syrová (separovatelnı tuk 2 %); Beef, tenderloin, separable lean and 2% separable fat, raw; ; 1.00; 6.25; 0.000;583;139; 6.6; 3.14; 2.66; 0.16; 0.02;0;0;0;0; 19.9; 1.1;54; 0.1; 72.4
+402; Maso hovìzí, svíèková, libová, smaená; Beef, tenderloin, separable lean only, fried; ; 1.00; 6.25; 0.000;699;167; 6.9; 3.16; 2.93; 0.12; 0.02;0;0;0;0; 26.1; 1.3;56; 0.1; 65.1
+422; Maso hovìzí, vırobní, H1; Beef, production meat, H1, raw; ; 1.00; 6.25; 0.000;439;104; 1.8; 0.82; 0.70; 0.06;0;0;0;0;0; 21.9; 1.1;47; 0.12; 75.2
+423; Maso hovìzí, vırobní, H2; Beef, production meat, H2, raw; ; 1.00; 6.25; 0.000;595;142; 6.8; 3.16; 2.67; 0.25;0;0;0;0;0; 20.0; 1.0;50; 0.13; 71.4
+554; Maso hovìzí, vırobní, H3; Beef, production meat, H3, raw; ; 1.00; 6.25; 0.916;710;170; 9.7; 4.03; 4.24; 0.15;0;0;0;0;0; 20.6; 0.9;56; 0.14; 68.6
+555; Maso hovìzí, vırobní, H4; Beef, production meat, H4, raw; ; 1.00; 6.25; 0.916;840;203; 14.1; 5.59; 6.20; 0.35;0;0;0;0;0; 18.8; 0.9;58; 0.15; 65.9
+556; Maso hovìzí, vırobní, H5; Beef, production meat, H5, raw; ; 1.00; 6.25; 0.916;1231;297; 25.8; 10.47; 1.49; 0.57;0;0;0;0;0; 16.3; 0.8;65; 0.16; 57.7
+701; Maso husí, bez kùe; Goose, meat without skin, raw; Anser anser domesticus; 0.46; 6.25; 0.945;540;129; 6.2; 1.74; 3.18; 0.88;0;0;0;0;0; 18.4; 1.0;81; 0.20; 74.6
+237; Maso husí, s kùí; Goose, meat and skin, raw; Anser anser domesticus; 0.56; 6.25; 0.945;1169;282; 25.2; 7.22; 12.98; 3.48;0;0;0;0;0; 13.9; 0.7;69; 0.17; 59.5
+703; Maso husí, stehno s kùí; Goose, meat, thigh with skin, raw; Anser anser domesticus; 0.80; 6.25; 0.945;1464;354; 33.5; 9.88; 18.02; 3.43;0;0;0;0;0; 13.2; 0.7;45; 0.11; 51.1
+702; Maso husí, stehno, bez kùe; Goose, meat, thigh with skin, raw; Anser anser domesticus; 0.77; 6.25; 0.945;1131;273; 23.3; 6.83; 12.93; 2.14;0;0;0;0;0; 15.8; 0.8;55; 0.14; 59.2
+704; Maso jehnìèí, hrudí; Lamb, brisket, raw; ; 0.63; 6.25; 0.916;706;169; 9.8; 4.57; 2.47; 0.53;0;0;0;0;0; 20.2; 1.0;111; 0.28; 70.3
+705; Maso jehnìèí, høbet; Lamb, back, raw; ; 0.65; 6.25; 0.916;456;108; 3.1; 1.49; 0.95; 0.11;0;0;0;0;0; 20.1; 1.1;77; 0.19; 74.9
+706; Maso jehnìèí, krk; Lamb, neck, raw; ; 0.63; 6.25; 0.916;477;113; 4.2; 2.05; 1.32; 0.15;0;0;0;0;0; 18.9; 1.0;91; 0.23; 75.2
+224; Maso jehnìèí, kıta; Lamb meat, rump, raw; ; 0.83; 6.25; 0.916;545;130; 5.4; 2.44; 1.89; 0.18;0;0;0;0;0; 20.3; 1.1;74; 0.18; 73.6
+707; Maso jehnìèí, plec; Lamb, shoulder, raw; ; 1.00; 6.25; 0.916;474;113; 3.7; 1.37; 1.78; 0.12;0;0;0;0;0; 19.8; 1.0;81; 0.20; 74.4
+784; Maso jelení (jelen lesní),  høbet; Red deer, back, raw; Cervus elaphus; 1.00; 6.25; 0.916;493;114; 3.5; 2.02; 0.91; 0.08;0;0;0;0;0; 21.4; 1.1;59; 0.15; 72.8
+782; Maso jelení (jelen lesní), kıta; Red deer, rump, raw; Cervus elaphus; 1.00; 6.25; 0.916;464;110; 2.9; 1.63; 0.79; 0.10;0;0;0;0;0; 21.0; 1.1;61; 0.15; 72.8
+785; Maso jelení (jelen lesní), na guláš; Red deer, for goulash, raw; Cervus elaphus; 1.00; 6.25; 0.916;480;114; 3.1; 1.62; 0.97; 0.10;0;0;0;0;0; 21.5; 1.1;63; 0.16; 73.7
+783; Maso jelení (jelen lesní), plec; Red deer, shoulder, raw; Cervus elaphus; 1.00; 6.25; 0.916;422;100; 2.3; 1.25; 0.62; 0.06;0;0;0;0;0; 19.8; 1.2;63; 0.16; 75.4
+786; Maso jelení (jelen lesní), svíèková; Red deer, loin, raw; Cervus elaphus; 1.00; 6.25; 0.916;479;113; 2.0; 1.17; 0.43; 0.07;0;0;0;0;0; 23.8; 1.2;62; 0.16; 71.7
+845; Maso jelení (jelen sika), høbet; Sika deer, back, raw; Cervus nippon; 1.00; 6.25; 0.916;476;113; 2.8; 1.21; 1.16; 0.06;0;0;0;0;0; 21.9; 1.6;55; 0.14; 74.0
+846; Maso jelení (jelen sika), na guláš; Sika deer, for goulash, raw; Cervus nippon; 1.00; 6.25; 0.916;428;101; 1.7; 0.75; 0.70; 0.05;0;0;0;0;0; 21.5; 1.3;68; 0.17; 75.8
+847; Maso jelení (jelen sika), plec; Sika deer, shoulder raw; Cervus nippon; 1.00; 6.25; 0.916;432;102; 2.2; 1.02; 0.81; 0.16;0;0;0;0;0; 20.6; 1.2;67; 0.17; 76.1
+848; Maso jelení (jelen sika), svíèková; Sika deer, sirloin, raw; Cervus nippon; 1.00; 6.25; 0.916;457;108; 2.0; 0.94; 0.75; 0.06;0;0;0;0;0; 22.5; 1.6;51; 0.13; 73.9
+533; Maso kachní, ètvrtky zadní, s kostí, s kùí; Duck, hind (leg) quarter, with skin, bone-in, raw; ; 0.84; 6.25; 0.945;1226;296; 26.8; 7.45; 14.74; 3.11;0;0;0;0;0; 13.8; 0.7;58; 0.15; 55.7
+587; Maso kachní, høbety, s kostí, s kùí; Duck, back, with skin, bone-in, raw; ; 0.56; 6.25; 0.945;1196;289; 26.3; 6.92; 13.52; 4.33;0;0;0;0;0; 13.1; 0.7;84; 0.21; 59.2
+433; Maso kachní, kachna mladá, celá, s kùí, bez drobù; Duck, young, whole, meat and skin, without giblets, raw; ; 0.67; 6.25; 0.945;1220;291; 26.0; 7.65; 13.42; 3.31;0;0;0;0;0; 15.1; 0.7;73; 0.18; 58.3
+538; Maso kachní, krky; Duck, neck, raw; ; 0.50; 6.25; 0.945;538;128; 5.9; 1.83; 3.17; 0.59;0;0;0;0;0; 18.8; 1.0;91; 0.23; 74.3
+566; Maso kachní, køídla, s kùí; Duck, whole wings, meat and skin, raw; ; 0.58; 6.25; 0.945;656;157; 9.4; 2.49; 5.07; 1.30;0;0;0;0;0; 18.1; 0.8;91; 0.23; 71.4
+429; Maso kachní, prsa bez kùe a bez kosti; Duck, breast, skinless, boneless, raw; ; 1.00; 6.25; 0.945;415;99; 2.0; 0.57; 0.95; 0.38;0;0;0;0;0; 20.1; 1.1;89; 0.22; 76.8
+532; Maso kachní, prsa s kostí, s kùí; Chicken, hind back, with skin, bone-in, raw; ; 0.82; 6.25; 0.945;1002;242; 19.6; 5.65; 10.51; 1.98;0;0;0;0;0; 16.3; 1.0;48; 0.12; 63.8
+589; Maso kachní, stehno, bez kosti, bez kùe – stehenní øízek  ; Duck, leg, fillet, skinless, boneless, raw; ; 1.00; 6.25; 0.945;590;141; 7.3; 2.11; 3.91; 0.81;0;0;0;0;0; 18.8; 1.0;77; 0.19; 73.2
+588; Maso kachní, stehno, s kostí, s kùí; Duck, leg, with skin, bone-in, raw; ; 0.84; 6.25; 0.945;968;233; 19.0; 5.68; 10.12; 1.99;0;0;0;0;0; 15.6; 0.8;71; 0.18; 64.7
+529; Maso kachní, strojnì oddìlené; Duck, meat, mechanically separated, raw; ; 1.00; 6.25; 0.945;945;228; 19.8; 5.54; 10.83; 2.17;0;0;0;0;0; 12.5; 0.8;67; 0.17; 66.2
+717; Maso kanèí, høbet; Wild boar, back, raw; Sus scrofa; 1.00; 6.25; 0.916;751;180; 11.6; 2.77; 4.44; 3.24;0;0;0;0;0; 18.9; 1.0;46; 0.11; 68.0
+715; Maso kanèí, kıta; Wild boar, rump, raw; Sus scrofa; 1.00; 6.25; 0.916;440;104; 1.7; 0.44; 0.59; 0.54;0;0;0;0;0; 22.1; 1.2;44; 0.11; 74.9
+720; Maso kanèí, na guláš; Wild boar, for goulash, raw; Sus scrofa; 1.00; 6.25; 0.916;635;152; 7.5; 1.80; 2.66; 2.35;0;0;0;0;0; 20.5; 1.1;59; 0.15; 70.3
+721; Maso kanèí, panenka; Wild boar, loin, raw; Sus scrofa; 1.00; 6.25; 0.916;505;120; 3.0; 0.73; 1.16; 0.83;0;0;0;0;0; 22.8; 1.2;44; 0.11; 72.6
+716; Maso kanèí, plec; Wild boar meat, boar, raw; Sus scrofa; 1.00; 6.25; 0.916;661;158; 8.9; 2.17; 3.14; 2.74;0;0;0;0;0; 19.5; 1.1;51; 0.13; 70.0
+897; Maso koòské, bok; Horse, meat, belly, raw; Equus caballus; 0.64; 6.25; 0.916;903;217; 16.5; 5.78; 4.23; 4.43;0;0;0;0;0; 17.2; 0.9;96; 0.24; 65.0
+898; Maso koòské, hrudí; Horse, meat, brisket, raw; Equus caballus; 0.73; 6.25; 0.916;680;163; 10.7; 3.70; 2.74; 2.89;0;0;0;0;0; 16.7; 1.0;81; 0.20; 70.0
+899; Maso koòské, klika; Horse, meat, shin, raw; Equus caballus; 1.00; 6.25; 0.916;448;106; 2.0; 0.68; 0.73; 0.31;0;0;0;0;0; 22.0; 1.1;92; 0.23; 74.4
+900; Maso koòské, kıta; Horse, meat, rump, raw; Equus caballus; 1.00; 6.25; 0.916;351;83; 0.8; 0.36; 0.22; 0.08;0;0;0;0;0; 18.9; 1.1;47; 0.12; 76.1
+901; Maso koòské, plec; Horse, meat, board, raw; Equus caballus; 1.00; 6.25; 0.916;361;85; 0.8; 0.30; 0.20; 0.19;0;0;0;0;0; 19.5; 1.1;45; 0.11; 76.9
+902; Maso koòské, roštìnec; Horse, meat, striploin, raw; Equus caballus; 1.00; 6.25; 0.916;370;87; 0.9; 0.34; 0.24; 0.19;0;0;0;0;0; 19.8; 1.2;38; 0.09; 75.5
+903; Maso koòské, svíèková; Horse, meat, sirloin, raw; Equus caballus; 1.00; 6.25; 0.916;404;96; 1.9; 0.77; 0.47; 0.41;0;0;0;0;0; 19.6; 1.2;37; 0.09; 74.9
+592; Maso králièí, filety (vykostìnı høbet bez kosti, bez kùe); Rabbit, back fillet (loin), skinless, boneless, raw; ; 1.00; 6.25; 0.945;430;102; 1.0; 0.42; 0.33; 0.19;0;0;0;0;0; 23.1; 1.2;40; 0.10; 74.4
+299; Maso králièí, králík celı, bez kùe; Rabbit, meat, whole, meat only, raw; ; 0.74; 6.25; 0.945;529;126; 5.1; 0.61; 1.49; 1.44;0;0;0;0;0; 20.0; 1.2;65; 0.16; 73.6
+593; Maso králièí, plec s hrudí (pøední noha s hrudníkem), bez kùe; Rabbit, shoulder and front leg, without skin, bone-in, raw; ; 0.72; 6.25; 0.945;770;185; 12.5; 4.56; 3.25; 3.80;0;0;0;0;0; 18.1; 1.1;67; 0.17; 67.7
+558; Maso králièí, stehna, bez kùe; Rabbit, leg, meat only, raw; ; 1.00; 6.25; 0.945;421;100; 1.6; 0.59; 0.44; 0.41;0;0;0;0;0; 21.3; 1.2;46; 0.12; 75.8
+708; Maso krùtí, horní stehno s kostí a kùí; Turkey, upper thigh with bone and skin, raw; Meleagris gallopavo f. domestica; 0.90; 6.25; 0.945;924;222; 16.2; 6.74; 7.09; 0.84;0;0;0;0;0; 19.1; 1.9;63; 0.16; 63.9
+590; Maso krùtí, horní stehno, bez kosti, bez kùe; Turkey, thigh, skinless, boneless, raw; ; 1.00; 6.25; 0.945;573;137; 6.3; 1.43; 1.72; 2.72;0;0;0;0;0; 20.0; 1.0;82; 0.21; 72.5
+568; Maso krùtí, krky; Turkey, neck, raw; ; 0.58; 6.25; 0.945;596;143; 7.8; 2.44; 2.86; 2.08;0;0;0;0;0; 18.1; 0.9;84; 0.21; 73.2
+537; Maso krùtí, køídla s kùí; Turkey, whole wing, with skin, bone-in, raw; ; 0.77; 6.25; 0.945;802;192; 12.2; 3.32; 5.61; 2.58;0;0;0;0;0; 20.6; 0.9;68; 0.17; 67.7
+452; Maso krùtí, prsa bez kosti a kùe; Turkey, breast, skinless, boneless, raw; ; 1.00; 6.25; 0.945;433;102; 1.0; 0.28; 0.38; 0.19;0;0;0;0;0; 23.3; 1.2;55; 0.14; 74.2
+709; Maso krùtí, prsa s kostí a kùí; Turkey, breast with bone and skin, raw; Meleagris gallopavo f. domestica; 0.87; 6.25; 0.945;522;124; 3.6; 0.86; 1.61; 0.84;0;0;0;0;0; 23.0; 1.3;60; 0.15; 72.2
+534; Maso krùtí, spodní stehna, s kostí, s kùí; Turkey, drumstick, with skin, bone-in, raw; ; 0.75; 6.25; 0.945;515;123; 5.0; 1.41; 2.26; 1.01;0;0;0;0;0; 19.4; 1.0;73; 0.18; 73.8
+430; Maso krùtí, stehno bez kùe a bez kosti; Turkey, leg, skinless, boneless, raw; ; 1.00; 6.25; 0.945;527;126; 5.0; 1.61; 1.89; 1.23;0;0;0;0;0; 20.2; 1.3;84; 0.21; 73.6
+591; Maso krùtí, strojnì oddìlené (separát)  ; Turkey, meat, mechanically separated, raw; ; 1.00; 6.25; 0.945;798;192; 14.4; 4.63; 5.37; 3.56;0;0;0;0;0; 15.6; 1.1;86; 0.22; 67.8
+710; Maso kuøecí, horní stehno bez kosti a kùe; Chicken, upper thigh without bone and skin, raw; ; 1.00; 6.25; 0.945;589;141; 7.5; 2.27; 3.60; 1.14;0;0;0;0;0; 18.3; 1.1;67; 0.17; 72.7
+439; Maso kuøecí, horní stehno s kostí a kùí; Chicken, thigh, with skin, bone-in, raw; ; 0.91; 6.25; 0.945;1030;246; 20.5; 5.95; 10.21; 3.12;0;0;0;0;0; 16.1; 0.8;80; 0.20; 62.7
+567; Maso kuøecí, krky; Chicken, neck, raw; ; 0.44; 6.25; 0.945;687;165; 12.0; 3.01; 6.00; 2.20;0;0;0;0;0; 14.3; 0.8;68; 0.17; 71.7
+584; Maso kuøecí, køídla dìlená /bez špièky/, s kostí, s kùí; Chicken, wing, (flat and drummette, without  tip), with skin, bone-in, raw; ; 0.71; 6.25; 0.945;812;195; 13.9; 4.00; 6.80; 2.22;0;0;0;0;0; 17.5; 0.9;82; 0.21; 67.1
+437; Maso kuøecí, køídla s kostí a kùí; Chicken, wing, with skin, bone-in, raw; ; 0.62; 6.25; 0.945;787;188; 13.8; 3.97; 6.43; 2.55;0;0;0;0;0; 16.3; 0.7;100; 0.25; 69.2
+490; Maso kuøecí, kuøe celé, s kùí, bez drobù; Chicken, whole, with skin, without giblets, raw; ; 0.71; 6.25; 0.945;935;225; 17.6; 5.20; 8.98; 2.36;0;0;0;0;0; 16.7; 0.9;73; 0.18; 65.2
+427; Maso kuøecí, prsa s kùí a kostí; Chicken, breast, with skin, bone-in, raw; ; 0.87; 6.25; 0.945;528;126; 5.1; 1.51; 2.46; 0.85;0;0;0;0;0; 19.9; 1.1;65; 0.16; 73.9
+230; Maso kuøecí, prsa, bez kùe; Chicken, breast, meat only, raw; ; 1.00; 6.25; 0.945;429;102; 1.2; 0.38; 0.57; 0.19;0;0;0;0;0; 22.8; 1.3;52; 0.13; 74.8
+528; Maso kuøecí, prsní oøez; Chicken, breast trimmings, raw; ; 1.00; 6.25; 0.945;550;131; 5.4; 1.66; 2.63; 0.84;0;0;0;0;0; 20.6; 1.1;49; 0.12; 71.9
+711; Maso kuøecí, spodní stehno bez kosti a kùe; Chicken, drumstick without bone and skin, raw; ; 1.00; 6.25; 0.945;494;118; 5.0; 1.44; 2.52; 0.64;0;0;0;0;0; 18.2; 1.0;78; 0.19; 75.0
+443; Maso kuøecí, spodní stehno s kostí a kùí; Chicken, drumstick, with skin, bone-in, raw; ; 0.71; 6.25; 0.945;529;126; 6.1; 1.70; 2.93; 1.13;0;0;0;0;0; 17.8; 0.9;106; 0.27; 75.2
+530; Maso kuøecí, stehenní øízek s kùí, bez kosti; Chicken, leg, fillet, with skin, boneless, raw; ; 1.00; 6.25; 0.945;723;174; 11.6; 3.11; 5.57; 2.17;0;0;0;0;0; 17.3; 0.9;66; 0.17; 69.9
+494; Maso kuøecí, stehno bez kùe a bez kosti – kuøecí stehenní øízek; Chicken, leg, fillet, skinless, boneless, raw; ; 1.00; 6.25; 0.945;603;144; 8.0; 2.46; 3.78; 1.32;0;0;0;0;0; 18.2; 1.0;92; 0.23; 72.9
+229; Maso kuøecí, stehno, s kùí; Chicken, leg, with skin, raw; ; 0.71; 6.25; 0.945;791;189; 13.5; 3.87; 6.52; 2.27;0;0;0;0;0; 17.2; 0.9;86; 0.22; 68.4
+524; Maso kuøecí, strojnì oddìlené I (tvrdé oddìlování); Chicken, meat, mechanically separated I (high pressure separation), raw; ; 1.00; 6.25; 0.945;729;175; 12.2; 3.11; 6.07; 2.18;0;0;0;0;0; 16.3; 1.0;72; 0.18; 70.7
+525; Maso kuøecí, strojnì oddìlené II – baader (mìkké oddìlování); Chicken, mechanically separated II - baader (low pressure separation), raw; ; 1.00; 6.25; 0.945;551;131; 5.1; 1.47; 2.45; 0.89;0;0;0;0;0; 21.3; 1.1;39; 0.10; 72.8
+523; Maso kuøecí, vnitøní prsní filet, bez kosti, bez kùe; Chicken, inner breast, fillet, skinless, boneless, raw; ; 1.00; 6.25; 0.945;421;99; 0.8; 0.11; 0.39; 0.14;0;0;0;0;0; 23.0; 1.2;36; 0.09; 75.7
+434; Maso kuøecí, zadní ètvrtky s kostí a kùí; Chicken, hind (leg) quarter, with skin, bone-in, raw; ; 0.74; 6.25; 0.945;885;211; 16.6; 5.01; 7.94; 2.65;0;0;0;0;0; 16.0; 0.8;93; 0.23; 66.6
+531; Maso kuøecí, zadní høbety, s kostí, s kùí; Chicken, hind back, with skin, bone-in, raw; ; 0.64; 6.25; 0.945;1374;333; 31.4; 7.96; 15.63; 5.75;0;0;0;0;0; 12.5; 0.7;59; 0.15; 54.4
+461; Maso kuøecí, zlaté kuøe s vıkrmem min. 50 dní, celé, bez drobù; Chicken, whole, type - golden chicken, fattening min. 50 days, without giblets, raw; ; 0.70; 6.25; 0.945;919;220; 16.4; 4.91; 7.56; 3.02;0;0;0;0;0; 18.3; 0.8;70; 0.18; 64.5
+573; Maso kuøecí, Zlaté kuøe, køídla, s kùí; Chicken, type - golden chicken, whole wing, with skin, bone-in, raw; ; 0.61; 6.25; 0.945;741;178; 11.7; 3.54; 5.82; 1.64;0;0;0;0;0; 18.1; 0.8;80; 0.20; 69.9
+570; Maso kuøecí, Zlaté kuøe, prsa, s kùí, s kostí; Chicken, type - golden chicken, breast, with skin, bone-in, raw; ; 0.84; 6.25; 0.945;613;146; 7.1; 2.18; 3.45; 1.02;0;0;0;0;0; 20.6; 1.0;46; 0.12; 70.8
+569; Maso kuøecí, Zlaté kuøe, prsní øízky, bez kostí, bez kùe; Chicken, type - golden chicken, breast, fillet, skinless, boneless, raw; ; 1.00; 6.25; 0.945;419;99; 0.7; 0.21; 0.32; 0.09;0;0;0;0;0; 23.1; 1.2;31; 0.08; 74.5
+571; Maso kuøecí, Zlaté kuøe, stehna, s kostí, s kùí; Chicken, type - golden chicken, leg, with skin, bone-in, raw; ; 0.78; 6.25; 0.945;690;165; 10.6; 3.08; 5.34; 1.63;0;0;0;0;0; 17.5; 1.0;68; 0.17; 70.0
+586; Maso kuøecí, Zlaté kuøe, stehno, bez kosti, bez kùe – stehenní øízek; Chicken, type - golden chicken, leg, fillet, skinless, boneless, raw; ; 1.00; 6.25; 0.945;660;157; 9.2; 2.68; 4.35; 1.60;0;0;0;0;0; 18.8; 1.1;58; 0.15; 71.1
+572; Maso kuøecí, Zlaté kuøe, zadní ètvrtky, s kostí, s kùí; Chicken, type - golden chicken, hind (leg) quarter, with skin, bone-in, raw; ; 0.73; 6.25; 0.945;754;181; 12.6; 3.95; 6.03; 1.83;0;0;0;0;0; 16.9; 1.0;72; 0.18; 68.5
+863; Maso kùzleèí, hrudí; Goatlink meat, brisket, raw; Capra aegagrus hircus; 0.52; 6.25; 0.916;310;73; 0.8; 0.44; 0.21; 0.03;0;0;0;0;0; 16.5; 0.9;97; 0.24; 81.0
+864; Maso kùzleèí, høbet; Goatlink meat, back, raw; Capra aegagrus hircus; 1.00; 6.25; 0.916;329;78; 1.0; 0.50; 0.29; 0.10;0;0;0;0;0; 17.2; 1.0;88; 0.22; 80.2
+865; Maso kùzleèí, krk; Goatlink meat, neck, raw; Capra aegagrus hircus; 0.49; 6.25; 0.916;329;78; 0.9; 0.46; 0.24; 0.02;0;0;0;0;0; 17.4; 1.0;84; 0.21; 80.5
+866; Maso kùzleèí, kıta; Goatlink meat, rump, raw; Capra aegagrus hircus; 0.71; 6.25; 0.916;340;80; 1.1; 0.58; 0.33; 0.03;0;0;0;0;0; 17.6; 1.0;72; 0.18; 80.3
+867; Maso kùzleèí, plec; Goatlink meat, shoulder, raw; Capra aegagrus hircus; 0.63; 6.25; 0.916;338;80; 0.9; 0.25; 0.51; 0.05;0;0;0;0;0; 17.9; 1.0;79; 0.20; 80.6
+779; Maso mufloní, høbet; Mouflon, back, raw; Ovis musimon; 1.00; 6.25; 0.916;450;107; 2.8; 1.27; 1.12; 0.07;0;0;0;0;0; 20.4; 1.1;67; 0.17; 74.8
+777; Maso mufloní, kıta; Mouflon, rump, raw; Ovis musimon; 1.00; 6.25; 0.916;436;103; 1.9; 0.82; 0.79; 0.04;0;0;0;0;0; 21.5; 1.1;55; 0.14; 75.3
+780; Maso mufloní, na guláš; Mouflon, for goulash, raw; Ovis musimon; 1.00; 6.25; 0.916;446;106; 2.3; 0.88; 0.99; 0.11;0;0;0;0;0; 21.2; 1.1;76; 0.19; 74.6
+781; Maso mufloní, panenka; Mouflon, loin, raw; Ovis musimon; 1.00; 6.25; 0.916;585;140; 7.4; 3.97; 2.14; 0.16;0;0;0;0;0; 18.3; 1.0;56; 0.14; 71.1
+778; Maso mufloní, plec; Mouflon, shoulder, raw; Ovis musimon; 1.00; 6.25; 0.916;449;107; 3.5; 1.58; 1.36; 0.09;0;0;0;0;0; 18.8; 1.1;79; 0.20; 75.8
+868; Maso seleèí , bok; Piglet meat, brisket; Sus scrofa f. domestica; 1.00; 6.25; 0.910;601;144; 7.7; 2.94; 2.66; 1.20;0;0;0;0;0; 18.6; 1.1;83; 0.21; 71.6
+869; Maso seleèí, høbet; Piglet meat, back, raw; Sus scrofa f. domestica; 1.00; 6.25; 0.910;403;95; 1.3; 0.49; 0.47; 0.20;0;0;0;0;0; 20.9; 1.2;47; 0.12; 76.6
+870; Maso seleèí, kıta; Piglet meat, rump, raw; Sus scrofa f. domestica; 1.00; 6.25; 0.910;421;100; 1.9; 0.69; 0.64; 0.26;0;0;0;0;0; 20.6; 1.2;46; 0.12; 76.7
+871; Maso seleèí, panenka; Piglet meat,  loin, raw; Sus scrofa f. domestica; 1.00; 6.25; 0.910;438;104; 2.6; 1.03; 0.88; 0.37;0;0;0;0;0; 20.1; 1.4;65; 0.16; 76.7
+872; Maso seleèí, šrùtka; Piglet meat, neck-end, raw; Sus scrofa f. domestica; 1.00; 6.25; 0.910;497;118; 4.7; 1.86; 1.61; 0.64;0;0;0;0;0; 19.0; 1.2;51; 0.13; 75.0
+873; Maso skopové, hrudí; Mutton, brisket, raw; Ovis ammon f. aries; 0.73; 6.25; 0.916;1336;323; 29.3; 11.99; 10.92; 1.09;0;0;0;0;0; 14.8; 0.7;61; 0.15; 53.6
+874; Maso skopové, høbet; Mutton, back, raw; Ovis ammon f. aries; 0.77; 6.25; 0.916;1305;316; 28.7; 11.36; 10.74; 0.88;0;0;0;0;0; 14.3; 0.7;53; 0.13; 53.7
+875; Maso skopové, krk; Mutton, neck, raw; Ovis ammon f. aries; 0.74; 6.25; 0.916;1066;257; 21.5; 8.70; 8.29; 0.76;0;0;0;0;0; 15.9; 0.9;63; 0.16; 62.9
+876; Maso skopové, kıta; Mutton, rump, raw; Ovis ammon f. aries; 0.80; 6.25; 0.916;641;153; 9.0; 3.62; 3.65; 0.28;0;0;0;0;0; 18.1; 1.0;61; 0.15; 70.7
+877; Maso skopové, plec; Mutton, shoulder, raw; Ovis ammon f. aries; 0.82; 6.25; 0.916;615;147; 7.7; 2.95; 3.26; 0.29;0;0;0;0;0; 19.4; 1.0;73; 0.18; 71.7
+878; Maso skopové, svíèková; Mutton, sirloin, raw; Ovis ammon f. aries; 1.00; 6.25; 0.916;911;219; 16.5; 7.19; 6.09; 0.59;0;0;0;0;0; 17.7; 1.1;59; 0.15; 64.9
+879; Maso skopové, šrùtka; Mutton,  neck-end, raw; Ovis ammon f. aries; 0.76; 6.25; 0.916;831;200; 14.5; 5.64; 6.00; 0.54;0;0;0;0;0; 17.3; 1.0;59; 0.15; 66.6
+544; Maso slepièí, prsa bez kosti a kùe; Hen, breast, skinless, boneless, raw; ; 1.00; 6.25; 0.945;469;111; 0.9; 0.29; 0.46; 0.13;0;0;0;0;0; 25.6; 1.1;41; 0.10; 72.9
+543; Maso slepièí, prsa s kostí a kùí; Hen, breast, with skin, bone-in, raw; ; 0.79; 6.25; 0.945;571;136; 5.1; 1.33; 2.79; 0.68;0;0;0;0;0; 22.5; 1.0;47; 0.12; 70.8
+431; Maso slepièí, slepice celá, bez drobù; Hen, whole, without giblets, raw; ; 0.67; 6.25; 0.945;896;214; 15.5; 4.25; 7.37; 2.93;0;0;0;0;0; 18.9; 0.9;72; 0.18; 64.7
+542; Maso slepièí, stehno bez kùe a kosti – slepièí stehenní øízek; Hen, leg, skinless, boneless, raw; ; 1.00; 6.25; 0.945;620;148; 7.3; 1.93; 3.78; 1.15;0;0;0;0;0; 20.6; 1.1;67; 0.17; 71.9
+541; Maso slepièí, stehno s kùí a kostí; Hen, leg, fillet, with skin, bone-in, raw; ; 0.75; 6.25; 0.945;559;133; 6.2; 1.59; 3.19; 1.06;0;0;0;0;0; 19.4; 1.0;72; 0.18; 73.8
+725; Maso srnèí, høbet; Roe deer, back, raw; Capreolus capreolus; 1.00; 6.25; 0.916;366;86; 0.7; 0.33; 0.12; 0.14;0;0;0;0;0; 20.0; 1.6;71; 0.18; 78.6
+723; Maso srnèí, kıta; Roe deer, rump, raw; Capreolus capreolus; 1.00; 6.25; 0.916;350;82; 0.3; 0.11; 0.04; 0.06;0;0;0;0;0; 19.7; 1.1;68; 0.17; 78.7
+731; Maso srnèí, na guláš; Roe deer, for goulash, raw; Capreolus capreolus; 1.00; 6.25; 0.916;340;80; 0.7; 0.32; 0.11; 0.14;0;0;0;0;0; 18.5; 1.0;77; 0.19; 79.5
+724; Maso srnèí, plec; Roe deer, shoulder, raw; Capreolus capreolus; 1.00; 6.25; 0.916;322;76; 0.3; 0.12; 0.05; 0.06;0;0;0;0;0; 18.3; 1.0;76; 0.19; 79.7
+726; Maso srnèí, svíèková; Roe deer, sirloin, raw; Capreolus capreolus; 1.00; 6.25; 0.916;338;80; 0.3; 0.13; 0.05; 0.04;0;0;0;0;0; 19.2; 1.2;70; 0.18; 78.1
+712; Maso telecí, hrudí; Veal, brisket, raw; Bos taurus; 0.65; 6.25; 0.916;640;153; 9.2; 4.52; 3.15; 0.28;0;0;0;0;0; 17.6; 1.0;110; 0.27; 71.9
+713; Maso telecí, krk; Veal, neck, raw; Bos taurus; 0.79; 6.25; 0.916;468;111; 3.5; 1.45; 1.41; 0.09;0;0;0;0;0; 19.9; 1.0;86; 0.21; 75.6
+223; Maso telecí, kıta; Veal, rump, raw; Bos taurus; 1.00; 6.25; 0.916;403;95; 1.2; 0.57; 0.40; 0.04;0;0;0;0;0; 21.1; 1.2;54; 0.13; 76.8
+714; Maso telecí, peèenì; Veal, roast, raw; Bos taurus; 1.00; 6.25; 0.916;563;134; 5.4; 2.29; 2.38; 0.36;0;0;0;0;0; 21.1; 1.0;57; 0.14; 72.2
+222; Maso telecí, plec; Veal, shoulder, raw; Bos taurus; 1.00; 6.25; 0.916;428;101; 1.5; 0.63; 0.62; 0.04;0;0;0;0;0; 21.9; 1.5;62; 0.16; 75.1
+549; Maso vepøové vırobní, V10; Pork, production meat, V10, raw; ; 1.00; 6.25; 0.910;2784;677; 72.9; 28.27; 31.17; 6.16;0;0;0;0;0; 5.0; 0.3;37; 0.09; 20.7
+288; Maso vepøové, bok bez kosti a kùe, peèenı; Pork, belly, boneless, without skin, roasted; ; 1.00; 6.25; 0.953;1660;400; 33.9; 9.56; 14.27; 2.82; 0.10;0;0;0;0; 23.8; 1.1;63; 0.2; 41.3
+287; Maso vepøové, bok bez kosti a kùe, syrovı; Pork, belly, boneless, without skin, raw; ; 1.00; 6.25; 0.953;1350;325; 29.7; 7.73; 12.77; 2.88; 0.08;0;0;0;0; 14.5; 0.8;59; 0.1; 55.1
+276; Maso vepøové, krkovice bez kosti, libová, peèená; Pork, shoulder blade, boneless, separable lean only, roasted; ; 1.00; 6.25; 0.910;1120;268; 16.6; 4.31; 6.37; 1.23; 0.04;0;0;0;0; 29.6; 1.1;52; 0.1; 52.6
+272; Maso vepøové, krkovice bez kosti, libová, syrová; Pork, shoulder blade, boneless, separable lean only, raw; ; 1.00; 6.25; 0.910;723;173; 10.4; 2.67; 3.87; 1.09; 0.02;0;0;0;0; 19.9; 1.0;54; 0.1; 68.6
+275; Maso vepøové, krkovice bez kosti, syrová (separovatelnı tuk 10 %); Pork, shoulder blade, boneless, separable lean and 10% separable fat, raw; ; 1.00; 6.25; 0.000;910;219; 16.0; 4.30; 6.16; 1.58; 0.03;0;0;0;0; 18.6; 0.9;52; 0.1; 64.4
+273; Maso vepøové, krkovice bez kosti, syrová (separovatelnı tuk 3 %); Pork, shoulder blade, boneless, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;779;187; 12.1; 3.16; 4.56; 1.24; 0.02;0;0;0;0; 19.5; 1.0;53; 0.1; 67.3
+274; Maso vepøové, krkovice bez kosti, syrová (separovatelnı tuk 5 %); Pork, shoulder blade, boneless, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;816;196; 13.2; 3.49; 5.02; 1.34; 0.03;0;0;0;0; 19.3; 1.0;53; 0.1; 66.5
+291; Maso vepøové, krkovice bez kosti, uzená, komerènì tepelnì upravená; Pork, smoked, shoulder blade, boneless, commercially heat treated; ; 1.00; 6.25; 0.910;995;240; 19.5; 4.85; 7.76; 1.70; 0.04;0;0;0;0; 16.1; 3.5;1090; 2.7; 60.9
+289; Maso vepøové, krkovice bez kosti, uzená, syrová; Pork, smoked, shoulder blade, boneless, raw; ; 1.00; 6.25; 0.910;786;190; 15.6; 4.33; 6.14; 0.97; 0.06;0;0;0;0; 12.3; 4.0;1380; 3.5; 68.2
+290; Maso vepøové, krkovice bez kosti, uzená, vaøená; Pork, smoked, shoulder blade, boneless, cooked; ; 1.00; 6.25; 0.910;1120;271; 24.3; 7.07; 9.30; 1.32; 0.04;0;0;0;0; 13.1; 3.0;1020; 2.6; 59.4
+286; Maso vepøové, kıta bez kosti, libová, peèená; Pork, leg, separable lean only, roasted; ; 1.00; 6.25; 0.910;805;191; 6.1; 1.50; 2.57; 0.63; 0.01;0;0;0;0; 34.1; 1.3;57; 0.1; 58.5
+282; Maso vepøové, kıta bez kosti, libová, syrová; Pork, leg, separable lean only, raw; ; 1.00; 6.25; 0.910;475;113; 3.2; 0.77; 1.36; 0.26; 0.01;0;0;0;0; 21.0; 1.2;52; 0.1; 74.5
+285; Maso vepøové, kıta bez kosti, syrová (separovatelnı tuk 10 %); Pork, leg, separable lean and 10% separable fat, raw; ; 1.00; 6.25; 0.000;686;164; 9.5; 2.58; 3.89; 0.84; 0.02;0;0;0;0; 19.6; 1.1;50; 0.1; 69.7
+283; Maso vepøové, kıta bez kosti, syrová (separovatelnı tuk 3 %); Pork, leg, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;539;128; 5.1; 1.31; 2.12; 0.44; 0.01;0;0;0;0; 20.6; 1.2;51; 0.1; 73.0
+284; Maso vepøové, kıta bez kosti, syrová (separovatelnı tuk 5 %); Pork, leg, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;581;139; 6.4; 1.68; 2.62; 0.55; 0.02;0;0;0;0; 20.3; 1.2;51; 0.1; 72.1
+281; Maso vepøové, peèenì bez kosti, libová, peèená; Pork, loin, boneless, separable lean only, roasted; ; 1.00; 6.25; 0.910;785;186; 5.4; 1.29; 2.39; 0.36; 0.01;0;0;0;0; 34.4; 1.1;41; 0.1; 59.1
+277; Maso vepøové, peèenì bez kosti, libová, syrová; Pork, loin, boneless, separable lean only, raw; ; 1.00; 6.25; 0.910;528;125; 3.8; 0.91; 1.68; 0.25; 0.01;0;0;0;0; 22.8; 1.1;46; 0.1; 72.4
+278; Maso vepøové, peèenì bez kosti, syrová (separovatelnı tuk 1 %); Pork, loin, boneless, separable lean and 1% separable fat, raw; ; 1.00; 6.25; 0.000;549;130; 4.4; 1.09; 1.93; 0.31; 0.01;0;0;0;0; 22.6; 1.1;46; 0.1; 71.9
+279; Maso vepøové, peèenì bez kosti, syrová (separovatelnı tuk 3 %); Pork, loin, boneless, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;590;140; 5.7; 1.45; 2.43; 0.42; 0.01;0;0;0;0; 22.3; 1.1;46; 0.1; 71.0
+280; Maso vepøové, peèenì bez kosti, syrová (separovatelnı tuk 5 %); Pork, loin, boneless, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;631;151; 6.9; 1.81; 2.93; 0.54; 0.01;0;0;0;0; 22.0; 1.1;45; 0.1; 70.1
+271; Maso vepøové, plec bez kosti, kolena a kùe, libová, peèená; Pork, shoulder, separable lean only, roasted; ; 1.00; 6.25; 0.910;741;176; 4.3; 1.02; 1.89; 0.37; 0.01;0;0;0;0; 34.2; 1.2;61; 0.2; 60.5
+267; Maso vepøové, plec bez kosti, kolena a kùe, libová, syrová; Pork, shoulder, separable lean only, raw; ; 1.00; 6.25; 0.910;494;117; 4.2; 1.03; 1.83; 0.27; 0.01;0;0;0;0; 19.9; 1.1;57; 0.1; 74.8
+270; Maso vepøové, plec bez kosti, kolena a kùe, syrová (separovatelnı tuk 10 %); Pork, shoulder, separable lean and 10% separable fat, raw; ; 1.00; 6.25; 0.000;702;168; 10.4; 2.82; 4.32; 0.84; 0.02;0;0;0;0; 18.6; 1.0;54; 0.1; 69.9
+268; Maso vepøové, plec bez kosti, kolena a kùe, syrová (separovatelnı tuk 3 %); Pork, shoulder, separable lean and 3% separable fat, raw; ; 1.00; 6.25; 0.000;556;133; 6.1; 1.57; 2.58; 0.44; 0.01;0;0;0;0; 19.5; 1.1;56; 0.1; 73.3
+269; Maso vepøové, plec bez kosti, kolena a kùe, syrová (separovatelnı tuk 5 %); Pork, shoulder, separable lean and 5% separable fat, raw; ; 1.00; 6.25; 0.000;598;143; 7.3; 1.93; 3.07; 0.56; 0.01;0;0;0;0; 19.3; 1.1;56; 0.1; 72.4
+552; Maso vepøové, strojnì oddìlené, nízkotlaké; Pork, meat, machine separated with low pressure, raw; ; 1.00; 6.25; 0.945;1088;263; 22.5; 3.99; 8.42; 2.70;0;0;0;0;0; 15.0; 1.3;97; 0.24; 60.6
+293; Maso vepøové, vırobní, V1; Pork, production meat, type V1, raw; ; 1.00; 6.25; 0.910;482;114; 2.6; 1.01; 1.21; 0.15;0;0;0;0;0; 22.7; 1.2;43; 0.11; 74.1
+550; Maso vepøové, vırobní, V10; Pork, production meat, V10, raw; ; 1.00; 6.25; 0.910;1683;408; 39.6; 14.03; 18.14; 3.49;0;0;0;0;0; 12.5; 0.6;63; 0.16; 45.5
+294; Maso vepøové, vırobní, V2; Pork, production meat, type V2, raw; ; 1.00; 6.25; 0.910;541;129; 5.1; 1.90; 2.25; 0.45;0;0;0;0;0; 20.7; 1.1;47; 0.1; 73.5
+295; Maso vepøové, vırobní, V3; Pork, production meat, type V3, raw; ; 1.00; 6.25; 0.910;727;174; 9.9; 3.93; 4.27; 0.70;0;0;0;0;0; 21.2; 1.0;53; 0.13; 67.5
+296; Maso vepøové, vırobní, V4; Pork, production meat, type V4, raw; ; 1.00; 6.25; 0.910;908;219; 16.5; 5.94; 7.81; 1.22;0;0;0;0;0; 17.5; 0.9;58; 0.15; 65.4
+297; Maso vepøové, vırobní, V5; Pork, production meat, type V5, raw; ; 1.00; 6.25; 0.910;1495;362; 33.8; 13.46; 14.81; 2.13;0;0;0;0;0; 14.4; 0.7;41; 0.10; 49.0
+298; Maso vepøové, vırobní, V6; Pork, production meat, type V6, raw; ; 1.00; 6.25; 0.910;2020;490; 49.4; 19.46; 21.09; 4.36;0;0;0;0;0; 11.3; 0.5;44; 0.11; 37.9
+546; Maso vepøové, vırobní, V7; Pork, production meat, V7, raw; ; 1.00; 6.25; 0.910;2782;676; 72.8; 29.40; 27.77; 8.49;0;0;0;0;0; 5.0; 0.3;25; 0.06; 21.2
+547; Maso vepøové, vırobní, V8; Pork, production meat, V8, raw; ; 1.00; 6.25; 0.910;2945;716; 77.9; 30.61; 31.41; 7.65;0;0;0;0;0; 3.8; 0.2;26; 0.07; 17.9
+548; Maso vepøové, vırobní, V9; Pork, production meat, V9, raw; ; 1.00; 6.25; 0.910;1902;461; 46.2; 17.60; 19.34; 4.59;0;0;0;0;0; 11.3; 0.6;35; 0.09; 40.7
+792; Mazanec (vánoèka), modelová receptura; Mazanec (vanocka), Easter (Christmas) sweet bread, model recipe; ; 1.00; 6.25; 0.956;1464;348; 10.5; 4.05; 4.10; 1.63; 0.00; 56.6; 53.5; 18.1; 3.1; 8.3; 1.1;208; 0.5; 23.6
+354; McChicken (firma McDONALD´S); McChicken, McDONALD'S; ; 1.00; 6.25; 0.000;1100;263; 10.6; 1.70; 4.48; 3.76; ; 30.2; ; ; ; 11.6; 2.1;539; 1.3; 45.5
+192; Med vèelí; Honey; ; 1.00; 6.25; 0.800;1390;328;0; ; ; ; ; 81.7; 81.7; ;0; 0.3; 0.2;3;0; 17.8
+557; Melan vajeèná; Egg, hen, melange, raw; ; 1.00; 6.25; 0.830;612;147; 10.1; 2.82; 4.53; 0.98;0; 1.5; 1.5; 0.3;0; 12.5; 1.0;115; 0.29; 74.9
+331; Melasa; Molasses; ; 1.00; 6.25; 0.000;1270;304; 0.1; 0.02; 0.03; 0.05; ; 74.7; 74.7; ;0;0; 3.3;37;0; 21.9
+40; Meruòky; Apricots, raw; Prunus armeniaca, synonymum Armeniaca vulgaris; 0.94; 6.25; 0.800;223;53; 0.1; 0.03; 0.02; 0.03;0; 13.8; 11.2; 8.9; 2.6; 0.5; 0.8;0;0; 84.8
+744; Meruòky sušené; Apricots, dried; Prunus armeniaca, synonymum Armeniaca vulgaris; 1.00; 6.25; 0.800;1170;276; 0.5; 0.18; 0.09; 0.13;0; 69.2; 61.9; 38.3; 7.4; 2.3; 4.6;9; 0.02; 23.3
+959; Meruòky, lyofilizované; Apricot, lyophilized; Prumus armeniaca; 1.00; 6.25; 0.800;1468;347; 0.8;0;0;0;0; 87.0; 72.2; 49.0; 14.8; 5.5; 6.2;6; 0.01; 0.5
+120; Mléko acidofilní, min. 3 % tuku; Milk, acidophilus cultured, min. 3% milkfat; ; 1.00; 6.38; 0.945;266;64; 3.5; 2.26; 0.95; 0.10; ; 4.0; 4.0; 4.0;0; 3.3; 0.7;43; 0.1; 87.8
+436; Mléko kefírové; Milk, cultured, kefir; ; 1.00; 6.38; 0.945;168;40; 1.1; 0.95;0;0;0; 4.8; 4.8; 3.6;0; 2.7; 0.6;44; 0.11; 90.8
+121; Mléko kefírové, sníenım obsahem tuku, 0,7 % tuku; Milk, cultured, kefir, reduced fat,  0.7% milkfat; ; 1.00; 6.38; 0.945;162;38; 0.7; 0.45; 0.19; 0.02; ; 4.1; 4.1; 4.1;0; 3.3; 0.7;44; 0.1; 90.4
+448; Mléko kozí; Milk, goat; ; 1.00; 6.38; 0.945;220;53; 2.4; 2.08; 0.19;0;0; 4.6; 4.6; 4.1;0; 3.0; 0.8;61; 0.15; 89.2
+114; Mléko nízkotuèné (odtuènìné); Milk, defatted; ; 1.00; 6.38; 0.945;160;38; 0.5; 0.32; 0.14; 0.01; ; 4.9; 4.9; 4.9;0; 3.4; 0.8;41; 0.1; 90.5
+115; Mléko odstøedìné; Milk, skimmed; ; 1.00; 6.38; 0.945;145;34; 0.1; 0.06; 0.03;0; ; 4.9; 4.9; 4.9;0; 3.4; 0.8;41; 0.1; 90.8
+449; Mléko ovèí; Milk, sheep; ; 1.00; 6.38; 0.945;526;126; 9.1; 6.24; 2.08; 0.28;0; 3.0; 3.0; 2.5;0; 8.1; 1.1;71; 0.18; 78.7
+112; Mléko plnotuèné; Milk, whole fat; ; 1.00; 6.38; 0.945;264;63; 3.4; 2.20; 0.92; 0.10; ; 4.8; 4.8; 4.8;0; 3.3; 0.7;41; 0.1; 87.9
+113; Mléko polotuèné; Milk, semi-skimmed; ; 1.00; 6.38; 0.945;193;46; 1.5; 0.97; 0.41; 0.04; ; 4.8; 4.8; 4.8;0; 3.3; 0.7;41; 0.1; 89.7
+144; Mléko sušené, nízkotuèné; Milk, lowfat fat, dried; ; 1.00; 6.38; 0.945;1640;388; 6.0; 3.88; 1.62; 0.17; ; 49.4; 49.4; 49.4;0; 34.0; 7.5;450; 1.1; 3.0
+145; Mléko sušené, odstøedìné; Milk, skimmed, dried; ; 1.00; 6.38; 0.945;1520;357; 1.0; 0.65; 0.27; 0.03; ; 51.5; 51.5; 51.5;0; 35.5; 8.0;470; 1.2; 4.0
+142; Mléko sušené, plnotuèné; Milk, whole fat, dried; ; 1.00; 6.38; 0.945;2081;497; 26.0; 16.82; 7.02; 0.75; ; 39.0; 39.0; 39.0;0; 26.8; 6.0;355; 0.9; 2.3
+143; Mléko sušené, polotuèné; Milk, reduced fat, dried; ; 1.00; 6.38; 0.945;1800;427; 14.0; 9.06; 3.78; 0.41; ; 44.5; 44.5; 44.5;0; 30.7; 6.8;405; 1.0; 4.0
+111; Mléko syrové; Milk, raw; ; 1.00; 6.38; 0.945;289;69; 4.1; 2.65; 1.11; 0.12; ; 4.8; 4.8; 4.8;0; 3.3; 0.7;41; 0.1; 87.2
+140; Mléko zahuštìné, plnotuèné, neslazené; Milk, condensed, wholefat, not sweetened; ; 1.00; 6.38; 0.945;668;160; 9.0; 5.82; 2.43; 0.26; ; 11.7; 11.7; 11.7;0; 8.0; 1.8;106; 0.3; 69.5
+141; Mléko zahuštìné, plnotuèné, slazené; Milk, condensed, wholefat,  sweetened; ; 1.00; 6.38; 0.945;1390;330; 9.0; 5.82; 2.43; 0.26; ; 54.9; 54.9; 54.9;0; 7.5; 1.8;106; 0.3; 27.0
+763; Morèák evropskı (vlk moøskı, okoun moøskı); Fish, seabass, raw; Dicentrarchus labrax; 0.45; 6.25; 0.700;575;137; 7.0; 1.23; 2.40; 0.98;0;0;0;0;0; 18.6; 1.2;71; 0.18; 72.7
+960; Moruše, bílá, sušená; Mulberry, white, dried; Morus alba; 1.00; 6.25; 0.800;1549;366; 2.5; 0.74; 0.29; 0.99;0; 86.4; 77.3; 73.9; 9.1; 4.1; 3.2;1;0; 3.8
+753; Moøan zlatı (prama královská); Fish, sea bream/dorade royal, raw; Sparus aurata; 0.41; 6.25; 0.700;671;161; 9.3; 2.27; 3.66; 1.99;0;0;0;0;0; 19.2; 1.3;57; 0.14; 69.3
+814; Moøan zlatı (prama královská), maso s kùí; Gilthead seabream, meat with skin, raw; Sparus aurata; 0.52; 6.25; 0.900;765;184; 11.9; 1.91; 4.93; 3.19;0;0;0;0;0; 19.1; 1.5;56; 0.14; 66.7
+661; Mouka amarantová; Amaranth flour; Amaranthus sp.; 1.00; 6.25; 0.956;1537;365; 6.7; 1.31; 1.56; 3.37;0; 66.7; 56.6; 2.2; 10.1; 14.6; 2.3;0;0; 9.7
+746; Mouka banánová; Banana flour; ; 1.00; 6.25; 0.670;1418;335; 0.4; 0.12; 0.02; 0.12;0; 83.4; 75.4; 1.9; 8.1; 3.3; 2.1;1;0; 10.7
+692; Mouka cizrnová; Chickpea flour; Ciceris similae; 1.00; 6.25; 0.670;1448;345; 6.4; 0.54; 1.28; 2.48;0; 58.6; 41.7; 2.9; 16.8; 21.6; 3.2;13; 0.03; 10.3
+767; Mouka èiroková; Sorghum flour; ; 1.00; 6.25; 0.670;1486;351; 3.0; 0.23; 0.68; 1.01;0; 77.6; 70.7; 0.9; 6.6; 7.3; 1.3;0;0; 11.2
+693; Mouka èoèková; Lentil flour; ; 1.00; 6.25; 0.670;1385;328; 1.6; 0.14; 0.33; 0.58;0; 61.2; 47.7; 2.0; 13.5; 23.9; 2.5;1;0; 10.8
+694; Mouka fazolová; Bean flour; ; 1.00; 6.25; 0.670;1307;311; 1.5; 0.17; 0.13; 0.73;0; 64.3; 41.2; 3.3; 23.2; 21.5; 3.8;0;0; 8.9
+729; Mouka hoøèièná; Mustard flour; ; 1.00; 6.25; 0.670;1498;360; 15.7; 0.55; 7.17; 2.27;0; 35.4; 6.0; 5.8; 29.4; 34.1; 6.0;0;0; 8.8
+695; Mouka hrachová; Pea flour; ; 1.00; 6.25; 0.670;1338;317; 1.8; 0.19; 0.27; 0.74;0;64.9;47.1;3.2;17.8; 19.3; 2.5;1;0; 11.5
+768; Mouka jáhlová; Millet flour; ; 1.00; 6.25; 0.670;1471;347; 1.5; 0.40; 0.31; 1.28;0; 76.1; 73.6; 0.8; 2.5; 8.5; 1.2;0;0; 11.2
+663; Mouka jeèná; Barley flour; Hordeum vulgare L.; 1.00; 6.25; 0.670;1455;344; 1.7; 0.25; 0.17; 0.74;0; 77.7; 69.7; 0.7; 7.9; 8.3; 1.4;2; 0.01; 10.9
+342; Mouka jeèná celozrnná; Barley flour, whole grain; ; 1.00; 6.25; 0.670;1480;350; 2.4; 0.32; 0.31; 0.97;0; 77.6; 69.4; 11.5; 8.2; 8.8; 1.4;1;0; 9.8
+817; Mouka kaštanová; Chestnut flour; Castanea; 1.00; 6.25; 0.670;1464;347; 3.6; 0.40; 1.04; 0.96;0; 80.6; 64.4; 26.5; 16.2; 6.3; 2.4;1;0; 7.1
+908; Mouka konopná celozrnná; Wholemeal Protein Flour Hemp; Cannabis; 1.00; 6.25; 0.670;1409;337; 9.5; 0.54; 0.79; 4.59;0; 23.9; 4.4; 4.4; 19.5; 48.6; 9.4;1;0; 8.6
+453; Mouka kukuøièná; Corn flour; ; 1.00; 6.25; 0.800;1510;362; 4.0; 0.48; 1.04; 1.76;0; 75.5; 69.9; 1.5; 5.6; 7.8; 1.0;0;0; 11.8
+732; Mouka lnìná; Flax flour; ; 1.00; 6.25; 0.670;1400;337; 11.8; 0.81; 2.07; 5.01;0; 41.1; 8.3; 3.2; 32.9; 33.0; 4.8;81; 0.20; 9.3
+696; Mouka lupinová; Lupin flour; ; 1.00; 6.25; 0.670;1438;344; 9.0; 1.14; 2.13; 2.74;0; 41.44; 12.60; 4.45; 28.84; 38.8; 3.3;38; 0.09; 7.4
+733; Mouka maková; Poppy flour; ; 1.00; 6.25; 0.670;1361;327; 11.3; 1.07; 1.16; 5.32;0; 38.3; 10.4; 5.0; 27.9; 32.0; 11.5;4; 0.01; 7.0
+818; Mouka nopálová; Cactus flour; Opuncie fikus indica; 1.00; 6.25; 0.670;815;198; 1.4; 0.40; 0.24; 0.11;0; 67.4; 14.6; 3.6; 52.8; 5.4; 19.4;1;0; 6.4
+343; Mouka ovesná; Oat flour; Avena sativa; 1.00; 6.25; 0.940;1559;370; 6.5; 1.28; 2.61; 2.25;0; 70.4; 62.6; 0.9; 7.8; 11.3; 1.4;2;0; 10.4
+664; Mouka pohanková; Buckwheat flour; Fagopyrum esculentum; 1.00; 6.25; 0.956;1479;349; 2.6; 0.19; 0.44; 0.52;0; 72.5; 68.4; 1.6; 4.2; 11.0; 1.5;0;0; 12.3
+665; Mouka prosná; Millet flour; Fagopyrum esculentum; 1.00; 6.25; 0.956;1527;360; 3.0; 0.68; 0.58; 1.42;0; 71.6; 69.3; 0.5; 2.3; 12.9; 1.0;1;0; 11.5
+146; Mouka pšenièná, hladká, svìtlá, T 530, obsah popela max. 0,6 % v suš.; Wheat, flour, fine, T 530, ash content max. 0.6% DM; ; 1.00; 6.25; 0.670;1460;344; 1.7; 0.22; 0.19; 0.73;0; 72.0; 68.9; 1.1; 3.1; 11.9; 0.5;1;0; 13.9
+148; Mouka pšenièná, hrubá, T 450,  obsah popela max. 0,5 % v suš.; Wheat, flour, coarse, T 450,  ash content max. 0.5% DM; ; 1.00; 6.25; 0.670;1460;344; 1.4; 0.18; 0.11; 0.64;0; 73.9; 70.2; 0.5; 3.7; 10.9; 0.3;1;0; 13.6
+666; Mouka pšenièná, chlebová; Wheat, bread flour; ; 1.00; 6.25; 0.670;1494;353; 1.7; 0.23; 0.01; 0.86;0; 73.3; 69.1; 1.7; 4.2; 13.2; 0.9;1;0; 10.9
+147; Mouka pšenièná, polohrubá,T 400, obsah popela max. 0,5 % v suš.; Wheat, flour, medium coarse, T 400, ash content max. 0.5% DM; ; 1.00; 6.25; 0.670;1460;344; 1.4; 0.19; 0.11; 0.62;0; 73.3; 69.6; 0.8; 3.7; 11.3; 0.4;1;0; 13.6
+772; Mouka quinoi; Quinoa flour; ; 1.00; 6.25; 0.670;1495;355; 7.0; 0.53; 1.28; 2.64;0; 64.3; 54.1; 1.7; 10.2; 13.9; 3.1;0;0; 11.8
+336; Mouka rıová; Rice flour; ; 1.00; 6.25; 0.850;1516;357; 1.5; 0.30; 0.53; 0.46;0; 78.7; 78.2; 1.2; 0.5; 7.5; 0.5;2;0; 11.8
+769; Mouka rıová celozrnná; Rice flour, wholemeal; ; 1.00; 6.25; 0.850;1622;383; 2.5; 0.45; 0.89; 0.83;0; 82.5; 79.0; 0.8; 3.5; 9.3; 1.4;2; 0.01; 4.3
+667; Mouka sladová; Malt flour; ; 1.00; 6.25; 0.956;1510;357; 2.0; 0.40; 0.23; 1.27;0; 80.3; 69.6; 4.6; 10.7; 9.9; 1.7;3; 0.01; 6.1
+338; Mouka sójová odtuènìná; Soy flour, defatted; ; 1.00; 6.25; 0.670;1328;315; 1.8; 0.27; 0.26; 0.70;0; 34.7; 14.9; 7.3; 19.8; 50.0; 6.8;1;0; 6.7
+337; Mouka sójová plnotuèná; Soy flour, full fat; ; 1.00; 6.25; 0.670;1712;412; 20.9; 2.07; 3.76; 8.15;0; 30.5; 9.9; 8.2; 20.6; 35.6; 5.3;0;0; 7.7
+893; Mouka teffová; Teff flour; Eragrostis abyssinica (Jacq.) Link; 1.00; 6.25; 0.670;1276;305; 3.6; 0.42; 0.68; 1.31;0; 63.7; 34.2; 2.1; 29.5; 19.1; 2.2;2; 0.01; 11.4
+454; Mouka z pšenice Durum; Durum wheat flour; ; 1.00; 6.25; 0.670;1480;354; 1.2; 0.13; 0.13; 0.54;0; 73.7; 71.0; 2.4; 2.7; 12.3; 0.6;1;0; 12.2
+455; Mouka z pšenice špaldy, celozrnná; Spelt wheat flour, wholemeal; ; 1.00; 6.25; 0.670;1457;344; 1.8; 0.20; 0.27; 0.74;0; 72.7; 64.5; 1.3; 8.2; 13.4; 1.1;1;0; 11.1
+597; Mouka ze svatojánského chleba; Carob flour; Ceratonia siliqua; 1.00; 6.25; 0.670;1217;291; 0.6;0;0;0;0; 87.1; 46.2; 29.7; 40.9; 4.8; 3.7;8; 0.02; 3.8
+910; Mouka aludová; Acorn Flour; Quercus; 1.00; 6.25; 0.670;1419;338; 5.2; 1.08; 1.53; 0.88;0; 78.2; 56.9; 1.9; 21.3; 5.3; 1.6;2; 0.01; 9.7
+339; Mouka itná; Rye flour, breadmaking; ; 1.00; 6.25; 0.670;1410;338; 1.4; 0.13; 0.13; 0.60;0; 77.9; 66.1; 1.9; 11.8; 8.4; 1.1;1;0; 11.2
+770; Mouka itná, celozrnná; Rye flour, wholemeal; ; 1.00; 6.25; 0.670;1449;342; 1.3; 0.13; 0.16; 0.57;0; 81.1; 72.1; 1.8; 9.0; 6.1; 1.2;0;0; 10.3
+920; Mouka, plantejnová (ze zelenıch banánù); Plantain (green bananas), flour; Musa paradisiaca; 1.00; 6.25; 0.670;1424;336; 0.4;0;0;0;0; 83.4; 76.3; 2.4; 7.1; 3.2; 2.5;0;0; 10.5
+150; Mouka, pšenièná, celozrnná, T 1700, obsah popela max. 1,9 % v suš.; Wheat, wholemeal, T 1700, ash content max. 1.9% DM; ; 1.00; 6.25; 0.670;1470;346; 2.4; 0.27; 0.26; 1.05;0; 71.2; 64.2; 1.4; 7.0; 13.5; 1.4;1;0; 11.5
+922; Mouka, z quinoa; Quinoa, flour; Chenopodium quinoa; 1.00; 6.25; 0.670;1503;356; 5.9; 0.43; 1.06; 2.36;0; 67.0; 57.8; 3.9; 9.2; 13.4; 2.7;35; 0.09; 11.0
+62; Mrkev; Carrot, raw; Daucus carota L.; 0.61; 6.25; 0.800;151;36; 0.2; ; ; ; ; 9.0; 6.1; ; 2.9; 1.0; 0.8;80; 0.2; 89.0
+930; Mrkev èerná; Carrot black, raw; Daucus carota; 0.93; 6.25; 0.800;199;48; 0.8;0;0;0;0; 11.4; 5.1; 4.7; 6.3; 1.9; 1.1;38; 0.10; 84.8
+961; Mrkev, lyofilizovaná; Carrot, lyophilized; Daucus carota; 1.00; 6.25; 0.800;1353;320; 0.8;0;0;0;0; 81.2; 67.6; 65.8; 13.6; 3.8; 3.1;392; 0.98; 11.1
+655; Mungo klíèky; Mung beans, sprouted, raw; Vigna radiata; 1.00; 6.25; 0.956;1325;314; 1.5; 0.49; 0.07; 0.87;0; 61.7; 42.1; 2.0; 19.6; 23.3; 2.8;0;0; 10.7
+583; Nápoj kokosovı; Coconut milk; ; 1.00; 6.25; 0.942;655;159; 15.3; 13.45; 0.85; 0.14;0; 3.9; 3.9;0;0; 1.3; 0.4;20; 0.05; 79.1
+574; Nápoj sójovı, natural, sušenı; Soy drink, plain, dried; ; 1.00; 6.25; 0.945;2038;488; 25.9; 3.93; 16.10; 1.05;0; 62.9; 55.7; 24.0; 7.2; 4.4; 3.1;153; 0.38; 3.7
+639; Nashi; Nashi pear, raw; Pyrus pyrifolia; 0.94; 6.25; 0.800;183;43; 0.1;0;0;0;0; 11.3; 8.5; 1.0; 2.8; 0.6; 0.4;0;0; 87.6
+360; Nektarinky; Nectarines, raw; Prunus persica var. nucipersica; 0.89; 6.25; 0.700;200;48; 0.3; 0.02; 0.09; 0.11; ; 11.0; 9.3; 7.9; 1.7; 1.1; ; 0.5;0; 87.6
+250; Ocet kvasnı; Vinegar, fermentative; ; 1.00; 6.25; 0.000;139;32;0; ; ; ; ; 9.6; 9.6; ;0;0; 0.1;20; 0.1; 89.8
+302; Oháòka hovìzí; Tail, ox, raw; ; 0.55; 6.25; 0.000;945;225; 15.7; 8.91; 6.87; 0.54; ;0;0; ;0; 21.4; 0.9;94; ; 63.0
+811; Okoun nilskı, maso bez kùe; Nile perch, meat without skin, raw; Lates niloticus; 1.00; 6.25; 0.700;325;77; 0.8; 0.28; 0.13; 0.06;0;0;0;0;0; 17.4; 1.0;50; 0.12; 78.4
+63; Okurky; Cucumber, raw; Cucumis sativus L.; 0.80; 6.25; 0.800;48;12; 0.1; ; ; ; ; 2.2; 1.5; ; 0.7; 0.8; 0.5;10;0; 96.4
+690; Olej arganovı; Oil, argan; ; 1.00; 6.25; 0.956;3700;900;100; 17.99; 43.85; 33.62;0;0;0;0;0;0;0;0;0;0
+483; Olej babassovı; Oil, babassu; ; 1.00; 6.25; 0.956;3690;900; 99.8; 79.83; 13.58; 2.20;0;0;0;0;0;0;0;0;0; 0.2
+482; Olej bavlníkovı; Oil, cottonseed; ; 1.00; 6.25; 0.956;3700;900; 99.9; 21.32; 23.61; 50.00; 0.48;0;0;0;0;0;0;0;0; 0.1
+480; Olej hoøèiènı; Oil, mustard; ; 1.00; 6.25; 0.956;3700;900; 99.9; 7.84; 56.31; 31.17; 0.19;0;0;0;0;0;0;0;0; 0.1
+481; Olej hroznovı; Oil, grape; ; 1.00; 6.25; 0.956;3700;900; 99.9; 10.61; 17.49; 66.92; 0.57;0;0;0;0;0;0;0;0; 0.1
+477; Olej kukuøiènı; Oil, corn; ; 1.00; 6.25; 0.956;3700;900; 99.9; 12.91; 29.06; 53.44; 0.19;0;0;0;0;0;0;0;0; 0.15
+634; Olej kukuøiènı klíèkovı, lisovanı; Oil, corn grits; ; 1.00; 6.25; 0.956;3700;900;100; 11.05; 28.18; 56.35;0;0;0;0;0;0;0;0;0;0
+382; Olej olivovı; Oil, olive; Olea europaea; 1.00; 6.25; 0.957;3700;900;100; 12.3; 74.6; 8.80;0;0;0;0;0;0;0;2;0;0
+473; Olej palmovı; Oil, palm; ; 1.00; 6.25; 0.956;3700;900; 99.9; 41.87; 42.16; 11.28; 0.29;0;0;0;0;0;0;0;0; 0.1
+476; Olej podzemnicovı; Oil, peanut; ; 1.00; 6.25; 0.956;3700;900; 99.9; 14.63; 64.72; 16.16;0;0;0;0;0;0;0;0;0;0
+595; Olej rybí (losos); Oil, fish, salmon; ; 1.00; 6.25; 0.956;3700;900;100; 14.52; 49.25; 23.80;0;0;0;0;0;0;0;0;0;0
+598; Olej rıovı; Oil, rice; ; 1.00; 6.25; 0.956;3693;898; 99.8; 23.15; 40.71; 31.31;0;0;0;0;0;0;0;2;0; 0.1
+84; Olej øepkovı, nízkoerukovı; Oil, rape seed (low eruca acid content); ; 1.00; 6.25; 0.956;3693;898; 99.8; 6.75; 62.67; 25.88;0;0;0;0;0;0;0;0;0; 0.2
+600; Olej sezamovı; Oil, sesame; ; 1.00; 6.25; 0.956;3689;897; 99.7; 16.57; 41.69; 37.05;0;0;0;0;0;0;0;1;0; 0.2
+86; Olej sluneènicovı; Oil, sunflower; ; 1.00; 6.25; 0.956;3700;900;100; 10.2; 22.0; 63.0; ;0;0; ;0;0;0;0;0;0
+324; Olej sluneènicovı, s vysokım obsahem kyseliny olejové (nad 70 %); Oil, sunflower, high oleic (70% and over); ; 1.00; 6.25; 0.956;3700;900;100; 9.86; 83.57; 3.80; ;0;0; ;0;0;0;0;0;0
+474; Olej sojovı; Oil, soybean; ; 1.00; 6.25; 0.956;3700;900; 99.9; 15.10; 21.61; 58.70;0;0;0;0;0;0;0;1;0; 0.1
+478; Olej svìtlicovı; Oil, safflower; ; 1.00; 6.25; 0.956;3700;900; 99.9; 9.37; 14.53; 71.51;0;0;0;0;0;0;0;0;0; 0.1
+479; Olej svìtlicovı, s vysokım obsahem kys. olejové; Oil, safflower, high oleic acid; ; 1.00; 6.25; 0.956;3700;900;100; 7.54; 75.13; 12.82; 0.10;0;0;0;0;0;0;0;0;0
+718; Olej z jader manga (Mangifera indica); Mango kernel oil; ; 1.00; 6.25; 0.956;3634;884; 98.0; 93.66;0;0;0; 0.06; 0.06;0;0; 0.5;0;0;0; 1.5
+906; Olej, avokádovı; Oil, avocado; Persea; 1.00; 6.25; 0.956;3696;899; 99.9; 9.30; 75.77; 10.00;0;0;0;0;0;0;0;0;0; 0.1
+907; Olej, z vlašskıch oøechù; Oil, walnut; Juglans regia; 1.00; 6.25; 0.956;3690;897; 99.7; 8.91; 15.30; 71.30;0;0;0;0;0;0; 0.1;0;0; 0.2
+387; Olivy zelené, marinované; Olives green brined / marinated; Olea europea L.; 0.84; 6.25; 0.950;542;136; 12.7; 1.78; 8.87; 1.42; ; 4.1; 1.7; 0.1; 2.4; 1.4; 5.8;2400; 6.0; 76.0
+388; Olivy zralé (èerné), konzervované; Olives, ripe, canned; Olea europea L.; 1.00; 6.25; 0.000;488;118; 10.7; 1.42; 7.89; 0.91; ; 6.3; 3.1;0; 3.2; 0.8; 2.2;735; 1.8; 80.0
+158; Omáèka houbová, maso hovìzí vaøené, knedlík houskovı; Mushroom sauce with boiled beef and dumplings; ; 1.00; 6.25; 0.000;660;157; 5.5; 3.08; 1.79; 0.26;0; 17.4; 16.4; 1.5; 1.0; 10.0; 1.6;389; 1.0; 65.5
+152; Omáèka houbová, smetanová, modelová receptura; Sauce, mushroom cream sauce, model recipe; ; 1.00; 6.25; 0.960;443;107; 7.5; 5.03; 1.83; 0.25; 0.01; 6.9; 6.4; 1.8; 0.5; 3.1; 2.0;560; 1.4; 80.5
+161; Omáèka koprová, maso hovìzí vaøené, knedlík houskovı; Dill sauce with boiled beef and dumplings; ; 1.00; 6.25; 0.000;731;174; 6.1; 3.50; 1.96; 0.27; 0.01; 19.6; 18.7; 2.5; 0.9; 10.6; 1.4;296; 0.7; 62.3
+155; Omáèka koprová, modelová receptura; Sauce, dill cream sauce, model recipe; ; 1.00; 6.25; 0.960;563;135; 9.9; 6.82; 2.31; 0.29; 0.02; 8.6; 8.3; 4.0; 0.3; 3.1; 1.6;368; 0.9; 76.8
+160; Omáèka køenová, maso hovìzí vaøené, knedlík houskovı; Horseradish sauce with boiled beef and  dumplings; ; 1.00; 6.25; 0.000;682;162; 5.6; 3.20; 1.81; 0.26;0; 18.5; 17.4; 2.3; 1.1; 10.0; 1.4;324; 0.8; 64.5
+154; Omáèka køenová, modelová receptura; Sauce, horseradish cream sauce, model recipe; ; 1.00; 6.25; 0.960;489;117; 7.8; 5.31; 1.88; 0.25; 0.01; 9.1; 8.3; 3.7; 0.8; 3.1; 1.7;413; 1.0; 78.3
+159; Omáèka rajèatová, maso hovìzí vaøené, knedlík houskovı; Tomato sauce with boiled beef and dumplings; ; 1.00; 6.25; 0.000;661;157; 5.7; 3.18; 1.90; 0.27; 0.01; 17.7; 16.5; 2.1; 1.2; 9.4; 1.4;375; 0.9; 65.8
+153; Omáèka rajèatová, modelová receptura; Sauce, tomato sauce, model recipe; ; 1.00; 6.25; 0.960;444;107; 8.0; 5.26; 2.08; 0.29; 0.03; 7.4; 6.3; 3.2; 1.1; 1.9; 1.6;528; 1.3; 81.1
+266; Omáèka sójová; Sauce, soy; ; 1.00; 6.25; 0.800;235;55; 0.1; ; ; ; ; 6.5; 5.7; ; 0.8; 7.5; 15.9;5900; 14.8; 70.0
+162; Omáèka svíèková, maso hovìzí vaøené, knedlík houskovı; Vegetable cream sauce with beef and dumplings; ; 1.00; 6.25; 0.000;768;183; 7.3; 4.37; 2.20; 0.41; 0.01; 20.5; 19.3; 1.3; 1.2; 9.4; 1.5;290; 0.7; 61.3
+156; Omáèka svíèková, modelová receptura; Sauce, vegetable cream sauce, model recipe; ; 1.00; 6.25; 0.960;722;173; 11.8; 7.27; 3.48; 0.52; 0.02; 5.3; 4.7; 0.7; 0.6; 11.8; 1.7;331; 0.8; 69.9
+640; Opuncie (plody); Opuntia, fruit, raw; Opuntia; 0.77; 6.25; 0.800;270;64; 0.4;0;0;0;0; 15.1; 13.3; 11.7; 1.8; 0.9; 0.6;0;0; 83.0
+880; Orebice, maso z celého kusu; Partridge meat from the whole animal, raw; Alectoris; 0.64; 6.25; 0.945;470;111; 2.6; 1.07; 1.10; 0.14;0;0;0;0;0; 22.0; 1.2;46; 0.11; 73.9
+913; Oøech, kolovı, celı; Nut, cola; Cola acuminata; 1.00; 6.25; 0.956;1036;250; 0.9;0;0;0;0; 74.9; 27.1; 2.3; 47.8; 9.3; 3.2;2; 0.01; 11.7
+914; Oøech, kolovı, mletı; Nut, cola, milled; Cola acuminata; 1.00; 6.25; 0.956;1272;303; 0.8;0;0;0;0; 78.9; 50.1; 3.8; 28.8; 9.4; 2.8;3; 0.01; 8.1
+370; Oøechy kešu; Cashew nuts; Anarcardium occidentale; 1.00; 5.30; 0.950;2470;595; 45.6; 10.40; 25.94; 7.41; ; 29.4; 27.3; 5.3; 2.1; 17.7; 3.0;15;0; 4.3
+335; Oøechy lískové; Hazelnuts; Corylus avellana L.; 1.00; 6.25; 0.956;2724;661; 61.4; 5.46; 47.48; 5.73;0; 21.2; 4.2; 4.2; 17.0; 14.4; 2.5;0;0; 5.5
+734; Oøechy lískové loupané; Hazelnuts, peeled; ; 1.00; 6.25; 0.956;2869;696; 66.5; 6.28; 52.61; 4.69;0; 14.3; 5.5; 5.0; 8.8; 14.4; 2.4;1;0; 2.4
+612; Oøechy para; Brazilnuts; Bertholethia excelsa Humb. et Bonpl.; 1.00; 6.25; 0.956;2837;688; 65.2; 15.00; 19.25; 28.09;0; 12.3; 5.2; 2.2; 7.2; 16.4; 3.5;1;0; 2.5
+613; Oøechy pekan; Pecan nuts; Carya illinoensis (Wangenh.) K. Koch; 1.00; 6.25; 0.956;2933;712; 69.6; 6.54; 32.50; 26.75;0; 13.7; 4.5; 4.2; 9.2; 12.1; 1.6;1;0; 3.0
+614; Oøechy píniové; Pine nuts; Pinus pinea L.; 1.00; 6.25; 0.956;2419;583; 44.5; 3.40; 17.19; 21.42;0; 31.3; 24.4; 4.3; 6.9; 17.8; 3.1;1;0; 3.3
+368; Oøechy pistáciové; Pistachio nuts, dried; Pistacia vera L.; 0.60; 5.30; 0.956;2500;605; 50.0; 5.64; 27.53; 14.53;0; 23.9; 13.5; 7.4; 10.4; 20.1; 2.8;19; 0.05; 3.2
+88; Oøechy vlašské; Walnuts; Juglans regia L.; 1.00; 6.25; 0.956;2740;664; 61.2; 5.36; 9.46; 43.68;0; 17.4; 6.6; 2.2; 10.8; 16.3; 1.9;0;0; 3.2
+915; Oøechy, tygøí; Nut, cola; Cyperus esculentus; 1.00; 6.25; 0.956;1777;429; 25.4; 5.33; 16.07; 2.75;0; 60.5; 30.0; 18.9; 30.5; 5.0; 2.1;4; 0.01; 7.0
+334; Ostruiny; Blackberries, raw; ; 1.00; 6.25; 0.800;225;54; 1.0; ; ; ; ; 12.4; 7.0; 4.9; 5.6; 1.4; 0.5;4;0; 84.7
+962; Ostruiny, lyofilizované; Blackberries, lyophilized; Rubus futicosus; 1.00; 6.25; 0.800;1328;318; 4.3; 0.32; 0.64; 2.44;0; 80.1; 47.1; 33.4; 33.0; 6.1; 2.6;1;0; 6.9
+760; Otruby ovesné; Oat bran; ; 1.00; 6.25; 0.820;1539;366; 7.3; 1.15; 2.42; 2.43;0; 65.7; 52.7; 1.5; 13.1; 15.7; 2.4;1;0; 8.7
+341; Otruby pšenièné; Wheat bran; Triticum aestivum L.; 1.00; 6.25; 0.820;1155;278; 5.7; 0.69; 1.35; 2.65;0; 60.1; 19.6; 2.3; 40.4; 16.8; 5.6;2;0; 11.8
+764; Otruby itné; Rye bran; ; 1.00; 6.25; 0.820;1170;281; 2.8; 0.32; 0.48; 1.52;0; 68.2; 30.2; 3.5; 38.0; 14.6; 4.4;1;0; 10.0
+163; Oves nahı; Naked oat; Avena nuda; 1.00; 5.83; 0.940;1620;384; 8.5; 1.69; 3.04; 3.23; ; 65.4; 57.8; ; 7.6; 15.3; 2.1;4;0; 8.7
+14; Palaèinka se zavaøeninou, trh; Palacinka, pancake (crape) with jam, retail; ; 1.00; 6.25; 0.956;842;199; 4.1; 0.70; 1.49; 1.73; ; 35.4; ; ; ; 5.2; 0.9;191; 0.5; 54.4
+576; Pangasius dolnookı (Pangas), filety; Tra catfish, fillet, raw; Pangasius hypophthalmus; 1.00; 6.25; 0.700;347;82; 1.9; 0.55; 0.58; 0.16;0;0;0;0;0; 16.3; 0.8;27; 0.07; 82.0
+641; Papaya melounová; Papaya, raw; Carica papaya; 0.72; 6.25; 0.800;169;49; 0.1;0;0;0;0; 10.1; 8.2; 8.2; 1.9; 0.6; 0.5;2; 0.01; 88.7
+247; Paprika sterilovaná; Pepper, sterilized; ; 1.00; 6.25; 0.000;127;30; 0.2; ; ; ; ; 7.4; 5.4; ;2; 0.7; 0.4;291; 0.7; 91.3
+988; Paprika zeleninová, bílá; Pepper, sweet, white, raw; Capsicum; 0.84; 6.25; 0.800;72;17; 0.2;0;0;0;0; 4.4; 2.1; 2.1; 2.3; 0.8; 0.4;0;0; 94.2
+65; Paprika zeleninová, èervená; Pepper, sweet, green, raw; Capsicum annum L.; 0.83; 6.25; 0.800;124;29; 0.4; ; ; ; ; 6.0; 4.3; ; 1.7; 1.3; 0.6;5;0; 91.6
+64; Paprika zeleninová, zelená; Pepper, sweet, red, raw; Capsicum annum L.; 0.84; 6.25; 0.800;87;21; 0.3; ; ; ; ; 4.6; 2.6; ; 2.0; 0.9; 0.4;6;0; 93.8
+989; Paprika zeleninová, lutá; Pepper, sweet, yellow, raw; Capsicum; 0.88; 6.25; 0.800;98;23; 0.3;0;0;0;0; 4.7; 4.2; 3.7; 0.5; 0.7; 0.4;0;0; 93.9
+963; Paprika, sušená; Pepper, dried; Capsicum; 1.00; 6.25; 0.800;1389;330; 5.1; 0.90; 0.24; 2.78;0; 71.3; 53.5; 53.4; 17.8; 8.7; 3.9;35; 0.09; 11.0
+8; Párek v rohlíku, trh; Hot dog with mustard, retail; ; 1.00; 6.25; 0.953;1030;244; 10.1; 3.17; 4.97; 1.38; ; 28.9; ; ; ; 9.4; 1.4;422; 1.1; 50.2
+312; Párky debrecínské; Frankfurters, debreciener; ; 0.98; 6.25; 0.000;1180;283; 24.0; ; ; ; ; 2.2; ; ;0; 15.2; 3.0;814; 2.0; 57.3
+304; Párky drùbeí; Frankfurters, poultry; ; 0.98; 6.25; 0.000;1010;241; 19.2; 6.94; 7.35; 3.47; ; 3.8; 3.7; ;0; 13.9; 2.4;131; ; 60.7
+314; Párky jemné; Frankfurters, fine; ; 0.98; 6.25; 0.000;1230;294; 26.8; ; ; ; ; 1.3; ; ;0; 12.9; 2.5;657; 1.6; 56.5
+994; Párky spišské; Frankfurters, Spisske; ; 1.00; 6.25; 0.956;846;203; 13.3; 5.38; 5.71; 1.08; 0.04; 4.2; 4.2; 0.1; 0.0; 16.6; 3.2;876; 2.2; 62.7
+642; Pastinák setı; Parsnip, raw; Pastinaca sativa; 0.83; 6.25; 0.800;280;67; 0.5;0;0;0;0; 17.4; 11.2; 11.0; 6.1; 1.3; 1.0;3; 0.01; 79.8
+306; Paštika játrová; Pate, liver; ; 1.00; 6.25; 0.000;1310;312; 28.0; 9.57; 12.36; 3.16; ; 1.7; 1.7; ;0; 14.2; 2.2;970; ; 53.9
+643; Patizon; Pattypan squash, raw; Cucurbita pepo; 0.68; 6.25; 0.800;66;16; 0.1;0;0;0;0; 4.2; 2.5; 2.3; 1.6; 0.4; 0.6;0;0; 94.7
+66; Paitka; Chives, raw; Allium schoenoprasum L.; 1.00; 6.25; 0.800;131;31; 0.7; ; ; ; ; 5.1; 2.7; ; 2.3; 2.4; 1.1;6;0; 90.7
+670; Pektin; Pectin; ; 1.00; 6.25; 0.956;1072;258; 0.6;0;0;0;0; 77.9; 26.9;0; 51.0; 10.9; 1.3;353; 0.88; 9.3
+881; Perlièka celá, maso bez kùe; Guinea fowl, meat wihtout skin, raw; Numida meleagris; 0.47; 6.25; 0.945;446;106; 2.5; 0.71; 0.88; 0.69;0;0;0;0;0; 20.8; 1.1;69; 0.17; 74.4
+882; Perlièka celá, maso s kùí; Guinea fowl, meat with skin, raw; Numida meleagris; 0.62; 6.25; 0.945;652;156; 8.3; 2.73; 3.07; 1.97;0;0;0;0;0; 20.3; 1.0;75; 0.19; 69.1
+441; Permeát mléènı; Milk permeate; ; 1.00; 6.38; 0.945;32;8; 0.4; 0.38;0;0;0; 1.0; 1.0; 1.0;0;0; 0.1;15; 0.04; 98.5
+67; Petrel, koøen; Parsley root, raw; Petroselinum crispum (Mill.) A. W. Hill; 0.66; 6.25; 0.800;222;53; 0.5; ; ; ; ; 11.5; 7.5; ; 4.0; 2.6; 1.3;38; 0.1; 84.1
+68; Petrel, na; Parsley, leaf, raw; Petroselinum sativum Hoffmann; 0.72; 6.25; 0.800;226;54; 0.42; ; ; ; ; 10.3; 6.1; ; 4.2; 4.3; 1.8;33; 0.1; 83.2
+644; Physalis, bobule; Physalis, berries, raw; Physalis; 5.00; 6.25; 0.800;295;71; 1.7; 0.14; 0.17; 1.12;0; 14.8; 9.0; 9.0; 5.8; 1.9; 1.3;1;0; 82.1
+394; Piškoty dìtské; Sponge biscuits; ; 1.00; 6.25; 0.000;1660;392; 4.9; 1.4; ; ; ; 76.8; 75.0; 36.0; 1.8; 11.0; 0.7;50; 0.1; 6.6
+425; Pivo svìtlé leák, 12 %; Beer, lager, light, 12%; ; 1.00; 6.25; 0.000;189;45;0;0;0;0; ; 4.2; 4.2; ;0; 0.5; 0.2;3;0; 91.0
+374; Pivo svìtlé nealkoholické; Beer, light, low alcohol; ; 1.00; 6.25; 0.000;63;15;0;0;0;0; ; 2.8; 2.8; ;0; 0.1; 0.1;2;0; 96.5
+375; Pivo svìtlé, vıèepní, 10 %; Beer, light, 10%; ; 1.00; 6.25; 0.000;160;38;0;0;0;0; ; 4.0; 4.0; ;0; 0.3; 0.2;3;0; 92.5
+426; Pivo tmavé, leák, 12 %,; Beer, lager, dark, 12%; ; 1.00; 6.25; 0.000;190;45;0;0;0;0; ; 5.3; 5.3; ;0; 0.4; 0.2;3;0; 90.9
+376; Pivo tmavé, vıèepní, 10 %; Beer, dark, 10%; ; 1.00; 6.25; 0.000;157;37;0;0;0;0; ; 4.3; 4.3; ;0; 0.3; 0.2;2;0; 92.5
+359; Pizza Hawai, balená a mrazená, po MW úpravì; Pizza, Hawai, packed and frozen, treated in microvawe oven; ; 1.00; 6.25; 0.000;1050;249; 3.9; 2.20; 0.93; 0.23; ; 40.6; ; ; ; 12.9; 1.9;384; 1.0; 40.7
+357; Pizza šunková, balená a mrazená, po MW úpravì; Pizza, ham, packed and frozen, treated in microvawe oven; ; 1.00; 6.25; 0.000;1040;246; 4.4; 1.92; 1.57; 0.49; ; 39.0; ; ; ; 12.5; 2.2;425; 1.1; 41.9
+358; Pizza ampionová, balená a mrazená, po MW úpravì; Pizza, mushroom, packed and frozen, treated in microvawe oven; ; 1.00; 6.25; 0.000;954;225; 1.9; 0.65; 0.77; 0.31; ; 41.4; ; ; ; 10.6; 2.0;521; 1.3; 44.1
+3; Placky bramborové, modelová receptura; Pancake from cooked potatoes, fried, model recipe; ; 1.00; 6.25; 0.956;986;235; 8.2; 1.18; 2.39; 4.29; 0.12; 34.1; 30.7; ; 3.5; 7.8; 3.2;730; 1.8; 46.7
+812; Platıs obecnı velkı, maso bez kùe; European plaice, meat without skin, raw; Pleuronectes platessa; 0.57; 6.25; 0.700;288;68; 0.3; 0.06; 0.05; 0.04;0;0;0;0;0; 16.3; 1.0;98; 0.24; 81.5
+813; Platıs obecnı velkı, maso s kùí; European plaice, meat with skin, raw; Pleuronectes platessa; 0.68; 6.25; 0.700;300;71; 0.4; 0.10; 0.12; 0.04;0;0;0;0;0; 16.8; 1.0;106; 0.26; 80.4
+447; Podmáslí; Buttermilk; ; 1.00; 6.38; 0.945;170;40; 1.0; 0.85;0;0;0; 4.3; 4.3; 3.4;0; 3.5; 0.6;42; 0.11; 90.6
+671; Podmáslí sušené; Milk, buttermilk, dried; ; 1.00; 6.25; 0.945;1645;389; 6.6; 3.77; 1.94; 0.23;0; 50.9; 50.9; 47.0;0; 31.4; 7.2;389; 0.97; 3.8
+172; Pohanka - tatarka; Tartary buckwheat; Fagopyrum tataricum; 1.00; 6.25; 0.720;1400;332; 3.1; 0.49; 0.85; 0.89; ; 76.9; 54.4; ; 22.4; 10.5; 3.2;2;0; 6.4
+169; Pohanka setá; Common buckwheat; Fagopyrum  esculentum; 1.00; 6.25; 0.720;1450;342; 2.9; 0.39; 0.84; 0.87; ; 69.3; 62.7; ; 6.6; 13.1; 2.1;3;0; 12.8
+1000; Pohanka, loupaná, lámanka; Buckwheat, hulled, groats, raw; Fagopyrum esculentum; 1.00; 6.25; 0.720;1462;345; 2.1; 0.26; 0.58; 0.54;0; 72.7; 68.3; 0.9; 4.4; 11.1; 1.4;0;0; 12.7
+1001; Pohanka, neloupaná; Buckwheat, unhulled; Fagopyrum; 1.00; 6.25; 0.720;1307;311; 2.3; 0.29; 0.65; 0.60;0; 73.5; 50.9; 0.9; 22.6; 10.3; 1.9;1;0; 12.0
+1; Polévka bramborová, modelová receptura; Soup, potato, model recipe; ; 1.00; 6.25; 0.956;218;52; 2.7; 1.77; 0.63; 0.09; 0.04; 6.3; 4.7; 1.1; 1.6; 1.5; 1.2;305; 0.8; 88.4
+932; Polníèek; Corn salad, raw; Valerianella locusta (L.) Laterr.; 1.00; 6.25; 0.800;79;19; 0.4;0;0;0;0; 2.8; 0.5; 0.1; 2.3; 2.2; 1.3;1;0; 93.3
+645; Pomelo; Pomelo, raw; Citrus maxima; 0.43; 6.25; 0.800;170;40; 0.1;0;0;0;0; 9.2; 8.4; 7.0; 0.7; 0.9; 0.4;0;0; 89.4
+862; Pomeranè, lyofilizovanı; Orange, lyophilized; Citrus sinensis; 1.00; 6.25; 0.800;1331;315; 1.1; 0.16; 0.26; 0.32;0; 79.3; 61.7; 57.3; 17.6; 5.9; 3.3;6; 0.02; 10.4
+41; Pomeranèe; Oranges, raw; Citrus sinensis L. Pers.; 0.73; 6.25; 0.800;209;49; 0.2; 0.02; 0.05; 0.08; ; 12.0; 10.0; 7.3; 2.0; 0.9; 0.5;3;0; 86.4
+69; Pórek; Leek, raw; Allium ampeloprasum L.; 0.63; 6.25; 0.800;136;32; 0.3; ; ; ; ; 6.6; 3.8; ; 2.8; 2.2; 0.9;17;0; 90.0
+345; Prášek kakaovı; Cocoa powder; Theobroma; 1.00; 6.25; 0.956;1605;387; 20.6; 12.60; 6.47; 0.56;0; 43.10; 13.52; 1.11; 29.58; 22.1; 10.0;12; 0.03; 4.2
+775; Prášek kakaovı, se sníenım obsahem tuku; Cocoa powder, low-fat; ; 1.00; 6.25; 0.956;1335;321; 10.9; 6.58; 3.48; 0.31;0; 47.5; 14.2; 0.7; 33.4; 25.0; 13.2;19; 0.05; 3.4
+398; Prášek pudinkovı, kakaovı; Pudding powder, cocoa; ; 1.00; 6.25; 0.800;1520;362; 2.0; 1.1; 0.6; 0.1; ; 83.1; 82.9; ; 0.2; 2.0; 0.8;12;0; 12.1
+399; Prášek pudinkovı, vanilkovı; Pudding powder, vanilla; ; 1.00; 6.25; 0.800;1480;353; 0.1; ; ; ; ; 86.5; 86.3; ; 0.2; 0.4; 0.3;8;0; 12.7
+168; Proso; Common millet; Panicum miliaceum; 1.00; 5.83; 0.720;1570;372; 4.4; 0.37; 0.76; 2.04; ; 71.2; 67.7; ; 3.5; 13.6; 1.3;1;0; 9.5
+396; Protlak rajèatovı; Tomato puree; ; 1.00; 6.25; 0.800;427;101; 0.5;0;0; 0.17; ; 22.9; 20.3; ; 2.6; 2.5; 2.2;59; 0.4; 71.9
+391; Prsty rybí, pøedsmaené, zmrazené; Fish fingers, prefried, frozen; ; 1.00; 6.25; 0.000;829;198; 8.3; 3.4; 3.4; 1.3; ; 18.0; 17.4; 0.8; 0.6; 13.0; 1.7;235; 0.6; 59.0
+329; Pstruh duhovı; Trout, rainbow, raw; Oncorhynchus mykiss (Salmo irideus); 0.52; 6.25; 0.000;671;160; 9.6; 2.11; 2.76; 3.15; ;0;0;0;0; 18.6; 1.2;52; 0.1; 70.6
+816; Pstruh duhovı (lososovitı, rùovoması), maso s kùí; Rainbow trout (pink flesh), meat with skin, raw; Oncorhynchus mykiss; 0.77; 6.25; 0.700;428;102; 3.1; 0.45; 0.83; 0.78;0;0;0;0;0; 18.4; 1.3;47; 0.12; 74.2
+1004; Pstruh duhovı, maso s kùí; Rainbow trout, meat with skin, raw; Oncorhynchus mykiss; 0.79; 6.25; 0.700;539;128; 5.1; 0.72; 1.41; 1.31;0;0;0;0;0; 20.6; 1.4;50; 0.13; 73.1
+815; Pstruh duhovı, uzenı, maso bez kùe; Rainbow trout, meat without skin, smoked; Oncorhynchus mykiss; 0.77; 6.25; 0.900;593;141; 5.6; 0.81; 2.57; 1.30;0;0;0;0;0; 22.7; 3.6;983; 2.46; 66.8
+825; Psyllium drcené; Psyllium, ground; Plantago psyllium; 1.00; 6.25; 0.820;749;186; 0.7; 0.10; 0.13; 0.24;0; 86.7; 1.2;0; 85.5; 1.1; 2.6;68; 0.17; 8.9
+167; Pšenice dvouzrnka; Emmer wheat; Triticum dicoccum; 1.00; 5.83; 0.720;1530;362; 3.9; 0.51; 0.67; 1.61; ; 69.5; 60.6; ; 8.9; 16.6; 2.1;2;0; 8.0
+166; Pšenice jednozrnka; Einkorn wheat; Triticum monococcum; 1.00; 5.83; 0.720;1480;351; 3.6; 0.39; 0.70; 1.48; ; 66.3; 57.6; ; 8.7; 17.6; 2.1;3;0; 10.5
+176; Pšenice ozimá; Common wheat or winter wheat; Triticum aestivum; 1.00; 5.83; 0.720;1470;349; 2.9; 0.35; 0.39; 1.34; ; 74.6; 59.9; ; 14.7; 13.4; 1.8;2;0; 7.3
+668; Quinoa, semena; Quinoa seeds; Chenopodium quinoa; 1.00; 6.25; 0.956;1470;349; 6.1; 0.77; 1.86; 3.17;0; 68.4; 54.1; 1.1; 14.2; 12.4; 2.2;3; 0.01; 10.9
+70; Rajèata; Tomato, raw; Lycopersicon esculentum Mill.; 0.93; 6.25; 0.800;88;21; 0.2; ; ; ; ; 4.7; 3.1; ; 1.6; 0.9; 0.5;7;0; 93.7
+646; Rajèata cherry; Cherry tomatoes, raw; Solanum lycopersicum; 1.00; 6.25; 0.800;108;26; 0.6;0;0;0;0; 5.0; 2.7; 1.9; 2.3; 1.4; 0.7;3; 0.01; 92.3
+933; Rakytník; Seaberry, raw; Hippophae rhamnoides; 1.00; 6.25; 0.800;340;82; 3.8; 1.10; 1.02; 0.65;0; 11.0; 8.1; 4.0; 2.9; 2.3; 0.4;11; 0.03; 82.5
+749; Rakytník sušenı; Sea Buckthorn, dried; Hippophae rhamnoides L.; 1.00; 6.25; 0.800;1550;374; 16.7; 5.41; 8.79; 1.79;0; 64.9; 24.1; 0.8; 40.8; 11.4; 2.3;78; 0.19; 4.6
+489; Rebarbora; Rhubarb, raw; Rheum rhabarbarum; 0.66; 6.25; 0.800;63;15;0;0;0;0;0; 4.4; 1.5; 0.6; 2.9; 0.9; 1.3;2; 0.01; 93.4
+442; Retentát mléènı; Milk retentate; ; 1.00; 6.38; 0.945;137;33; 0.6; 0.28; 0.19;0;0; 1.1; 1.1; 1.1;0; 5.7; 0.6;19; 0.05; 92.0
+196; Rohlík bílı; Roll, wheat, white; ; 1.00; 6.25; 0.000;1490;351; 1.4; ; ; ; ; 73.1; ; ; ; 11.4; 2.1;603; 1.5; 12.0
+424; Rohlík sójovı; Roll, soy; ; 1.00; 6.25; 0.000;1240;293; 2.7; 0.52; 0.70; 0.58;0; 63.1; 57.5; 3.7; 5.6; 6.8; 1.1;475; 1.2; 26.3
+174; Rosièka; Hairy crabgrass; Digitaria sanguinalis; 1.00; 6.25; 0.720;1488;353; 5.1; 0.64; 1.18; 1.81; ; 70.7; 56.8; ; 13.9; 13.1; 5.3;3;0; 6.0
+47; Rozinky bez jadérek; Raisins, seedless; Vitis spp.; 1.00; 6.25; 0.660;1384;326; 0.5; 0.05; 0.05; 0.04; ; 79.2; 75.5; 58.0; 3.7; 3.1; 1.9;11;0; 15.4
+48; Rozinky s jadérky; Raisins, seeded; Vitis spp.; 1.00; 6.25; 0.800;1330;315; 0.5; ; ; ; ; 78.5; 71.7; ; 6.8; 2.5; 1.9;28;0; 16.6
+1003; Rozinky sultánky; Raisins, Sultanas; Vitis vinifera; 1.00; 6.25; 0.800;1486;350; 0.9; 0.14; 0.15; 0.40;0; 84.3; 79.3; 73.2; 4.6; 3.6; 2.8;19; 0.05; 8.4
+648; Rukola; Rucola, raw; Eruca sativa; 1.00; 6.25; 0.800;74;18; 0.3;0;0;0;0; 2.1;0;0; 2.1; 2.7; 1.8;60; 0.15; 93.1
+750; Rybíz bílı; Currants, white; Ribes rubrum; 0.97; 6.25; 0.800;218;52; 1.1; 0.11; 0.16; 0.52;0; 12.8; 6.2; 5.3; 6.7; 1.1; 0.6;0;0; 84.4
+42; Rybíz èernı; Currants, black, raw; Ribes nigrum L.; 0.98; 6.25; 0.800;258;62; 0.3; 0.03; 0.01; 0.10; ; 16.4; 10.6; 7.5; 5.8; 1.2; 0.8;5;0; 81.3
+965; Rybíz èernı, lyofilizovanı; Black currant, lyophilized; Ribes nigrum; 1.00; 6.25; 0.800;1400;333; 4.0; 0.29; 0.60; 1.76;0; 80.2; 56.8; 41.6; 23.4; 5.8; 2.5;1;0; 7.5
+43; Rybíz èervenı; Currants, red, raw; Ribes rubrum L.; 0.88; 6.25; 0.800;205;49; 0.2; 0.04; 0.03; 0.07; ; 13.4; 8.0; 4.9; 5.4; 1.1; 0.6;4;0; 84.7
+966; Rybíz èervenı, lyofilizovanı; Red currant, lyophilized; Ribes rubrum; 1.00; 6.25; 0.800;1282;306; 3.3; 0.20; 0.49; 1.73;0; 78.6; 50.0; 40.1; 28.6; 4.7; 5.4;0;0; 8.0
+181; Rıe loupaná; Rice, white, raw; Oryza sativa L.; 1.00; 5.95; 0.820;1489;351; 0.4; ; ; ; ; 80.4; 78.7; ; 1.7; 7.2; 0.5;1;0; 11.5
+504; Rıe loupaná, dušená v nesolené vodì; Rice, white, boiled in unsalted water; ; 1.00; 5.95; 0.000;597;141; 0.2; ; ; ; ; 32.4; 31.8; ; 0.6; 2.6; 0.1; ; ; 64.7
+182; Rıe neloupaná (natural); Rice, brown (natural), raw; Oryza sativa L.; 1.00; 5.95; 0.820;1500;354; 2.6; ; ; ; ; 75.3; 72.8; ; 2.5; 8.7; 1.1; ; ; 12.3
+505; Rıe neloupaná (natural), dušená v nesolené vodì; Rice, brown (natural), boiled in unsalted water; ; 1.00; 5.95; 0.000;691;163; 1.2; ; ; ; ; 35.0; 33.9; ; 1.1; 3.6; 0.5; ; ; 59.7
+979; Øasa moøská Arame; Seaweed Arame; Phaeophyceae, Fucophyceae; 1.00; 6.25; 0.800;789;194; 2.1; 1.02; 0.57; 0.08;0; 69.4; 0.5;0; 68.9; 9.0; 10.4;1030; 2.58; 9.1
+980; Øasa moøská Dulse; Seaweed Dulse; Phaeophyceae, Fucophyceae; 1.00; 6.25; 0.800;860;207; 0.9; 0.33; 0.23; 0.05;0; 56.8; 22.9;0; 33.9; 9.7; 23.2;1646; 4.12; 9.4
+978; Øasa moøská Kombu; Seaweed Kombu; Phaeophyceae, Fucophyceae; 1.00; 6.25; 0.800;765;185; 1.6; 0.48; 0.41; 0.13;0; 52.5; 17.6;0; 34.9; 7.5; 29.2;2815; 7.04; 9.2
+491; Øedkev bílá; Radish, white, raw; Raphanus sativus; 0.77; 6.25; 0.800;83;20; 0.1; 0.03; 0.02; 0.08; ; 4.2; 2.6; 2.5; 1.6; 1.3; 0.9;30; 0.08; 93.5
+71; Øedkvièka; Radish, raw; Raphanus sativus L. var. radicula DC.; 0.65; 6.25; 0.800;45;11;0;0;0;0;0; 2.6; 1.6; 1.6; 1.0; 0.6; 0.5;10; 0.03; 96.2
+72; Øepa èervená; Beet, red, raw; Beta vulgaris L. subsp. esculenta; 0.78; 6.25; 0.800;166;39; 0.2; ; ; ; ; 8.9; 7.2; ; 1.7; 1.3; 0.8;45; 0.1; 88.8
+967; Øepa èervená, lyofilizovaná; Red beet, lyophilized; Beta vulgaris var. Vulgaris; 1.00; 6.25; 0.800;1305;310; 0.7;0;0;0;0; 74.9; 52.6; 52.4; 22.3; 12.2; 6.3;143; 0.36; 5.9
+722; Sádlo kanèí; Wild boar, fat, raw; Sus scrofa; 1.00; 6.25; 0.953;2633;640; 67.7; 16.77; 23.10; 23.51;0;0;0;0;0; 7.6; 0.4;30; 0.08; 24.4
+82; Sádlo vepøové; Lard; ; 1.00; 6.25; 0.930;3690;896; 99.5; ; ; ; ;0;0;0;0; 0.2; 0.1;2;0; 0.2
+303; Salám drùbeí; Sausage, poultry; ; 1.00; 6.25; 0.000;663;158; 8.9; ; ; ; ; 1.3; ; ; ; 18.3; 2.7;131; ; 68.1
+309; Salám loveckı; Salami, Lovecky salam, long-keeping fermented meat product; ; 0.99; 6.25; 0.000;1780;425; 35.4; ; ; ; ; 0.2; 0.2; ;0; 27.4; 5.6;1291; ; 27.8
+310; Salám šunkovı; Sausage, ham; ; 0.98; 6.25; 0.000;848;202; 14.6; ; ; ; ; 0.1; 0.1; ;0; 18.0; 3.3;1310; ; 65.6
+987; Salát bramborovı, modelová receptura; Salad, potato, modelová receptura; ; 1.00; 6.25; 0.956;907;219; 18.9; 1.98; 5.00; 10.02;0; 11.3; 9.6; 3.8; 1.7; 1.8; 2.0;448; 1.12; 66.0
+15; Salát bramborovı, trh; Salad, potato, retail; ; 1.00; 6.25; 0.956;655;157; 10.8; 0.87; 6.34; 3.08; ; 13.2; ; ; ; 1.8; 0.9;202; 0.5; 73.2
+356; Salát Coleslaw (firma KENTUCKY FRIED CHICKEN); Salad, Coleslaw, KENTUCKY FRIED CHICKEN; ; 1.00; 6.25; 0.000;539;130; 9.7; ; ; ; ; 9.0; ; ; ; 1.6; 0.9;131; 0.3; 78.8
+25; Salát fazolovı, trh; Salad, bean, retail; ; 1.00; 6.25; 0.956;1070;257; 19.4; 1.80; 11.17; 5.37; ; 14.8; ; ; ; 5.7; 1.3;220; 0.6; 58.8
+24; Salát hanáckı, trh; Salad, red cabbage, retail; ; 1.00; 6.25; 0.956;564;136; 11.8; 0.94; 6.84; 3.40; ; 5.8; ; ; ; 1.7; 1.5;320; 0.8; 79.3
+19; Salát hermelínovı, trh; Salad, with camembert-type cheese, retail; ; 1.00; 6.25; 0.956;1340;325; 31.0; 5.98; 16.39; 6.98; ; 1.4; ; ; ; 10.1; 2.0;461; 0.8; 55.7
+73; Salát hlávkovı; Lettuce, raw; Lactuca sativa L.; 0.68; 6.25; 0.800;65;15; 0.2; ; ; ; ; 2.8; 1.4; ; 1.4; 1.3; 0.9;9;0; 94.8
+22; Salát holandskı, trh; Salad, Dutch, retail; ; 1.00; 6.25; 0.956;1370;331; 30.6; 5.23; 16.74; 6.69; ; 2.9; ; ; ; 10.9; 2.3;589; 1.5; 53.4
+23; Salát islandskı, trh; Salad, Iceland, retail; ; 1.00; 6.25; 0.956;1240;301; 29.8; 2.38; 17.63; 7.69; ; 1.7; ; ; ; 6.6; 2.3;610; 1.5; 59.6
+26; Salát jarní, trh; Salad, spring, retail; ; 1.00; 6.25; 0.000;498;120; 9.6; ; ; ; ; 5.5; ; ; ; 2.9; 2.4;448; 1.1; 79.6
+18; Salát kemping, trh; Salad, camping, retail; ; 1.00; 6.25; 0.956;826;199; 17.4; 3.22; 9.85; 3.33; ; 5.0; ; ; ; 5.7; 2.1;515; 1.3; 69.8
+30; Salát kukuøiènı, trh; Salad, maize, retail; ; 1.00; 6.25; 0.000;423;100; 3.2; ; ; ; ; 15.8; ; ; ; 2.1; 1.2;226; 0.6; 77.7
+27; Salát letní, trh; Salad, summer, retail; ; 1.00; 6.25; 0.000;190;45; 1.4; ; ; ; ; 3.2; ; ; ; 4.9; 0.9;103; 0.3; 89.6
+29; Salát mrkvovı, trh; Salad, carrot, retail; ; 1.00; 6.25; 0.000;106;25; 0.2; ; ; ; ; 5.0; ; ; ; 0.8; 0.9;44; 0.1; 93.2
+17; Salát pochoutkovı, trh; Salad, delicate, retail; ; 1.00; 6.25; 0.956;1020;247; 22.4; 3.80; 12.61; 4.40; ; 5.3; ; ; ; 6.0; 1.9;454; 1.1; 64.4
+21; Salát rybí, trh; Salad, fish, retail; ; 1.00; 6.25; 0.956;1190;287; 27.0; 2.47; 15.60; 6.74; ; 5.1; ; ; ; 6.0; 2.0;522; 1.3; 59.9
+31; Salát to-fu, trh; Salad, to-fu, retail; ; 1.00; 6.25; 0.000;349;83; 2.0; ; ; ; ; 9.6; ; ; ; 6.6; 2.4;561; 1.4; 79.4
+20; Salát vajíèkovı, trh; Salad, egg, retail; ; 1.00; 6.25; 0.956;742;179; 15.7; 2.24; 9.08; 3.37; ; 4.0; ; ; ; 5.5; 1.4;303; 0.8; 73.4
+16; Salát vlašskı, trh; Salad, Italian, retail; ; 1.00; 6.25; 0.956;890;215; 17.8; 2.03; 10.13; 4.64; ; 10.5; ; ; ; 3.1; 1.7;312; 0.8; 67.0
+28; Salát zelnı, trh; Salad, cabbage, retail; ; 1.00; 6.25; 0.000;374;90; 5.2; ; ; ; ; 9.2; ; ; ; 1.5; 1.4;296; 0.7; 82.7
+754; Sardel obecná (Anèovièka); Fish, anchovy, raw; Engraulis encrasicolus; 0.71; 6.25; 0.700;839;201; 13.4; 2.65; 3.21; 1.18;0;0;0;0;0; 20.1; 2.4;81; 0.20; 64.0
+755; Sardinka evropská; Fish, sardines, raw; Sardina pilchardus; 0.68; 6.25; 0.700;661;158; 8.9; 2.89; 1.73; 0.71;0;0;0;0;0; 19.5; 1.8;112; 0.28; 68.0
+390; Sardinky v oleji; Sardines, canned in oil; ; 0.91; 6.25; 0.940;921;220; 14.0; 2.77; 5.46; 4.73; ;0;0;0;0; 23.7; 3.6;408; 1.0; 58.5
+393; Sardinky v rajèatové omáèce; Sardines, canned in tomato sauce; ; 1.00; 6.25; 0.925;679;162; 9.9; 2.80; 2.70; 3.00; ; 1.5; 1.4; 1.4; 0.1; 17.0; 2.1;350; 0.9; 69.5
+911; Semena canihua, z merlíku bledého; Canihua, seeds; Chenopodium pallidicaule; 1.00; 6.25; 0.800;1462;349; 8.7; 1.21; 2.01; 3.69;0; 62.4; 41.8; 3.7; 20.6; 15.5; 2.3;12; 0.03; 11.1
+616; Semena hoøèice bílé; White mustard seeds; Sinapis alba; 1.00; 6.25; 0.956;1859;448; 28.3; 1.89; 9.73; 4.31;0; 30.9; 10.0; 3.1; 20.9; 28.0; 4.7;1;0; 8.2
+951; Semena jetelová; Clover seeds; Trifolium; 1.00; 6.25; 0.800;1289;310; 7.9; 1.42; 1.24; 3.63;0; 43.0; 3.7; 1.2; 39.3; 36.4; 3.9;14; 0.03; 8.8
+617; Semena lnìná; Flaxseed (linseed); Linum usitatissimum; 1.00; 6.25; 0.956;2005;484; 33.5; 3.76; 6.97; 21.26;0; 35.6; 12.5;0; 23.1; 21.7; 2.9;41; 0.10; 6.3
+974; Semena pískavice, øecké seno; Seeds, Fenugreek; Trigonella foenum-graecum; 1.00; 6.25; 0.800;1181;286; 7.8; 0.90; 1.02; 4.23;0; 55.0; 3.8; 0.2; 51.2; 24.7; 3.6;88; 0.22; 8.9
+736; Semena øeøichy; Cress seeds; ; 1.00; 6.25; 0.956;1669;404; 24.1; 3.62; 10.77; 8.42;0; 41.7; 3.8; 3.8; 37.9; 24.1; 5.4;5; 0.01; 7.2
+372; Semena sezamová; Sesame seeds; Sesamum indicum L.; 1.00; 5.30; 0.000;2680;648; 58.5; 8.74; 22.59; 23.26; ; 12.5; 4.6; 0.5; 7.9; 21.9; 3.9;26; 0.1; 3.2
+894; Semena sezamová, neloupaná; Sesame seed, unscraped; Sesamum; 1.00; 6.25; 0.956;2483;601; 52.3; 7.77; 21.66; 20.53;0; 14.9; 2.6; 0.9; 12.3; 23.9; 5.3;3; 0.01; 3.6
+371; Semena sluneènicová; Sunflower seeds; Helianthus annuus L.; 0.63; 6.25; 0.940;2370;572; 45.0; 5.54; 10.26; 27.37; ; 25.7; 19.7; 1.7; 6.0; 19.0; 3.5;88; 0.2; 6.8
+857; Semena teffová, svìtlá; Teff seeds, light; Eragrostis abyssinica (Jacq.) Link; 1.00; 6.25; 0.956;888;218; 3.3; 0.56; 0.66; 1.12;0; 71.4; 4.2; 1.3; 67.2; 9.2; 2.0;2; 0.01; 14.1
+369; Semena tykvová (dıòová), sušená; Seeds, pumpkin, dried; ; 1.00; 6.25; 0.956;2354;568; 45.3; 7.92; 15.39; 20.01;0; 11.4; 1.3; 1.3; 10.1; 33.8; 4.8;15; 0.04; 5.3
+737; Semena vojtìšky; Alfalfa seeds; ; 1.00; 6.25; 0.956;1325;319; 8.5; 1.23; 2.56; 3.45;0; 46.1; 7.4; 1.2; 38.7; 34.0; 3.5;18; 0.04; 8.0
+923; Semena, anız, celı; Anise seeds, whole; Pimpinella anisium; 1.00; 6.25; 0.800;1683;408; 25.3; 0.98; 14.17; 4.59;0; 42.9; 5.9; 3.2; 37.0; 20.7; 6.2;19; 0.05; 4.9
+924; Semena, èernucha setá; Seeds, black-caraway black cumin; Nigella sativa; 1.00; 6.25; 0.800;2102;509; 41.0; 5.55; 7.99; 18.39;0; 25.5; 1.6; 1.1; 23.9; 21.6; 4.3;41; 0.10; 7.6
+968; Semena, Jobovy slzy; Seeds, Job's tears; Coix lacryma-jobi; 1.00; 6.25; 0.800;1626;385; 6.1; 0.73; 2.61; 1.51;0; 71.3; 65.6; 0.7; 5.7; 14.1; 1.7;1;0; 6.8
+650; Shiitake, èerstvé; Shiitake, raw; Lentinula edodes; 1.00; 6.25; 0.800;141;34; 0.4;0;0;0;0; 4.9; 2.0;0; 2.9; 3.9; 1.0;3; 0.01; 89.7
+458; Sirup glukózovı; Syrup, glucose; ; 1.00; 6.25; 0.800;1460;348;0;0;0;0;0; 85.8; 85.8; 17.0;0;0;0;1;0; 14.2
+459; Sirup inulinovı; Syrup, inulin; ; 1.00; 6.25; 0.800;1370;327;0;0;0;0;0; 80.5; 80.5; 12.3;0;0;0;1;0; 19.5
+460; Sirup javorovı; Syrup, maple; ; 1.00; 6.25; 0.800;1150;274;0;0;0;0;0; 67.9; 67.1; 67.0; 0.8;0; 0.3;1;0; 31.9
+819; Siven americkı, maso bez kùe; Brook trout, meat without skin, raw; Salvelinus fontinalis; 0.59; 6.25; 0.900;584;140; 7.6; 1.00; 3.85; 1.75;0;0;0;0;0; 17.8; 1.4;52; 0.13; 72.9
+820; Siven americkı, maso s kùí; Brook trout, meat with skin, raw; Salvelinus fontinalis; 0.66; 6.25; 0.900;611;146; 8.7; 1.14; 4.46; 1.87;0;0;0;0;0; 17.0; 1.5;50; 0.13; 73.2
+256; Skoøice mletá; Spices, cinnamon, ground, dried; Cinnamomum; 1.00; 6.25; 0.956;973;237; 1.9;0;0;0;0; 80.8; 21.3; 1.8; 59.5; 3.8; 3.8;3; 0.01; 9.7
+599; Slad karamelovı; Caramel malt; ; 1.00; 6.25; 0.956;1455;345; 2.5; 0.59; 0.37; 1.45;0; 80.0; 63.2; 8.5; 16.7; 9.0; 1.9;2; 0.01; 6.6
+756; Sleï obecnı, filety bez kùe; Fish, herring, fillets without skin, raw; Clupea harengus; 1.00; 6.25; 0.900;791;190; 12.6; 2.85; 2.31; 3.15;0;0;0;0;0; 19.1; 1.2;116; 0.29; 67.7
+757; Sleï obecnı, filety s kùí; Fish, herring, fillets with skin, raw; Clupea harengus; 1.00; 6.25; 0.900;779;187; 12.5; 2.58; 1.62; 3.77;0;0;0;0;0; 18.6; 1.1;116; 0.29; 68.5
+12; Smaenka, trh; Smazenka, bread with egg pancake, onion and mustard, retail; ; 1.00; 6.25; 0.956;997;238; 13.2; 1.39; 7.76; 3.16; ; 22.4; ; ; ; 7.5; 1.8;501; 1.3; 55.1
+9; Smaenı sır v housce s tatarskou omáèkou, trh; Cheese, breaded, fried, with Tatar sauce in a bun, retail; ; 1.00; 6.25; 0.956;1340;320; 13.2; 2.49; 6.89; 3.09; ; 40.0; ; ; ; 10.2; 2.7;533; 1.3; 33.8
+118; Smetana ke šlehání, 30 % tuku; Cream, whipping, 30% milkfat; ; 1.00; 6.38; 0.945;1200;292; 30.0; 19.41; 8.10; 0.87; ; 3.0; 3.0; 3.0;0; 2.4; 0.5;29; 0.1; 64.2
+119; Smetana ke šlehání, 33 % tuku; Cream, whipping, 33% milkfat; ; 1.00; 6.38; 0.945;1310;317; 33.0; 21.35; 8.91; 0.96; ; 2.8; 2.8; 2.8;0; 2.2; 0.5;28; 0.1; 61.5
+124; Smetana kysaná, min. 18 % tuku; Cream, cultured, min. 18% milkfat; ; 1.00; 6.38; 0.945;780;189; 18.0; 11.65; 4.86; 0.52; ; 3.3; 3.3; 3.3;0; 2.8; 0.6;36; 0.1; 74.6
+122; Smetana kysaná, nízkotuèná, 10 -12 % tuku; Cream, cultured, reduced fat, 10 -12% milkfat; ; 1.00; 6.38; 0.945;530;128; 11.0; 7.12; 2.97; 0.32; ; 3.8; 3.8; 3.8;0; 2.8; 0.8;40; 0.1; 80.8
+123; Smetana kysaná, nízkotuèná, 15 % tuku; Cream, cultured, reduced fat, 15% milkfat; ; 1.00; 6.38; 0.945;673;163; 15.0; 9.71; 4.05; 0.44; ; 3.4; 3.4; 3.4;0; 2.9; 0.6;38; 0.1; 77.4
+116; Smetana se sníenım obsahem tuku, (na vaøení), 10 % tuku; Cream, reduced fat, (for cooking), 10% milkfat; ; 1.00; 6.38; 0.945;492;119; 10.0; 6.47; 2.70; 0.29; ; 4.3; 4.3; 4.3;0; 2.9; 0.6;37; 0.1; 82.1
+117; Smetana se sníenım obsahem tuku, (na vaøení), 12 % tuku; Cream, reduced fat, (for cooking), 12% milkfat; ; 1.00; 6.38; 0.945;563;136; 12.0; 7.76; 3.24; 0.35; ; 4.2; 4.2; 4.2;0; 2.8; 0.6;36; 0.1; 80.4
+93; Sója; Beans, soy, dried; Glycine max (L.) Merr.; 0.89; 5.71; 0.940;1701;408; 20.4; ; ; ; ; 31.7; 12.3; ; 19.4; 34.2; 4.8;18;0; 8.9
+185;" Sója extrudovaná (""maso"" sójové), kostky, neochucené";" Soy, textured protein (soy ""meat""), cubes, unflavored"; ; 1.00; 6.25; 9.450;1330;315; 1.5; 0.11; 0.31; 0.67;0; 33.1; 16.6; 8.3; 16.5; 50.6; 5.9;1;0; 8.9
+498; Sója, vaøená v nesolené vodì; Soya beans, boiled in unsalted water; ; 1.00; 5.71; 0.000;600;143; 3.1; ; ; ; ; 18.2; 10.3; ; 7.9; 14.5; 1.8; ; ; 62.4
+681; Sójovı bílkovinnı hydrolyzát; Soy protein hydrolysate; ; 1.00; 6.25; 0.956;628;148; 2.0; 1.18; 0.66; 0.08;0; 10.0; 9.1;0; 0.9; 22.9; 61.8;23740; 59.35; 3.2
+803; Solea evropská (jazyk moøskı), maso s kùí; Common sole, meat with skin, raw; Solea solea; 0.58; 6.25; 0.700;339;80; 0.8; 0.18; 0.20; 0.06;0;0;0;0;0; 18.2; 1.7;86; 0.21; 78.8
+220; Srdce hovìzí; Heart, ox, raw; ; 0.87; 6.25; 0.780;490;117; 5.3; ; ; ; ; 0.4; 0.4; ;0; 16.9; 1.0;107; 0.3; 76.4
+539; Srdce kachní; Heart, duck, raw; ; 1.00; 6.25; 0.789;535;128; 6.5; 1.44; 2.94; 0.66;0; 2.3; 2.3;0;0; 15.0; 1.0;87; 0.22; 75.2
+536; Srdce kuøecí; Heart, chicken, raw; ; 1.00; 6.25; 0.789;424;101; 4.7; 1.07; 1.90; 0.72;0; 0.9; 0.9;0;0; 13.8; 1.0;81; 0.20; 79.6
+206; Srdce vepøové; Heart, pig, raw; ; 0.89; 6.25; 0.840;456;109; 4.6; ; ; ; ;0;0; ;0; 16.8; 1.0;104; 0.3; 77.6
+682; Stévie prášek; Stevia powder; ; 1.00; 6.25; 0.956;1639;386;0;0;0;0;0; 96.1; 96.1;0;0; 0.3; 0.2;42; 0.10; 3.4
+189; Strouhanka; Bread crumbs; ; 1.00; 6.25; 0.950;1510;357; 1.0; ; ; ; ; 78.9; 75.7; ; 3.2; 9.7; 1.6;437; 1.1; 8.8
+249; Sùl jedlá; Salt, table; ; 1.00; 0.00; 0.000;0;0;0; ; ; ; ;0;0; ;0;0; 99.5;38850; 97.1; 0.5
+823; Sumec velkı, maso s kùí; Wels catfish, meat with skin, raw; Silurus glanis; 1.00; 6.25; 0.700;438;104; 3.8; 0.67; 1.17; 0.58;0;0;0;0;0; 17.5; 1.1;38; 0.09; 77.7
+824; Sumec, uzenı, maso bez kùe; Wels catfish, meat without skin, smoked; Silurus glanis; 0.90; 6.25; 0.900;829;200; 15.6; 3.03; 7.10; 2.99;0;0;0;0;0; 14.8; 2.5;856; 2.14; 65.6
+397; Sır ovèí, Brynza; Cheese, sheep, Bryndza; ; 1.00; 6.25; 0.945;1320;314; 25.4; ; ; 1.2; ; 1.7; 1.7; ;0; 20.5; 4.9;888; 2.2; 49.5
+444; Sır syrovátkovı; Cheese, whey; ; 1.00; 6.38; 0.945;747;178; 14.2; 9.07; 3.69; 0.38; 0.28; 4.7; 4.7; 3.5;0; 8.3; 1.6;185; 0.46; 71.2
+95; Sır, Akawi, 40 % t. v s.; Cheese, Akawi, 40% fidm; ; 1.00; 6.38; 0.945;1060;255; 19.8; 12.78; 5.33; 0.57; ; 1.3; 1.3; 1.3;0; 17.8; 8.0;2638; 6.6; 53.0
+96; Sır, balkánskı, 50 % t. v s.; Cheese, Balkan, 50% fidm; ; 1.00; 6.38; 0.945;1030;245; 20.5; 13.26; 5.54; 0.59; ; 1.2; 1.2; 1.2;0; 14.7; 4.9;1764; 4.4; 58.5
+97; Sır, èerstvı, nezrající, 60 % t. v s.; Cheese, fresh, unripened, 60% fidm; ; 1.00; 6.38; 0.945;1230;296; 26.5; 17.15; 7.16; 0.77; ; 2.1; 2.1; 2.1;0; 12.3; 1.2;325; 0.8; 57.3
+136; Sır, Eidam uzenı, 40 % t. v s.; Cheese, edam, smoked, 40% fidm; ; 1.00; 6.38; 0.945;1390;334; 24.9; 16.11; 6.72; 0.72; ; 1.0; 1.0; 1.0;0; 26.4; 4.0;780; 2.0; 42.3
+135; Sır, Eidam, 30 % t. v s.; Cheese, edam, 30% fidm; ; 1.00; 6.38; 0.945;1105;265; 16.0; 10.35; 4.32; 0.46; ; 1.3; 1.3; 1.3;0; 28.9; 4.8;849; 2.1; 48.4
+137; Sır, Eidam, 50 %, t. v s.; Cheese, edam, 50% fidm; ; 1.00; 6.38; 0.945;1560;376; 30.3; 19.60; 8.18; 0.88; ; 1.0; 1.0; 1.0;0; 24.7; 4.2;690; 1.7; 40.9
+98; Sır, Gervais, 30 %, t. v s.; Cheese, Gervais, 30% fidm; ; 1.00; 6.38; 0.945;972;235; 22.0; 14.23; 5.94; 0.64; ; 1.6; 1.6; 1.6;0; 7.7; 0.6;26; 0.1; 65.9
+99; Sır, Hermelín, 50 % t. v s.; Cheese, Hermelin (Camembert type), 50% fidm; ; 1.00; 6.38; 0.945;1230;295; 22.3; 14.40; 6.01; 0.65; ; 1.2; 1.2; 1.2;0; 22.4; 3.8;1112; 2.8; 50.6
+100; Sır, Imperiál, 50 % t. v s.; Cheese. Imperial, 50% fidm; ; 1.00; 6.38; 0.945;813;196; 15.4; 9.93; 4.14; 0.45; ; 1.7; 1.7; 1.7;0; 12.6; 0.9; ;0; 68.3
+101; Sır, Istanbuli, 40 % t. v s.; Cheese, Istanbuli, 40% fidm; ; 1.00; 6.38; 0.945;934;225; 17.2; 11.13; 4.65; 0.50; ; 1.2; 1.2; 1.2;0; 16.3; 5.2;723; 1.8; 60.4
+102; Sır, Jadel, 40 % t. v s.; Cheese, Jadel, 40% fidm; ; 1.00; 6.38; 0.945;1280;308; 22.5; 14.56; 6.08; 0.65; ; 1.0; 1.0; 1.0;0; 25.3; 9.1;2296; 5.7; 42.1
+103; Sır, Luèina, 70 % t. v s.; Cheese, Lucina, 70% fidm; ; 1.00; 6.38; 0.945;1420;345; 33.5; 21.67; 9.05; 0.97; ; 1.4; 1.4; 1.4;0; 9.4; 0.7;171; 0.4; 54.5
+104; Sır, Niva, 50 % t. v s.; Cheese, Niva (Roquefort - type), 50% fidm; ; 1.00; 6.38; 0.945;1430;345; 28.9; 18.67; 7.79; 0.84; ; 1.3; 1.3; 1.3;0; 20.0; 6.2;1833; 4.6; 45.0
+105; Sır, Olomoucké tvarùky; Cheese, Olomoucke tvaruzky; ; 1.00; 6.38; 0.945;576;138; 1.0; 0.61; 0.26; 0.03; ; 1.4; 1.4; 1.4;0; 30.3; 5.5;1918; 4.8; 61.9
+106; Sır, Pivní, 50 % t. v s.; Cheese, beer, 50% fidm; ; 1.00; 6.38; 0.945;1200;290; 24.0; 15.53; 6.48; 0.70; ; 1.1; 1.1; 1.1;0; 17.3; 4.5;840; 2.1; 55.0
+107; Sır, Romadur, 40 %  t. v s.; Cheese, Romadur, 40% fidm; ; 1.00; 6.38; 0.945;1160;278; 19.9; 12.88; 5.37; 0.58; ; 1.8; 1.8; 1.8;0; 23.0; 3.7;1063; 2.7; 52.8
+992; Sır, smaenı; Cheese, fried; ; 1.00; 6.25; 0.945;1595;384; 27.5; 12.85; 9.70; 3.28; 0.20; 12.9; 11.1; 0.6; 1.8; 22.0; 3.3;516; 1.29; 34.4
+139; Sır, tavenı, jemnı, Maratónec, 65 %, t. v s.; Cheese, processed, Maratonec, 65% fidm; ; 1.00; 6.38; 0.945;1330;321; 29.5; 19.09; 7.97; 0.86; ; 2.7; 2.7; 2.7;0; 11.1; 2.4;902; 2.3; 54.3
+138; Sır, tavenı, nízkoenergetickı, Lipno, 30 % t. v s.; Cheese, processed, low energy, Lipno, 30% fidm; ; 1.00; 6.38; 0.945;775;186; 11.4; 7.38; 3.08; 0.33; ; 1.8; 1.8; 1.8;0; 19.0; 5.4;1051; 2.6; 62.3
+108; Sır, Tylskı, 50 % t. v s.; Cheese, Tilsit, 50% fidm; ; 1.00; 6.38; 0.945;791;191; 15.0; 8.25; 3.44; 0.37; ; 1.4; 1.4; 1.4;0; 12.5; 3.5;414; 1.0; 69.1
+109; Sır, Zlato, 50 % t. v s.; Cheese, Zlato, 50% fidm; ; 1.00; 6.38; 0.945;1410;339; 27.5; 17.81; 7.43; 0.80; ; 1.9; 1.9; 1.9;0; 20.9; 3.9;840; 2.1; 46.2
+110; Sır, ervé, 50 % t. v s.; Cheese, Zerve, 50% fidm; ; 1.00; 6.38; 0.945;803;193; 15.0; 9.71; 4.05; 0.44; ; 2.1; 2.1; 2.1;0; 12.5; 0.7;34; 0.1; 70.1
+445; Syrovátka; Whey, raw; ; 1.00; 6.38; 0.945;88;21; 0.2;0;0;0;0; 4.4; 4.4; 4.4;0; 0.5; 0.7;50; 0.13; 94.3
+446; Syrovátka sušená; Whey, dried, powder; ; 1.00; 6.38; 0.945;1560;372; 0.6; 0.38; 0.09;0;0; 77.6; 77.6; 76.4;0; 12.7; 5.4;536; 1.34; 3.81
+861; Syrovátka z ovèího mléka, syrová; Whey fluid, sheep milk, raw; Ovis; 1.00; 6.25; 0.945;151;36; 1.5; 0.91; 0.34; 0.05;0; 4.7; 4.7; 4.7;0; 0.9; 0.5;63; 0.16; 92.0
+860; Syrovátka, z kozího mléka, syrová; Whey fluid, goat milk, raw; Capra; 1.00; 6.25; 0.945;100;24; 0.6; 0.36; 0.12; 0.02;0; 3.9; 3.9; 3.9;0; 0.7; 0.6;40; 0.10; 93.7
+858; Šípky, syrové; Rose hip from dog rose, raw; Rosa canina L.; 0.94; 6.25; 0.800;671;161; 1.4;0;0;0;0; 44.9; 20.6; 8.6; 24.3; 4.3; 2.2;0;0; 47.2
+184; Škrob bramborovı; Starch, potato; ; 1.00; 6.25; 0.800;1400;330; 0.1; ; ; ; ; 81.8; 81.7; ; 0.1; 0.4; 0.3;8; ; 17.4
+183; Škrob kukuøiènı; Starch, corn; ; 1.00; 6.25; 0.800;1490;351; 0.1; ; ; ; ; 87.2; 87.1; ; 0.1; 0.3; 0.2;9;0; 12.2
+683; Škrob kukuøiènı modifikovanı; Modified corn starch; ; 1.00; 6.25; 0.956;1517;358; 2.6; 1.11; 0.78; 0.46;0; 83.4; 83.3;0; 0.1; 0.2; 0.2;58; 0.15; 13.6
+340; Škrob pšeniènı; Starch, wheat; ; 1.00; 6.25; 0.000;1470;345; 0.2; ; ; ; ; 85.4; 85.2; ; 0.2; 0.5; 0.3;5;0; 13.6
+462; Škrob rıovı; Rice starch; ; 1.00; 6.25; 0.820;1460;350; 0.4; 0.16; 0.08; 0.08;0; 84.4; 84.4;0;0; 0.9; 0.2; 2.3; 0.01; 14.1
+684; Škrob tapiokovı; Tapioca starch; ; 1.00; 6.25; 0.956;1502;354; 0.3;0;0;0;0; 87.5; 87.4;0; 0.1; 0.1; 0.2;12; 0.03; 11.8
+7; Škubánky s mákem, modelová receptura; Skubanky, mashed potatoes with poppy seed and sugar, modelová receptura; ; 1.00; 6.25; 0.956;913;218; 9.7; 4.18; 3.17; 1.87; 0.18; 29.5; 27.2; 9.3; 2.3; 4.3; 1.7;365; 0.9; 55.0
+463; Škvarky; Greaves; ; 1.00; 6.25; 0.953;3220;780; 79.2; 30.59; 36.31; 8.20; 0.29;0;0;0;0; 16.9; 1.0;352; 0.88; 2.94
+165; Špalda; Spelt; Triticum spelta; 1.00; 5.83; 0.720;1530;362; 4.1; 0.51; 0.78; 1.63; ; 70.7; 61.2; ; 9.5; 15.4; 1.9;3;0; 8.1
+74; Špenát; Spinach, raw; Spinacia oleracea L.; 0.80; 6.25; 0.800;106;25; 0.4; ; ; ; ; 3.9; 1.7; ; 2.2; 2.6; 1.6;33; 0.1; 91.5
+981; Šprot obecnı, maso bez kùe; European spratin, meat without skin, raw; Sprattus sprattus; 0.64; 6.25; 0.900;707;170; 12.4; 3.69; 4.16; 2.01;0;0;0;0;0; 14.6; 1.6;63; 0.16; 70.8
+982; Šprot obecnı, maso s kùí; European spratin, meat with skin, raw; Sprattus sprattus; 0.80; 6.25; 0.900;770;185; 14.0; 3.82; 4.52; 2.01;0;0;0;0;0; 14.8; 1.6;64; 0.16; 68.8
+697; Šrot sojovı; Soybean scrap; ; 1.00; 6.25; 0.820;1271;302; 1.9; 0.29; 0.23; 1.02;0;35.5;16.9;7.6;18.6; 45.0; 6.6;2; 0.01; 11.0
+776; Šrot itnı; Rye scrap; ; 1.00; 6.25; 0.820;1312;311; 1.4; 0.17; 0.18; 0.81;0; 75.9; 57.3; 2.0; 19.0; 8.0; 2.3;1;0; 12.4
+564; Štika obecná, maso z celé ryby; Pike, whole fish, raw; Esox lucius; 0.47; 6.25; 0.700;334;79; 0.4; 0.06; 0.11; 0.07;0;0;0;0;0; 18.8; 1.1;48; 0.12; 80.6
+828; Štikozubec argentinskı (moøská štika, hejk), maso bez kùe; Argentine hake, meat without skin, raw; Merluccius hubbsi; 0.91; 6.25; 0.700;317;75; 1.3; 0.20; 0.47; 0.20;0;0;0;0;0; 15.8; 1.3;172; 0.43; 81.2
+829; Štikozubec argentinskı (moøská štika, hejk), maso s kùí; Argentine hake, meat with skin, raw; Merluccius hubbsi; 1.00; 6.25; 0.700;318;75; 1.3; 0.19; 0.46; 0.19;0;0;0;0;0; 15.9; 1.3;187; 0.47; 81.8
+830; Štikozubec kanadskı (moøská štika, hejk), maso bez kùe; Pacific hake, meat without skin, raw; Merluccius productus; 1.00; 6.25; 0.700;289;68; 0.6; 0.13; 0.17; 0.06;0;0;0;0;0; 15.7; 1.4;180; 0.45; 82.7
+826; Štikozubec kapskı (moøská štika, hejk), maso bez kùe; Shallow-water Cape Hake, meat without skin, raw; Merluccius capensis; 0.92; 6.25; 0.700;270;64; 0.4; 0.09; 0.12; 0.07;0;0;0;0;0; 15.0; 1.3;139; 0.35; 82.8
+827; Štikozubec kapskı (moøská štika, hejk), maso s kùí; Shallow-water Cape Hake, meat with skin, raw; Merluccius capensis; 1.00; 6.25; 0.700;259;61; 0.3; 0.06; 0.07; 0.04;0;0;0;0;0; 14.6; 1.4;147; 0.37; 81.8
+321; Štikozubec obecnı (štika moøská, hejk, merlùza), maso bez kostí, dušené; Hake European, meat, boneless, stewed; Merluccius merluccius; 1.00; 6.25; 0.700;298;69; 0.9; 0.19; 0.12; 0.28; ;0;0;0;0; 15.1; 1.6;165; 0.4; 80.4
+322; Štikozubec obecnı (štika moøská, hejk, merlùza), maso bez kostí, peèené; Hake European, meat, boneless, roasted; Merluccius merluccius; 1.00; 6.25; 0.700;266;63; 0.8; 0.17; 0.09; 0.26; ;0;0;0;0; 13.9; 1.4;156; 0.4; 81.9
+323; Štikozubec obecnı (štika moøská, hejk, merlùza), maso bez kostí, smaené; Hake European, meat, boneless, fried; Merluccius merluccius; 1.00; 6.25; 0.700;516;124; 7.1; 2.26; 2.13; 0.50; ;0;0;0;0; 14.9; 1.5;206; 0.5; 74.4
+320; Štikozubec obecnı (štika moøská, hejk, merlùza), maso bez kostí, syrové; Hake European, meat, boneless, raw; Merluccius merluccius; 1.00; 6.25; 0.700;265;63; 1.0; 0.22; 0.14; 0.32; ;0;0;0;0; 13.4; 1.4;140; 0.4; 82.6
+305; Šunka drùbeí; Ham, poultry; ; 1.00; 6.25; 0.000;513;123; 4.4; 1.25; 1.35; 1.19; ;0;0; ;0; 20.6; 3.2;600; ; 72.5
+44; Švestky; Plums, raw; Prunus domestica L.; 0.48; 6.25; 0.800;250;59; 0.2; 0.04; 0.01; 0.09; ; 14.9; 12.4; 9.5; 2.5; 0.7; 0.5;4;0; 83.7
+484; Švestky sušené; Prune, dried plums; Prunus domestica; 1.00; 6.25; 0.800;824;197; 0.2; 0.16;0;0;0; 50.5; 41.2; 24.8; 9.3; 2.4; 12.4;5; 0.01; 34.4
+943; Tamarillo, (rajèenka); Tamarillo (tree tomato), raw; Cyphomandra betacea; 0.87; 6.25; 0.800;193;46; 0.9;0;0;0;0; 10.1; 5.2; 4.6; 4.9; 1.9; 0.9;0;0; 86.2
+651; Temnoplodec (aronie); Chokeberry (aronia), raw; Aronia; 1.00; 6.25; 0.800;233;56; 0.7;0;0;0;0; 14.7; 8.2; 3.1; 6.4; 0.9; 0.5;0;0; 83.3
+499; Tìstoviny (špagety), dvouvajeèné; Pasta (spaghetti), two-egg, dried; ; 1.00; 6.25; 0.000;1503;355; 2.1; ; ; ; ; 75.5; 72.6; ; 2.9; 9.9; 0.4;2;0; 12.1
+500; Tìstoviny (špagety), dvouvajeèné, vaøené v nesolené vodì; Pasta (spaghetti), two-egg, boiled in unsalted water; ; 1.00; 6.25; 0.000;411;97; 0.6; ; ; ; ; 20.4; 19.6; ; 0.8; 2.9; 0.1; ; ; 76.0
+202; Tìstoviny (špagety), nevajeèné; Pasta without eggs, raw; ; 1.00; 6.25; 0.000;1493;352; 1.0; ; ; ; ; 76.8; 74.0; ; 2.8; 10.3; 0.4;2;0; 11.5
+501; Tìstoviny (špagety), nevajeèné, vaøené v nesolené vodì; Pasta (spaghetti), without eggs, boiled in unsalted water; ; 1.00; 6.25; 0.000;455;107; 0.1; ; ; ; ; 23.5; 22.6; ; 0.9; 3.5; 0.1; ; ; 72.8
+502; Tìstoviny, bezvajeèné, celozrnné; Pasta, without eggs, wholemeal, dried; ; 1.00; 6.25; 0.000;1425;337; 1.3; ; ; ; ; 72.5; 64.4; ; 8.1; 12.8; 0.8;3;0; 12.6
+503; Tìstoviny, bezvajeèné, celozrnné, vaøené v nesolené vodì; Pasta without eggs, wholemeal, boiled in unsalted water; ; 1.00; 6.25; 0.000;631;149; 0.6; ; ; ; ; 31.4; 28.0; ; 3.4; 6.2; 0.3;1;0; 61.5
+996; Tlaèenka, modelová receptura; Headcheese (brawn), modelová receptura; ; 0.98; 6.25; 0.800;884;211; 16.0; 11.05; 1.42; 0.18; 0.00; 0.2; 0.1; 0.1; 0.2; 16.9; 3.1;800; 2.0; 64.7
+761; Tlamoun nilskı (Tilápie); Fish, nile tilapia, raw; Oreochromis niloticus; 1.00; 6.25; 0.700;269;64; 0.8; 0.19; 0.25; 0.07;0;0;0;0;0; 14.2; 1.5;488; 1.22; 83.6
+94; Tofu; Tofu, soy bean curd; ; 1.00; 6.25; 0.940;316;76; 4.2; ; ; ; ; 2.2; 1.2; ; 1.0; 7.8; 0.8;7;0; 85.0
+787; Tolstolobík bílı; Fish, Silver carp, raw; Hypophthalmichthys molitrix; 0.73; 6.25; 0.900;766;186; 13.5; 2.91; 6.14; 1.79;0;0;0;0;0; 15.7; 1.1;31; 0.08; 69.5
+831; Tolstolobik bílı, maso s kùí; Silver carp, meat with skin, raw; Hypophthalmichthys molitrix; 0.50; 6.25; 0.900;634;152; 10.1; 2.78; 5.12; 0.64;0;0;0;0;0; 15.3; 1.3;49; 0.12; 73.4
+832; Tolstolobik bílı, uzenı, maso bez kùe; Silver carp, meat without skin, smoked; Hypophthalmichthys molitrix; 0.83; 6.25; 0.900;586;140; 5.5; 1.17; 1.92; 1.06;0;0;0;0;0; 22.5; 4.5;1339; 3.35; 66.7
+762; Treska aljašská, filet, bez kùe; Fish, Alaska codfish, fillet, without skin, raw; Theragra chalcogramma; 1.00; 6.25; 0.700;279;66; 0.2; 0.04; 0.03; 0.06;0;0;0;0;0; 16.0; 0.8;66; 0.16; 82.8
+833; Treska aljašská, maso s kùí; Alaska pollack, meat with skin, raw; Theragra chalcogramma; 1.00; 6.25; 0.700;228;54; 0.1; 0.01; 0.02; 0.02;0;0;0;0;0; 13.2; 0.6;58; 0.15; 85.0
+602; Treska tmavá, filet, bez kùe; Black cod fish, fillet, without skin, raw; Pollachius virens; 1.00; 6.25; 0.700;317;75; 0.3;0;0;0;0;0;0;0;0; 18.0; 1.3;83; 0.21; 79.8
+242; Treska, filé; Cod, fillet, raw; Gadus morhua; 1.00; 6.25; 0.695;292;69; 0.3; ; ; ; ;0;0;0;0; 16.5; 1.5;89; 0.2; 81.7
+765; Trhanka pšenièná; Wheat flour, wholemeal; ; 1.00; 6.25; 0.820;1367;324; 1.9; 0.23; 0.24; 0.84;0; 72.7; 57.8; 1.1; 14.7; 11.3; 1.6;1;0; 12.4
+766; Trhanka itná; Rye flour, wholemeal; ; 1.00; 6.25; 0.820;1335;317; 1.6; 0.20; 0.22; 0.87;0; 75.9; 57.5; 1.1; 18.4; 9.0; 1.5;1;0; 12.1
+45; Tøešnì; Cherries, sweet, raw; Prunus avium L.; 0.89; 6.25; 0.800;274;65; 0.4; 0.07; 0.08; 0.10; ; 15.4; 13.4; 12.5; 2.0; 0.9; 0.5;4;0; 82.8
+969; Tøešnì, lyofilizované; Cherry, lyophilized; Prunus; 1.00; 6.25; 0.800;1527;360; 0.7;0;0;0;0; 88.3; 80.3; 53.7; 8.0; 4.2; 3.2;2; 0.01; 3.6
+934; Tøešnì, sušené; Cherries, dried; Prunus; 1.00; 6.25; 0.800;1333;315; 1.2;0;0;0;0; 73.2; 64.7; 58.6; 8.5; 7.0; 2.9;0;0; 15.7
+472; Tuk (olej) palmojádrovı; Oil, palm kernel; ; 1.00; 6.25; 0.956;3700;900; 99.9; 44.07; 43.02; 8.13; 0.29;0;0;0;0;0;0;0;0;0
+719; Tuk bambuckı; Shea butter; ; 1.00; 6.25; 0.956;3673;893; 99.1; 40.25; 37.66; 4.97;0;0;0;0;0; 0.3;0;0;0; 0.6
+421; Tuk hovìzí, (lùj); Beef, suet, raw; ; 1.00; 6.25; 0.000;3360;817; 90.2; 48.13; 31.22; 2.15; 0.29;0;0;0;0; 1.3; 0.1;0;0; 7.9
+471; Tuk kokosovı; Oil, coconut; ; 1.00; 6.25; 0.942;3700;900; 99.9; 84.21; 7.91; 1.88;0;0;0;0;0;0;0;0;0; 0.1
+605; Tuk máselnı (vyhláška è. 77/2003 Sb.); Butterfat (Czech Regulation No. 77/2003 Coll.); ; 1.00; 6.25; 0.945;3684;896; 99.5; 63.04; 21.92; 1.67;0; 0.1; 0.1;0;0;0;0;0;0; 0.3
+520; Tuk pomazánkovı rostlinnı roztíratelnı s nízkım obsahem tuku (20 %), Perla Tip, UNILEVER; Fat spread vegetable, low-fat (20%), Perla Tip, UNILEVER; ; 1.00; 6.25; 0.956;740;180; 20.0; 6.27; 9.82; 3.78; 0.14;0;0;0;0;0; ;315; 0.8; 79.2
+521; Tuk rostlinnı roztíratelnı (72 %), Hera, UNILEVER; Fat spread vegetable (72%), Hera, UNILEVER; ; 1.00; 6.25; 0.956;2670;648; 72.0; 33.35; 27.21; 11.14; 0.30; 0.2; 0.2; 0.1;0;0; ;85; 0.23; 27.6
+522; Tuk rostlinnı roztíratelnı (79 %), Hera Máslová pøíchu, UNILEVER; Fat spread vegetable (79%), Hera Máslová pøíchu, UNILEVER; ; 1.00; 6.25; 0.956;2930;713; 79.0; 37.00; 30.3; 11.2; 0.4; 0.4; 0.4; 0.4;0; 0.1; ;166; 0.41; 20.1
+515; Tuk rostlinnı roztíratelnı s nízkım obsahem tuku (30 %), Flora light, UNILEVER; Fat spread vegetable, low-fat (30%), Flora light, UNILEVER; ; 1.00; 6.25; 0.956;1110;270; 30.0; 6.20; 8.25; 15.32; 0.19;0;0;0;0;0; ;168; 0.42; 69.6
+516; Tuk rostlinnı roztíratelnı s nízkım obsahem tuku (35 %) s pøidanımi rostlinnımi steroly, Flora pro.activ, UNILEVER; Fat spread, low-fat (35%) with added plant sterols, Flora pro.activ, UNILEVER; ; 1.00; 6.25; 0.956;1320;321; 34.5; 7.81; 8.51; 17.99; 0.18; 2.4; 2.4; 0.3;0; 0.1; ;96; 0.25; 56.4
+514; Tuk rostlinnı roztíratelnı se sníenım obsahem tuku (45 %), Flora, UNILEVER; Fat spread vegetable, reduced-fat (45%), Flora, UNILEVER; ; 1.00; 6.25; 0.956;1670;407; 45.0; 8.76; 12.22; 23.72; 0.29; 0.2; 0.2; 0.2;0; 0.2; ;206; 0.52; 53.9
+292; Tuk vepøovı, syrovı, separovatelnı (odøezky); Pork, separable fat, raw; ; 1.00; 6.25; 0.953;2580;627; 66.6; 18.93; 26.69; 5.98; 0.13;0;0;0;0; 6.9; 0.4;31; 0.1; 26.1
+328; Tuòák modroploutvı; Tuna, raw; Thunnus thynnus; 0.60; 6.25; 0.700;610;145; 5.6; 1.34; 1.58; 1.73; ;0;0;0;0; 23.7; 1.2;43; 0.1; 69.5
+456; Tuòák modroploutvı, filet; Tuna bluefin, fillet, raw; Thunnus thynnus; 1.00; 6.25; 0.700;440;104; 0.6; 0.20; 0.14; 0.09;0;0;0;0;0; 24.5; 1.3;115; 0.29; 76.2
+834; Tuòák, uzenı, maso bez kùe; Tuna, meat without skin, smoked; Thunnus; 1.00; 6.25; 0.700;519;122; 0.3; 0.05; 0.09; 0.02;0;0;0;0;0; 29.9; 2.3;489; 1.22; 67.7
+652; Tuøín (brukev øepka); Turnip, raw; Brassica napus var. napobrassica; 0.82; 6.25; 0.800;63;15; 0.1;0;0;0;0; 3.6; 2.0; 1.7; 1.6; 0.8; 0.7;4; 0.01; 94.9
+131; Tvaroh nízkotuènı (jemnı); Curd, reduced fat; ; 1.00; 6.25; 0.945;460;109; 3.1; 1.85; 0.81; 0.09;0; 2.9; 2.9; 2.9;0; 17.3; 1.2;28; 0.07; 75.3
+130; Tvaroh odtuènìnı (mìkkı); Curd, defatted; ; 1.00; 6.25; 0.945;279;66; 0.2; 0.11; 0.05; 0.01;0; 3.8; 3.8; 3.8;0; 12.2; 0.8;35; 0.09; 82.1
+132; Tvaroh polotuènı; Curd, semifat; ; 1.00; 6.25; 0.945;455;109; 4.7; 2.88; 1.17; 0.10;0; 3.6; 3.6; 3.6;0; 12.9; 1.0;33; 0.08; 77.7
+133; Tvaroh tuènı; Curd, fat; ; 1.00; 6.25; 0.945;690;166; 11.8; 7.61; 2.73; 0.31;0; 2.3; 2.3; 2.3;0; 12.6; 1.0;26; 0.07; 70.5
+134; Tvaroh tvrdı; Curd, hard; ; 1.00; 6.25; 0.945;423;100; 0.9; 0.54; 0.24; 0.02;0; 1.4; 1.4; 1.4;0; 21.5; 2.1;26; 0.06; 70.0
+392; Tyèinky krabí, ze surimi; Crabstics, imitation, made from surimi; ; 1.00; 6.25; 0.000;397;94; 0.5; 0.16; 0.11; 0.10; 0.01; 14.9; 14.4; 6.3; 0.5; 7.6; 2.3;841; 2.1; 74.7
+492; Tykev obecná; Pumpkin, raw; Cucurbita pepo; 0.70; 6.25; 0.800;126;30; 0.2; 0.03;0; 0.06; ; 6.7; 5.1; 4.7; 1.6; 1.1; 0.7;2; ; 91.3
+835; Úhoø evropskı øíèní, maso bez kùe; European eel, meat without skin, raw; Anguilla anguilla; 0.49; 6.25; 0.900;1168;282; 24.8; 8.19; 12.17; 1.37;0;0;0;0;0; 14.7; 1.0;63; 0.16; 59.1
+836; Úhoø evropskı øíèní, maso s kùí; European eel, meat with skin, raw; Anguilla anguilla; 0.72; 6.25; 0.900;1131;273; 24.1; 7.92; 11.96; 1.31;0;0;0;0;0; 14.1; 1.0;77; 0.19; 59.3
+855; Vejce køepelèí; Japanese quail, eggs; Coturnix japonica; 0.85; 6.25; 0.830;733;176; 11.4; 6.77; 2.13; 0.27;0; 5.76; 5.76;0;0; 12.6; 1.1;125; 0.31; 69.2
+78; Vejce slepièí; Egg, hen, whole, raw; ; 0.89; 6.25; 0.830;575;138; 9.2; 2.53; 4.07; 1.04;0; 1.3; 1.3; 0.3;0; 12.5; 0.9;119; 0.30; 76.1
+79; Vejce slepièí, bílek; Egg, hen, white, raw; ; 1.00; 6.25; 0.830;201;47; 0.1; 0.02; 0.03; 0.01;0; 1.0; 1.0; 0.4;0; 10.6; 0.7;164; 0.41; 87.6
+318; Vejce slepièí, bílek, sušenı; Egg, hen, white, dried; ; 1.00; 6.25; 0.830;1496;352; 0.4; 0.11; 0.18; 0.05;0; 9.0; 9.0; 3.2;0; 78.1; 5.0;1128; 2.82; 7.5
+316; Vejce slepièí, celé, hmota sušená; Egg, hen, whole, dried; ; 1.00; 6.25; 0.830;2172;520; 30.4; 8.10; 12.89; 4.04;0; 12.8; 12.8; 1.4;0; 48.8; 3.5;492; 1.23; 4.5
+80; Vejce slepièí, loutek; Egg, hen, yolk, raw; ; 1.00; 6.25; 0.830;1216;293; 25.2; 6.71; 11.10; 2.99;0; 1.7; 1.7; 0.3;0; 15.0; 1.7;56; 0.14; 56.4
+317; Vejce slepièí, loutek, sušenı; Egg, hen, yolk, dried; ; 1.00; 6.25; 0.830;2684;648; 55.4; 14.91; 24.18; 6.49;0; 4.2; 4.2; 0.8;0; 33.1; 3.6;1225; 3.06; 3.7
+201; Veka; Bread roll, white; ; 1.00; 6.25; 0.000;1180;278; 1.0; ; ; ; ; 59.8; 57.3; ; 2.5; 8.7; 1.6;471; 1.2; 28.9
+373; Víno - hrozny; Grapes, raw; Vitis vinifera L.; 0.92; 6.25; 0.660;302;71; 0.4; 0.06; 0.01; 0.15; ; 17.3; 15.2; 15.0; 2.1; 0.7; 0.5;7;0; 81.1
+379; Víno bílé; Wine, white; ; 1.00; 6.25; 0.000;306;73;0;0;0;0; ; 3.3; 3.3; ;0; 0.2; 0.2;3;0; 87.8
+378; Víno èervené; Wine, red; ; 1.00; 6.25; 0.000;312;75;0;0;0;0; ; 2.8; 2.8; ;0; 0.3; 0.3;5;0; 87.6
+385; Víno dezertní likérové, Sherry dry; Sherry, dry; ; 1.00; 6.25; 0.000;487;116;0;0;0;0; ; 1.3; 1.3; 1.3;0; 0.2; 1.8;10;0; 80.8
+380; Víno dezertní, koøenìné, Vermut; Vermouth; ; 1.00; 6.25; 0.000;603;144;0;0;0;0; ; 14.0; 14.0; ;0; 0.2; 0.3;6;0; 73.1
+381; Víno šumivé, sekt; Wine, sparkling; ; 1.00; 6.25; 0.000;423;101;0;0;0;0; ; 7.3; 7.3; ;0; 0.2; 0.2;4;0; 82.1
+46; Višnì; Cherries, sour, raw; Prunus cerasus L.; 0.90; 6.25; 0.800;234;56; 0.5; 0.08; 0.11; 0.12; ; 12.6; 10.9; 9.0; 1.7; 1.0; 0.5;5;0; 85.4
+970; Višnì, lyofilizované; Cherries, sour, lyophilized; Prunus cerasus L.; 1.00; 6.25; 0.800;1485;350; 0.7;0;0;0;0; 84.4; 78.0; 51.0; 6.4; 4.8; 3.7;2; 0.01; 6.4
+751; Vláknina jableèná; Apple fiber; ; 1.00; 6.25; 0.800;1077;262; 6.6; 0.83; 1.31; 2.69;0; 73.4; 13.2; 2.3; 60.3; 7.6; 2.0;3; 0.01; 10.5
+774; Vláknina pšenièná; Wheat fiber; ; 1.00; 6.25; 0.820;1101;267; 5.8; 0.85; 0.85; 3.08;0; 61.2; 11.4; 1.9; 50.2; 17.0; 6.7;2; 0.01; 8.8
+752; Vloèky bramborové; Potato flakes; Solanum tuberosum; 1.00; 6.25; 0.800;1465;346; 0.8; 0.59;0; 0.07;0; 81.0; 72.9; 1.6; 8.1; 7.7; 3.5;35; 0.09; 7.0
+604; Vloèky jeèné; Barley, flakes; Hordeum; 1.00; 6.25; 0.956;1440;341; 2.2; 0.44; 0.37; 1.25;0; 77.1; 65.7; 0.5; 11.5; 8.9; 1.5;3; 0.01; 10.4
+188; Vloèky ovesné; Oat flakes; Avena sativa L.; 1.00; 6.25; 0.940;1488;353; 5.8; 0.98; 2.22; 2.23;0; 68.5; 55.8; 1.2; 12.7; 13.1; 1.7;1;0; 10.9
+606; Vloèky pohankové; Buckwheat, flakes; Fagopyrum esculentum; 1.00; 6.25; 0.956;1482;350; 2.7; 0.52; 1.04; 1.00;0; 73.8; 66.3; 1.0; 7.5; 11.5; 1.8;0;0; 10.3
+607; Vloèky pšenièné; Wheat, flakes; Triticum aestivum L.; 1.00; 6.25; 0.956;1417;336; 2.2; 0.42; 0.39; 1.24;0; 75.3; 62.7; 0.6; 12.6; 10.0; 1.6;1;0; 10.9
+608; Vloèky rıové; Rice, flakes; Oryza sativa L.; 1.00; 6.25; 0.956;1517;358; 2.6; 0.81; 0.90; 0.76;0; 77.1; 73.5; 0.4; 3.6; 8.3; 1.1;1;0; 10.8
+609; Vloèky sójové; Soy, flakes; Glycine max (L.) Merr.; 1.00; 6.25; 0.956;1676;404; 22.0; 3.29; 5.34; 12.43;0; 25.6; 0.6; 2.9; 25.0; 38.3; 4.7;0;0; 9.4
+610; Vloèky špaldové; Spelt, flakes; Triticum spelta; 1.00; 6.25; 0.956;1435;340; 2.6; 0.47; 0.67; 1.30;0; 70.2; 59.8; 0.3; 10.3; 14.1; 1.8;0;0; 11.3
+615; Vloèky itné; Rye, flakes; ; 1.00; 6.25; 0.956;1374;326; 1.6; 0.20; 0.22; 0.77;0; 79.0; 62.3; 0.2; 16.6; 7.1; 1.5;74; 0.18; 10.8
+926; Vloèky, teffové; Teff, flakes; Eragrostis tef; 1.00; 6.25; 0.820;1487;351; 2.3; 0.44; 0.53; 0.87;0; 74.2; 67.4; 1.5; 6.8; 11.8; 2.3;3; 0.01; 9.4
+611; Vosk karnaubskı; Carnauba wax; Copernicia cerifera; 1.00; 6.25; 0.956;3664;891; 98.7; 65.96; 17.48; 10.92;0; 0.5; 0.5;0;0; 0.3; 0.3;8; 0.02; 0.3
+129; Vırobek mléènı, Tradièní pomazánkové (døíve Pomazánkové máslo); Milk product, Tradicni pomazankove (former name Butter spread -Pomazankove maslo); ; 1.00; 6.25; 0.945;1330;323; 32.0; 20.70; 8.64; 0.93; ; 5.7; 5.7; 5.7;0; 3.0; 1.0;343; 0.1; 57.0
+758; Zajíc, maso z celého kusu; Hare, meat from the whole animal, raw; Lepus; 0.73; 6.25; 0.916;405;96; 1.1; 0.43; 0.17; 0.31;0;0;0;0;0; 21.4; 1.1;58; 0.14; 74.6
+759; Zajíc, stehna; Hare, haunch, raw; Lepus; 0.69; 6.25; 0.916;474;112; 2.1; 0.72; 0.48; 0.62;0;0;0;0;0; 23.3; 1.1;58; 0.14; 72.7
+440; Zákys smetanovı; Starter cream; ; 1.00; 6.38; 0.945;174;41; 1.6; 1.13; 0.28;0;0; 3.6; 3.6; 3.6;0; 3.3; 0.7;49; 0.12; 90.9
+993; Závin, jablkovı; Strudel, apple; ; 1.00; 6.25; 0.800;1329;316; 9.9; 6.33; 2.46; 0.61; 0.06; 52.8; 51.2; 24.1; 1.6; 4.7; 0.6;188; 0.47; 32.1
+493; Zázvor; Ginger root, raw; Zingiber officinale; 0.75; 6.25; 0.800;115;27; 0.2;0;0;0;0; 6.8; 3.9; 1.0; 2.9; 1.1; 0.8;6; 0.02; 91.1
+75; Zelí èínské; Cabbage, Chinese, raw; Brassica chinensis L. Jusl.; 0.79; 6.25; 0.800;71;17; 0.3; ; ; ; ; 3.0; 1.7; ; 1.3; 1.2; 0.6;8;0; 94.9
+76; Zelí hlávkové, bílé; Cabbage, white, raw; Brassica oleracea L. var. capitata L.; 0.80; 6.25; 0.800;123;29; 0.2; ; ; ; ; 6.6; 4.1; ; 2.5; 1.6; 0.6;13;0; 91.0
+77; Zelí hlávkové, èervené; Cabbage, red, raw; Brassica oleracea L. var. capitata L.; 0.79; 6.25; 0.800;122;29; 0.2; ; ; ; ; 6.5; 3.9; ; 2.6; 1.6; 0.7;13;0; 91.0
+540; aludky kachní; Gizzard, duck, raw; ; 1.00; 6.25; 0.789;445;106; 3.4; 0.95; 1.42; 0.28;0;0;0;0;0; 18.8; 0.15;58; 0.14; 75.8
+535; aludky kuøecí; Gizzard, chicken, raw; ; 1.00; 6.25; 0.789;307;73; 1.4; 0.37; 0.57; 0.18;0;0;0;0;0; 15.0; 0.8;63; 0.16; 81.1
+740; aludky vepøové; Pork, stomach, raw; ; 1.00; 6.25; 0.910;470;112; 3.9; 1.82; 1.49; 0.17;0; 0.45; 0.45;0;0; 18.7; 0.7;75; 0.19; 76.3
+246; ampiony; Mushroom, table, raw; Agaricus bisporus forma albus; 0.98; 6.25; 0.770;98;27; 0.3; ; ; ; ; 3.1; 1.4; ; 1.7; 2.9; 1.0;8;0; 92.7
+315; elatina jedlá, vepøová; Gelatin, edible, porcine; ; 1.00; 5.55; 0.800;1500;358;0;0;0;0;0;0;0;0;0; 88.0; 0.2;64; 0.16; 11.8
+175; ito ozimé; Winter rye; Secale cereale; 1.00; 5.83; 0.720;1467;348; 3.1; 0.38; 0.42; 1.44; ; 78.9; 63.3; ; 15.6; 8.9; 1.5;1;0; 7.6
+840; ralok, maso bez kùe; Piked dogfish, meat without skin, raw; Squalus acanthias; 0.87; 6.25; 0.700;402;95; 0.2; 0.06; 0.05;0;0;0;0;0;0; 23.2; 1.2;85; 0.21; 73.9
+841; ralok, maso s kùí; Piked dogfish, meat with skin, raw; Squalus acanthias; 1.00; 6.25; 0.700;403;95; 0.1; 0.05; 0.04;0;0;0;0;0;0; 23.5; 1.5;85; 0.21; 74.9

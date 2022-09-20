@@ -1,7 +1,7 @@
 package cz.daiton.foodsquare.appuser;
 
-import cz.daiton.foodsquare.security.IncorrectUserException;
-import cz.daiton.foodsquare.security.jwt.JwtUtils;
+import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.authentication.JwtUtils;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
