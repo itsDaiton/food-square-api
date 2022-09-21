@@ -8,7 +8,7 @@ import cz.daiton.foodsquare.authentication.request.RegisterRequestDTO;
 import cz.daiton.foodsquare.payload.response.FieldErrorResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.payload.response.UserDataResponse;
-import cz.daiton.foodsquare.role.AppUserRole;
+import cz.daiton.foodsquare.role.RoleType;
 import cz.daiton.foodsquare.role.Role;
 import cz.daiton.foodsquare.role.RoleRepository;
 import cz.daiton.foodsquare.exceptions.CustomFieldError;
@@ -95,26 +95,26 @@ public class AuthenticationController {
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
-            Role userRole = roleRepository.findByName(AppUserRole.ROLE_USER)
+            Role userRole = roleRepository.findByName(RoleType.ROLE_USER)
                     .orElseThrow(() -> new RuntimeException("Role is not found."));
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
-                        Role roleAdmin = roleRepository.findByName(AppUserRole.ROLE_ADMIN)
+                        Role roleAdmin = roleRepository.findByName(RoleType.ROLE_ADMIN)
                                 .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleAdmin);
                         break;
 
                     case "moderator":
-                        Role roleModerator = roleRepository.findByName(AppUserRole.ROLE_MODERATOR)
+                        Role roleModerator = roleRepository.findByName(RoleType.ROLE_MODERATOR)
                                 .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleModerator);
                         break;
 
                     default:
-                        Role roleUser = roleRepository.findByName(AppUserRole.ROLE_USER)
+                        Role roleUser = roleRepository.findByName(RoleType.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Role is not found."));
                         roles.add(roleUser);
                 }

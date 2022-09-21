@@ -1,13 +1,15 @@
-package cz.daiton.foodsquare.comment;
+package cz.daiton.foodsquare.review;
 
-import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.payload.response.MessageResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -15,45 +17,45 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping(value = "api/v1/comments")
+@RequestMapping(value = "api/v1/reviews")
 @CrossOrigin
 @AllArgsConstructor
-public class CommentController {
+public class ReviewController {
 
-    private final CommentService commentService;
+    private final ReviewService reviewService;
 
     @GetMapping(value = "get/{id}")
-    public Comment getComment(@PathVariable Long id) {
-        return commentService.get(id);
+    public Review getReview(@PathVariable Long id) {
+        return reviewService.get(id);
     }
 
     @GetMapping(value = "/getAll")
-    public List<Comment> getComments() {
-        return commentService.getAll();
+    public List<Review> getReviews() {
+        return reviewService.getAll();
     }
 
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addComment(@Valid @RequestBody CommentDto commentDto, HttpServletRequest request) throws Exception {
+    public ResponseEntity<?> addReview(@Valid @RequestBody ReviewDto reviewDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
-                .body(new MessageResponse(commentService.add(commentDto, request)));
+                .body(new MessageResponse(reviewService.add(reviewDto, request)));
     }
 
     @PutMapping(value = "/update/{id}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> updateComment(@Valid @RequestBody CommentDto commentDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+    public ResponseEntity<?> updateReview(@Valid @RequestBody ReviewDto reviewDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
-                .body(new MessageResponse(commentService.update(commentDto, id, request)));
+                .body(new MessageResponse(reviewService.update(reviewDto, id, request)));
     }
 
     @DeleteMapping(value = "/delete/{id}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> deleteComment(@PathVariable Long id, HttpServletRequest request) throws Exception {
+    public ResponseEntity<?> deleteReview(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
-                .body(new MessageResponse(commentService.delete(id, request)));
+                .body(new MessageResponse(reviewService.delete(id, request)));
     }
 
     @ExceptionHandler(value =
@@ -75,6 +77,12 @@ public class CommentController {
         }
         else if (e instanceof NumberFormatException) {
             message = "Please enter a valid number as Id.";
+        }
+        else if (e instanceof MethodArgumentTypeMismatchException) {
+            message = "This is not valid ID. Please try again.";
+        }
+        else if (e instanceof HttpRequestMethodNotSupportedException) {
+            message = "Wrong request method. Please try again.";
         }
         else {
             message = e.getMessage();

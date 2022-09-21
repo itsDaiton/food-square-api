@@ -3,9 +3,10 @@ package cz.daiton.foodsquare.comment;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.appuser.AppUserService;
-import cz.daiton.foodsquare.post.Post;
-import cz.daiton.foodsquare.post.PostRepository;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.recipe.Recipe;
+import cz.daiton.foodsquare.recipe.RecipeRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,19 +15,13 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@AllArgsConstructor
 public class CommentServiceImpl implements CommentService {
 
     private final CommentRepository commentRepository;
     private final AppUserRepository appUserRepository;
-    private final PostRepository postRepository;
+    private final RecipeRepository recipeRepository;
     private final AppUserService appUserService;
-
-    public CommentServiceImpl(CommentRepository commentRepository, AppUserRepository appUserRepository, PostRepository postRepository, AppUserService appUserService) {
-        this.commentRepository = commentRepository;
-        this.appUserRepository = appUserRepository;
-        this.postRepository = postRepository;
-        this.appUserService = appUserService;
-    }
 
     @Override
     public Comment get(Long id) {
@@ -46,13 +41,13 @@ public class CommentServiceImpl implements CommentService {
         AppUser appUser = appUserRepository.findById(commentDto.getAppUser()).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + commentDto.getAppUser() + "' does not exist.")
         );
-        Post post = postRepository.findById(commentDto.getPost()).orElseThrow(
-                () -> new NoSuchElementException("Post with id: '" + commentDto.getPost() + "' does not exist.")
+        Recipe recipe = recipeRepository.findById(commentDto.getRecipe()).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + commentDto.getRecipe() + "' does not exist.")
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
             comment.setAppUser(appUser);
-            comment.setPost(post);
+            comment.setRecipe(recipe);
             comment.setCommentedAt(LocalDateTime.now());
             comment.setText(commentDto.getText());
 

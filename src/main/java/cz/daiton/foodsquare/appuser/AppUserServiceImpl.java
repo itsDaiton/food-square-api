@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.appuser;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.authentication.JwtUtils;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,15 +10,11 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@AllArgsConstructor
 public class AppUserServiceImpl implements AppUserService {
 
     private final AppUserRepository appUserRepository;
     private final JwtUtils jwtUtils;
-
-    public AppUserServiceImpl(AppUserRepository appUserRepository, JwtUtils jwtUtils) {
-        this.appUserRepository = appUserRepository;
-        this.jwtUtils = jwtUtils;
-    }
 
     @Override
     public AppUser get(Long id) {
@@ -96,18 +93,6 @@ public class AppUserServiceImpl implements AppUserService {
             else {
                 throw new IncorrectUserException("You are not authorized to operate with other user's content.");
             }
-        }
-        else {
-            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
-        }
-    }
-
-    @Override
-    public AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException{
-        String jwt = jwtUtils.getJwtFromCookies(request);
-        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
-            String username = jwtUtils.getUserNameFromJwtToken(jwt);
-            return findByUsername(username);
         }
         else {
             throw new IncorrectUserException("There has been an error with your token, please make a new login request.");

@@ -1,7 +1,7 @@
 package cz.daiton.foodsquare.ingredient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
+import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import lombok.*;
 
 import javax.persistence.*;
@@ -71,6 +71,5 @@ public class Ingredient {
             fetch = FetchType.LAZY
     )
     @JsonIgnore
-    private Set<IngredientsInMeal> ingredientsInMeals = new HashSet<>();
-
+    private Set<RecipeIngredient> ingredientSet = new HashSet<>();
 }

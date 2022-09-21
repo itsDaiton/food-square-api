@@ -24,7 +24,4 @@ public interface AppUserService {
     Boolean existsByEmail(String email);
 
     Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException;
-
-    AppUser getLocalUser(HttpServletRequest request) throws IncorrectUserException;
-
 }
