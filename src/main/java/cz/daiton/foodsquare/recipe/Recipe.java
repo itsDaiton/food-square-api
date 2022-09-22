@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.recipe;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
+import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import cz.daiton.foodsquare.review.Review;
@@ -95,4 +96,13 @@ public class Recipe {
     )
     @JsonIgnore
     private Set<RecipeIngredient> ingredientSet = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "recipe_categories",
+            joinColumns = @JoinColumn(name = "recipe_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    @JsonIgnore
+    private Set<Category> categories = new HashSet<>();
 }

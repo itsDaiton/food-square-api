@@ -1,3 +1,20 @@
 INSERT INTO user_role (name) VALUES ('ROLE_USER');
 INSERT INTO user_role (name) VALUES ('ROLE_ADMIN');
 INSERT INTO user_role (name) VALUES ('ROLE_MODERATOR');
+
+INSERT INTO recipe_category(name) VALUES ('GLUTEN_FREE');
+INSERT INTO recipe_category(name) VALUES ('SHELLFISH_FREE');
+INSERT INTO recipe_category(name) VALUES ('EGG_FREE');
+INSERT INTO recipe_category(name) VALUES ('FISH_FREE');
+INSERT INTO recipe_category(name) VALUES ('SESAME_FREE');
+INSERT INTO recipe_category(name) VALUES ('NUT_FREE');
+INSERT INTO recipe_category(name) VALUES ('SOY_FREE');
+INSERT INTO recipe_category(name) VALUES ('LACTOSE_FREE');
+INSERT INTO recipe_category(name) VALUES ('PEANUT_FREE');
+INSERT INTO recipe_category(name) VALUES ('CELERY_FREE');
+INSERT INTO recipe_category(name) VALUES ('MUSTARD_FREE');
+INSERT INTO recipe_category(name) VALUES ('SULPHUR_FREE');
+INSERT INTO recipe_category(name) VALUES ('LUPIN_FREE');
+INSERT INTO recipe_category(name) VALUES ('VEGETARIAN');
+INSERT INTO recipe_category(name) VALUES ('VEGAN');
+INSERT INTO recipe_category(name) VALUES ('PESCATARIAN');
