@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.exceptions.IncorrectTypeException;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,4 +25,8 @@ public interface AppUserService {
     Boolean existsByEmail(String email);
 
     Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    String like(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
+
+    String deleteLike(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
 }

@@ -47,6 +47,22 @@ public class AppUserController {
                 .body(new MessageResponse(appUserService.deleteProfilePicture(id, request)));
     }
 
+    @PutMapping(value = "/like")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> like(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.like(likeDto, request)));
+    }
+
+    @PutMapping(value = "/deleteLike")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> deleteLike(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.deleteLike(likeDto, request)));
+    }
+
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;
