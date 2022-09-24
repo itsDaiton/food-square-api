@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.recipe;
 
+import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 @RestController
 @RequestMapping(value = "api/v1/recipes")
@@ -32,6 +34,11 @@ public class RecipeController {
     @GetMapping(value = "/getAll")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAll();
+    }
+
+    @GetMapping(value = "/getCategories/{id}")
+    public Set<Category> getCategoriesInRecipe(@PathVariable Long id) {
+        return recipeService.getCategoriesInRecipe(id);
     }
 
     @PostMapping(value = "/add")
@@ -63,7 +70,7 @@ public class RecipeController {
                     NoSuchElementException.class,
                     HttpMessageNotReadableException.class,
                     IncorrectUserException.class,
-                    InvalidDataAccessApiUsageException.class
+                    InvalidDataAccessApiUsageException.class,
             })
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;

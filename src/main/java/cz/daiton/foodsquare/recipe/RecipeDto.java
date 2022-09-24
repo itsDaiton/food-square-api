@@ -1,9 +1,11 @@
 package cz.daiton.foodsquare.recipe;
 
+import cz.daiton.foodsquare.category.CategoryInputDto;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -34,4 +36,9 @@ public class RecipeDto {
     private Integer timeToCook;
 
     private Long appUser;
+
+    @Valid
+    @NotNull(message = required)
+    private CategoryInputDto inputs;
+
 }

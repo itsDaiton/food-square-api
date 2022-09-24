@@ -22,6 +22,7 @@ public class Category {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @JsonIgnore
     private Long id;
 
     @Enumerated(EnumType.STRING)
