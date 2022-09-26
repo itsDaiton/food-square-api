@@ -121,6 +121,19 @@ public class AppUser {
     @JsonIgnore
     private Set<Review> likedReviews;
 
+    @ManyToMany
+    @JoinTable(
+            name = "favorite_recipes",
+            joinColumns = @JoinColumn(name = "app_user_id"),
+            inverseJoinColumns = @JoinColumn(name = "recipe_id"),
+            uniqueConstraints = {
+                    @UniqueConstraint(columnNames = {"app_user_id", "recipe_id"})
+            }
+    )
+    @JsonIgnore
+    private Set<Recipe> favoriteRecipes;
+
+
     public AppUser(@NotNull(message = required) @Email(message = "This is not valid e-mail address.") String email, @NotNull(message = required) @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.") String userName, @NotNull(message = required) @Size(min = 6, message = "Password must be at least 6 characters long.") String password) {
         this.email = email;
         this.userName = userName;

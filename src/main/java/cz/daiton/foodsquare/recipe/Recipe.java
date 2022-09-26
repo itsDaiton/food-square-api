@@ -104,4 +104,8 @@ public class Recipe {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private Set<Category> categories = new HashSet<>();
+
+    @ManyToMany(mappedBy = "favoriteRecipes")
+    @JsonIgnore
+    private Set<AppUser> favorites;
 }

@@ -1,10 +1,14 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.exceptions.IncorrectTypeException;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.recipe.Recipe;
+import cz.daiton.foodsquare.review.Review;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Set;
 
 public interface AppUserService {
 
@@ -29,4 +33,14 @@ public interface AppUserService {
     String like(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
 
     String deleteLike(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
+
+    String favoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException;
+
+    String unfavoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException;
+
+    List<Recipe> getFavoriteRecipesOfUser(Long id);
+
+    List<Review> getLikedReviewsOfUser(Long id);
+
+    List<Comment> getLikedCommentsOfUser(Long id);
 }

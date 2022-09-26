@@ -5,6 +5,8 @@ import cz.daiton.foodsquare.comment.CommentRepository;
 import cz.daiton.foodsquare.exceptions.IncorrectTypeException;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.authentication.JwtUtils;
+import cz.daiton.foodsquare.recipe.Recipe;
+import cz.daiton.foodsquare.recipe.RecipeRepository;
 import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.review.ReviewRepository;
 import lombok.AllArgsConstructor;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -23,6 +26,7 @@ public class AppUserServiceImpl implements AppUserService {
     private final JwtUtils jwtUtils;
     private final ReviewRepository reviewRepository;
     private final CommentRepository commentRepository;
+    private final RecipeRepository recipeRepository;
 
     @Override
     public AppUser get(Long id) {
@@ -182,5 +186,73 @@ public class AppUserServiceImpl implements AppUserService {
         else {
             throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
         }
+    }
+
+    @Override
+    public String favoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException {
+        AppUser appUser = appUserRepository.findById(favoriteDto.getAppUser()).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' does not exist.")
+        );
+        Recipe recipe;
+
+        if (checkUser(appUser.getId(), request)) {
+            recipe = recipeRepository.findById(favoriteDto.getRecipe()).orElseThrow(
+                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' does not exist.")
+            );
+            if (appUser.getFavoriteRecipes().contains(recipe)) {
+                throw new DataIntegrityViolationException("You already added this recipe to your favorites.");
+            }
+            appUser.getFavoriteRecipes().add(recipe);
+            appUserRepository.save(appUser);
+            return "Recipe has been successfully added to favorites.";
+        }
+        return "There has been a error while trying to favorite the recipe.";
+    }
+
+    @Override
+    public String unfavoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException {
+        AppUser appUser = appUserRepository.findById(favoriteDto.getAppUser()).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' does not exist.")
+        );
+        Recipe recipe;
+
+        if (checkUser(appUser.getId(), request)) {
+            recipe = recipeRepository.findById(favoriteDto.getRecipe()).orElseThrow(
+                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' does not exist.")
+            );
+            if (appUser.getFavoriteRecipes().contains(recipe)) {
+                appUser.getFavoriteRecipes().remove(recipe);
+                appUserRepository.save(appUser);
+                return "Recipe has been removed from favorites.";
+            }
+            else {
+                throw new NoSuchElementException("You cannot unfavorite recipe which you did not added to favorites before.");
+            }
+        }
+        return "There has been a error while trying to unfavorite the recipe.";
+    }
+
+    @Override
+    public List<Recipe> getFavoriteRecipesOfUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return recipeRepository.findAllByFavorites(appUser);
+    }
+
+    @Override
+    public List<Review> getLikedReviewsOfUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return reviewRepository.findAllByLikes(appUser);
+    }
+
+    @Override
+    public List<Comment> getLikedCommentsOfUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return commentRepository.findAllByLikes(appUser);
     }
 }

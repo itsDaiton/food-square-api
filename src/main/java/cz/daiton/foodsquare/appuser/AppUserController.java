@@ -1,6 +1,9 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import cz.daiton.foodsquare.recipe.Recipe;
+import cz.daiton.foodsquare.review.Review;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -61,6 +64,37 @@ public class AppUserController {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.deleteLike(likeDto, request)));
+    }
+
+    @PutMapping(value = "/favoriteRecipe")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> favoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.favoriteRecipe(favoriteDto, request)));
+    }
+
+    @PutMapping(value = "/unfavoriteRecipe")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> unfavoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.unfavoriteRecipe(favoriteDto, request)));
+    }
+
+    @GetMapping(value = "/getFavoriteRecipes/{id}")
+    public List<Recipe> getFavoriteRecipesOfUser(@PathVariable Long id) {
+        return appUserService.getFavoriteRecipesOfUser(id);
+    }
+
+    @GetMapping(value = "/getLikedComments/{id}")
+    public List<Comment> getLikedCommentsOfUser(@PathVariable Long id) {
+        return appUserService.getLikedCommentsOfUser(id);
+    }
+
+    @GetMapping(value = "/getLikedReviews/{id}")
+    public List<Review> getLikedReviewsOfUser(@PathVariable Long id) {
+        return appUserService.getLikedReviewsOfUser(id);
     }
 
     @ExceptionHandler(value = Exception.class)
