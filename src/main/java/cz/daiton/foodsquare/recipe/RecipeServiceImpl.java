@@ -78,6 +78,15 @@ public class RecipeServiceImpl implements RecipeService {
         recipe.setTimeToCook(recipeDto.getTimeToCook());
         recipe.setUpdatedAt(LocalDateTime.now());
         recipe.setCategories(categories);
+
+        String meal = recipeDto.getMeal();
+        if (meal.equals("breakfast") || meal.equals("lunch") || meal.equals("dinner") || meal.equals("snack")) {
+            recipe.setMeal(RecipeMeal.valueOf(meal.toUpperCase()));
+        }
+        else {
+            throw new NoSuchElementException("Please enter a correct meal type.");
+        }
+
     }
 
     @Override

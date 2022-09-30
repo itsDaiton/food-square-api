@@ -7,6 +7,7 @@ import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import cz.daiton.foodsquare.review.Review;
 import lombok.*;
+import net.bytebuddy.utility.nullability.MaybeNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -108,4 +109,9 @@ public class Recipe {
     @ManyToMany(mappedBy = "favoriteRecipes")
     @JsonIgnore
     private Set<AppUser> favorites;
+
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = required)
+    private RecipeMeal meal;
+
 }

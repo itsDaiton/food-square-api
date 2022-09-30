@@ -37,6 +37,9 @@ public class RecipeDto {
 
     private Long appUser;
 
+    @NotNull(message = required)
+    private String meal;
+
     @Valid
     @NotNull(message = required)
     private CategoryInputDto inputs;
