@@ -15,7 +15,7 @@ public interface RecipeService {
 
     Set<Category> getCategoriesInRecipe(Long id);
 
-    String add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException;
+    Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException;
 
     String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 

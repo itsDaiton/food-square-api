@@ -13,6 +13,8 @@ public interface RecipeIngredientService {
 
     String add(RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws IncorrectUserException;
 
+    String addAll(RecipeIngredientListDto listDto, HttpServletRequest request) throws IncorrectUserException;
+
     String update(RecipeIngredientDto recipeIngredientDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;

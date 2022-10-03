@@ -62,8 +62,9 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll").permitAll()
                 .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
-                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll").permitAll()
+                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getUnits").permitAll()
                 .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll").permitAll()
+                .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll").permitAll()
                 .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*").permitAll()
                 .anyRequest().authenticated();
 

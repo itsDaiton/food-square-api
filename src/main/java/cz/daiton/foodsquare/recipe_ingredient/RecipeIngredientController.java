@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -32,13 +33,21 @@ public class RecipeIngredientController {
     public List<RecipeIngredient> getAllRecipeIngredients() {
         return recipeIngredientService.getAll();
     }
-
+    
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addIngredientToRecipe(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.add(recipeIngredientDto, request)));
+    }
+
+    @PostMapping(value = "/addAll")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> addAllIngredientsToRecipe(@RequestBody RecipeIngredientListDto list, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(recipeIngredientService.addAll(list, request)));
     }
 
     @PutMapping(value = "/update/{id}")
@@ -63,7 +72,8 @@ public class RecipeIngredientController {
                     HttpMessageNotReadableException.class,
                     IncorrectUserException.class,
                     InvalidDataAccessApiUsageException.class,
-                    DataIntegrityViolationException.class
+                    DataIntegrityViolationException.class,
+                    NullPointerException.class
             })
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;

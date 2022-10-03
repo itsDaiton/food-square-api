@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.recipe;
 
 import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.payload.response.InsertResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
@@ -44,9 +45,10 @@ public class RecipeController {
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addRecipe(@Valid @RequestBody RecipeDto recipeDto, HttpServletRequest request) throws Exception {
+        Recipe recipe = recipeService.add(recipeDto, request);
         return ResponseEntity
                 .ok()
-                .body(new MessageResponse(recipeService.add(recipeDto, request)));
+                .body(new InsertResponse(recipe.getId(), "Recipe has been successfully created."));
     }
 
     @PutMapping(value = "/update/{id}")

@@ -13,6 +13,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -52,11 +53,9 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
-
             if (recipeIngredientRepository.existsByRecipeAndIngredient(recipe, ingredient)) {
                 throw new DataIntegrityViolationException("Recipe with id: '" + recipe.getId() + "' already contains ingredient with id: '" + ingredient.getId() + "'.");
             }
-
             recipeIngredient.setAmount(recipeIngredientDto.getAmount());
             recipeIngredient.setIngredient(ingredient);
             recipeIngredient.setRecipe(recipe);
@@ -64,6 +63,40 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
             return "Ingredient has been successfully added to recipe.";
         }
         return "There has been a error while trying to add the ingredient to recipe.";
+    }
+
+    @Override
+    public String addAll(RecipeIngredientListDto listDto, HttpServletRequest request) throws IncorrectUserException {
+        List<RecipeIngredientDto> recipeIngredientDtoList = listDto.getRecipeIngredients();
+        if (recipeIngredientDtoList.isEmpty()) {
+            throw new NullPointerException("List of ingredients cannot be empty.");
+        }
+        List<RecipeIngredient> ingredients = new ArrayList<>();
+
+        for (RecipeIngredientDto ingredientDto : recipeIngredientDtoList) {
+            RecipeIngredient recipeIngredient = new RecipeIngredient();
+            Recipe recipe = recipeRepository.findById(ingredientDto.getRecipe()).orElseThrow(
+                    () -> new NoSuchElementException("Recipe with id: '" + ingredientDto.getRecipe() + "' was not found.")
+            );
+            Ingredient ingredient = ingredientRepository.findById(ingredientDto.getIngredient()).orElseThrow(
+                    () -> new NoSuchElementException("Ingredient with id: '" + ingredientDto.getIngredient() + "' was not found.")
+            );
+            AppUser appUser = appUserRepository.findById(recipe.getAppUser().getId()).orElseThrow(
+                    () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' does not exist.")
+            );
+
+            if (appUserService.checkUser(appUser.getId(), request)) {
+                if (recipeIngredientRepository.existsByRecipeAndIngredient(recipe, ingredient)) {
+                    throw new DataIntegrityViolationException("Recipe with id: '" + recipe.getId() + "' already contains ingredient with id: '" + ingredient.getId() + "'.");
+                }
+                recipeIngredient.setAmount(ingredientDto.getAmount());
+                recipeIngredient.setIngredient(ingredient);
+                recipeIngredient.setRecipe(recipe);
+                ingredients.add(recipeIngredient);
+            }
+        }
+        recipeIngredientRepository.saveAll(ingredients);
+        return "All ingredients have been successfully added to recipe.";
     }
 
     @Override

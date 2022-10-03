@@ -37,7 +37,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public String add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException {
+    public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = new Recipe();
         AppUser appUser = appUserRepository.findById(recipeDto.getAppUser()).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + recipeDto.getAppUser() + "' does not exist.")
@@ -47,10 +47,8 @@ public class RecipeServiceImpl implements RecipeService {
         if (appUserService.checkUser(recipeDto.getAppUser(), request)) {
             handleInsert(recipeDto, recipe, inputs);
             recipe.setAppUser(appUser);
-            recipeRepository.save(recipe);
-            return "Recipe has been successfully created.";
         }
-        return "There has been a error while trying to add the recipe.";
+        return recipeRepository.saveAndFlush(recipe);
     }
 
     @Override
@@ -80,13 +78,22 @@ public class RecipeServiceImpl implements RecipeService {
         recipe.setCategories(categories);
 
         String meal = recipeDto.getMeal();
-        if (meal.equals("breakfast") || meal.equals("lunch") || meal.equals("dinner") || meal.equals("snack")) {
-            recipe.setMeal(RecipeMeal.valueOf(meal.toUpperCase()));
+        switch (meal) {
+            case "Breakfast":
+                recipe.setMeal(RecipeMeal.BREAKFAST);
+                break;
+            case "Lunch":
+                recipe.setMeal(RecipeMeal.LUNCH);
+                break;
+            case "Dinner":
+                recipe.setMeal(RecipeMeal.DINNER);
+                break;
+            case "Snack":
+                recipe.setMeal(RecipeMeal.SNACK);
+                break;
+            default:
+                throw new NoSuchElementException("Please enter a correct meal type.");
         }
-        else {
-            throw new NoSuchElementException("Please enter a correct meal type.");
-        }
-
     }
 
     @Override
