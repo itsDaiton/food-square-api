@@ -16,6 +16,7 @@ public class CustomReader extends FlatFileItemReader<Ingredient> implements Item
         setResource(new FileSystemResource("src/main/resources/input/data.csv"));
         setLinesToSkip(1);
         setLineMapper(getDefaultLineMapper());
+        setEncoding("Cp1252");
     }
 
     public DefaultLineMapper<Ingredient> getDefaultLineMapper() {

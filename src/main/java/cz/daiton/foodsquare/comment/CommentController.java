@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(value = "api/v1/comments")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 @AllArgsConstructor
 public class CommentController {
 
@@ -30,6 +30,11 @@ public class CommentController {
     @GetMapping(value = "/getAll")
     public List<Comment> getComments() {
         return commentService.getAll();
+    }
+
+    @GetMapping(value = "getCountByRecipe/{id}")
+    public Integer countCommentsByRecipe(@PathVariable Long id) {
+        return commentService.countByRecipe(id);
     }
 
     @PostMapping(value = "/add")

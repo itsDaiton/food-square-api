@@ -13,6 +13,9 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "review")
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"app_user_id", "recipe_id"})
+})
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

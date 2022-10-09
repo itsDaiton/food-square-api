@@ -7,9 +7,12 @@ import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.recipe.RecipeRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -36,6 +39,18 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override
+    public Review getByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        AppUser appUser = appUserService.getUserFromCookie(request);
+
+        return reviewRepository.findByAppUserAndRecipe(appUser, recipe).orElseThrow(
+                () -> new NoSuchElementException("You did not review this recipe yet.")
+        );
+    }
+
+    @Override
     public String add(ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException {
         Review review = new Review();
         AppUser appUser = appUserRepository.findById(reviewDto.getAppUser()).orElseThrow(
@@ -46,6 +61,9 @@ public class ReviewServiceImpl implements ReviewService{
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
+            if (reviewRepository.existsByAppUserAndRecipe(appUser, recipe)) {
+                throw new DataIntegrityViolationException("You already reviewed this recipe.");
+            }
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
             review.setPathToImage(reviewDto.getPathToImage());
@@ -88,5 +106,67 @@ public class ReviewServiceImpl implements ReviewService{
             return "Review has been successfully deleted.";
         }
         return "There has been a error while trying to delete the review.";
+    }
+
+    @Override
+    public Integer countByRecipe(Long id) {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        return reviewRepository.countAllByRecipe(recipe);
+    }
+
+    @Override
+    public BigDecimal getAverageRating(Long id) {
+        double sumOfRating = 0;
+        int countOfReviews = 0;
+        double result;
+
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+
+        List<Review> reviews = reviewRepository.findAllByRecipe(recipe);
+
+        if (!reviews.isEmpty()) {
+            for (Review r : reviews) {
+                sumOfRating += r.getRating().doubleValue();
+                countOfReviews++;
+            }
+            result = sumOfRating / countOfReviews;
+        }
+        else {
+            result = 0;
+        }
+
+        return new BigDecimal(result).setScale(1, RoundingMode.HALF_EVEN);
+    }
+
+    @Override
+    public Boolean containsReview(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        AppUser appUser = appUserService.getUserFromCookie(request);
+
+        return reviewRepository.existsByAppUserAndRecipe(appUser, recipe);
+    }
+
+    @Override
+    public String deleteByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        AppUser appUser = appUserService.getUserFromCookie(request);
+
+        Review review = reviewRepository.findByAppUserAndRecipe(appUser, recipe).orElseThrow(
+                () -> new NoSuchElementException("You did not review this recipe yet.")
+        );
+
+        if (appUserService.checkUser(appUser.getId(), request)) {
+            reviewRepository.deleteById(review.getId());
+            return "You review for this recipe has been deleted.";
+        }
+        return "There has been a error while trying to delete the review from the recipe.";
     }
 }

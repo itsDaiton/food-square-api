@@ -54,7 +54,7 @@ public class FollowServiceImpl implements FollowService {
 
         if (appUserService.checkUser(follower.getId(), request)) {
             if (followRepository.existsByFollowerAndFollowed(follower, followed)) {
-                throw new DataIntegrityViolationException("User with id: '" + follower.getId() + "' already follows user with id: '" + followed.getId() + "'.");
+                throw new DataIntegrityViolationException("You already follow this user.");
             }
 
             if (follower.getId().equals(followed.getId())) {
@@ -72,16 +72,37 @@ public class FollowServiceImpl implements FollowService {
 
     @Override
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
-        Follow follow = followRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("There is no record with id: '" + id + "' present in the database.")
+        AppUser followed = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
         );
-        AppUser appUser = follow.getFollower();
+        AppUser me = appUserService.getUserFromCookie(request);
 
-        if (appUserService.checkUser(appUser.getId(), request)) {
-            followRepository.deleteById(id);
-            return "You are no longer following this user.";
+        if (followed.getId().equals(me.getId())) {
+            throw new DataIntegrityViolationException("You cannot follow yourself.");
         }
 
+        Follow follow = followRepository.findAllByFollowerAndFollowed(me, followed).orElseThrow(
+                () -> new NoSuchElementException("You do not follow this user.")
+        );
+
+        if (appUserService.checkUser(me.getId(), request)) {
+            followRepository.deleteById(follow.getId());
+            return "You are no longer following this user.";
+        }
         return "There has been a error while trying to unfollow the user.";
+    }
+
+    @Override
+    public Boolean follows(Long id, HttpServletRequest request) throws IncorrectUserException {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        AppUser me = appUserService.getUserFromCookie(request);
+
+        if (appUser.getId().equals(me.getId())) {
+            throw new DataIntegrityViolationException("You cannot follow yourself.");
+        }
+
+        return followRepository.existsByFollowerAndFollowed(me, appUser);
     }
 }

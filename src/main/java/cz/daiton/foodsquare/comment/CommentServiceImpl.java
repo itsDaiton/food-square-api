@@ -85,4 +85,12 @@ public class CommentServiceImpl implements CommentService {
         }
         return "There has been a error while trying to delete the comment.";
     }
+
+    @Override
+    public Integer countByRecipe(Long id) {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        return commentRepository.countAllByRecipe(recipe);
+    }
 }

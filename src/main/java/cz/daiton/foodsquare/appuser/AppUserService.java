@@ -30,6 +30,8 @@ public interface AppUserService {
 
     Boolean checkUser(Long id, HttpServletRequest request) throws IncorrectUserException;
 
+    AppUser getUserFromCookie(HttpServletRequest request) throws IncorrectUserException;
+
     String like(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
 
     String deleteLike(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException;
@@ -43,4 +45,6 @@ public interface AppUserService {
     List<Review> getLikedReviewsOfUser(Long id);
 
     List<Comment> getLikedCommentsOfUser(Long id);
+
+    Boolean containsFavorite(Long id, HttpServletRequest request) throws IncorrectUserException;
 }

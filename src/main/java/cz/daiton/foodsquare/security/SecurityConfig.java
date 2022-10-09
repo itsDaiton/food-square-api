@@ -59,13 +59,13 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/v1/auth/register", "/api/v1/auth/login").anonymous()
-                .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll").permitAll()
-                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll").permitAll()
+                .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll", "/api/v1/comments/getCountByRecipe/*").permitAll()
+                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll", "/api/v1/users/checkFavorite/*").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
-                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getUnits").permitAll()
-                .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll").permitAll()
+                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll").permitAll()
+                .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*").permitAll()
                 .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll").permitAll()
-                .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*").permitAll()
+                .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*", "/api/v1/follows/follows/*").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);

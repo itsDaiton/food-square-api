@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/users")
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 @AllArgsConstructor
 public class AppUserController {
 
@@ -95,6 +95,11 @@ public class AppUserController {
     @GetMapping(value = "/getLikedReviews/{id}")
     public List<Review> getLikedReviewsOfUser(@PathVariable Long id) {
         return appUserService.getLikedReviewsOfUser(id);
+    }
+
+    @GetMapping(value = "/checkFavorite/{id}")
+    public Boolean checkForFavorite(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return appUserService.containsFavorite(id, request);
     }
 
     @ExceptionHandler(value = Exception.class)

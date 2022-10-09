@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -189,6 +188,18 @@ public class AppUserServiceImpl implements AppUserService {
     }
 
     @Override
+    public AppUser getUserFromCookie(HttpServletRequest request) throws IncorrectUserException {
+        String jwt = jwtUtils.getJwtFromCookies(request);
+        if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
+            String username = jwtUtils.getUserNameFromJwtToken(jwt);
+            return findByUsername(username);
+        }
+        else {
+            throw new IncorrectUserException("There has been an error with your token, please make a new login request.");
+        }
+    }
+
+    @Override
     public String favoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException {
         AppUser appUser = appUserRepository.findById(favoriteDto.getAppUser()).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' does not exist.")
@@ -254,5 +265,15 @@ public class AppUserServiceImpl implements AppUserService {
                 () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
         );
         return commentRepository.findAllByLikes(appUser);
+    }
+
+    @Override
+    public Boolean containsFavorite(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' doest not exist.")
+        );
+        AppUser me = getUserFromCookie(request);
+
+        return me.getFavoriteRecipes().contains(recipe);
     }
 }

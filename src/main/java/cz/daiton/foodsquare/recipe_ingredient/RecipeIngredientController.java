@@ -33,7 +33,7 @@ public class RecipeIngredientController {
     public List<RecipeIngredient> getAllRecipeIngredients() {
         return recipeIngredientService.getAll();
     }
-    
+
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addIngredientToRecipe(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws Exception {
@@ -44,7 +44,7 @@ public class RecipeIngredientController {
 
     @PostMapping(value = "/addAll")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addAllIngredientsToRecipe(@RequestBody RecipeIngredientListDto list, HttpServletRequest request) throws Exception {
+    public ResponseEntity<?> addAllIngredientsToRecipe(@Valid @RequestBody RecipeIngredientListDto list, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.addAll(list, request)));

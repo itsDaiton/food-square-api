@@ -14,4 +14,8 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     List<Comment> findAllByLikes(AppUser appUser);
 
+    List<Comment> findAllByRecipe(Recipe recipe);
+
+    Integer countAllByRecipe(Recipe recipe);
+
 }

@@ -40,6 +40,11 @@ public class FollowController {
         return followService.getAllFollowingOfUser(id);
     }
 
+    @GetMapping(value = "/follows/{id}")
+    public Boolean follows(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return followService.follows(id, request);
+    }
+
     @PostMapping(value = "/follow")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> followUser(@Valid @RequestBody FollowDto followDto, HttpServletRequest request) throws Exception {

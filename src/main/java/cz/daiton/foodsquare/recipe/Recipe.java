@@ -7,7 +7,6 @@ import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import cz.daiton.foodsquare.review.Review;
 import lombok.*;
-import net.bytebuddy.utility.nullability.MaybeNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -15,6 +14,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "recipe")
@@ -22,7 +22,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
 public class Recipe {
 
     @Transient
@@ -79,21 +78,27 @@ public class Recipe {
 
     @OneToMany(
             mappedBy = "id",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
 
     @OneToMany(
             mappedBy = "id",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     @JsonIgnore
     private Set<Review> reviews = new HashSet<>();
 
     @OneToMany(
             mappedBy = "id",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     @JsonIgnore
     private Set<RecipeIngredient> ingredientSet = new HashSet<>();
@@ -106,7 +111,11 @@ public class Recipe {
     )
     private Set<Category> categories = new HashSet<>();
 
-    @ManyToMany(mappedBy = "favoriteRecipes")
+    @ManyToMany(
+            mappedBy = "favoriteRecipes",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
     @JsonIgnore
     private Set<AppUser> favorites;
 
@@ -114,4 +123,16 @@ public class Recipe {
     @NotNull(message = required)
     private RecipeMeal meal;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id.equals(recipe.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
