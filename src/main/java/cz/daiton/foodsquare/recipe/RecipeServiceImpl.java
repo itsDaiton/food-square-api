@@ -7,11 +7,20 @@ import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.category.CategoryInputDto;
 import cz.daiton.foodsquare.category.CategoryRepository;
 import cz.daiton.foodsquare.category.CategoryType;
+import cz.daiton.foodsquare.comment.Comment;
+import cz.daiton.foodsquare.comment.CommentRepository;
+import cz.daiton.foodsquare.comment.CommentService;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
+import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredientRepository;
+import cz.daiton.foodsquare.review.Review;
+import cz.daiton.foodsquare.review.ReviewRepository;
+import cz.daiton.foodsquare.review.ReviewService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -23,6 +32,11 @@ public class RecipeServiceImpl implements RecipeService {
     private final AppUserService appUserService;
     private final RecipeRepository recipeRepository;
     private final CategoryRepository categoryRepository;
+    private final RecipeIngredientRepository recipeIngredientRepository;
+    private final CommentService commentService;
+    private final ReviewService reviewService;
+    private final CommentRepository commentRepository;
+    private final ReviewRepository reviewRepository;
 
     @Override
     public Recipe get(Long id) {
@@ -97,12 +111,62 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist. You cannot delete it.")
         );
 
         if (appUserService.checkUser(recipe.getAppUser().getId(), request)) {
+
+            if (!recipe.getIngredientSet().isEmpty()) {
+                for (RecipeIngredient ri : recipe.getIngredientSet()) {
+                    RecipeIngredient recipeIngredient = recipeIngredientRepository.findById(ri.getId()).orElseThrow(
+                            () -> new NoSuchElementException("No record present in the database.")
+                    );
+                    recipeIngredientRepository.deleteById(recipeIngredient.getId());
+                }
+                recipe.getIngredientSet().clear();
+                recipeIngredientRepository.flush();
+            }
+
+
+            if (!recipe.getComments().isEmpty()) {
+                for (Comment c : recipe.getComments()) {
+                    commentService.delete(c.getId(), request);
+                }
+                recipe.getComments().clear();
+                commentRepository.flush();
+            }
+
+            if (!recipe.getReviews().isEmpty()) {
+                for (Review r : recipe.getReviews()) {
+                    reviewService.delete(r.getId(), request);
+                }
+                recipe.getReviews().clear();
+                reviewRepository.flush();
+            }
+
+            if (!recipe.getCategories().isEmpty()) {
+                List<Category> categories = categoryRepository.findAll();
+                for (Category c : categories) {
+                    c.getRecipes().remove(recipe);
+                }
+                recipe.getCategories().clear();
+                categoryRepository.saveAllAndFlush(categories);
+            }
+
+            if (!recipe.getFavorites().isEmpty()) {
+                List<AppUser> users = appUserRepository.findAll();
+                for (AppUser a : users) {
+                    a.getFavoriteRecipes().remove(recipe);
+                }
+                recipe.getFavorites().clear();
+                appUserRepository.saveAllAndFlush(users);
+            }
+
+            recipeRepository.saveAndFlush(recipe);
+
             recipeRepository.deleteById(id);
             return "Recipe has been successfully deleted.";
         }

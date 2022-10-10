@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -80,6 +81,17 @@ public class CommentServiceImpl implements CommentService {
         );
 
         if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
+
+            if (!comment.getLikes().isEmpty()) {
+                List<AppUser> users = appUserRepository.findAll();
+                for (AppUser a : users) {
+                    a.getLikedComments().remove(comment);
+                }
+                comment.getLikes().clear();
+                commentRepository.saveAndFlush(comment);
+                appUserRepository.saveAllAndFlush(users);
+            }
+
             commentRepository.deleteById(id);
             return "Comment has been successfully deleted.";
         }

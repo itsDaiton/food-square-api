@@ -17,7 +17,9 @@ public class CustomWriter implements ItemWriter<Ingredient> {
     @Override
     public void write(List<? extends Ingredient> list) throws Exception {
         for (Ingredient data : list) {
-            ingredientRepository.save(data);
+            if (!ingredientRepository.existsByCode(data.getCode())) {
+                ingredientRepository.save(data);
+            }
         }
     }
 }

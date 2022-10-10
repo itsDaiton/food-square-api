@@ -74,7 +74,7 @@ public class AppUser {
     private Set<Recipe> recipes;
 
     @OneToMany(
-            mappedBy = "id",
+            mappedBy = "appUser",
             fetch = FetchType.LAZY
     )
     @JsonIgnore

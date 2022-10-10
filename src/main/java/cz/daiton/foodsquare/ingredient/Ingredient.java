@@ -15,7 +15,6 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 public class Ingredient {
 
     @Id
@@ -68,8 +67,7 @@ public class Ingredient {
     private BigDecimal water;
 
     @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY
+            mappedBy = "ingredient"
     )
     @JsonIgnore
     private Set<RecipeIngredient> ingredientSet = new HashSet<>();

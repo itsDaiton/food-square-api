@@ -102,6 +102,17 @@ public class ReviewServiceImpl implements ReviewService{
         );
 
         if (appUserService.checkUser(review.getAppUser().getId(), request)) {
+
+            if (!review.getLikes().isEmpty()) {
+                List<AppUser> users = appUserRepository.findAll();
+                for (AppUser a : users) {
+                    a.getLikedReviews().remove(review);
+                }
+                review.getLikes().clear();
+                reviewRepository.saveAndFlush(review);
+                appUserRepository.saveAllAndFlush(users);
+            }
+
             reviewRepository.deleteById(id);
             return "Review has been successfully deleted.";
         }
@@ -164,6 +175,17 @@ public class ReviewServiceImpl implements ReviewService{
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
+
+            if (!review.getLikes().isEmpty()) {
+                List<AppUser> users = appUserRepository.findAll();
+                for (AppUser a : users) {
+                    a.getLikedReviews().remove(review);
+                }
+                review.getLikes().clear();
+                reviewRepository.saveAndFlush(review);
+                appUserRepository.saveAllAndFlush(users);
+            }
+
             reviewRepository.deleteById(review.getId());
             return "You review for this recipe has been deleted.";
         }

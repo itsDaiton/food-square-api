@@ -60,7 +60,7 @@ public class Recipe {
             nullable = false
     )
     @NotNull(message = required)
-    @Min(value = 1, message = "Time to cook must be at least 1 minute.")
+    @Min(value = 1, message = "Cooking time must be at least 1 minute.")
     private Integer timeToCook;
 
     @Column(
@@ -77,28 +77,19 @@ public class Recipe {
     private AppUser appUser;
 
     @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "recipe"
     )
     @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
 
     @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "recipe"
     )
     @JsonIgnore
     private Set<Review> reviews = new HashSet<>();
 
     @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "recipe"
     )
     @JsonIgnore
     private Set<RecipeIngredient> ingredientSet = new HashSet<>();
@@ -112,9 +103,7 @@ public class Recipe {
     private Set<Category> categories = new HashSet<>();
 
     @ManyToMany(
-            mappedBy = "favoriteRecipes",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL
+            mappedBy = "favoriteRecipes"
     )
     @JsonIgnore
     private Set<AppUser> favorites;

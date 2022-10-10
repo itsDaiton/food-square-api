@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.recipe.Recipe;
 import lombok.*;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -18,7 +20,6 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
 public class RecipeIngredient {
 
     @Transient
@@ -36,14 +37,12 @@ public class RecipeIngredient {
     @Min(value = 1, message = "You have to include the ingredient at least once.")
     private Integer amount;
 
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "recipe_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id", nullable = false)
     private Recipe recipe;
 
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "ingredient_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ingredient_id", referencedColumnName = "id", nullable = false)
     private Ingredient ingredient;
 
     @Override
