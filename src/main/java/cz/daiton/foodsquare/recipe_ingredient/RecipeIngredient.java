@@ -1,11 +1,8 @@
 package cz.daiton.foodsquare.recipe_ingredient;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.recipe.Recipe;
 import lombok.*;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -37,11 +34,11 @@ public class RecipeIngredient {
     @Min(value = 1, message = "You have to include the ingredient at least once.")
     private Integer amount;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne()
     @JoinColumn(name = "recipe_id", referencedColumnName = "id", nullable = false)
     private Recipe recipe;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne()
     @JoinColumn(name = "ingredient_id", referencedColumnName = "id", nullable = false)
     private Ingredient ingredient;
 

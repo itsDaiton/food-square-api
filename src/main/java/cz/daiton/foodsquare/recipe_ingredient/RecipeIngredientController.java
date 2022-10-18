@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.recipe_ingredient;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import cz.daiton.foodsquare.recipe.Recipe;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
@@ -32,6 +33,11 @@ public class RecipeIngredientController {
     @GetMapping(value = "/getAll")
     public List<RecipeIngredient> getAllRecipeIngredients() {
         return recipeIngredientService.getAll();
+    }
+
+    @GetMapping(value = "/getByRecipe/{id}")
+    public List<RecipeIngredient> getAllByRecipe(@PathVariable Long id) {
+        return recipeIngredientService.getAllByRecipe(id);
     }
 
     @PostMapping(value = "/add")

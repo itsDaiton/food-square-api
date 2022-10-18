@@ -34,3 +34,7 @@ build/
 
 ### Development ###
 src/main/resources/application-dev.properties
+
+### User data ###
+/img/
+/public/

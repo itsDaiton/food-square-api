@@ -39,6 +39,15 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
         return recipeIngredientRepository.findAll();
     }
 
+
+    @Override
+    public List<RecipeIngredient> getAllByRecipe(Long id) {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
+        );
+        return recipeIngredientRepository.findAllByRecipe(recipe);
+    }
+
     @Override
     public String add(RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws IncorrectUserException {
         RecipeIngredient recipeIngredient = new RecipeIngredient();

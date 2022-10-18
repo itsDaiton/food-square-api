@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -60,16 +61,15 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/api/v1/auth/register", "/api/v1/auth/login").anonymous()
                 .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll", "/api/v1/comments/getCountByRecipe/*").permitAll()
-                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll", "/api/v1/users/checkFavorite/*").permitAll()
+                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll", "/api/v1/users/checkFavorite/*", "/api/v1/users/get5Random").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
-                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll").permitAll()
-                .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*").permitAll()
+                .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*").permitAll()
+                .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*", "/api/v1/reviews/getLikes/*", "/api/v1/reviews/isLikedByUser/*", "/api/v1/reviews/getAllByRecipe/*").permitAll()
                 .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll").permitAll()
                 .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*", "/api/v1/follows/follows/*").permitAll()
+                .antMatchers("/img/**").permitAll()
                 .anyRequest().authenticated();
-
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 
@@ -77,5 +77,4 @@ public class SecurityConfig {
     public AccessDeniedHandler accessDeniedHandler() {
         return new CustomAccessDeniedHandler();
     }
-
 }

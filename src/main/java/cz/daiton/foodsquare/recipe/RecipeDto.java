@@ -4,6 +4,7 @@ import cz.daiton.foodsquare.category.CategoryInputDto;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -34,6 +35,8 @@ public class RecipeDto {
     @NotNull(message = required)
     @Min(value = 1, message = "Time to cook must be at least 1 minute.")
     private Integer timeToCook;
+
+    private MultipartFile image;
 
     private Long appUser;
 

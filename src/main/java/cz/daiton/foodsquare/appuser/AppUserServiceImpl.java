@@ -248,7 +248,7 @@ public class AppUserServiceImpl implements AppUserService {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
         );
-        return recipeRepository.findAllByFavorites(appUser);
+        return recipeRepository.findAllByFavoritesOrderByUpdatedAtDesc(appUser);
     }
 
     @Override

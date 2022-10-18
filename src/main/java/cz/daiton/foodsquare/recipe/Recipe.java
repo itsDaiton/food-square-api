@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.recipe;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.category.Category;
@@ -48,6 +49,11 @@ public class Recipe {
     private String instructions;
 
     @Column(
+            name = "path_to_image"
+    )
+    private String pathToImage;
+
+    @Column(
             name = "prep_time",
             nullable = false
     )
@@ -66,6 +72,7 @@ public class Recipe {
     @Column(
             name = "updated_at"
     )
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updatedAt;
 
     @ManyToOne

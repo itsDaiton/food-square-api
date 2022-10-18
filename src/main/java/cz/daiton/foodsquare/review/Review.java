@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.review;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.recipe.Recipe;
@@ -53,6 +54,7 @@ public class Review {
             name = "updated_at",
             nullable = false
     )
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updatedAt;
 
     @ManyToOne

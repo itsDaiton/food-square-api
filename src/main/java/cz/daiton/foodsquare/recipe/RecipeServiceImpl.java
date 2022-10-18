@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.recipe;
 
+import cz.daiton.foodsquare.IO.FileStorageService;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.appuser.AppUserRepository;
 import cz.daiton.foodsquare.appuser.AppUserService;
@@ -11,6 +12,8 @@ import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.comment.CommentRepository;
 import cz.daiton.foodsquare.comment.CommentService;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.follow.Follow;
+import cz.daiton.foodsquare.follow.FollowRepository;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredientRepository;
 import cz.daiton.foodsquare.review.Review;
@@ -21,6 +24,8 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -37,6 +42,8 @@ public class RecipeServiceImpl implements RecipeService {
     private final ReviewService reviewService;
     private final CommentRepository commentRepository;
     private final ReviewRepository reviewRepository;
+    private final FollowRepository followRepository;
+    private final FileStorageService fileStorageService;
 
     @Override
     public Recipe get(Long id) {
@@ -51,7 +58,27 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException {
+    public List<Recipe> getAllRecipesOfFollowingAndMine(HttpServletRequest request) throws IncorrectUserException {
+        AppUser me = appUserService.getUserFromCookie(request);
+
+        List<Recipe> myRecipes = recipeRepository.findAllByAppUser(me);
+
+        List<Follow> myFollows = followRepository.findAllByFollowerId(me.getId());
+
+        List<Recipe> followRecipes = new ArrayList<>();
+
+        for (Follow f : myFollows) {
+            followRecipes.addAll(recipeRepository.findAllByAppUser(f.getFollowed()));
+        }
+
+        List<Recipe> feed = new ArrayList<>(myRecipes);
+        feed.addAll(followRecipes);
+        feed.sort(Comparator.comparing(Recipe::getUpdatedAt).reversed());
+        return feed;
+    }
+
+    @Override
+    public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException, IOException {
         Recipe recipe = new Recipe();
         AppUser appUser = appUserRepository.findById(recipeDto.getAppUser()).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + recipeDto.getAppUser() + "' does not exist.")
@@ -66,7 +93,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException {
+    public String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException, IOException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
         );
@@ -166,6 +193,11 @@ public class RecipeServiceImpl implements RecipeService {
             }
 
             recipeRepository.saveAndFlush(recipe);
+
+            if (recipe.getPathToImage() != null) {
+                String pathToImage = recipe.getPathToImage();
+                fileStorageService.delete(Paths.get(pathToImage));
+            }
 
             recipeRepository.deleteById(id);
             return "Recipe has been successfully deleted.";

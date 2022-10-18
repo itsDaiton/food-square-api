@@ -12,6 +12,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import javax.annotation.security.PermitAll;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -39,6 +40,22 @@ public class ReviewController {
     @GetMapping(value = "/getByRecipe/{id}")
     public Review getReviewByRecipe(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return reviewService.getByRecipe(id, request);
+    }
+
+    @GetMapping(value = "/getLikes/{id}")
+    public Integer getReviewLikes(@PathVariable Long id) {
+        return reviewService.countLikes(id);
+    }
+
+    @GetMapping(value = "/isLikedByUser/{id}")
+    public Boolean isLikedByUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return reviewService.isLikedByUser(id, request);
+    }
+
+    @GetMapping(value = "/getAllByRecipe/{id}")
+    @PermitAll
+    public List<Review> getAllByRecipe(@PathVariable Long id) {
+        return reviewService.getAllByRecipe(id);
     }
 
     @GetMapping(value = "/getCountByRecipe/{id}")

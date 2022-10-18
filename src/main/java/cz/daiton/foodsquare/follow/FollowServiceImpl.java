@@ -34,12 +34,12 @@ public class FollowServiceImpl implements FollowService {
 
     @Override
     public List<Follow> getAllFollowersOfUser(Long id) {
-        return followRepository.findAllByFollowerId(id);
+        return followRepository.findAllByFollowedId(id);
     }
 
     @Override
     public List<Follow> getAllFollowingOfUser(Long id) {
-        return followRepository.findAllByFollowedId(id);
+        return followRepository.findAllByFollowerId(id);
     }
 
     @Override
@@ -98,10 +98,6 @@ public class FollowServiceImpl implements FollowService {
                 () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
         );
         AppUser me = appUserService.getUserFromCookie(request);
-
-        if (appUser.getId().equals(me.getId())) {
-            throw new DataIntegrityViolationException("You cannot follow yourself.");
-        }
 
         return followRepository.existsByFollowerAndFollowed(me, appUser);
     }

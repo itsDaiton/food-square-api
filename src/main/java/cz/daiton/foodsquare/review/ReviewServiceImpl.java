@@ -51,6 +51,14 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override
+    public List<Review> getAllByRecipe(Long id) {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        return reviewRepository.findAllByRecipe(recipe);
+    }
+
+    @Override
     public String add(ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException {
         Review review = new Review();
         AppUser appUser = appUserRepository.findById(reviewDto.getAppUser()).orElseThrow(
@@ -128,6 +136,14 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override
+    public Integer countLikes(Long id) {
+        Review review = reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
+        return review.getLikes().size();
+    }
+
+    @Override
     public BigDecimal getAverageRating(Long id) {
         double sumOfRating = 0;
         int countOfReviews = 0;
@@ -161,6 +177,15 @@ public class ReviewServiceImpl implements ReviewService{
         AppUser appUser = appUserService.getUserFromCookie(request);
 
         return reviewRepository.existsByAppUserAndRecipe(appUser, recipe);
+    }
+
+    @Override
+    public Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Review review = reviewRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+        );
+        AppUser appUser = appUserService.getUserFromCookie(request);
+        return review.getLikes().contains(appUser);
     }
 
     @Override

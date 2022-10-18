@@ -12,6 +12,8 @@ public interface ReviewService {
 
     List<Review> getAll();
 
+    List<Review> getAllByRecipe(Long id);
+
     Review getByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String add(ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException;
@@ -20,9 +22,13 @@ public interface ReviewService {
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
 
+    Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException;
+
     String deleteByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException;
 
     Integer countByRecipe(Long id);
+
+    Integer countLikes(Long id);
 
     BigDecimal getAverageRating(Long id);
 

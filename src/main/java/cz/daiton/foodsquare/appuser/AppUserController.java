@@ -22,6 +22,7 @@ import java.util.List;
 public class AppUserController {
 
     private final AppUserService appUserService;
+    private final AppUserRepository appUserRepository;
 
     @GetMapping(value = "get/{id}")
     public AppUser getUser(@PathVariable Long id) {
@@ -32,6 +33,11 @@ public class AppUserController {
     @GetMapping(value = "/getAll")
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
+    }
+
+    @GetMapping(value = "/get5Random")
+    public List<AppUser> get5RandomUsers() {
+        return appUserRepository.find5RandomUsers();
     }
 
     @PutMapping(value = "/update/{id}")

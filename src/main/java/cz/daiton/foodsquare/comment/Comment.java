@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.comment;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.recipe.Recipe;
@@ -42,6 +43,7 @@ public class Comment {
             name = "commented_at",
             nullable = false
     )
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime commentedAt;
 
     @ManyToOne

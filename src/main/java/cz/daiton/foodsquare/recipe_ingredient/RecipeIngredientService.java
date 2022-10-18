@@ -11,6 +11,8 @@ public interface RecipeIngredientService {
 
     List<RecipeIngredient> getAll();
 
+    List<RecipeIngredient> getAllByRecipe(Long id);
+
     String add(RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws IncorrectUserException;
 
     String addAll(RecipeIngredientListDto listDto, HttpServletRequest request) throws IncorrectUserException;

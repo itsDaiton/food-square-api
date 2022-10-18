@@ -9,5 +9,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     List<Recipe> findAllByOrderByUpdatedAtDesc();
 
-    List<Recipe> findAllByFavorites(AppUser appUser);
+    List<Recipe> findAllByAppUser(AppUser appUser);
+
+    List<Recipe> findAllByFavoritesOrderByUpdatedAtDesc(AppUser appUser);
 }
