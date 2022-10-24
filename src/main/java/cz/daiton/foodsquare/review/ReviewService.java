@@ -1,5 +1,6 @@
 package cz.daiton.foodsquare.review;
 
+import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,8 @@ public interface ReviewService {
 
     List<Review> getAllByRecipe(Long id);
 
+    List<Review> getAllByAppUser(Long id);
+
     Review getByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String add(ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException;
@@ -21,6 +24,8 @@ public interface ReviewService {
     String update(ReviewDto reviewDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    void deleteRecursively(Review review);
 
     Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException;
 

@@ -1,21 +1,26 @@
 package cz.daiton.foodsquare.appuser;
 
+import cz.daiton.foodsquare.IO.FileStorageService;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.comment.CommentRepository;
 import cz.daiton.foodsquare.exceptions.IncorrectTypeException;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.authentication.JwtUtils;
+import cz.daiton.foodsquare.follow.Follow;
+import cz.daiton.foodsquare.follow.FollowRepository;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.recipe.RecipeRepository;
 import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.review.ReviewRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.nio.file.Paths;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -26,6 +31,8 @@ public class AppUserServiceImpl implements AppUserService {
     private final ReviewRepository reviewRepository;
     private final CommentRepository commentRepository;
     private final RecipeRepository recipeRepository;
+    private final FollowRepository followRepository;
+    private final FileStorageService fileStorageService;
 
     @Override
     public AppUser get(Long id) {
@@ -45,7 +52,33 @@ public class AppUserServiceImpl implements AppUserService {
     }
 
     @Override
-    public String updateAdditionalInfo(AppUserDto appUserDto, Long id, HttpServletRequest request) throws IncorrectUserException {
+    public List<AppUser> getFollowers(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
+        );
+        List<Follow> followList = followRepository.findAllByFollowedId(appUser.getId());
+        List<AppUser> followers = new ArrayList<>();
+        for (Follow f : followList) {
+            followers.add(f.getFollower());
+        }
+        return followers;
+    }
+
+    @Override
+    public List<AppUser> getFollowing(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
+        );
+        List<Follow> followList = followRepository.findAllByFollowerId(appUser.getId());
+        List<AppUser> following = new ArrayList<>();
+        for (Follow f : followList) {
+            following.add(f.getFollowed());
+        }
+        return following;
+    }
+
+    @Override
+    public String updatePersonalInfo(AppUserDto appUserDto, Long id, HttpServletRequest request) throws IncorrectUserException {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
@@ -53,12 +86,38 @@ public class AppUserServiceImpl implements AppUserService {
         if (checkUser(appUser.getId(), request)) {
             appUser.setFirstName(appUserDto.getFirstName());
             appUser.setLastName(appUserDto.getLastName());
-            appUser.setPathToImage(appUserDto.getPathToImage());
             appUserRepository.save(appUser);
 
-            return "Your profile has been updated.";
+            return "Your personal info has been updated.";
         }
         return "There has been a error while trying to edit your profile.";
+    }
+
+    @Override
+    public String updateProfilePicture(Long id, MultipartFile file, HttpServletRequest request) throws IncorrectUserException {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
+        );
+        try {
+            if (checkUser(appUser.getId(), request)) {
+                String contentType = file.getContentType();
+                Set<String> types = new HashSet<>();
+                types.add(MediaType.IMAGE_GIF_VALUE);
+                types.add(MediaType.IMAGE_JPEG_VALUE);
+                types.add(MediaType.IMAGE_PNG_VALUE);
+                if (!types.contains(contentType)) {
+                    throw new RuntimeException("Only images with format PNG, GIF or JPEG are allowed.");
+                }
+                String pathToImage = fileStorageService.save(file, "user", id);
+                appUser.setPathToImage(pathToImage);
+                appUserRepository.saveAndFlush(appUser);
+                return "Your profile picture has been updated successfully.";
+            }
+            return "There has been a error while trying to edit your profile picture.";
+
+        } catch (Exception e) {
+            return "Could not update your profile picture. Error: " + e.getMessage();
+        }
     }
 
     @Override
@@ -66,12 +125,15 @@ public class AppUserServiceImpl implements AppUserService {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
-
         if (checkUser(appUser.getId(), request)) {
+            if (appUser.getPathToImage() == null) {
+                throw new RuntimeException("You do not have a profile picture set up yet.");
+            }
+            String pathToImage = appUser.getPathToImage();
+            fileStorageService.delete(Paths.get(pathToImage));
             appUser.setPathToImage(null);
-            appUserRepository.save(appUser);
-
-            return "Your profile picture has bee removed.";
+            appUserRepository.saveAndFlush(appUser);
+            return "Your profile picture has been removed.";
         }
         return "There has been a error while trying to remove your profile picture.";
     }
@@ -275,5 +337,21 @@ public class AppUserServiceImpl implements AppUserService {
         AppUser me = getUserFromCookie(request);
 
         return me.getFavoriteRecipes().contains(recipe);
+    }
+
+    @Override
+    public Integer countFollowers(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return followRepository.countAllByFollowed(appUser);
+    }
+
+    @Override
+    public Integer countFollowing(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return followRepository.countAllByFollower(appUser);
     }
 }

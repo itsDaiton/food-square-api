@@ -34,12 +34,18 @@ public class FollowServiceImpl implements FollowService {
 
     @Override
     public List<Follow> getAllFollowersOfUser(Long id) {
-        return followRepository.findAllByFollowedId(id);
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return followRepository.findAllByFollowedId(appUser.getId());
     }
 
     @Override
     public List<Follow> getAllFollowingOfUser(Long id) {
-        return followRepository.findAllByFollowerId(id);
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return followRepository.findAllByFollowerId(appUser.getId());
     }
 
     @Override

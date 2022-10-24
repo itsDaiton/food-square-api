@@ -9,8 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -35,25 +37,29 @@ public class AppUserController {
         return appUserService.getAll();
     }
 
+    @GetMapping(value = "/getFollowers/{id}")
+    public List<AppUser> getFollowers(@PathVariable Long id) {
+        return appUserService.getFollowers(id);
+    }
+
+    @GetMapping(value = "/getFollowing/{id}")
+    public List<AppUser> getFollowing(@PathVariable Long id) {
+        return appUserService.getFollowing(id);
+    }
+
     @GetMapping(value = "/get5Random")
     public List<AppUser> get5RandomUsers() {
         return appUserRepository.find5RandomUsers();
     }
 
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> updateInfo(@RequestBody AppUserDto appUserDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
-        return ResponseEntity
-                .ok()
-                .body(new MessageResponse(appUserService.updateAdditionalInfo(appUserDto, id, request)));
+    @GetMapping(value = "/countFollowers/{id}")
+    public Integer countFollowers(@PathVariable Long id) {
+        return appUserService.countFollowers(id);
     }
 
-    @PutMapping(value = "/updatePicture/{id}")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> removeProfilePicture(@PathVariable Long id, HttpServletRequest request) throws Exception {
-        return ResponseEntity
-                .ok()
-                .body(new MessageResponse(appUserService.deleteProfilePicture(id, request)));
+    @GetMapping(value = "/countFollowing/{id}")
+    public Integer countFollowing(@PathVariable Long id) {
+        return appUserService.countFollowing(id);
     }
 
     @PutMapping(value = "/like")
@@ -108,6 +114,30 @@ public class AppUserController {
         return appUserService.containsFavorite(id, request);
     }
 
+    @PutMapping(value = "/updateInfo/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> updatePersonalInfo(@RequestBody AppUserDto appUserDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.updatePersonalInfo(appUserDto, id, request)));
+    }
+
+    @PutMapping(value = "/addImage/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> addProfilePicture(@PathVariable Long id, @RequestParam("image") MultipartFile file, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.updateProfilePicture(id, file, request)));
+    }
+
+    @DeleteMapping(value = "/deleteImage/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> removeProfilePicture(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(appUserService.deleteProfilePicture(id, request)));
+    }
+
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;
@@ -123,6 +153,9 @@ public class AppUserController {
         }
         else if (e instanceof HttpRequestMethodNotSupportedException) {
             message = "Wrong request method. Please try again.";
+        }
+        else if (e instanceof MissingServletRequestPartException) {
+            message = "Please choose an image.";
         }
         else {
             message = e.getMessage();

@@ -16,7 +16,9 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     List<Review> findAllByLikes(AppUser appUser);
 
-    List<Review> findAllByRecipe(Recipe recipe);
+    List<Review> findAllByRecipeOrderByUpdatedAtDesc(Recipe recipe);
+
+    List<Review> findAllByAppUserOrderByUpdatedAtDesc(AppUser appUser);
 
     Integer countAllByRecipe(Recipe recipe);
 

@@ -51,11 +51,19 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override
+    public List<Review> getAllByAppUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return reviewRepository.findAllByAppUserOrderByUpdatedAtDesc(appUser);
+    }
+
+    @Override
     public List<Review> getAllByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
         );
-        return reviewRepository.findAllByRecipe(recipe);
+        return reviewRepository.findAllByRecipeOrderByUpdatedAtDesc(recipe);
     }
 
     @Override
@@ -128,6 +136,20 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override
+    public void deleteRecursively(Review review) {
+        if (!review.getLikes().isEmpty()) {
+            List<AppUser> users = appUserRepository.findAll();
+            for (AppUser a : users) {
+                a.getLikedReviews().remove(review);
+            }
+            review.getLikes().clear();
+            reviewRepository.saveAndFlush(review);
+            appUserRepository.saveAllAndFlush(users);
+        }
+        reviewRepository.deleteById(review.getId());
+    }
+
+    @Override
     public Integer countByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
@@ -153,7 +175,7 @@ public class ReviewServiceImpl implements ReviewService{
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
         );
 
-        List<Review> reviews = reviewRepository.findAllByRecipe(recipe);
+        List<Review> reviews = reviewRepository.findAllByRecipeOrderByUpdatedAtDesc(recipe);
 
         if (!reviews.isEmpty()) {
             for (Review r : reviews) {

@@ -62,7 +62,7 @@ public class FileStorageServiceImpl implements FileStorageService {
             }
             return dir.toString() + "\\" + pathToImage;
         } catch (Exception e) {
-            throw new RuntimeException("Could not upload the file. Error: " + e.getMessage());
+            throw new RuntimeException(e.getMessage());
         }
     }
 

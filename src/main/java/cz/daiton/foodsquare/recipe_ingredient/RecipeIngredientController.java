@@ -40,6 +40,11 @@ public class RecipeIngredientController {
         return recipeIngredientService.getAllByRecipe(id);
     }
 
+    @GetMapping(value = "/calculateNutritionAnalysis/{id}")
+    public NutritionAnalysis getNutritionAnalysis(@PathVariable Long id) {
+        return recipeIngredientService.calculateNutritionAnalysisForRecipe(id);
+    }
+
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addIngredientToRecipe(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws Exception {

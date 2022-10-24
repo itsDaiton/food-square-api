@@ -13,6 +13,8 @@ public interface RecipeIngredientService {
 
     List<RecipeIngredient> getAllByRecipe(Long id);
 
+    NutritionAnalysis calculateNutritionAnalysisForRecipe(Long id);
+
     String add(RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws IncorrectUserException;
 
     String addAll(RecipeIngredientListDto listDto, HttpServletRequest request) throws IncorrectUserException;

@@ -20,7 +20,9 @@ import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.review.ReviewRepository;
 import cz.daiton.foodsquare.review.ReviewService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
@@ -58,17 +60,48 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    public List<RecipeExtended> getAllExtendedRecipes() {
+        List<Recipe> recipes = recipeRepository.findAllByOrderByUpdatedAtDesc();
+        List<RecipeExtended> recipeExtendedList = new ArrayList<>();
+        for (Recipe r : recipes) {
+            RecipeExtended recipeExtended = new RecipeExtended();
+            recipeExtended.setId(r.getId());
+            recipeExtended.setName(r.getName());
+            recipeExtended.setDescription(r.getDescription());
+            recipeExtended.setInstructions(r.getInstructions());
+            recipeExtended.setTimeToPrepare(r.getTimeToPrepare());
+            recipeExtended.setTimeToCook(r.getTimeToCook());
+            recipeExtended.setPathToImage(r.getPathToImage());
+            recipeExtended.setUpdatedAt(r.getUpdatedAt());
+            recipeExtended.setAppUser(r.getAppUser());
+            recipeExtended.setCategories(r.getCategories());
+            recipeExtended.setMeal(r.getMeal());
+            recipeExtended.setAvgRating(reviewService.getAverageRating(r.getId()));
+            recipeExtendedList.add((recipeExtended));
+        }
+        return recipeExtendedList;
+    }
+
+    @Override
+    public List<Recipe> getAllByUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return recipeRepository.findAllByAppUserOrderByUpdatedAtDesc(appUser);
+    }
+
+    @Override
     public List<Recipe> getAllRecipesOfFollowingAndMine(HttpServletRequest request) throws IncorrectUserException {
         AppUser me = appUserService.getUserFromCookie(request);
 
-        List<Recipe> myRecipes = recipeRepository.findAllByAppUser(me);
+        List<Recipe> myRecipes = recipeRepository.findAllByAppUserOrderByUpdatedAtDesc(me);
 
         List<Follow> myFollows = followRepository.findAllByFollowerId(me.getId());
 
         List<Recipe> followRecipes = new ArrayList<>();
 
         for (Follow f : myFollows) {
-            followRecipes.addAll(recipeRepository.findAllByAppUser(f.getFollowed()));
+            followRecipes.addAll(recipeRepository.findAllByAppUserOrderByUpdatedAtDesc(f.getFollowed()));
         }
 
         List<Recipe> feed = new ArrayList<>(myRecipes);
@@ -78,7 +111,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException, IOException {
+    public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = new Recipe();
         AppUser appUser = appUserRepository.findById(recipeDto.getAppUser()).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + recipeDto.getAppUser() + "' does not exist.")
@@ -93,7 +126,33 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException, IOException {
+    public String uploadImage(Long id, MultipartFile file, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
+        );
+        try {
+            if (appUserService.checkUser(recipe.getAppUser().getId(), request)) {
+                String contentType = file.getContentType();
+                Set<String> types = new HashSet<>();
+                types.add(MediaType.IMAGE_GIF_VALUE);
+                types.add(MediaType.IMAGE_JPEG_VALUE);
+                types.add(MediaType.IMAGE_PNG_VALUE);
+                if (!types.contains(contentType)) {
+                    throw new RuntimeException("Only images with format PNG, GIF or JPEG are allowed.");
+                }
+                String pathToImage = fileStorageService.save(file, "recipe", id);
+                recipe.setPathToImage(pathToImage);
+                recipeRepository.saveAndFlush(recipe);
+                return "Recipe image has been uploaded successfully.";
+            }
+            return "There has been a error while trying to upload your image.";
+        } catch (Exception e) {
+            return "Could not update your profile picture. Error: " + e.getMessage();
+        }
+    }
+
+    @Override
+    public String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
         );
@@ -160,7 +219,7 @@ public class RecipeServiceImpl implements RecipeService {
 
             if (!recipe.getComments().isEmpty()) {
                 for (Comment c : recipe.getComments()) {
-                    commentService.delete(c.getId(), request);
+                    commentService.deleteRecursively(c);
                 }
                 recipe.getComments().clear();
                 commentRepository.flush();
@@ -168,7 +227,7 @@ public class RecipeServiceImpl implements RecipeService {
 
             if (!recipe.getReviews().isEmpty()) {
                 for (Review r : recipe.getReviews()) {
-                    reviewService.delete(r.getId(), request);
+                    reviewService.deleteRecursively(r);
                 }
                 recipe.getReviews().clear();
                 reviewRepository.flush();

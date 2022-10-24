@@ -8,7 +8,6 @@ import cz.daiton.foodsquare.payload.response.InsertResponse;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,10 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.print.attribute.standard.Media;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.HashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -32,9 +29,6 @@ import java.util.Set;
 public class RecipeController {
 
     private final RecipeService recipeService;
-    private final RecipeRepository recipeRepository;
-    private final FileStorageService fileStorageService;
-    private final AppUserService appUserService;
 
     @GetMapping(value = "get/{id}")
     public Recipe getRecipe(@PathVariable Long id) {
@@ -57,6 +51,16 @@ public class RecipeController {
         return recipeService.getAllRecipesOfFollowingAndMine(request);
     }
 
+    @GetMapping(value = "/getAllByUser/{id}")
+    public List<Recipe> getAllByUser(@PathVariable Long id) {
+        return recipeService.getAllByUser(id);
+    }
+
+    @GetMapping(value = "/getAllExtended")
+    public List<RecipeExtended> getAllRecipesExtended() {
+        return recipeService.getAllExtendedRecipes();
+    }
+
     @PostMapping(value = "/add")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addRecipe(@Valid @RequestBody RecipeDto recipeDto, HttpServletRequest request) throws Exception {
@@ -69,34 +73,9 @@ public class RecipeController {
     @PutMapping(value = "/addImage/{id}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addImage(@PathVariable Long id, @RequestParam("image") MultipartFile file, HttpServletRequest request) throws Exception {
-        Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
-        );
-        String message;
-        try {
-            if (appUserService.checkUser(recipe.getAppUser().getId(), request)) {
-                String contentType = file.getContentType();
-                Set<String> types = new HashSet<>();
-                types.add(MediaType.IMAGE_GIF_VALUE);
-                types.add(MediaType.IMAGE_JPEG_VALUE);
-                types.add(MediaType.IMAGE_PNG_VALUE);
-                if (!types.contains(contentType)) {
-                    throw new RuntimeException("Only images are allowed.");
-                }
-                String pathToImage = fileStorageService.save(file, "recipe", id);
-                recipe.setPathToImage(pathToImage);
-                recipeRepository.saveAndFlush(recipe);
-            }
-            message = "Uploaded the file successfully: " + file.getOriginalFilename();
-            return ResponseEntity
-                    .ok()
-                    .body(new MessageResponse(message));
-        } catch (Exception e) {
-            message = "Could not upload the file: " + file.getOriginalFilename() + "!";
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse(message));
-        }
+        return ResponseEntity
+                .ok()
+                .body(new MessageResponse(recipeService.uploadImage(id, file, request)));
     }
 
     @PutMapping(value = "/update/{id}")

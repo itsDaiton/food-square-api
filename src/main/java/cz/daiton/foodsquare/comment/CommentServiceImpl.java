@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -34,6 +33,22 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> getAll() {
         return commentRepository.findAllByOrderByCommentedAtDesc();
+    }
+
+    @Override
+    public List<Comment> getAllByRecipe(Long id) {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+        );
+        return commentRepository.findAllByRecipeOrderByCommentedAtDesc(recipe);
+    }
+
+    @Override
+    public List<Comment> getAllByAppUser(Long id) {
+        AppUser appUser = appUserRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+        );
+        return commentRepository.findAllByAppUserOrderByCommentedAtDesc(appUser);
     }
 
     @Override
@@ -99,10 +114,41 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public void deleteRecursively(Comment comment) {
+        if (!comment.getLikes().isEmpty()) {
+            List<AppUser> users = appUserRepository.findAll();
+            for (AppUser a : users) {
+                a.getLikedComments().remove(comment);
+            }
+            comment.getLikes().clear();
+            commentRepository.saveAndFlush(comment);
+            appUserRepository.saveAllAndFlush(users);
+        }
+        commentRepository.deleteById(comment.getId());
+    }
+
+    @Override
     public Integer countByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
         );
         return commentRepository.countAllByRecipe(recipe);
+    }
+
+    @Override
+    public Integer countLikes(Long id) {
+        Comment comment = commentRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+        );
+        return comment.getLikes().size();
+    }
+
+    @Override
+    public Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Comment comment = commentRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+        );
+        AppUser appUser = appUserService.getUserFromCookie(request);
+        return comment.getLikes().contains(appUser);
     }
 }

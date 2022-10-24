@@ -5,10 +5,10 @@ import cz.daiton.foodsquare.exceptions.IncorrectTypeException;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.review.Review;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Set;
 
 public interface AppUserService {
 
@@ -18,7 +18,9 @@ public interface AppUserService {
 
     void register(AppUser appUser);
 
-    String updateAdditionalInfo(AppUserDto appUserDto, Long id, HttpServletRequest request) throws IncorrectUserException;
+    String updatePersonalInfo(AppUserDto appUserDto, Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    String updateProfilePicture(Long id, MultipartFile file, HttpServletRequest request) throws IncorrectUserException;
 
     String deleteProfilePicture(Long id, HttpServletRequest request) throws IncorrectUserException;
 
@@ -47,4 +49,12 @@ public interface AppUserService {
     List<Comment> getLikedCommentsOfUser(Long id);
 
     Boolean containsFavorite(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    List<AppUser> getFollowers(Long id);
+
+    List<AppUser> getFollowing(Long id);
+
+    Integer countFollowers(Long id);
+
+    Integer countFollowing(Long id);
 }

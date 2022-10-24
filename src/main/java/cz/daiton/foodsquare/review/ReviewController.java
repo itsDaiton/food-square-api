@@ -42,12 +42,18 @@ public class ReviewController {
         return reviewService.getByRecipe(id, request);
     }
 
+    @GetMapping(value = "/getAllByUser/{id}")
+    public List<Review> getAllByAppUser(@PathVariable Long id) {
+        return reviewService.getAllByAppUser(id);
+    }
+
     @GetMapping(value = "/getLikes/{id}")
     public Integer getReviewLikes(@PathVariable Long id) {
         return reviewService.countLikes(id);
     }
 
     @GetMapping(value = "/isLikedByUser/{id}")
+    @PreAuthorize("hasRole('USER')")
     public Boolean isLikedByUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return reviewService.isLikedByUser(id, request);
     }
