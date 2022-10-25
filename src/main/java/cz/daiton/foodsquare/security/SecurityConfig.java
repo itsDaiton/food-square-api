@@ -18,6 +18,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import java.security.SecureRandom;
+
 
 @Configuration
 @EnableWebSecurity
@@ -32,7 +34,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(10, new SecureRandom());
     }
 
     @Bean
@@ -59,7 +61,8 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/v1/auth/register", "/api/v1/auth/login").anonymous()
+                .antMatchers("/api/v1/auth/register").anonymous()
+                .antMatchers("/api/v1/auth/login").permitAll()
                 .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll", "/api/v1/comments/getCountByRecipe/*", "/api/v1/comments/getAllByRecipe/*", "/api/v1/comments/getLikes/*", "/api/v1/comments/getAllByUser/*").permitAll()
                 .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll", "/api/v1/users/checkFavorite/*", "/api/v1/users/get5Random", "/api/v1/users/getFollowers/*", "/api/v1/users/getFollowing/*", "/api/v1/users/countFollowers/*", "/api/v1/users/countFollowing/*").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
