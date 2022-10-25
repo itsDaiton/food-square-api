@@ -2,9 +2,11 @@ package cz.daiton.foodsquare.appuser;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.comment.Comment;
-import cz.daiton.foodsquare.like.Like;
-import cz.daiton.foodsquare.post.Post;
+import cz.daiton.foodsquare.follow.Follow;
+import cz.daiton.foodsquare.recipe.Recipe;
+import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.role.Role;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -15,9 +17,15 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "app_user")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class AppUser {
 
     @Transient
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     private final String required = "This field is required.";
 
     @Id
@@ -63,21 +71,14 @@ public class AppUser {
 
     @OneToMany(mappedBy = "appUser")
     @JsonIgnore
-    private Set<Post> posts;
+    private Set<Recipe> recipes;
 
     @OneToMany(
-            mappedBy = "id",
+            mappedBy = "appUser",
             fetch = FetchType.LAZY
     )
     @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
-
-    @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY
-    )
-    @JsonIgnore
-    private Set<Like> likes = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -88,115 +89,55 @@ public class AppUser {
     @JsonIgnore
     private Set<Role> roles = new HashSet<>();
 
-    public AppUser() {
-    }
+    @OneToMany(mappedBy = "follower")
+    @JsonIgnore
+    private Set<Follow> followers;
 
-    public AppUser(Long id, String email,String userName, String firstName, String lastName, String password, String pathToImage, Set<Post> posts, Set<Comment> comments, Set<Like> likes, Set<Role> roles) {
-        this.id = id;
-        this.email = email;
-        this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.pathToImage = pathToImage;
-        this.posts = posts;
-        this.comments = comments;
-        this.likes = likes;
-        this.roles = roles;
-    }
+    @OneToMany(mappedBy = "followed")
+    @JsonIgnore
+    private Set<Follow> followed;
+
+    @ManyToMany
+    @JoinTable(
+            name = "comment_likes",
+            joinColumns = @JoinColumn(name = "app_user_id"),
+            inverseJoinColumns = @JoinColumn(name = "comment_id"),
+            uniqueConstraints = {
+                    @UniqueConstraint(columnNames = {"app_user_id", "comment_id"})
+            }
+    )
+    @JsonIgnore
+    private Set<Comment> likedComments;
+
+    @ManyToMany
+    @JoinTable(
+            name = "review_likes",
+            joinColumns = @JoinColumn(name = "app_user_id"),
+            inverseJoinColumns = @JoinColumn(name = "review_id"),
+            uniqueConstraints = {
+                    @UniqueConstraint(columnNames = {"app_user_id", "review_id"})
+            }
+    )
+    @JsonIgnore
+    private Set<Review> likedReviews;
+
+    @ManyToMany
+    @JoinTable(
+            name = "favorite_recipes",
+            joinColumns = @JoinColumn(name = "app_user_id"),
+            inverseJoinColumns = @JoinColumn(name = "recipe_id"),
+            uniqueConstraints = {
+                    @UniqueConstraint(columnNames = {"app_user_id", "recipe_id"})
+            }
+    )
+    @JsonIgnore
+    private Set<Recipe> favoriteRecipes;
+
 
     public AppUser(@NotNull(message = required) @Email(message = "This is not valid e-mail address.") String email, @NotNull(message = required) @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.") String userName, @NotNull(message = required) @Size(min = 6, message = "Password must be at least 6 characters long.") String password) {
         this.email = email;
         this.userName = userName;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPathToImage() {
-        return pathToImage;
-    }
-
-    public void setPathToImage(String pathToImage) {
-        this.pathToImage = pathToImage;
-    }
-
-    public Set<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Set<Post> posts) {
-        this.posts = posts;
-    }
-
-    public Set<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public Set<Like> getLikes() {
-        return likes;
-    }
-
-    public void setLikes(Set<Like> likes) {
-        this.likes = likes;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
     }
 
     @Override

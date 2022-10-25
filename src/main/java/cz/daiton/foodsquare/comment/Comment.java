@@ -1,17 +1,28 @@
 package cz.daiton.foodsquare.comment;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
-import cz.daiton.foodsquare.post.Post;
+import cz.daiton.foodsquare.recipe.Recipe;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity(name = "user_comment")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Comment {
 
     @Transient
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     private final String required = "This field is required.";
 
     @Id
@@ -32,66 +43,31 @@ public class Comment {
             name = "commented_at",
             nullable = false
     )
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime commentedAt;
 
     @ManyToOne
-    @JoinColumn(name = "appuser_id")
+    @JoinColumn(name = "app_user_id")
     private AppUser appUser;
 
     @ManyToOne
-    @JoinColumn(name = "post_id")
-    private Post post;
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
-    public Comment() {
+    @ManyToMany(mappedBy = "likedComments")
+    @JsonIgnore
+    Set<AppUser> likes;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Comment comment = (Comment) o;
+        return id.equals(comment.id);
     }
 
-    public Comment(Long id, String text, LocalDateTime commentedAt, AppUser appUser, Post post) {
-        this.id = id;
-        this.text = text;
-        this.commentedAt = commentedAt;
-        this.appUser = appUser;
-        this.post = post;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public LocalDateTime getCommentedAt() {
-        return commentedAt;
-    }
-
-    public void setCommentedAt(LocalDateTime commentedAt) {
-        this.commentedAt = commentedAt;
-    }
-
-    public AppUser getAppUser() {
-        return appUser;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
 }

@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.comment;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -15,14 +16,11 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(value = "api/v1/comments")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
+@AllArgsConstructor
 public class CommentController {
 
     private final CommentService commentService;
-
-    public CommentController(CommentService commentService) {
-        this.commentService = commentService;
-    }
 
     @GetMapping(value = "get/{id}")
     public Comment getComment(@PathVariable Long id) {
@@ -32,6 +30,32 @@ public class CommentController {
     @GetMapping(value = "/getAll")
     public List<Comment> getComments() {
         return commentService.getAll();
+    }
+
+    @GetMapping(value = "/getAllByRecipe/{id}")
+    public List<Comment> getAllByRecipe(@PathVariable Long id) {
+        return commentService.getAllByRecipe(id);
+    }
+
+    @GetMapping(value = "/getLikes/{id}")
+    public Integer getCommentLikes(@PathVariable Long id) {
+        return commentService.countLikes(id);
+    }
+
+    @GetMapping(value = "/isLikedByUser/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public Boolean isLikedByUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return commentService.isLikedByUser(id, request);
+    }
+
+    @GetMapping(value = "/getAllByUser/{id}")
+    public List<Comment> getAllByAppUser(@PathVariable Long id) {
+        return commentService.getAllByAppUser(id);
+    }
+
+    @GetMapping(value = "getCountByRecipe/{id}")
+    public Integer countCommentsByRecipe(@PathVariable Long id) {
+        return commentService.countByRecipe(id);
     }
 
     @PostMapping(value = "/add")

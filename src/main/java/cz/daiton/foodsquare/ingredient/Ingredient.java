@@ -1,12 +1,13 @@
 package cz.daiton.foodsquare.ingredient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import cz.daiton.foodsquare.ingredients_in_meal.IngredientsInMeal;
+import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "ingredient")
@@ -14,7 +15,6 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 public class Ingredient {
 
     @Id
@@ -67,10 +67,21 @@ public class Ingredient {
     private BigDecimal water;
 
     @OneToMany(
-            mappedBy = "id",
-            fetch = FetchType.LAZY
+            mappedBy = "ingredient"
     )
     @JsonIgnore
-    private Set<IngredientsInMeal> ingredientsInMeals = new HashSet<>();
+    private Set<RecipeIngredient> ingredientSet = new HashSet<>();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ingredient that = (Ingredient) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
