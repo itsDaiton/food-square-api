@@ -55,58 +55,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
-        List<RecipeIngredient> ingredientList = recipeIngredientRepository.findAllByRecipe(recipe);
-
-        double totalCalories = 0;
-        double totalFat = 0;
-        double totalSaturatedFattyAcids = 0;
-        double totalMonounsaturatedFattyAcids = 0;
-        double totalPolyunsaturatedFattyAcids = 0;
-        double totalTransFattyAcids = 0;
-        double totalCarbohydrateTotal = 0;
-        double totalCarbohydrateAvailable = 0;
-        double totalFibre = 0;
-        double totalSugar = 0;
-        double totalProtein = 0;
-        double totalSodium = 0;
-        double totalSalt = 0;
-        double totalWater = 0;
-
-        if (!ingredientList.isEmpty()) {
-            for (RecipeIngredient r : ingredientList) {
-                totalCalories += (r.getAmount() * r.getIngredient().getCalories().doubleValue());
-                totalFat += (r.getAmount() * r.getIngredient().getFat().doubleValue());
-                totalSaturatedFattyAcids += (r.getAmount() * r.getIngredient().getSaturatedFattyAcids().doubleValue());
-                totalMonounsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getMonounsaturatedFattyAcids().doubleValue());
-                totalPolyunsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getPolyunsaturatedFattyAcids().doubleValue());
-                totalTransFattyAcids += (r.getAmount() * r.getIngredient().getTransFattyAcids().doubleValue());
-                totalCarbohydrateTotal += (r.getAmount() * r.getIngredient().getCarbohydrateTotal().doubleValue());
-                totalCarbohydrateAvailable += (r.getAmount() * r.getIngredient().getCarbohydrateAvailable().doubleValue());
-                totalFibre += (r.getAmount() * r.getIngredient().getFibre().doubleValue());
-                totalSugar += (r.getAmount() * r.getIngredient().getSugar().doubleValue());
-                totalProtein += (r.getAmount() * r.getIngredient().getProtein().doubleValue());
-                totalSodium += (r.getAmount() * r.getIngredient().getSodium().doubleValue());
-                totalSalt += (r.getAmount() * r.getIngredient().getSalt().doubleValue());
-                totalWater += (r.getAmount() * r.getIngredient().getWater().doubleValue());
-            }
-        }
-
-        return new NutritionAnalysis(
-                BigDecimal.valueOf(totalCalories).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalFat).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalSaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalMonounsaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalPolyunsaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalTransFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalCarbohydrateTotal).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalCarbohydrateAvailable).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalFibre).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalSugar).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalProtein).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalSodium).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalSalt).setScale(1, RoundingMode.HALF_EVEN),
-                BigDecimal.valueOf(totalWater).setScale(1, RoundingMode.HALF_EVEN)
-                );
+        return getNutritionAnalysis(recipe);
     }
 
     @Override
@@ -202,5 +151,60 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
             return "Ingredient has been successfully deleted from recipe.";
         }
         return "There has been a error while trying to delete the ingredient from recipe.";
+    }
+
+    public NutritionAnalysis getNutritionAnalysis(Recipe recipe) {
+        List<RecipeIngredient> ingredientList = recipeIngredientRepository.findAllByRecipe(recipe);
+
+        double totalCalories = 0;
+        double totalFat = 0;
+        double totalSaturatedFattyAcids = 0;
+        double totalMonounsaturatedFattyAcids = 0;
+        double totalPolyunsaturatedFattyAcids = 0;
+        double totalTransFattyAcids = 0;
+        double totalCarbohydrateTotal = 0;
+        double totalCarbohydrateAvailable = 0;
+        double totalFibre = 0;
+        double totalSugar = 0;
+        double totalProtein = 0;
+        double totalSodium = 0;
+        double totalSalt = 0;
+        double totalWater = 0;
+
+        if (!ingredientList.isEmpty()) {
+            for (RecipeIngredient r : ingredientList) {
+                totalCalories += (r.getAmount() * r.getIngredient().getCalories().doubleValue());
+                totalFat += (r.getAmount() * r.getIngredient().getFat().doubleValue());
+                totalSaturatedFattyAcids += (r.getAmount() * r.getIngredient().getSaturatedFattyAcids().doubleValue());
+                totalMonounsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getMonounsaturatedFattyAcids().doubleValue());
+                totalPolyunsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getPolyunsaturatedFattyAcids().doubleValue());
+                totalTransFattyAcids += (r.getAmount() * r.getIngredient().getTransFattyAcids().doubleValue());
+                totalCarbohydrateTotal += (r.getAmount() * r.getIngredient().getCarbohydrateTotal().doubleValue());
+                totalCarbohydrateAvailable += (r.getAmount() * r.getIngredient().getCarbohydrateAvailable().doubleValue());
+                totalFibre += (r.getAmount() * r.getIngredient().getFibre().doubleValue());
+                totalSugar += (r.getAmount() * r.getIngredient().getSugar().doubleValue());
+                totalProtein += (r.getAmount() * r.getIngredient().getProtein().doubleValue());
+                totalSodium += (r.getAmount() * r.getIngredient().getSodium().doubleValue());
+                totalSalt += (r.getAmount() * r.getIngredient().getSalt().doubleValue());
+                totalWater += (r.getAmount() * r.getIngredient().getWater().doubleValue());
+            }
+        }
+
+        return new NutritionAnalysis(
+                BigDecimal.valueOf(totalCalories).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalFat).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalSaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalMonounsaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalPolyunsaturatedFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalTransFattyAcids).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalCarbohydrateTotal).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalCarbohydrateAvailable).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalFibre).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalSugar).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalProtein).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalSodium).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalSalt).setScale(1, RoundingMode.HALF_EVEN),
+                BigDecimal.valueOf(totalWater).setScale(1, RoundingMode.HALF_EVEN)
+        );
     }
 }

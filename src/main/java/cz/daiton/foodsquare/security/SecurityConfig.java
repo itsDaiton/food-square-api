@@ -71,6 +71,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll", "/api/v1/recipes/getAllExtended", "/api/v1/recipes/getAllByUser/*").permitAll()
                 .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*", "/api/v1/follows/follows/*").permitAll()
                 .antMatchers("/img/**").permitAll()
+                .antMatchers("/api/v1/meal-planning/*").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
