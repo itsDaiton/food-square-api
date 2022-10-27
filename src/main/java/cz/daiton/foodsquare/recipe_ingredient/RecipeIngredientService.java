@@ -1,6 +1,7 @@
 package cz.daiton.foodsquare.recipe_ingredient;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
+import cz.daiton.foodsquare.recipe.Recipe;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -22,4 +23,6 @@ public interface RecipeIngredientService {
     String update(RecipeIngredientDto recipeIngredientDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    NutritionAnalysis getNutritionAnalysis(Recipe recipe);
 }

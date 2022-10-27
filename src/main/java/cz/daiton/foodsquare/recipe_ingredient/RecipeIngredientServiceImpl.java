@@ -153,6 +153,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
         return "There has been a error while trying to delete the ingredient from recipe.";
     }
 
+    @Override
     public NutritionAnalysis getNutritionAnalysis(Recipe recipe) {
         List<RecipeIngredient> ingredientList = recipeIngredientRepository.findAllByRecipe(recipe);
 

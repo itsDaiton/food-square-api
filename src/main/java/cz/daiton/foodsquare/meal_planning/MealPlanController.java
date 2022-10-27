@@ -1,10 +1,6 @@
 package cz.daiton.foodsquare.meal_planning;
 
-import cz.daiton.foodsquare.category.Category;
-import cz.daiton.foodsquare.category.CategoryRepository;
-import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
-import cz.daiton.foodsquare.recipe.Recipe;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Set;
 
 @RestController
 @RequestMapping(value = "api/v1/meal-planning")
@@ -25,12 +19,10 @@ import java.util.Set;
 public class MealPlanController {
 
     private final MealPlanService mealPlanService;
-    private final CategoryRepository categoryRepository;
 
     @GetMapping(value = "/generate")
-    public List<Recipe> generateMealPlan(@Valid @RequestBody MealPlanRequestDto dto) throws Exception {
+    public MealPlanOutput generateMealPlan(@Valid @RequestBody MealPlanRequestDto dto) throws Exception {
         return mealPlanService.generateMealPlan(dto);
-        //return categoryRepository.findAll();
     }
 
     @ExceptionHandler(value =
