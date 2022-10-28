@@ -20,7 +20,7 @@ public class MealPlanController {
 
     private final MealPlanService mealPlanService;
 
-    @GetMapping(value = "/generate")
+    @PutMapping(value = "/generate")
     public MealPlanOutput generateMealPlan(@Valid @RequestBody MealPlanRequestDto dto) throws Exception {
         return mealPlanService.generateMealPlan(dto);
     }

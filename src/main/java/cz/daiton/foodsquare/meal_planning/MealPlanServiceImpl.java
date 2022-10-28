@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.meal_planning;
 
 import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.category.CategoryRepository;
+import cz.daiton.foodsquare.category.CategoryType;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.recipe.RecipeMeal;
 import cz.daiton.foodsquare.recipe.RecipeRepository;
@@ -33,9 +34,9 @@ public class MealPlanServiceImpl implements MealPlanService {
         Set<Category> categories = new HashSet<>();
 
         if (dto.getCategories() != null && !dto.getCategories().isEmpty()) {
-            for (Category c : dto.getCategories()) {
-                Category category = categoryRepository.findByName(c.getName()).orElseThrow(
-                        () -> new NoSuchElementException("Category: '" + c.getName() + "' does not exist.")
+            for (String name : dto.getCategories()) {
+                Category category = categoryRepository.findByName(CategoryType.valueOf(name)).orElseThrow(
+                        () -> new NoSuchElementException("Category: '" + CategoryType.valueOf(name) + "' does not exist.")
                 );
                 categories.add(category);
             }
@@ -75,7 +76,7 @@ public class MealPlanServiceImpl implements MealPlanService {
                 for (Recipe r : recipesFiltered) {
                     NutritionAnalysis values = recipeIngredientService.getNutritionAnalysis(r);
                     if (
-                    values.getTotalCalories().doubleValue() < dto.getCalories().doubleValue() &&
+                    values.getTotalCalories().doubleValue() < (dto.getCalories().doubleValue() + 100)  &&
                     values.getTotalCalories().doubleValue() > (dto.getCalories().doubleValue() - 100)
                     ) {
                         recipeOutputs.add(r);
@@ -91,7 +92,7 @@ public class MealPlanServiceImpl implements MealPlanService {
                         NutritionAnalysis bValues = recipeIngredientService.getNutritionAnalysis(b);
                         NutritionAnalysis lValues = recipeIngredientService.getNutritionAnalysis(l);
                         if (
-                        bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() < dto.getCalories().doubleValue() &&
+                        bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() < (dto.getCalories().doubleValue() + 100) &&
                         bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() > (dto.getCalories().doubleValue() - 100)
                         ) {
                             recipeOutputs.add(b);
@@ -113,7 +114,7 @@ public class MealPlanServiceImpl implements MealPlanService {
                             NutritionAnalysis lValues = recipeIngredientService.getNutritionAnalysis(l);
                             NutritionAnalysis dValues = recipeIngredientService.getNutritionAnalysis(d);
                             if (
-                            bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() < dto.getCalories().doubleValue() &&
+                            bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() < (dto.getCalories().doubleValue() + 100) &&
                             bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() > (dto.getCalories().doubleValue() - 100)
                             ) {
                                 recipeOutputs.add(b);
@@ -140,7 +141,7 @@ public class MealPlanServiceImpl implements MealPlanService {
                                 NutritionAnalysis dValues = recipeIngredientService.getNutritionAnalysis(d);
                                 NutritionAnalysis sValues = recipeIngredientService.getNutritionAnalysis(s);
                                 if (
-                                bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + sValues.getTotalCalories().doubleValue() < dto.getCalories().doubleValue() &&
+                                bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + sValues.getTotalCalories().doubleValue() < (dto.getCalories().doubleValue() + 100) &&
                                 bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + sValues.getTotalCalories().doubleValue() > (dto.getCalories().doubleValue() - 100)
                                 ) {
                                     recipeOutputs.add(b);
@@ -172,7 +173,7 @@ public class MealPlanServiceImpl implements MealPlanService {
                                     NutritionAnalysis s1Values = recipeIngredientService.getNutritionAnalysis(s1);
                                     NutritionAnalysis s2Values = recipeIngredientService.getNutritionAnalysis(s2);
                                     if (
-                                    bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + s1Values.getTotalCalories().doubleValue() + s2Values.getTotalCalories().doubleValue() < dto.getCalories().doubleValue() &&
+                                    bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + s1Values.getTotalCalories().doubleValue() + s2Values.getTotalCalories().doubleValue() < (dto.getCalories().doubleValue() + 100) &&
                                     bValues.getTotalCalories().doubleValue() + lValues.getTotalCalories().doubleValue() + dValues.getTotalCalories().doubleValue() + s1Values.getTotalCalories().doubleValue() + s2Values.getTotalCalories().doubleValue() > (dto.getCalories().doubleValue() - 100) &&
                                     !s1.getId().equals(s2.getId())
                                     ) {
