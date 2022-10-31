@@ -11,5 +11,4 @@ public class AppUserDto {
 
     private String lastName;
 
-    private String pathToImage;
 }

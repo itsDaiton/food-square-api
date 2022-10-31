@@ -73,10 +73,7 @@ public class AppUser {
     @JsonIgnore
     private Set<Recipe> recipes;
 
-    @OneToMany(
-            mappedBy = "appUser",
-            fetch = FetchType.LAZY
-    )
+    @OneToMany(mappedBy = "appUser")
     @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
 
@@ -133,8 +130,7 @@ public class AppUser {
     @JsonIgnore
     private Set<Recipe> favoriteRecipes;
 
-
-    public AppUser(@NotNull(message = required) @Email(message = "This is not valid e-mail address.") String email, @NotNull(message = required) @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.") String userName, @NotNull(message = required) @Size(min = 6, message = "Password must be at least 6 characters long.") String password) {
+    public AppUser(String email, String userName, String password) {
         this.email = email;
         this.userName = userName;
         this.password = password;
