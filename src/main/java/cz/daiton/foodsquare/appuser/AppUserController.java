@@ -31,7 +31,6 @@ public class AppUserController {
         return appUserService.get(id);
     }
 
-
     @GetMapping(value = "/getAll")
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
