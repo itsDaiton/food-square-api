@@ -64,7 +64,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/api/v1/auth/register").anonymous()
                 .antMatchers("/api/v1/auth/login").permitAll()
-                .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll", "/api/v1/comments/getCountByRecipe/*", "/api/v1/comments/getAllByRecipe/*", "/api/v1/comments/getLikes/*", "/api/v1/comments/getAllByUser/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/comments/**", "/api/v1/comments").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/users/**", "/api/v1/users").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
                 .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*", "/api/v1/recipe-ingredients/calculateNutritionAnalysis/*").permitAll()

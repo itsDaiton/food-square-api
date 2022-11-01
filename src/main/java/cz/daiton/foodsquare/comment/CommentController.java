@@ -22,60 +22,57 @@ public class CommentController {
 
     private final CommentService commentService;
 
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/{id}")
     public Comment getComment(@PathVariable Long id) {
         return commentService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<Comment> getComments() {
         return commentService.getAll();
     }
 
-    @GetMapping(value = "/getAllByRecipe/{id}")
+    @GetMapping(value = "/recipe/{id}")
     public List<Comment> getAllByRecipe(@PathVariable Long id) {
         return commentService.getAllByRecipe(id);
     }
 
-    @GetMapping(value = "/getLikes/{id}")
+    @GetMapping(value = "/{id}/likes")
     public Integer getCommentLikes(@PathVariable Long id) {
         return commentService.countLikes(id);
     }
 
-    @GetMapping(value = "/isLikedByUser/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @GetMapping(value = "/{id}/check-like")
+    @PreAuthorize("isAuthenticated()")
     public Boolean isLikedByUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return commentService.isLikedByUser(id, request);
     }
 
-    @GetMapping(value = "/getAllByUser/{id}")
+    @GetMapping(value = "/user/{id}")
     public List<Comment> getAllByAppUser(@PathVariable Long id) {
         return commentService.getAllByAppUser(id);
     }
 
-    @GetMapping(value = "getCountByRecipe/{id}")
+    @GetMapping(value = "/recipe/{id}/count")
     public Integer countCommentsByRecipe(@PathVariable Long id) {
         return commentService.countByRecipe(id);
     }
 
     @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addComment(@Valid @RequestBody CommentDto commentDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(commentService.add(commentDto, request)));
     }
 
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<?> updateComment(@Valid @RequestBody CommentDto commentDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(commentService.update(commentDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> deleteComment(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
