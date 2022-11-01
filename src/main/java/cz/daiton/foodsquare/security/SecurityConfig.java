@@ -70,7 +70,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*", "/api/v1/recipe-ingredients/calculateNutritionAnalysis/*").permitAll()
                 .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*", "/api/v1/reviews/getLikes/*", "/api/v1/reviews/getAllByRecipe/*", "/api/v1/reviews/getAllByUser/*").permitAll()
                 .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll", "/api/v1/recipes/getAllExtended", "/api/v1/recipes/getAllByUser/*").permitAll()
-                .antMatchers("/api/v1/follows/get/*", "/api/v1/follows/getAll", "/api/v1/follows/following/*", "/api/v1/follows/followers/*", "/api/v1/follows/follows/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/follows/**", "/api/v1/follows").permitAll()
                 .antMatchers("/img/**").permitAll()
                 .antMatchers("/api/v1/meal-planning/*").permitAll()
                 .anyRequest().authenticated();

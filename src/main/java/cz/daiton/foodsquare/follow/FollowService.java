@@ -2,7 +2,6 @@ package cz.daiton.foodsquare.follow;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
