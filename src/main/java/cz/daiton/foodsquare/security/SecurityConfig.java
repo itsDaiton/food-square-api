@@ -69,10 +69,10 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET, "/api/v1/ingredients/**", "/api/v1/ingredients").permitAll()
                 .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*", "/api/v1/recipe-ingredients/calculateNutritionAnalysis/*").permitAll()
                 .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*", "/api/v1/reviews/getLikes/*", "/api/v1/reviews/getAllByRecipe/*", "/api/v1/reviews/getAllByUser/*").permitAll()
-                .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll", "/api/v1/recipes/getAllExtended", "/api/v1/recipes/getAllByUser/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/recipes/**", "/api/v1/recipes").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/follows/**", "/api/v1/follows").permitAll()
                 .antMatchers("/img/**").permitAll()
-                .antMatchers("/api/v1/meal-planning/*").permitAll()
+                .antMatchers("/api/v1/meal-planning/generate").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();

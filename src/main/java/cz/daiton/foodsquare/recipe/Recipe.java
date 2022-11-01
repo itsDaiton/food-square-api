@@ -101,7 +101,7 @@ public class Recipe {
     @JsonIgnore
     private Set<RecipeIngredient> ingredientSet = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "recipe_categories",
             joinColumns = @JoinColumn(name = "recipe_id"),
