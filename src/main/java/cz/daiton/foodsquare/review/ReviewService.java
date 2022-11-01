@@ -1,6 +1,5 @@
 package cz.daiton.foodsquare.review;
 
-import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 
 import javax.servlet.http.HttpServletRequest;
