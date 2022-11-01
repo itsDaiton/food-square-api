@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/auth/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/comments/**", "/api/v1/comments").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/users/**", "/api/v1/users").permitAll()
-                .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/ingredients/**", "/api/v1/ingredients").permitAll()
                 .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*", "/api/v1/recipe-ingredients/calculateNutritionAnalysis/*").permitAll()
                 .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*", "/api/v1/reviews/getLikes/*", "/api/v1/reviews/getAllByRecipe/*", "/api/v1/reviews/getAllByUser/*").permitAll()
                 .antMatchers("/api/v1/recipes/get/*", "/api/v1/recipes/getAll", "/api/v1/recipes/getAllExtended", "/api/v1/recipes/getAllByUser/*").permitAll()
