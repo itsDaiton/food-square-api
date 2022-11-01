@@ -330,16 +330,6 @@ public class AppUserServiceImpl implements AppUserService {
     }
 
     @Override
-    public Boolean containsFavorite(Long id, HttpServletRequest request) throws IncorrectUserException {
-        Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' doest not exist.")
-        );
-        AppUser me = getUserFromCookie(request);
-
-        return me.getFavoriteRecipes().contains(recipe);
-    }
-
-    @Override
     public Integer countFollowers(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")

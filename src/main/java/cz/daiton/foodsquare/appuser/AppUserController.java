@@ -7,7 +7,6 @@ import cz.daiton.foodsquare.review.Review;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.bind.annotation.*;
@@ -26,111 +25,99 @@ public class AppUserController {
     private final AppUserService appUserService;
     private final AppUserRepository appUserRepository;
 
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/{id}")
     public AppUser getUser(@PathVariable Long id) {
         return appUserService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
     }
 
-    @GetMapping(value = "/getFollowers/{id}")
+    @GetMapping(value = "/{id}/followers")
     public List<AppUser> getFollowers(@PathVariable Long id) {
         return appUserService.getFollowers(id);
     }
 
-    @GetMapping(value = "/getFollowing/{id}")
+    @GetMapping(value = "/{id}/following")
     public List<AppUser> getFollowing(@PathVariable Long id) {
         return appUserService.getFollowing(id);
     }
 
-    @GetMapping(value = "/get5Random")
+    @GetMapping(value = "/random")
     public List<AppUser> get5RandomUsers() {
         return appUserRepository.find5RandomUsers();
     }
 
-    @GetMapping(value = "/countFollowers/{id}")
+    @GetMapping(value = "/{id}/followers-count")
     public Integer countFollowers(@PathVariable Long id) {
         return appUserService.countFollowers(id);
     }
 
-    @GetMapping(value = "/countFollowing/{id}")
+    @GetMapping(value = "/{id}/following-count")
     public Integer countFollowing(@PathVariable Long id) {
         return appUserService.countFollowing(id);
     }
 
     @PutMapping(value = "/like")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> like(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.like(likeDto, request)));
     }
 
-    @PutMapping(value = "/deleteLike")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/unlike")
     public ResponseEntity<?> deleteLike(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.deleteLike(likeDto, request)));
     }
 
-    @PutMapping(value = "/favoriteRecipe")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/recipes/favorite")
     public ResponseEntity<?> favoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.favoriteRecipe(favoriteDto, request)));
     }
 
-    @PutMapping(value = "/unfavoriteRecipe")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/recipes/unfavorite")
     public ResponseEntity<?> unfavoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.unfavoriteRecipe(favoriteDto, request)));
     }
 
-    @GetMapping(value = "/getFavoriteRecipes/{id}")
+    @GetMapping(value = "/{id}/favorite-recipes")
     public List<Recipe> getFavoriteRecipesOfUser(@PathVariable Long id) {
         return appUserService.getFavoriteRecipesOfUser(id);
     }
 
-    @GetMapping(value = "/getLikedComments/{id}")
+    @GetMapping(value = "/{id}/liked-comments")
     public List<Comment> getLikedCommentsOfUser(@PathVariable Long id) {
         return appUserService.getLikedCommentsOfUser(id);
     }
 
-    @GetMapping(value = "/getLikedReviews/{id}")
+    @GetMapping(value = "/{id}/liked-reviews")
     public List<Review> getLikedReviewsOfUser(@PathVariable Long id) {
         return appUserService.getLikedReviewsOfUser(id);
     }
 
-    @GetMapping(value = "/checkFavorite/{id}")
-    public Boolean checkForFavorite(@PathVariable Long id, HttpServletRequest request) throws Exception {
-        return appUserService.containsFavorite(id, request);
-    }
-
-    @PutMapping(value = "/updateInfo/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<?> updatePersonalInfo(@RequestBody AppUserDto appUserDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.updatePersonalInfo(appUserDto, id, request)));
     }
 
-    @PutMapping(value = "/addImage/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}/image")
     public ResponseEntity<?> addProfilePicture(@PathVariable Long id, @RequestParam("image") MultipartFile file, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.updateProfilePicture(id, file, request)));
     }
 
-    @DeleteMapping(value = "/deleteImage/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "/{id}/image")
     public ResponseEntity<?> removeProfilePicture(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()

@@ -5,6 +5,7 @@ import cz.daiton.foodsquare.authentication.CustomAuthenticationFilter;
 import cz.daiton.foodsquare.exceptions.CustomAccessDeniedHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -64,7 +65,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/auth/register").anonymous()
                 .antMatchers("/api/v1/auth/login").permitAll()
                 .antMatchers("/api/v1/comments/get/*", "/api/v1/comments/getAll", "/api/v1/comments/getCountByRecipe/*", "/api/v1/comments/getAllByRecipe/*", "/api/v1/comments/getLikes/*", "/api/v1/comments/getAllByUser/*").permitAll()
-                .antMatchers("/api/v1/users/get/*", "/api/v1/users/getAll", "/api/v1/users/checkFavorite/*", "/api/v1/users/get5Random", "/api/v1/users/getFollowers/*", "/api/v1/users/getFollowing/*", "/api/v1/users/countFollowers/*", "/api/v1/users/countFollowing/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/users/**", "/api/v1/users").permitAll()
                 .antMatchers("/api/v1/ingredients/get/*", "/api/v1/ingredients/getAll").permitAll()
                 .antMatchers("/api/v1/recipe-ingredients/get/*", "/api/v1/recipe-ingredients/getAll", "/api/v1/recipe-ingredients/getByRecipe/*", "/api/v1/recipe-ingredients/calculateNutritionAnalysis/*").permitAll()
                 .antMatchers("/api/v1/reviews/get/*", "/api/v1/reviews/getAll", "/api/v1/reviews/getCountByRecipe/*", "/api/v1/reviews/getAvgRating/*", "/api/v1/reviews/containsReview/*", "/api/v1/reviews/getByRecipe/*", "/api/v1/reviews/getLikes/*", "/api/v1/reviews/getAllByRecipe/*", "/api/v1/reviews/getAllByUser/*").permitAll()

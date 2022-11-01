@@ -126,6 +126,16 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    public Boolean checkFavorite(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' doest not exist.")
+        );
+        AppUser me = appUserService.getUserFromCookie(request);
+
+        return me.getFavoriteRecipes().contains(recipe);
+    }
+
+    @Override
     public String uploadImage(Long id, MultipartFile file, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
                 () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")

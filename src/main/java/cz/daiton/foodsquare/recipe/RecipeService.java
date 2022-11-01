@@ -29,4 +29,6 @@ public interface RecipeService {
     String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException;
 
     String delete(Long id, HttpServletRequest request) throws IncorrectUserException;
+
+    Boolean checkFavorite(Long id, HttpServletRequest request) throws IncorrectUserException;
 }

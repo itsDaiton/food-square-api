@@ -94,6 +94,11 @@ public class RecipeController {
                 .body(new MessageResponse(recipeService.delete(id, request)));
     }
 
+    @GetMapping(value = "/{id}/check-favorite")
+    public Boolean checkForFavorite(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return recipeService.checkFavorite(id, request);
+    }
+
     @ExceptionHandler(value =
             {
                     NoSuchElementException.class,
