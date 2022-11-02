@@ -15,6 +15,8 @@ public class JwtConfig {
 
     private int expirationTime;
 
+    private boolean secure;
+
     public JwtConfig() {
 
     }
@@ -43,4 +45,11 @@ public class JwtConfig {
         this.expirationTime = expirationTime;
     }
 
+    public boolean isSecure() {
+        return secure;
+    }
+
+    public void setSecure(boolean secure) {
+        this.secure = secure;
+    }
 }

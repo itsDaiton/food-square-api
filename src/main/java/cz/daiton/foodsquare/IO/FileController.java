@@ -14,7 +14,7 @@ import java.io.InputStream;
 @RestController
 @RequestMapping(value = "img")
 @CrossOrigin(
-        origins = {"http://localhost:3000", "https://daiton-food-square.herokuapp.com/"},
+        origins = {"http://localhost:3000", "https://food-square.site/"},
         maxAge = 3600,
         allowCredentials = "true"
 )

@@ -23,7 +23,7 @@ import java.util.Set;
 @RestController
 @RequestMapping(value = "api/v1/recipes")
 @CrossOrigin(
-        origins = {"http://localhost:3000", "https://daiton-food-square.herokuapp.com/"},
+        origins = {"http://localhost:3000", "https://food-square.site/"},
         maxAge = 3600,
         allowCredentials = "true"
 )

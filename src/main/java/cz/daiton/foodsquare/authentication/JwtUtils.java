@@ -31,6 +31,9 @@ public class JwtUtils {
     @Value("${app.jwt.cookie-name}")
     private String cookieName;
 
+    @Value("${app.jwt.secure}")
+    private Boolean secure;
+
     private Key getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(jwtSecret);
         return Keys.hmacShaKeyFor(keyBytes);
@@ -50,6 +53,7 @@ public class JwtUtils {
         return ResponseCookie.from(cookieName, jwt)
                 .path("/api/v1")
                 .maxAge(604800)
+                .secure(secure)
                 .httpOnly(true)
                 .build();
     }
@@ -58,6 +62,7 @@ public class JwtUtils {
         return ResponseCookie.from(cookieName, null)
                 .path("/api/v1")
                 .maxAge(0)
+                .secure(secure)
                 .httpOnly(true)
                 .build();
     }

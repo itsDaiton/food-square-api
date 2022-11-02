@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping(value = "api/v1/comments")
 @CrossOrigin(
-        origins = {"http://localhost:3000", "https://daiton-food-square.herokuapp.com/"},
+        origins = {"http://localhost:3000", "https://food-square.site/"},
         maxAge = 3600,
         allowCredentials = "true"
 )
