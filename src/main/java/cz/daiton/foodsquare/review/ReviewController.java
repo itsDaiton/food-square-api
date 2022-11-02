@@ -20,7 +20,11 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(value = "api/v1/reviews")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
+@CrossOrigin(
+        origins = {"http://localhost:3000", "https://daiton-food-square.herokuapp.com/"},
+        maxAge = 3600,
+        allowCredentials = "true"
+)
 @AllArgsConstructor
 public class ReviewController {
 

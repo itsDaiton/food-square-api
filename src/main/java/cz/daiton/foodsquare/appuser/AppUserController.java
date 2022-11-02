@@ -18,7 +18,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/users")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
+@CrossOrigin(
+        origins = {"http://localhost:3000", "https://daiton-food-square.herokuapp.com/"},
+        maxAge = 3600,
+        allowCredentials = "true"
+)
 @AllArgsConstructor
 public class AppUserController {
 
