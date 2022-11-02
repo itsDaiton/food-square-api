@@ -34,6 +34,9 @@ public class JwtUtils {
     @Value("${app.jwt.secure}")
     private Boolean secure;
 
+    @Value("${app.jwt.sameSite}")
+    private String sameSite;
+
     private Key getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(jwtSecret);
         return Keys.hmacShaKeyFor(keyBytes);
@@ -54,6 +57,7 @@ public class JwtUtils {
                 .path("/api/v1")
                 .maxAge(604800)
                 .secure(secure)
+                .sameSite(sameSite)
                 .httpOnly(true)
                 .build();
     }
@@ -63,6 +67,7 @@ public class JwtUtils {
                 .path("/api/v1")
                 .maxAge(0)
                 .secure(secure)
+                .sameSite(sameSite)
                 .httpOnly(true)
                 .build();
     }

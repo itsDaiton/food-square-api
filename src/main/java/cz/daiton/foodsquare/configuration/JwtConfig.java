@@ -17,6 +17,8 @@ public class JwtConfig {
 
     private boolean secure;
 
+    private String sameSite;
+
     public JwtConfig() {
 
     }
@@ -51,5 +53,13 @@ public class JwtConfig {
 
     public void setSecure(boolean secure) {
         this.secure = secure;
+    }
+
+    public String getSameSite() {
+        return sameSite;
+    }
+
+    public void setSameSite(String sameSite) {
+        this.sameSite = sameSite;
     }
 }
