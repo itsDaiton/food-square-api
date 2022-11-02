@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.Check;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "follow")
 @Table(uniqueConstraints = {
@@ -15,7 +16,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
 public class Follow {
 
     @Id
@@ -31,4 +31,17 @@ public class Follow {
     @ManyToOne
     @JoinColumn(name = "followed_id")
     private AppUser followed;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Follow follow = (Follow) o;
+        return id.equals(follow.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

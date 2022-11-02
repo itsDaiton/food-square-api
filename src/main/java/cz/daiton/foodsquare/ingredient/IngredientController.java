@@ -1,8 +1,8 @@
 package cz.daiton.foodsquare.ingredient;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -12,21 +12,18 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "api/v1/ingredients")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
+@AllArgsConstructor
 public class IngredientController {
 
     private final IngredientService ingredientService;
 
-    public IngredientController(IngredientService ingredientService) {
-        this.ingredientService = ingredientService;
-    }
-
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/{id}")
     public Ingredient getIngredient(@PathVariable Long id) {
         return ingredientService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<Ingredient> getAllIngredients() {
         return ingredientService.getAll();
     }

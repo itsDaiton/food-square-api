@@ -26,7 +26,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -123,6 +122,16 @@ public class RecipeServiceImpl implements RecipeService {
             recipe.setAppUser(appUser);
         }
         return recipeRepository.saveAndFlush(recipe);
+    }
+
+    @Override
+    public Boolean checkFavorite(Long id, HttpServletRequest request) throws IncorrectUserException {
+        Recipe recipe = recipeRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' doest not exist.")
+        );
+        AppUser me = appUserService.getUserFromCookie(request);
+
+        return me.getFavoriteRecipes().contains(recipe);
     }
 
     @Override

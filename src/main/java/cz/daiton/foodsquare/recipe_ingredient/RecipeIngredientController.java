@@ -25,28 +25,27 @@ public class RecipeIngredientController {
 
     private final RecipeIngredientService recipeIngredientService;
 
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/{id}")
     public RecipeIngredient getRecipeIngredient(@PathVariable Long id) {
         return recipeIngredientService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<RecipeIngredient> getAllRecipeIngredients() {
         return recipeIngredientService.getAll();
     }
 
-    @GetMapping(value = "/getByRecipe/{id}")
+    @GetMapping(value = "/recipe/{id}")
     public List<RecipeIngredient> getAllByRecipe(@PathVariable Long id) {
         return recipeIngredientService.getAllByRecipe(id);
     }
 
-    @GetMapping(value = "/calculateNutritionAnalysis/{id}")
+    @GetMapping(value = "/recipe/{id}/nutrition-analysis")
     public NutritionAnalysis getNutritionAnalysis(@PathVariable Long id) {
         return recipeIngredientService.calculateNutritionAnalysisForRecipe(id);
     }
 
     @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addIngredientToRecipe(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
@@ -54,23 +53,20 @@ public class RecipeIngredientController {
     }
 
     @PostMapping(value = "/addAll")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addAllIngredientsToRecipe(@Valid @RequestBody RecipeIngredientListDto list, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.addAll(list, request)));
     }
 
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<?> updateIngredientAmount(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.update(recipeIngredientDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "{id}")
     public ResponseEntity<?> deleteIngredientFromRecipe(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()

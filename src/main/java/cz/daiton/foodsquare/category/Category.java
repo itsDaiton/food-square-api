@@ -29,6 +29,6 @@ public class Category {
     private CategoryType name;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "categories", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes = new HashSet<>();
 }

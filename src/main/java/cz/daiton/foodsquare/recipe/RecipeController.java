@@ -1,7 +1,5 @@
 package cz.daiton.foodsquare.recipe;
 
-import cz.daiton.foodsquare.IO.FileStorageService;
-import cz.daiton.foodsquare.appuser.AppUserService;
 import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.InsertResponse;
@@ -30,39 +28,38 @@ public class RecipeController {
 
     private final RecipeService recipeService;
 
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/{id}")
     public Recipe getRecipe(@PathVariable Long id) {
         return recipeService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<Recipe> getAllRecipes() {
         return recipeService.getAll();
     }
 
-    @GetMapping(value = "/getCategories/{id}")
+    @GetMapping(value = "/{id}/categories")
     public Set<Category> getCategoriesInRecipe(@PathVariable Long id) {
         return recipeService.getCategoriesInRecipe(id);
     }
 
-    @GetMapping(value = "/getMyFeed/")
-    @PreAuthorize("hasRole('USER')")
+    @GetMapping(value = "/my-feed")
+    @PreAuthorize("isAuthenticated()")
     public List<Recipe> getMyFeed(HttpServletRequest request) throws IncorrectUserException {
         return recipeService.getAllRecipesOfFollowingAndMine(request);
     }
 
-    @GetMapping(value = "/getAllByUser/{id}")
+    @GetMapping(value = "/user/{id}")
     public List<Recipe> getAllByUser(@PathVariable Long id) {
         return recipeService.getAllByUser(id);
     }
 
-    @GetMapping(value = "/getAllExtended")
+    @GetMapping(value = "/extended")
     public List<RecipeExtended> getAllRecipesExtended() {
         return recipeService.getAllExtendedRecipes();
     }
 
     @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addRecipe(@Valid @RequestBody RecipeDto recipeDto, HttpServletRequest request) throws Exception {
         Recipe recipe = recipeService.add(recipeDto, request);
         return ResponseEntity
@@ -70,28 +67,31 @@ public class RecipeController {
                 .body(new InsertResponse(recipe.getId(), "Recipe has been successfully created."));
     }
 
-    @PutMapping(value = "/addImage/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}/image")
     public ResponseEntity<?> addImage(@PathVariable Long id, @RequestParam("image") MultipartFile file, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeService.uploadImage(id, file, request)));
     }
 
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<?> updateRecipe(@Valid @RequestBody RecipeDto recipeDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeService.update(recipeDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> deleteRecipe(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeService.delete(id, request)));
+    }
+
+    @GetMapping(value = "/{id}/check-favorite")
+    @PreAuthorize("isAuthenticated()")
+    public Boolean checkForFavorite(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        return recipeService.checkFavorite(id, request);
     }
 
     @ExceptionHandler(value =
@@ -100,7 +100,8 @@ public class RecipeController {
                     HttpMessageNotReadableException.class,
                     IncorrectUserException.class,
                     InvalidDataAccessApiUsageException.class,
-                    RuntimeException.class
+                    RuntimeException.class,
+                    InvalidDataAccessApiUsageException.class
             })
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;

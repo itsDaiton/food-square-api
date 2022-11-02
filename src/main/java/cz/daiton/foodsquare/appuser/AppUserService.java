@@ -48,8 +48,6 @@ public interface AppUserService {
 
     List<Comment> getLikedCommentsOfUser(Long id);
 
-    Boolean containsFavorite(Long id, HttpServletRequest request) throws IncorrectUserException;
-
     List<AppUser> getFollowers(Long id);
 
     List<AppUser> getFollowing(Long id);

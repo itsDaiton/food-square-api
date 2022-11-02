@@ -12,7 +12,6 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import javax.annotation.security.PermitAll;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -27,84 +26,81 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "{id}")
     public Review getReview(@PathVariable Long id) {
         return reviewService.get(id);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<Review> getReviews() {
         return reviewService.getAll();
     }
 
-    @GetMapping(value = "/getByRecipe/{id}")
+    @GetMapping(value = "/recipe/{id}/my-review")
+    @PreAuthorize("isAuthenticated()")
     public Review getReviewByRecipe(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return reviewService.getByRecipe(id, request);
     }
 
-    @GetMapping(value = "/getAllByUser/{id}")
+    @GetMapping(value = "/user/{id}")
     public List<Review> getAllByAppUser(@PathVariable Long id) {
         return reviewService.getAllByAppUser(id);
     }
 
-    @GetMapping(value = "/getLikes/{id}")
+    @GetMapping(value = "/{id}/likes")
     public Integer getReviewLikes(@PathVariable Long id) {
         return reviewService.countLikes(id);
     }
 
-    @GetMapping(value = "/isLikedByUser/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @GetMapping(value = "/{id}/like-check")
+    @PreAuthorize("isAuthenticated()")
     public Boolean isLikedByUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return reviewService.isLikedByUser(id, request);
     }
 
-    @GetMapping(value = "/getAllByRecipe/{id}")
-    @PermitAll
+    @GetMapping(value = "/recipe/{id}")
     public List<Review> getAllByRecipe(@PathVariable Long id) {
         return reviewService.getAllByRecipe(id);
     }
 
-    @GetMapping(value = "/getCountByRecipe/{id}")
+    @GetMapping(value = "/recipe/{id}/count")
     public Integer countReviewsByRecipe(@PathVariable Long id) {
         return reviewService.countByRecipe(id);
     }
 
-    @GetMapping(value = "/getAvgRating/{id}")
+    @GetMapping(value = "/recipe/{id}/avg-rating")
     public BigDecimal getAvgRatingOfRecipe(@PathVariable Long id) {
         return reviewService.getAverageRating(id);
     }
 
-    @GetMapping(value = "/containsReview/{id}")
+    @GetMapping(value = "/recipe/{id}/my-review-check")
+    @PreAuthorize("isAuthenticated()")
     public Boolean containsReview(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return reviewService.containsReview(id, request);
     }
 
     @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> addReview(@Valid @RequestBody ReviewDto reviewDto, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(reviewService.add(reviewDto, request)));
     }
 
-    @PutMapping(value = "/update/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<?> updateReview(@Valid @RequestBody ReviewDto reviewDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(reviewService.update(reviewDto, id, request)));
     }
 
-    @DeleteMapping(value = "/delete/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> deleteReview(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(reviewService.delete(id, request)));
     }
 
-    @DeleteMapping(value = "/deleteForUser/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @DeleteMapping(value = "/user/{id}")
     public ResponseEntity<?> deleteReviewByRecipeAndAppUser(@PathVariable Long id, HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
