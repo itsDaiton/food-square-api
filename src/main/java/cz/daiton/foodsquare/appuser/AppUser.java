@@ -38,7 +38,7 @@ public class AppUser {
             unique = true
     )
     @NotNull(message = required)
-    @Email(message = "This is not valid e-mail address.")
+    @Email(message = "This is not a valid e-mail address.")
     private String email;
 
     @Column(

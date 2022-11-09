@@ -35,7 +35,7 @@ public class FollowServiceImpl implements FollowService {
     @Override
     public List<Follow> getAllFollowersOfUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return followRepository.findAllByFollowedId(appUser.getId());
     }
@@ -43,7 +43,7 @@ public class FollowServiceImpl implements FollowService {
     @Override
     public List<Follow> getAllFollowingOfUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return followRepository.findAllByFollowerId(appUser.getId());
     }
@@ -52,10 +52,10 @@ public class FollowServiceImpl implements FollowService {
     public String add(FollowDto followDto, HttpServletRequest request) throws IncorrectUserException {
         Follow follow = new Follow();
         AppUser follower = appUserRepository.findById(followDto.getFollower()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + followDto.getFollower() + "' does not exist. They cannot follow anyone.")
+                () -> new NoSuchElementException("User with id: '" + followDto.getFollower() + "' was not found. They cannot follow anyone.")
         );
         AppUser followed = appUserRepository.findById(followDto.getFollowed()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + followDto.getFollowed() + "' does not exist. They cannot be followed by anyone.")
+                () -> new NoSuchElementException("User with id: '" + followDto.getFollowed() + "' was not found. They cannot be followed by anyone.")
         );
 
         if (appUserService.checkUser(follower.getId(), request)) {
@@ -79,7 +79,7 @@ public class FollowServiceImpl implements FollowService {
     @Override
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
         AppUser followed = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         AppUser me = appUserService.getUserFromCookie(request);
 
@@ -88,7 +88,7 @@ public class FollowServiceImpl implements FollowService {
         }
 
         Follow follow = followRepository.findAllByFollowerAndFollowed(me, followed).orElseThrow(
-                () -> new NoSuchElementException("You do not follow this user.")
+                () -> new NoSuchElementException("You do not follow this user yet.")
         );
 
         if (appUserService.checkUser(me.getId(), request)) {
@@ -101,7 +101,7 @@ public class FollowServiceImpl implements FollowService {
     @Override
     public Boolean follows(Long id, HttpServletRequest request) throws IncorrectUserException {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         AppUser me = appUserService.getUserFromCookie(request);
 

@@ -25,6 +25,6 @@ public class MealPlanRequestDto {
     private Long amount;
 
     @NotNull(message = required)
-    @DecimalMin(value = "100.00", message = "Minimal value of calories is 100.")
+    @DecimalMin(value = "100.00", message = "You have to choose at least 100 calories.")
     private BigDecimal calories;
 }

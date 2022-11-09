@@ -49,7 +49,7 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         } catch (Exception e) {
-            logger.error("Cannot set user authentication: {}", e.getMessage());
+            logger.error("Cannot set authentication: {}", e.getMessage());
         }
         filterChain.doFilter(request, response);
     }
