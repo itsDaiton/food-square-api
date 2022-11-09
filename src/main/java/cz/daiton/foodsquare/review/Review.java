@@ -46,11 +46,6 @@ public class Review {
     private BigDecimal rating;
 
     @Column(
-            name = "path_to_image"
-    )
-    private String pathToImage;
-
-    @Column(
             name = "updated_at",
             nullable = false
     )

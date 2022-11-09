@@ -82,7 +82,6 @@ public class ReviewServiceImpl implements ReviewService{
             }
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setPathToImage(reviewDto.getPathToImage());
             review.setUpdatedAt(LocalDateTime.now());
             review.setAppUser(appUser);
             review.setRecipe(recipe);
@@ -102,7 +101,6 @@ public class ReviewServiceImpl implements ReviewService{
         if (appUserService.checkUser(review.getAppUser().getId(), request)) {
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setPathToImage(reviewDto.getPathToImage());
             review.setUpdatedAt(LocalDateTime.now());
             reviewRepository.save(review);
 

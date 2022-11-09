@@ -24,8 +24,6 @@ public class ReviewDto {
     @Digits(integer = 1, fraction = 0, message = "Rating cannot be a decimal number.")
     private BigDecimal rating;
 
-    private String pathToImage;
-
     private Long appUser;
 
     private Long recipe;
