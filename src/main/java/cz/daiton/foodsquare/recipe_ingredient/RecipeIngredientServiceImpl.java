@@ -68,7 +68,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
                 () -> new NoSuchElementException("Ingredient with id: '" + recipeIngredientDto.getIngredient() + "' was not found.")
         );
         AppUser appUser = appUserRepository.findById(recipe.getAppUser().getId()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' was not found.")
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
@@ -101,7 +101,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
                     () -> new NoSuchElementException("Ingredient with id: '" + ingredientDto.getIngredient() + "' was not found.")
             );
             AppUser appUser = appUserRepository.findById(recipe.getAppUser().getId()).orElseThrow(
-                    () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' does not exist.")
+                    () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' was not found.")
             );
 
             if (appUserService.checkUser(appUser.getId(), request)) {
@@ -127,7 +127,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
                 () -> new NoSuchElementException("Recipe with id: '" + recipeIngredient.getRecipe().getId() + "' was not found.")
         );
         AppUser appUser = appUserRepository.findById(recipe.getAppUser().getId()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + recipe.getAppUser().getId() + "' was not found.")
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {

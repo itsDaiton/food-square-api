@@ -29,7 +29,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Review get(Long id) {
         return reviewRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Review with id: '" + id + "' was not found.")
         );
     }
 
@@ -41,7 +41,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Review getByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         AppUser appUser = appUserService.getUserFromCookie(request);
 
@@ -53,7 +53,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public List<Review> getAllByAppUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return reviewRepository.findAllByAppUserOrderByUpdatedAtDesc(appUser);
     }
@@ -61,7 +61,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public List<Review> getAllByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         return reviewRepository.findAllByRecipeOrderByUpdatedAtDesc(recipe);
     }
@@ -70,10 +70,10 @@ public class ReviewServiceImpl implements ReviewService{
     public String add(ReviewDto reviewDto, HttpServletRequest request) throws IncorrectUserException {
         Review review = new Review();
         AppUser appUser = appUserRepository.findById(reviewDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + reviewDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + reviewDto.getAppUser() + "' was not found.")
         );
         Recipe recipe = recipeRepository.findById(reviewDto.getRecipe()).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + reviewDto.getRecipe() + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + reviewDto.getRecipe() + "' was not found.")
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
@@ -82,7 +82,6 @@ public class ReviewServiceImpl implements ReviewService{
             }
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setPathToImage(reviewDto.getPathToImage());
             review.setUpdatedAt(LocalDateTime.now());
             review.setAppUser(appUser);
             review.setRecipe(recipe);
@@ -96,13 +95,12 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public String update(ReviewDto reviewDto, Long id, HttpServletRequest request) throws IncorrectUserException {
         Review review = reviewRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist. You cannot edit it.")
+                () -> new NoSuchElementException("Review with id: '" + id + "' was not found.")
         );
 
         if (appUserService.checkUser(review.getAppUser().getId(), request)) {
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setPathToImage(reviewDto.getPathToImage());
             review.setUpdatedAt(LocalDateTime.now());
             reviewRepository.save(review);
 
@@ -114,7 +112,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
         Review review = reviewRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist. You cannot delete it.")
+                () -> new NoSuchElementException("Review with id: '" + id + "' was not found.")
         );
 
         if (appUserService.checkUser(review.getAppUser().getId(), request)) {
@@ -152,7 +150,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Integer countByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         return reviewRepository.countAllByRecipe(recipe);
     }
@@ -160,7 +158,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Integer countLikes(Long id) {
         Review review = reviewRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Review with id: '" + id + "' was not found.")
         );
         return review.getLikes().size();
     }
@@ -172,7 +170,7 @@ public class ReviewServiceImpl implements ReviewService{
         double result;
 
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
 
         List<Review> reviews = reviewRepository.findAllByRecipeOrderByUpdatedAtDesc(recipe);
@@ -194,7 +192,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Boolean containsReview(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         AppUser appUser = appUserService.getUserFromCookie(request);
 
@@ -204,7 +202,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException {
         Review review = reviewRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Review with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Review with id: '" + id + "' was not found.")
         );
         AppUser appUser = appUserService.getUserFromCookie(request);
         return review.getLikes().contains(appUser);
@@ -213,7 +211,7 @@ public class ReviewServiceImpl implements ReviewService{
     @Override
     public String deleteByRecipe(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         AppUser appUser = appUserService.getUserFromCookie(request);
 
@@ -234,7 +232,7 @@ public class ReviewServiceImpl implements ReviewService{
             }
 
             reviewRepository.deleteById(review.getId());
-            return "You review for this recipe has been deleted.";
+            return "You review for this recipe has been deleted successfully.";
         }
         return "There has been a error while trying to delete the review from the recipe.";
     }

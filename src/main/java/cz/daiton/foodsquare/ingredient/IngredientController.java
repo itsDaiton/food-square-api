@@ -3,6 +3,7 @@ package cz.daiton.foodsquare.ingredient;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -43,8 +44,14 @@ public class IngredientController {
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;
 
-        if (e instanceof MethodArgumentTypeMismatchException) {
-            message = "This is not valid ID. Please try again.";
+        if (e instanceof HttpMessageNotReadableException) {
+            message = "Error while parsing JSON. Please enter valid inputs.";
+        }
+        else if (e instanceof MethodArgumentTypeMismatchException) {
+            message = "Wrong argument type. Please try again.";
+        }
+        else if (e instanceof NumberFormatException) {
+            message = "Please enter a valid number.";
         }
         else if (e instanceof HttpRequestMethodNotSupportedException) {
             message = "Wrong request method. Please try again.";

@@ -36,7 +36,7 @@ public class MealPlanServiceImpl implements MealPlanService {
         if (dto.getCategories() != null && !dto.getCategories().isEmpty()) {
             for (String name : dto.getCategories()) {
                 Category category = categoryRepository.findByName(CategoryType.valueOf(name)).orElseThrow(
-                        () -> new NoSuchElementException("Category: '" + CategoryType.valueOf(name) + "' does not exist.")
+                        () -> new NoSuchElementException("Category: '" + CategoryType.valueOf(name) + "' was not found.")
                 );
                 categories.add(category);
             }

@@ -26,7 +26,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Comment get(Long id) {
         return commentRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Comment with id: '" + id + "' was not found.")
         );
     }
 
@@ -38,7 +38,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> getAllByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         return commentRepository.findAllByRecipeOrderByCommentedAtDesc(recipe);
     }
@@ -46,7 +46,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> getAllByAppUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return commentRepository.findAllByAppUserOrderByCommentedAtDesc(appUser);
     }
@@ -55,10 +55,10 @@ public class CommentServiceImpl implements CommentService {
     public String add(CommentDto commentDto, HttpServletRequest request) throws IncorrectUserException {
         Comment comment = new Comment();
         AppUser appUser = appUserRepository.findById(commentDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + commentDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + commentDto.getAppUser() + "' was not found.")
         );
         Recipe recipe = recipeRepository.findById(commentDto.getRecipe()).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + commentDto.getRecipe() + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + commentDto.getRecipe() + "' was not found.")
         );
 
         if (appUserService.checkUser(appUser.getId(), request)) {
@@ -76,7 +76,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public String update(CommentDto commentDto, Long id, HttpServletRequest request) throws IncorrectUserException {
         Comment comment = commentRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot edit it.")
+                () -> new NoSuchElementException("Comment with id: '" + id + "' was not found.")
         );
 
         if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
@@ -92,7 +92,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
         Comment comment = commentRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist. You cannot delete it.")
+                () -> new NoSuchElementException("Comment with id: '" + id + "' was not found.")
         );
 
         if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
@@ -130,7 +130,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Integer countByRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         return commentRepository.countAllByRecipe(recipe);
     }
@@ -138,7 +138,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Integer countLikes(Long id) {
         Comment comment = commentRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Comment with id: '" + id + "' was not found.")
         );
         return comment.getLikes().size();
     }
@@ -146,7 +146,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Boolean isLikedByUser(Long id, HttpServletRequest request) throws IncorrectUserException {
         Comment comment = commentRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Comment with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Comment with id: '" + id + "' was not found.")
         );
         AppUser appUser = appUserService.getUserFromCookie(request);
         return comment.getLikes().contains(appUser);

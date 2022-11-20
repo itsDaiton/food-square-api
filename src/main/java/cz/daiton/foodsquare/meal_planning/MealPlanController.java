@@ -46,7 +46,7 @@ public class MealPlanController {
             message = "Wrong format. Try again.";
         }
         else if (e instanceof MethodArgumentTypeMismatchException) {
-            message = "This is not valid ID. Please try again.";
+            message = "Wrong argument type. Please try again.";
         }
         else if (e instanceof HttpRequestMethodNotSupportedException) {
             message = "Wrong request method. Please try again.";

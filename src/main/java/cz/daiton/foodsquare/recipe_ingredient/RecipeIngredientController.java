@@ -2,18 +2,16 @@ package cz.daiton.foodsquare.recipe_ingredient;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
-import cz.daiton.foodsquare.recipe.Recipe;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -84,7 +82,8 @@ public class RecipeIngredientController {
                     IncorrectUserException.class,
                     InvalidDataAccessApiUsageException.class,
                     DataIntegrityViolationException.class,
-                    NullPointerException.class
+                    NullPointerException.class,
+                    HttpRequestMethodNotSupportedException.class
             })
     public ResponseEntity<?> handleExceptions(Exception e) {
         String message;
@@ -94,6 +93,9 @@ public class RecipeIngredientController {
         }
         else if (e instanceof InvalidDataAccessApiUsageException) {
             message = "Wrong format. Try again.";
+        }
+        else if (e instanceof HttpRequestMethodNotSupportedException) {
+            message = "Wrong request method. Please try again.";
         }
         else {
             message = e.getMessage();

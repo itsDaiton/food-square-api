@@ -7,6 +7,7 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -72,7 +73,8 @@ public class FollowController {
                     HttpMessageNotReadableException.class,
                     IncorrectUserException.class,
                     NumberFormatException.class,
-                    InvalidDataAccessApiUsageException.class
+                    InvalidDataAccessApiUsageException.class,
+                    HttpRequestMethodNotSupportedException.class
             }
     )
     public ResponseEntity<?> handleExceptions(Exception e) {
@@ -81,8 +83,11 @@ public class FollowController {
         if (e instanceof HttpMessageNotReadableException) {
             message = "Error while parsing JSON. Please enter valid inputs.";
         }
+        else if (e instanceof HttpRequestMethodNotSupportedException) {
+            message = "Wrong request method. Please try again.";
+        }
         else if (e instanceof NumberFormatException) {
-            message = "Please enter a valid number as Id.";
+            message = "Please enter a valid number.";
         }
         else if (e instanceof InvalidDataAccessApiUsageException) {
             message = "Wrong format. Try again.";

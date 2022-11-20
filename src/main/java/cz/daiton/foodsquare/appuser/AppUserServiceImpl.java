@@ -88,7 +88,7 @@ public class AppUserServiceImpl implements AppUserService {
             appUser.setLastName(appUserDto.getLastName());
             appUserRepository.save(appUser);
 
-            return "Your personal info has been updated.";
+            return "Your personal info has been updated successfully.";
         }
         return "There has been a error while trying to edit your profile.";
     }
@@ -133,7 +133,7 @@ public class AppUserServiceImpl implements AppUserService {
             fileStorageService.delete(Paths.get(pathToImage));
             appUser.setPathToImage(null);
             appUserRepository.saveAndFlush(appUser);
-            return "Your profile picture has been removed.";
+            return "Your profile picture has been removed successfully.";
         }
         return "There has been a error while trying to remove your profile picture.";
     }
@@ -141,7 +141,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public String like(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException {
         AppUser appUser = appUserRepository.findById(likeDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + likeDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + likeDto.getAppUser() + "' was not found.")
         );
         Review review;
         Comment comment;
@@ -149,7 +149,7 @@ public class AppUserServiceImpl implements AppUserService {
         if (checkUser(appUser.getId(), request)) {
             if (likeDto.getType().equals("review")) {
                 review = reviewRepository.findById(likeDto.getContent()).orElseThrow(
-                        () -> new NoSuchElementException("Review with id: '" + likeDto.getContent() + "' does not exist.")
+                        () -> new NoSuchElementException("Review with id: '" + likeDto.getContent() + "' was not found.")
                 );
                 if (appUser.getLikedReviews().contains(review)) {
                     throw new DataIntegrityViolationException("You already liked this review.");
@@ -160,7 +160,7 @@ public class AppUserServiceImpl implements AppUserService {
             }
             else if(likeDto.getType().equals("comment")) {
                 comment = commentRepository.findById(likeDto.getContent()).orElseThrow(
-                        () -> new NoSuchElementException("Comment with id: '" + likeDto.getContent() + "' does not exist.")
+                        () -> new NoSuchElementException("Comment with id: '" + likeDto.getContent() + "' was not found.")
                 );
                 if (appUser.getLikedComments().contains(comment)) {
                     throw new DataIntegrityViolationException("You already liked this comment.");
@@ -179,7 +179,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public String deleteLike(LikeDto likeDto, HttpServletRequest request) throws IncorrectUserException, IncorrectTypeException {
         AppUser appUser = appUserRepository.findById(likeDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + likeDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + likeDto.getAppUser() + "' was not found.")
         );
         Review review;
         Comment comment;
@@ -187,7 +187,7 @@ public class AppUserServiceImpl implements AppUserService {
         if (checkUser(appUser.getId(), request)) {
             if (likeDto.getType().equals("review")) {
                 review = reviewRepository.findById(likeDto.getContent()).orElseThrow(
-                        () -> new NoSuchElementException("Review with id: '" + likeDto.getContent() + "' does not exist.")
+                        () -> new NoSuchElementException("Review with id: '" + likeDto.getContent() + "' was not found.")
                 );
                 if (appUser.getLikedReviews().contains(review)) {
                     appUser.getLikedReviews().remove(review);
@@ -195,17 +195,20 @@ public class AppUserServiceImpl implements AppUserService {
                     return "You are no longer liking this review.";
                 }
                 else {
-                    throw new NoSuchElementException("You cannot delete like on a review which you did not liked before.");
+                    throw new NoSuchElementException("Unable to delete like. Review was not liked before.");
                 }
             }
             else if (likeDto.getType().equals("comment")) {
                 comment = commentRepository.findById(likeDto.getContent()).orElseThrow(
-                        () -> new NoSuchElementException("Comment with id: '" + likeDto.getContent() + "' does not exist.")
+                        () -> new NoSuchElementException("Comment with id: '" + likeDto.getContent() + "' was not found.")
                 );
                 if (appUser.getLikedComments().contains(comment)) {
                     appUser.getLikedComments().remove(comment);
                     appUserRepository.save(appUser);
                     return "You are no longer liking this comment.";
+                }
+                else {
+                    throw new NoSuchElementException("Unable to delete like. Comment was not liked before.");
                 }
             }
             else {
@@ -241,7 +244,7 @@ public class AppUserServiceImpl implements AppUserService {
                 return true;
             }
             else {
-                throw new IncorrectUserException("You are not authorized to operate with other user's content.");
+                throw new IncorrectUserException("You are not authorized to manipulate with other user's content.");
             }
         }
         else {
@@ -264,13 +267,13 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public String favoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException {
         AppUser appUser = appUserRepository.findById(favoriteDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' was not found.")
         );
         Recipe recipe;
 
         if (checkUser(appUser.getId(), request)) {
             recipe = recipeRepository.findById(favoriteDto.getRecipe()).orElseThrow(
-                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' does not exist.")
+                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' was not found.")
             );
             if (appUser.getFavoriteRecipes().contains(recipe)) {
                 throw new DataIntegrityViolationException("You already added this recipe to your favorites.");
@@ -285,21 +288,21 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public String unfavoriteRecipe(FavoriteDto favoriteDto, HttpServletRequest request) throws IncorrectUserException {
         AppUser appUser = appUserRepository.findById(favoriteDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + favoriteDto.getAppUser() + "' was not found.")
         );
         Recipe recipe;
 
         if (checkUser(appUser.getId(), request)) {
             recipe = recipeRepository.findById(favoriteDto.getRecipe()).orElseThrow(
-                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' does not exist.")
+                    () -> new NoSuchElementException("Recipe with id: " + favoriteDto.getRecipe() + "' was not found.")
             );
             if (appUser.getFavoriteRecipes().contains(recipe)) {
                 appUser.getFavoriteRecipes().remove(recipe);
                 appUserRepository.save(appUser);
-                return "Recipe has been removed from favorites.";
+                return "Recipe has been successfully removed from favorites.";
             }
             else {
-                throw new NoSuchElementException("You cannot unfavorite recipe which you did not added to favorites before.");
+                throw new NoSuchElementException("Unable to unfavorite recipe. Recipe was not in your favorites before.");
             }
         }
         return "There has been a error while trying to unfavorite the recipe.";
@@ -308,7 +311,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public List<Recipe> getFavoriteRecipesOfUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return recipeRepository.findAllByFavoritesOrderByUpdatedAtDesc(appUser);
     }
@@ -316,7 +319,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public List<Review> getLikedReviewsOfUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return reviewRepository.findAllByLikes(appUser);
     }
@@ -324,7 +327,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public List<Comment> getLikedCommentsOfUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return commentRepository.findAllByLikes(appUser);
     }
@@ -332,7 +335,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public Integer countFollowers(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return followRepository.countAllByFollowed(appUser);
     }
@@ -340,7 +343,7 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public Integer countFollowing(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return followRepository.countAllByFollower(appUser);
     }

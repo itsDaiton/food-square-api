@@ -78,26 +78,26 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(RoleType.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("Role is not found."));
+                    .orElseThrow(() -> new RuntimeException("Role was not found."));
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
                         Role roleAdmin = roleRepository.findByName(RoleType.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role was not found."));
                         roles.add(roleAdmin);
                         break;
 
                     case "moderator":
                         Role roleModerator = roleRepository.findByName(RoleType.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RuntimeException("Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role was not found."));
                         roles.add(roleModerator);
                         break;
 
                     default:
                         Role roleUser = roleRepository.findByName(RoleType.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("Role is not found."));
+                                .orElseThrow(() -> new RuntimeException("Role was not found."));
                         roles.add(roleUser);
                 }
             });
@@ -143,6 +143,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return ResponseEntity
                 .ok()
                 .header(HttpHeaders.SET_COOKIE, cookie.toString())
-                .body(new MessageResponse("You have been logged out."));
+                .body(new MessageResponse("You have been logged out successfully."));
     }
 }

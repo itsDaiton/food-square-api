@@ -136,10 +136,10 @@ public class AppUserController {
             message = "Error while parsing JSON. Please enter valid inputs.";
         }
         else if (e instanceof NumberFormatException) {
-            message = "Please enter a valid number as Id.";
+            message = "Please enter a valid number.";
         }
         else if (e instanceof MethodArgumentTypeMismatchException) {
-            message = "This is not valid ID. Please try again.";
+            message = "Wrong argument type. Please try again.";
         }
         else if (e instanceof HttpRequestMethodNotSupportedException) {
             message = "Wrong request method. Please try again.";

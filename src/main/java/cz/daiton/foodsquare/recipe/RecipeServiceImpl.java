@@ -84,7 +84,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public List<Recipe> getAllByUser(Long id) {
         AppUser appUser = appUserRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + id + "' was not found.")
         );
         return recipeRepository.findAllByAppUserOrderByUpdatedAtDesc(appUser);
     }
@@ -113,7 +113,7 @@ public class RecipeServiceImpl implements RecipeService {
     public Recipe add(RecipeDto recipeDto, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = new Recipe();
         AppUser appUser = appUserRepository.findById(recipeDto.getAppUser()).orElseThrow(
-                () -> new NoSuchElementException("User with id: '" + recipeDto.getAppUser() + "' does not exist.")
+                () -> new NoSuchElementException("User with id: '" + recipeDto.getAppUser() + "' was not found.")
         );
         CategoryInputDto inputs = recipeDto.getInputs();
 
@@ -127,7 +127,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Boolean checkFavorite(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' doest not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         AppUser me = appUserService.getUserFromCookie(request);
 
@@ -137,7 +137,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public String uploadImage(Long id, MultipartFile file, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         try {
             if (appUserService.checkUser(recipe.getAppUser().getId(), request)) {
@@ -156,14 +156,14 @@ public class RecipeServiceImpl implements RecipeService {
             }
             return "There has been a error while trying to upload your image.";
         } catch (Exception e) {
-            return "Could not update your profile picture. Error: " + e.getMessage();
+            return "Could not recipe image. Error: " + e.getMessage();
         }
     }
 
     @Override
     public String update(RecipeDto recipeDto, Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' has not been found.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         CategoryInputDto inputs = recipeDto.getInputs();
 
@@ -209,7 +209,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Transactional
     public String delete(Long id, HttpServletRequest request) throws IncorrectUserException {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist. You cannot delete it.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
 
         if (appUserService.checkUser(recipe.getAppUser().getId(), request)) {
@@ -276,7 +276,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Set<Category> getCategoriesInRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id: '" + id + "' does not exist.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
         return categoryRepository.findAllByRecipes(recipe);
     }
