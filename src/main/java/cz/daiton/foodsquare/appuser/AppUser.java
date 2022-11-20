@@ -77,6 +77,10 @@ public class AppUser {
     @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
 
+    @OneToMany(mappedBy = "appUser")
+    @JsonIgnore
+    private Set<Review> reviews = new HashSet<>();
+
     @ManyToMany
     @JoinTable(
             name = "app_user_roles",
