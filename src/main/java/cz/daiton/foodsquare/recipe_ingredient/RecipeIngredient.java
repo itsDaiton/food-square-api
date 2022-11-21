@@ -31,7 +31,7 @@ public class RecipeIngredient {
     private Long id;
 
     @NotNull(message = required)
-    @Min(value = 1, message = "You have to include the ingredient at least once.")
+    @Min(value = 1, message = "You have to include at least 1g of the ingredient.")
     private Integer amount;
 
     @ManyToOne()
