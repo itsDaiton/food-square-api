@@ -133,9 +133,9 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
         if (appUserService.checkUser(appUser.getId(), request)) {
             recipeIngredient.setAmount(recipeIngredientDto.getAmount());
             recipeIngredientRepository.save(recipeIngredient);
-            return "Amount of ingredients has been successfully updated.";
+            return "Amount has been successfully updated.";
         }
-        return "There has been a error while trying to update the amount of ingredients.";
+        return "There has been a error while trying to update the amount in ingredient.";
     }
 
     @Override
@@ -174,20 +174,22 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
 
         if (!ingredientList.isEmpty()) {
             for (RecipeIngredient r : ingredientList) {
-                totalCalories += (r.getAmount() * r.getIngredient().getCalories().doubleValue());
-                totalFat += (r.getAmount() * r.getIngredient().getFat().doubleValue());
-                totalSaturatedFattyAcids += (r.getAmount() * r.getIngredient().getSaturatedFattyAcids().doubleValue());
-                totalMonounsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getMonounsaturatedFattyAcids().doubleValue());
-                totalPolyunsaturatedFattyAcids += (r.getAmount() * r.getIngredient().getPolyunsaturatedFattyAcids().doubleValue());
-                totalTransFattyAcids += (r.getAmount() * r.getIngredient().getTransFattyAcids().doubleValue());
-                totalCarbohydrateTotal += (r.getAmount() * r.getIngredient().getCarbohydrateTotal().doubleValue());
-                totalCarbohydrateAvailable += (r.getAmount() * r.getIngredient().getCarbohydrateAvailable().doubleValue());
-                totalFibre += (r.getAmount() * r.getIngredient().getFibre().doubleValue());
-                totalSugar += (r.getAmount() * r.getIngredient().getSugar().doubleValue());
-                totalProtein += (r.getAmount() * r.getIngredient().getProtein().doubleValue());
-                totalSodium += (r.getAmount() * r.getIngredient().getSodium().doubleValue());
-                totalSalt += (r.getAmount() * r.getIngredient().getSalt().doubleValue());
-                totalWater += (r.getAmount() * r.getIngredient().getWater().doubleValue());
+                double coefficient = r.getAmount().doubleValue() / 100;
+
+                totalCalories += (r.getIngredient().getCalories().doubleValue() * coefficient);
+                totalFat += (r.getIngredient().getFat().doubleValue() * coefficient);
+                totalSaturatedFattyAcids += (r.getIngredient().getSaturatedFattyAcids().doubleValue() * coefficient);
+                totalMonounsaturatedFattyAcids += (r.getIngredient().getMonounsaturatedFattyAcids().doubleValue() * coefficient);
+                totalPolyunsaturatedFattyAcids += (r.getIngredient().getPolyunsaturatedFattyAcids().doubleValue() * coefficient);
+                totalTransFattyAcids += (r.getIngredient().getTransFattyAcids().doubleValue() * coefficient);
+                totalCarbohydrateTotal += (r.getIngredient().getCarbohydrateTotal().doubleValue() * coefficient);
+                totalCarbohydrateAvailable += (r.getIngredient().getCarbohydrateAvailable().doubleValue() * coefficient);
+                totalFibre += (r.getIngredient().getFibre().doubleValue() * coefficient);
+                totalSugar += (r.getIngredient().getSugar().doubleValue() * coefficient);
+                totalProtein += (r.getIngredient().getProtein().doubleValue() * coefficient);
+                totalSodium += (r.getIngredient().getSodium().doubleValue() * coefficient);
+                totalSalt += (r.getIngredient().getSalt().doubleValue() * coefficient);
+                totalWater += (r.getIngredient().getWater().doubleValue() * coefficient);
             }
         }
 
