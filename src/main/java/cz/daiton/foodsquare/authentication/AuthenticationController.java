@@ -4,6 +4,8 @@ import cz.daiton.foodsquare.authentication.request.LoginRequestDTO;
 import cz.daiton.foodsquare.authentication.request.RegisterRequestDTO;
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
@@ -23,22 +25,26 @@ import java.util.NoSuchElementException;
         allowCredentials = "true"
 )
 @AllArgsConstructor
+@Tag(description = "Set of endpoints for user authentication.", name = "Authentication Controller")
 public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
 
     @PostMapping("/register")
+    @Operation(summary = "Creates a user.")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequestDTO registerRequestDto) {
         return authenticationService.register(registerRequestDto);
     }
 
     @PostMapping("/login")
+    @Operation(summary = "Makes a login request.")
     public ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequestDTO loginRequestDto) {
         return authenticationService.login(loginRequestDto);
     }
 
     @PostMapping("logout")
     @PreAuthorize("isAuthenticated()")
+    @Operation(summary = "Makes a logout request.")
     public ResponseEntity<?> logoutUser() {
         return authenticationService.logout();
     }
