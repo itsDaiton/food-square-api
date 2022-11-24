@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.category;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.recipe.Recipe;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a category used in recipes.")
 public class Category {
 
     @Id
@@ -26,6 +28,7 @@ public class Category {
     private Long id;
 
     @Enumerated(EnumType.STRING)
+    @Schema(description = "Name of the category.", example = "GLUTEN_FREE")
     private CategoryType name;
 
     @JsonIgnore
