@@ -2,6 +2,9 @@ package cz.daiton.foodsquare.recipe_ingredient;
 
 import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
@@ -23,53 +26,77 @@ import java.util.NoSuchElementException;
         allowCredentials = "true"
 )
 @AllArgsConstructor
+@Tag(
+        description = "Set of endpoints for CRUD operations with recipe-ingredient relations.",
+        name = "Recipe Ingredient Controller"
+)
 public class RecipeIngredientController {
 
     private final RecipeIngredientService recipeIngredientService;
 
     @GetMapping(value = "/{id}")
-    public RecipeIngredient getRecipeIngredient(@PathVariable Long id) {
+    @Operation(summary = "Returns a specific recipe-ingredient relation based on given parameter.")
+    public RecipeIngredient getRecipeIngredient(
+            @Parameter(description = "ID of the recipe-ingredient relation.", example = "1") @PathVariable Long id) {
         return recipeIngredientService.get(id);
     }
 
     @GetMapping()
+    @Operation(summary = "Returns a list of all recipe-ingredient relations.")
     public List<RecipeIngredient> getAllRecipeIngredients() {
         return recipeIngredientService.getAll();
     }
 
     @GetMapping(value = "/recipe/{id}")
-    public List<RecipeIngredient> getAllByRecipe(@PathVariable Long id) {
+    @Operation(summary = "Returns all recipe-ingredient relations for a recipe.")
+    public List<RecipeIngredient> getAllByRecipe(
+            @Parameter(description = "ID of the recipe.", example = "1") @PathVariable Long id) {
         return recipeIngredientService.getAllByRecipe(id);
     }
 
     @GetMapping(value = "/recipe/{id}/nutrition-analysis")
-    public NutritionAnalysis getNutritionAnalysis(@PathVariable Long id) {
+    @Operation(summary = "Returns a nutrition analysis for a recipe.")
+    public NutritionAnalysis getNutritionAnalysis(
+            @Parameter(description = "ID of the recipe.", example = "1") @PathVariable Long id) {
         return recipeIngredientService.calculateNutritionAnalysisForRecipe(id);
     }
 
     @PostMapping(value = "/add")
-    public ResponseEntity<?> addIngredientToRecipe(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Adds a ingredient to recipe.")
+    public ResponseEntity<?> addIngredientToRecipe(
+            @Valid @RequestBody RecipeIngredientDto recipeIngredientDto,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.add(recipeIngredientDto, request)));
     }
 
     @PostMapping(value = "/addAll")
-    public ResponseEntity<?> addAllIngredientsToRecipe(@Valid @RequestBody RecipeIngredientListDto list, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Adds multiple ingredient to recipe.")
+    public ResponseEntity<?> addAllIngredientsToRecipe(
+            @Valid @RequestBody RecipeIngredientListDto list,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.addAll(list, request)));
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> updateIngredientAmount(@Valid @RequestBody RecipeIngredientDto recipeIngredientDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Updates amount of ingredient in recipe.")
+    public ResponseEntity<?> updateIngredientAmount(
+            @Valid @RequestBody RecipeIngredientDto recipeIngredientDto,
+            @Parameter(description = "ID of the recipe-ingredient relation.", example = "1") @PathVariable Long id,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.update(recipeIngredientDto, id, request)));
     }
 
     @DeleteMapping(value = "{id}")
-    public ResponseEntity<?> deleteIngredientFromRecipe(@PathVariable Long id, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Deletes ingredient from recipe.")
+    public ResponseEntity<?> deleteIngredientFromRecipe(
+            @Parameter(description = "ID of the recipe-ingredient relation.", example = "1") @PathVariable Long id,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(recipeIngredientService.delete(id, request)));
