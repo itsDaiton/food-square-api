@@ -20,7 +20,7 @@ public class MealPlanRequestDto {
     @Setter(AccessLevel.NONE)
     private final String required = "This field is required.";
 
-    @Schema(description = "Allowed categories.", example = "FISH_FREE")
+    @Schema(description = "Allowed categories.")
     Set<String> categories;
 
     @NotNull(message = required)

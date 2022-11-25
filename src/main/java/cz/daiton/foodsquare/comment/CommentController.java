@@ -33,7 +33,7 @@ public class CommentController {
 
     @GetMapping(value = "/{id}")
     @Operation(summary = "Returns a specific comment based on given parameter.")
-    public Comment getComment(@PathVariable Long id) {
+    public Comment getComment(@Parameter(description = "ID of the comment.", example = "1") @PathVariable Long id) {
         return commentService.get(id);
     }
 

@@ -72,7 +72,7 @@ public class RecipeIngredientController {
     }
 
     @PostMapping(value = "/addAll")
-    @Operation(summary = "Adds multiple ingredient to recipe.")
+    @Operation(summary = "Adds multiple ingredients to recipe.")
     public ResponseEntity<?> addAllIngredientsToRecipe(
             @Valid @RequestBody RecipeIngredientListDto list,
             HttpServletRequest request) throws Exception {
