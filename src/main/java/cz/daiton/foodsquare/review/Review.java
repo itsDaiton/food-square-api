@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.recipe.Recipe;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a review.")
 public class Review {
 
     @Transient
@@ -32,10 +34,12 @@ public class Review {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for review.", example = "1")
     private Long id;
 
     @Column(nullable = false)
     @NotEmpty(message = required)
+    @Schema(description = "Text of the review.", example = "example review text")
     private String text;
 
     @Column(nullable = false)
@@ -43,6 +47,7 @@ public class Review {
     @DecimalMin(value = "1.00", message = "You must rate at least 1 star.")
     @DecimalMax(value = "5.00", message = "You cannot rate more than 5 stars.")
     @Digits(integer = 1, fraction = 0, message = "Rating cannot be a decimal number.")
+    @Schema(description = "Rating of the review.", example = "5")
     private BigDecimal rating;
 
     @Column(
@@ -50,6 +55,7 @@ public class Review {
             nullable = false
     )
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Schema(description = "Date of last update to the review.")
     private LocalDateTime updatedAt;
 
     @ManyToOne

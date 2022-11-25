@@ -2,6 +2,7 @@ package cz.daiton.foodsquare.recipe_ingredient;
 
 import cz.daiton.foodsquare.ingredient.Ingredient;
 import cz.daiton.foodsquare.recipe.Recipe;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a recipe-ingredient relation.")
 public class RecipeIngredient {
 
     @Transient
@@ -28,10 +30,12 @@ public class RecipeIngredient {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for recipe-ingredient relation.", example = "1")
     private Long id;
 
     @NotNull(message = required)
     @Min(value = 1, message = "You have to include at least 1g of the ingredient.")
+    @Schema(description = "Amount of the ingredient in recipe (in grams).", example = "100")
     private Integer amount;
 
     @ManyToOne()

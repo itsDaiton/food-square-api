@@ -4,6 +4,9 @@ import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.payload.response.MessageResponse;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.review.Review;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -24,105 +27,139 @@ import java.util.List;
         allowCredentials = "true"
 )
 @AllArgsConstructor
+@Tag(description = "Set of endpoints for CRUD operations with users.", name = "User Controller")
 public class AppUserController {
 
     private final AppUserService appUserService;
     private final AppUserRepository appUserRepository;
 
     @GetMapping(value = "/{id}")
-    public AppUser getUser(@PathVariable Long id) {
+    @Operation(summary = "Returns a specific user based on given parameter.")
+    public AppUser getUser(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.get(id);
     }
 
     @GetMapping()
+    @Operation(summary = "Returns list of all users in the application.")
     public List<AppUser> getAllUsers() {
         return appUserService.getAll();
     }
 
     @GetMapping(value = "/{id}/followers")
-    public List<AppUser> getFollowers(@PathVariable Long id) {
+    @Operation(summary = "Returns list of all users that follow the specific user.")
+    public List<AppUser> getFollowers(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.getFollowers(id);
     }
 
     @GetMapping(value = "/{id}/following")
-    public List<AppUser> getFollowing(@PathVariable Long id) {
+    @Operation(summary = "Returns list of all users that the specific user is following.")
+    public List<AppUser> getFollowing(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.getFollowing(id);
     }
 
     @GetMapping(value = "/random")
+    @Operation(summary = "Returns list of 5 random users from the application.")
     public List<AppUser> get5RandomUsers() {
         return appUserRepository.find5RandomUsers();
     }
 
     @GetMapping(value = "/{id}/followers-count")
-    public Integer countFollowers(@PathVariable Long id) {
+    @Operation(summary = "Returns a count of followers for a specific user.")
+    public Integer countFollowers(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.countFollowers(id);
     }
 
     @GetMapping(value = "/{id}/following-count")
-    public Integer countFollowing(@PathVariable Long id) {
+    @Operation(summary = "Returns a count of users that the specific user is following.")
+    public Integer countFollowing(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.countFollowing(id);
     }
 
     @PutMapping(value = "/like")
-    public ResponseEntity<?> like(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Likes the desired content.")
+    public ResponseEntity<?> like(
+            @RequestBody LikeDto likeDto,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.like(likeDto, request)));
     }
 
     @PutMapping(value = "/unlike")
-    public ResponseEntity<?> deleteLike(@RequestBody LikeDto likeDto, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Unlikes the desired content.")
+    public ResponseEntity<?> deleteLike(
+            @RequestBody LikeDto likeDto,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.deleteLike(likeDto, request)));
     }
 
     @PutMapping(value = "/recipes/favorite")
-    public ResponseEntity<?> favoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Adds a recipe to favorites.")
+    public ResponseEntity<?> favoriteRecipe(
+            @RequestBody FavoriteDto favoriteDto,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.favoriteRecipe(favoriteDto, request)));
     }
 
     @PutMapping(value = "/recipes/unfavorite")
-    public ResponseEntity<?> unfavoriteRecipe(@RequestBody FavoriteDto favoriteDto, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Removes a recipe from favorites.")
+    public ResponseEntity<?> unfavoriteRecipe(
+            @RequestBody FavoriteDto favoriteDto,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.unfavoriteRecipe(favoriteDto, request)));
     }
 
     @GetMapping(value = "/{id}/favorite-recipes")
-    public List<Recipe> getFavoriteRecipesOfUser(@PathVariable Long id) {
+    @Operation(summary = "Returns list of favorite recipes of a specific user.")
+    public List<Recipe> getFavoriteRecipesOfUser(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.getFavoriteRecipesOfUser(id);
     }
 
     @GetMapping(value = "/{id}/liked-comments")
-    public List<Comment> getLikedCommentsOfUser(@PathVariable Long id) {
+    @Operation(summary = "Returns list of liked comments of a specific user.")
+    public List<Comment> getLikedCommentsOfUser(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.getLikedCommentsOfUser(id);
     }
 
     @GetMapping(value = "/{id}/liked-reviews")
-    public List<Review> getLikedReviewsOfUser(@PathVariable Long id) {
+    @Operation(summary = "Returns list of liked reviews of a specific user.")
+    public List<Review> getLikedReviewsOfUser(@Parameter(description = "ID of the user.", example = "1") @PathVariable Long id) {
         return appUserService.getLikedReviewsOfUser(id);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> updatePersonalInfo(@RequestBody AppUserDto appUserDto, @PathVariable Long id, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Updates user's personal information.")
+    public ResponseEntity<?> updatePersonalInfo(
+            @RequestBody AppUserDto appUserDto,
+            @Parameter(description = "ID of the user.", example = "1") @PathVariable Long id,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.updatePersonalInfo(appUserDto, id, request)));
     }
 
     @PutMapping(value = "/{id}/image")
-    public ResponseEntity<?> addProfilePicture(@PathVariable Long id, @RequestParam("image") MultipartFile file, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Adds a profile picture for a user.")
+    public ResponseEntity<?> addProfilePicture(
+            @Parameter(description = "ID of the user.", example = "1") @PathVariable Long id,
+            @Parameter(description = "Multipart image file.") @RequestParam("image") MultipartFile file,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.updateProfilePicture(id, file, request)));
     }
 
     @DeleteMapping(value = "/{id}/image")
-    public ResponseEntity<?> removeProfilePicture(@PathVariable Long id, HttpServletRequest request) throws Exception {
+    @Operation(summary = "Removes profile picture for a user.")
+    public ResponseEntity<?> removeProfilePicture(
+            @Parameter(description = "ID of the user.", example = "1") @PathVariable Long id,
+            HttpServletRequest request) throws Exception {
         return ResponseEntity
                 .ok()
                 .body(new MessageResponse(appUserService.deleteProfilePicture(id, request)));

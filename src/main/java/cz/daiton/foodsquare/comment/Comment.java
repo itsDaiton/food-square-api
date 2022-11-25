@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import cz.daiton.foodsquare.appuser.AppUser;
 import cz.daiton.foodsquare.recipe.Recipe;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a created comment.")
 public class Comment {
 
     @Transient
@@ -29,6 +31,7 @@ public class Comment {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for comment.", example = "1")
     private Long id;
 
     @Column(
@@ -37,6 +40,7 @@ public class Comment {
     )
     @NotEmpty(message = required)
     @Size(max = 500, message = "Comment can contain a maximum of 500 characters.")
+    @Schema(description = "Text of the comment.", example = "example text")
     private String text;
 
     @Column(
@@ -44,6 +48,7 @@ public class Comment {
             nullable = false
     )
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Schema(description = "Date of the comment creation.")
     private LocalDateTime commentedAt;
 
     @ManyToOne

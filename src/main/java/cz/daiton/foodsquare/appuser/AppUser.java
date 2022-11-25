@@ -6,6 +6,7 @@ import cz.daiton.foodsquare.follow.Follow;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.role.Role;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a user registered in the application.")
 public class AppUser {
 
     @Transient
@@ -32,6 +34,7 @@ public class AppUser {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for user.", example = "1")
     private Long id;
 
     @Column(
@@ -39,6 +42,7 @@ public class AppUser {
     )
     @NotNull(message = required)
     @Email(message = "This is not a valid e-mail address.")
+    @Schema(description = "Email of the user.", example = "user@example.com")
     private String email;
 
     @Column(
@@ -47,16 +51,19 @@ public class AppUser {
     )
     @NotNull(message = required)
     @Size(min = 2, max = 30, message = "Username must be between 2 and 30 characters long.")
+    @Schema(description = "Username of the user.", example = "user123")
     private String userName;
 
     @Column(
             name = "first_name"
     )
+    @Schema(description = "First name of the user.", example = "John")
     private String firstName;
 
     @Column(
             name = "last_name"
     )
+    @Schema(description = "Last name of the user.", example = "Doe")
     private String lastName;
 
     @JsonIgnore
@@ -67,6 +74,7 @@ public class AppUser {
     @Column(
             name = "path_to_image"
     )
+    @Schema(description = "Path to a image file representing profile picture of a user.", example = "/img/users/1.png")
     private String pathToImage;
 
     @OneToMany(mappedBy = "appUser")

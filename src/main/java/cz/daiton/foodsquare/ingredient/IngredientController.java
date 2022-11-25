@@ -1,6 +1,9 @@
 package cz.daiton.foodsquare.ingredient;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -19,16 +22,19 @@ import java.util.NoSuchElementException;
         allowCredentials = "true"
 )
 @AllArgsConstructor
+@Tag(description = "Set of endpoints for CRUD operations with ingredients.", name = "Ingredient Controller")
 public class IngredientController {
 
     private final IngredientService ingredientService;
 
     @GetMapping(value = "/{id}")
-    public Ingredient getIngredient(@PathVariable Long id) {
+    @Operation(summary = "Returns a specific ingredient based on given parameter.")
+    public Ingredient getIngredient(@Parameter(description = "ID of the ingredient.", example = "1") @PathVariable Long id) {
         return ingredientService.get(id);
     }
 
     @GetMapping()
+    @Operation(summary = "Returns list of all ingredients in the database.")
     public List<Ingredient> getAllIngredients() {
         return ingredientService.getAll();
     }

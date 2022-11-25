@@ -10,7 +10,7 @@
     </parent>
     <groupId>cz.daiton</groupId>
     <artifactId>foodsquare</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>FoodSquare</name>
     <description>Food Square - API</description>
     <properties>
@@ -100,7 +100,16 @@
             <artifactId>spring-batch-core</artifactId>
             <version>4.3.6</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-security</artifactId>
+            <version>1.6.13</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -113,7 +122,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>
@@ -130,5 +138,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
