@@ -7,6 +7,7 @@ import cz.daiton.foodsquare.category.Category;
 import cz.daiton.foodsquare.comment.Comment;
 import cz.daiton.foodsquare.recipe_ingredient.RecipeIngredient;
 import cz.daiton.foodsquare.review.Review;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing a recipe.")
 public class Recipe {
 
     @Transient
@@ -34,23 +36,28 @@ public class Recipe {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for recipe.", example = "1")
     private Long id;
 
     @Column(nullable = false)
     @NotEmpty(message = required)
+    @Schema(description = "Name of the recipe.", example = "Example recipe")
     private String name;
 
     @Column(nullable = false)
     @NotEmpty(message = required)
+    @Schema(description = "Description of the recipe.", example = "Example description")
     private String description;
 
     @Column(nullable = false)
     @NotEmpty(message = required)
+    @Schema(description = "Instructions of the recipe.", example = "Example instructions")
     private String instructions;
 
     @Column(
             name = "path_to_image"
     )
+    @Schema(description = "Path to recipe image.", example = "/img/recipes/1.jpg")
     private String pathToImage;
 
     @Column(
@@ -59,6 +66,7 @@ public class Recipe {
     )
     @NotNull(message = required)
     @Min(value = 1, message = "Preparation time must be at least 1 minute.")
+    @Schema(description = "Preparation time of the recipe.", example = "20")
     private Integer timeToPrepare;
 
     @Column(
@@ -67,12 +75,14 @@ public class Recipe {
     )
     @NotNull(message = required)
     @Min(value = 1, message = "Cooking time must be at least 1 minute.")
+    @Schema(description = "Cooking time of the recipe.", example = "10")
     private Integer timeToCook;
 
     @Column(
             name = "updated_at"
     )
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Schema(description = "Date of last update to the recipe.")
     private LocalDateTime updatedAt;
 
     @ManyToOne
@@ -117,6 +127,7 @@ public class Recipe {
 
     @Enumerated(EnumType.STRING)
     @NotNull(message = required)
+    @Schema(description = "Meal type of the recipe.", example = "DINNER")
     private RecipeMeal meal;
 
     @Override
