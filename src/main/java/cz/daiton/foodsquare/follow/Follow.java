@@ -1,6 +1,7 @@
 package cz.daiton.foodsquare.follow;
 
 import cz.daiton.foodsquare.appuser.AppUser;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.hibernate.annotations.Check;
 
@@ -16,12 +17,14 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 @Setter
+@Schema(description = "Class representing follow relation between two users.")
 public class Follow {
 
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Schema(description = "Unique identifier for follow relation.", example = "1")
     private Long id;
 
     @ManyToOne
