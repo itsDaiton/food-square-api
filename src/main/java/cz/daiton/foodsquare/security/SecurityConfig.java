@@ -75,22 +75,14 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET, "/api/v1/reviews/**", "/api/v1/reviews").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/recipes/**", "/api/v1/recipes").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/follows/**", "/api/v1/follows").permitAll()
-                .antMatchers("/api/v1/docs").permitAll()
                 .antMatchers("/img/**").permitAll()
                 .antMatchers("/api/v1/meal-planning/generate").permitAll()
+                .antMatchers("/api/v1/docs", "/api/v1/docs/**").permitAll()
+                .antMatchers("/api/v1/swagger-ui/*", "/api/v1/swagger-ui/**").permitAll()
+                .antMatchers("/favicon.ico").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
-    }
-
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers(
-                "/api/v1/swagger-ui/*",
-                "/api/v1/swagger-ui/**",
-                "/api/v1/docs/**",
-                "/favicon.ico"
-        );
     }
 
     @Bean
