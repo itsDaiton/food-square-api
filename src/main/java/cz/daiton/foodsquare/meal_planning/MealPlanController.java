@@ -1,6 +1,8 @@
 package cz.daiton.foodsquare.meal_planning;
 
 import cz.daiton.foodsquare.payload.response.MessageResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +22,13 @@ import java.util.NoSuchElementException;
         allowCredentials = "true"
 )
 @AllArgsConstructor
+@Tag(description = "Controller used to generate meal plans.", name = "Meal Plan Controller")
 public class MealPlanController {
 
     private final MealPlanService mealPlanService;
 
     @PutMapping(value = "/generate")
+    @Operation(summary = "Returns a generated meal plan based on inputs.")
     public MealPlanOutput generateMealPlan(@Valid @RequestBody MealPlanRequestDto dto) throws Exception {
         return mealPlanService.generateMealPlan(dto);
     }
