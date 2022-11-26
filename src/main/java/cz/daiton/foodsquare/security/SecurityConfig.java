@@ -80,6 +80,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/docs", "/api/v1/docs/**").permitAll()
                 .antMatchers("/api/v1/swagger-ui/*", "/api/v1/swagger-ui/**").permitAll()
                 .antMatchers("/favicon.ico").permitAll()
+                .antMatchers("/docs/tests/*", "/docs/tests/**").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
