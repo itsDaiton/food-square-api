@@ -49,7 +49,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Recipe get(Long id) {
         return recipeRepository.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Recipe with id'" + id + "' was not found.")
+                () -> new NoSuchElementException("Recipe with id: '" + id + "' was not found.")
         );
     }
 
