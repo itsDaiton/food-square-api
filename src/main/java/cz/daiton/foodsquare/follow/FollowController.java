@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -91,7 +92,8 @@ public class FollowController {
                     IncorrectUserException.class,
                     NumberFormatException.class,
                     InvalidDataAccessApiUsageException.class,
-                    HttpRequestMethodNotSupportedException.class
+                    HttpRequestMethodNotSupportedException.class,
+                    DataIntegrityViolationException.class
             }
     )
     public ResponseEntity<?> handleExceptions(Exception e) {
