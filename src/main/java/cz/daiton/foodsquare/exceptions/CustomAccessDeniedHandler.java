@@ -33,7 +33,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         final Map<String, Object> body = new HashMap<>();
         body.put("status", HttpServletResponse.SC_FORBIDDEN);
         body.put("error", "Forbidden");
-        body.put("message", accessDeniedException.getLocalizedMessage());
+        body.put("message", accessDeniedException.getLocalizedMessage() + ".");
         body.put("path", request.getServletPath());
 
         final ObjectMapper mapper = new ObjectMapper();
