@@ -17,6 +17,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -151,6 +152,9 @@ public class RecipeController {
         }
         else if (e instanceof HttpRequestMethodNotSupportedException) {
             message = "Wrong request method. Please try again.";
+        }
+        else if (e instanceof MissingServletRequestPartException) {
+            message = "Please choose an image.";
         }
         else {
             message = e.getMessage();
