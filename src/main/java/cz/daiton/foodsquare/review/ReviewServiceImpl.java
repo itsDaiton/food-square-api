@@ -7,6 +7,7 @@ import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.recipe.RecipeRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,9 @@ public class ReviewServiceImpl implements ReviewService{
     private final AppUserRepository appUserRepository;
     private final RecipeRepository recipeRepository;
     private final AppUserService appUserService;
+
+    @Value("${server.timezone.offset}")
+    private final long offset;
 
     @Override
     public Review get(Long id) {
@@ -82,7 +86,7 @@ public class ReviewServiceImpl implements ReviewService{
             }
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setUpdatedAt(LocalDateTime.now());
+            review.setUpdatedAt(LocalDateTime.now().plusHours(offset));
             review.setAppUser(appUser);
             review.setRecipe(recipe);
 
@@ -101,7 +105,7 @@ public class ReviewServiceImpl implements ReviewService{
         if (appUserService.checkUser(review.getAppUser().getId(), request)) {
             review.setText(reviewDto.getText());
             review.setRating(reviewDto.getRating());
-            review.setUpdatedAt(LocalDateTime.now());
+            review.setUpdatedAt(LocalDateTime.now().plusHours(offset));
             reviewRepository.save(review);
 
             return "Review has been successfully updated.";

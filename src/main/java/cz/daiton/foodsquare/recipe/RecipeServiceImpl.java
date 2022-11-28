@@ -20,6 +20,7 @@ import cz.daiton.foodsquare.review.Review;
 import cz.daiton.foodsquare.review.ReviewRepository;
 import cz.daiton.foodsquare.review.ReviewService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -45,6 +46,9 @@ public class RecipeServiceImpl implements RecipeService {
     private final ReviewRepository reviewRepository;
     private final FollowRepository followRepository;
     private final FileStorageService fileStorageService;
+
+    @Value("${server.timezone.offset}")
+    private final long offset;
 
     @Override
     public Recipe get(Long id) {
@@ -183,7 +187,7 @@ public class RecipeServiceImpl implements RecipeService {
         recipe.setInstructions(recipeDto.getInstructions());
         recipe.setTimeToPrepare(recipeDto.getTimeToPrepare());
         recipe.setTimeToCook(recipeDto.getTimeToCook());
-        recipe.setUpdatedAt(LocalDateTime.now());
+        recipe.setUpdatedAt(LocalDateTime.now().plusHours(offset));
         recipe.setCategories(categories);
 
         String meal = recipeDto.getMeal();

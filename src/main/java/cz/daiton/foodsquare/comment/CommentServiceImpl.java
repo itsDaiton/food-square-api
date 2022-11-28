@@ -7,6 +7,7 @@ import cz.daiton.foodsquare.exceptions.IncorrectUserException;
 import cz.daiton.foodsquare.recipe.Recipe;
 import cz.daiton.foodsquare.recipe.RecipeRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,9 @@ public class CommentServiceImpl implements CommentService {
     private final AppUserRepository appUserRepository;
     private final RecipeRepository recipeRepository;
     private final AppUserService appUserService;
+
+    @Value("${server.timezone.offset}")
+    private final long offset;
 
     @Override
     public Comment get(Long id) {
@@ -64,7 +68,7 @@ public class CommentServiceImpl implements CommentService {
         if (appUserService.checkUser(appUser.getId(), request)) {
             comment.setAppUser(appUser);
             comment.setRecipe(recipe);
-            comment.setCommentedAt(LocalDateTime.now());
+            comment.setCommentedAt(LocalDateTime.now().plusHours(offset));
             comment.setText(commentDto.getText());
 
             commentRepository.save(comment);
@@ -80,7 +84,7 @@ public class CommentServiceImpl implements CommentService {
         );
 
         if (appUserService.checkUser(comment.getAppUser().getId(), request)) {
-            comment.setCommentedAt(LocalDateTime.now());
+            comment.setCommentedAt(LocalDateTime.now().plusHours(offset));
             comment.setText(commentDto.getText());
             commentRepository.save(comment);
 
