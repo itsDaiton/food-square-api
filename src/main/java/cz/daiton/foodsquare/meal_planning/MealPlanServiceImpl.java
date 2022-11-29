@@ -51,7 +51,7 @@ public class MealPlanServiceImpl implements MealPlanService {
         }
 
         if (recipesFiltered.isEmpty()) {
-            throw new RuntimeException("Unable to create a meal plan based on those inputs.");
+            throw new RuntimeException("Unable to create a meal plan. Please try different set of inputs.");
         }
 
         Collections.shuffle(recipesFiltered);
@@ -200,7 +200,7 @@ public class MealPlanServiceImpl implements MealPlanService {
             default:
                 throw new RuntimeException("Unable to generate a meal plan with more than 5 meals.");
         }
-        throw new RuntimeException("Unable to create a meal plan based on those inputs.");
+        throw new RuntimeException("Unable to create a meal plan. Please try different set of inputs.");
     }
 
     private NutritionAnalysis summariseNutritionAnalyses(List<NutritionAnalysis> nutritionAnalyses) {
