@@ -124,7 +124,7 @@ app.jwt.sameSite=''
 
 #### app.jwt.secret-key
 
-- secret used to sign JWT keys
+- secret used to sign JWT tokens
 
 #### app.jwt.expiration-time
 
