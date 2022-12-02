@@ -80,7 +80,7 @@ Live demo of the application can be found here: **https://food-square.site**
 ### Prerequisites
 
 - [Maven](https://maven.apache.org)
-- IDE (e.g [IntelliJ IDEA](https://www.jetbrains.com/idea/)) or terminal
+- IDE (e.g. [IntelliJ IDEA](https://www.jetbrains.com/idea/)) or terminal
 
 ### Installation
 
@@ -112,7 +112,7 @@ app.jwt.sameSite=''
 
 #### spring.datasource.url
 
-- URL to the your database, which the application is gonna connect to
+- URL to your database, which the application is going to connect to
 
 #### spring.datasource.username
 
@@ -128,8 +128,8 @@ app.jwt.sameSite=''
 
 #### app.jwt.expiration-time
 
-- expiration time on JWT token in miliseconds
-- it is recommended to choose atleast 1 day (86400000)
+- expiration time on JWT token in milliseconds
+- it is recommended to choose at least 1 day (86400000)
 
 #### app.jwt.cookie-name
 
