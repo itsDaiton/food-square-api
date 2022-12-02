@@ -87,7 +87,7 @@ Live demo of the application can be found here: **https://food-square.site**
 Clone the project
 
 ```
-git clone https://github.com/itsDaiton/food-square.git
+git clone https://github.com/itsDaiton/food-square-api.git
 ```
 
 Open the project
