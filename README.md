@@ -77,7 +77,99 @@ Live demo of the application can be found here: **https://food-square.site**
 
 ## Get Started
 
-//TODO
+### Prerequisites
+
+- [Maven](https://maven.apache.org)
+- IDE (e.g [IntelliJ IDEA](https://www.jetbrains.com/idea/)) or terminal
+
+### Installation
+
+Clone the project
+
+```
+git clone https://github.com/itsDaiton/food-square.git
+```
+
+Open the project
+
+```
+cd food-square-api
+```
+
+Configure required variables located in `src/main/resources/application.properties`
+
+```
+spring.datasource.url=''
+spring.datasource.username=''
+spring.datasource.password=''
+
+app.jwt.secret-key=''
+app.jwt.expiration-time=''
+app.jwt.cookie-name=''
+app.jwt.secure=''
+app.jwt.sameSite=''
+```
+
+#### spring.datasource.url
+
+- URL to the your database, which the application is gonna connect to
+
+#### spring.datasource.username
+
+- your username in the database
+
+#### spring.datasource.password
+
+- your password to the database
+
+#### app.jwt.secret-key
+
+- secret used to sign JWT keys
+
+#### app.jwt.expiration-time
+
+- expiration time on JWT token in miliseconds
+- it is recommended to choose atleast 1 day (86400000)
+
+#### app.jwt.cookie-name
+
+- name of the cookie used for user authentication
+- example: 'examplecookiename'
+
+#### app.jwt.secure
+
+- defines whether cookies will have secure attribute or not
+- choose 'false' for local development
+- must be set to 'true' in production!
+
+#### app.jwt.sameSite
+
+- defines whether cookies will have samesite attribute or not
+- choose 'lax' for local development
+- must be set to 'none' in production!
+
+Run the application in terminal
+
+```
+mvnw spring-boot:run
+```
+
+Run the service with curl (in a separate terminal window)
+
+```
+curl localhost:8080
+```
+
+If you wish, you can create a executable JAR file
+
+```
+mvnw clean install
+```
+
+### Deployment
+- Create a feature branch for your changes
+- Deploy your code
+- After your development is done, create a pull request
 
 ## Contributting
 
