@@ -186,6 +186,13 @@ Application testing was carried out using the [***Postman***](https://www.postma
 docs/tests
 ```
 
+## Documentation
+
+Documentation describing all end-points of the API can be found under
+```
+'baseURL'/api/v1/docs/swagger-ui/index.html
+```
+
 ## Contact
 
 You can contact the author of the project under this [e-mail](mailto:david.poslusny@gmail.com).
