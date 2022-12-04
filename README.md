@@ -188,7 +188,7 @@ docs/tests
 
 ## Documentation
 
-Documentation describing all end-points of the API can be found under
+Documentation describing all end-points of the API can be found under this URL
 ```
 'baseURL'/api/v1/docs/swagger-ui/index.html
 ```
