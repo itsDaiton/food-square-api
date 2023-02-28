@@ -3,11 +3,15 @@ Social network for food lovers.
 
 Food Square was developed as an open source application as a part of bachelor thesis titled ***Design and implementation of an open source web application about cooking*** by David Poslušný at [***Faculty of Informatics and Statistics of Prague University of Economics and Business***](https://fis.vse.cz).
 
+ℹ️ This bachelor thesis **was defended on 31.1.2023 with the grade of 1**. Link to the official paper can be found [**here**](https://vskp.vse.cz/88311). ℹ️
+
 This repository contains source code of the **server side** of the application. 
 
 The other repository that contains the **client side** of the application can be found [here](https://github.com/itsDaiton/food-square).
 
 Live demo of the application can be found here: **https://food-square.site**
+
+![image](https://user-images.githubusercontent.com/72783924/222009100-6076bc96-f99f-4a7c-a3d8-d60eb0c47267.png)
 
 ## Features
 
